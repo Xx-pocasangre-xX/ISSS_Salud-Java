@@ -1,14 +1,23 @@
 package Vista;
 
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.geom.RoundRectangle2D;
+import javax.swing.AbstractButton;
+import javax.swing.BorderFactory;
+import javax.swing.JComponent;
 import javax.swing.UIManager;
+import javax.swing.plaf.basic.BasicButtonUI;
+
 
 public class jfrPantallaMain extends javax.swing.JFrame {
-
-    /**
-     * Creates new form jfrPantallaMain
-     */
+    
     public jfrPantallaMain() {
         initComponents();
+        
+        btnBienvenida.setUI(new RoundedButtonUI());
     }
 
     @SuppressWarnings("unchecked")
@@ -17,10 +26,9 @@ public class jfrPantallaMain extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnBienvenida = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(951, 631));
 
         jPanel1.setBackground(new java.awt.Color(50, 55, 69));
         jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
@@ -29,15 +37,13 @@ public class jfrPantallaMain extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoprueba.PNG"))); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(41, 72, 152));
-        jButton1.setText("Iniciar Sesión");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.setBorderPainted(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBienvenida.setBackground(new java.awt.Color(255, 255, 255));
+        btnBienvenida.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBienvenida.setForeground(new java.awt.Color(41, 72, 152));
+        btnBienvenida.setText("Iniciar Sesión");
+        btnBienvenida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnBienvenidaActionPerformed(evt);
             }
         });
 
@@ -46,23 +52,22 @@ public class jfrPantallaMain extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(318, 318, 318)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(419, 419, 419)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(318, 318, 318)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(297, 297, 297))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(374, 374, 374))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addComponent(jLabel1)
-                .addGap(28, 28, 28)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(133, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -79,13 +84,10 @@ public class jfrPantallaMain extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnBienvenidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBienvenidaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
+    }//GEN-LAST:event_btnBienvenidaActionPerformed
+    
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -116,8 +118,34 @@ public class jfrPantallaMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton btnBienvenida;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    private static class RoundedButtonUI extends BasicButtonUI {
+       @Override 
+       public void installUI(JComponent c){
+         super.installUI(c);
+         ((AbstractButton) c).setOpaque(false);
+         ((AbstractButton) c).setBorder(BorderFactory.createEmptyBorder(5, 15, 5, 15));
+       }
+       
+       @Override
+       public void paint(Graphics g, JComponent c){
+          AbstractButton b = (AbstractButton) c;
+          Graphics2D g2 = (Graphics2D) g;
+          g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+          
+          g2.setColor(b.getBackground());
+          g2.fill(new RoundRectangle2D.Float(0, 0, b.getWidth(), b.getHeight(), 50, 50));
+          
+          g2.setColor(b.getForeground());
+          FontMetrics fm = g.getFontMetrics();
+          g2.drawString(b.getText(), (b.getWidth() - fm.stringWidth(b.getText())) / 2,
+                    (b.getHeight() + fm.getAscent()) / 2 - 2);
+          
+          g2.dispose();
+       }
+    }
 }
