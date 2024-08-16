@@ -1,20 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Vista;
 
-/**
- *
- * @author Eduardo Padilla
- */
-public class jfrPantallaLogin extends javax.swing.JFrame {
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.geom.RoundRectangle2D;
+import javax.swing.JPanel;
 
-    /**
-     * Creates new form jfrPantallaLogin
-     */
+public class jfrPantallaLogin extends javax.swing.JFrame {
+    
     public jfrPantallaLogin() {
         initComponents();
+        
+        RoundedPanel roundedPanel = new RoundedPanel();
+        roundedPanel.setBackground(jpFondoAzul.getBackground());
+        roundedPanel.setBounds(jpFondoAzul.getBounds());
+        
+        jPanel1.remove(jpFondoAzul);
+        jPanel1.add(roundedPanel);
+        jpFondoAzul = roundedPanel;
     }
 
     /**
@@ -57,8 +60,8 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(89, 89, 89)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85)
                 .addComponent(jpFondoAzul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(84, Short.MAX_VALUE))
         );
@@ -71,7 +74,7 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
                         .addComponent(jpFondoAzul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(145, 145, 145)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(115, Short.MAX_VALUE))
         );
 
@@ -129,4 +132,21 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jpFondoAzul;
     // End of variables declaration//GEN-END:variables
+   public class RoundedPanel extends JPanel{
+     private int cornerRadius = 20;
+     
+     public RoundedPanel(){
+       super();
+       setOpaque(false);
+     }
+     
+     @Override
+     protected void paintComponent(Graphics g){
+       super.paintComponent(g);
+       Graphics2D g2 = (Graphics2D) g;
+       g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+       g2.setColor(getBackground());
+       g2.fill(new RoundRectangle2D.Float(0, 0, getWidth(), getHeight(), cornerRadius, cornerRadius));
+     }
+   }
 }
