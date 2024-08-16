@@ -2,6 +2,7 @@ package Controlador;
 
 import Vista.jfrPantallaCarga;
 import Vista.jfrPantallaMain;
+import javax.swing.SwingUtilities;
 
 public class ctrlPantallasCarga {
     private jfrPantallaCarga pantallaCarga;
@@ -14,6 +15,7 @@ public class ctrlPantallasCarga {
     
     public void mostrarPantallaCarga(){
       pantallaCarga.setVisible(true);
+      pantallaCarga.setLocationRelativeTo(null);
       
       new Thread(() -> {
         try{
@@ -22,8 +24,11 @@ public class ctrlPantallasCarga {
           e.printStackTrace();
         }
         
-        pantallaCarga.dispose();
-        pantallaMain.setVisible(true);
+         SwingUtilities.invokeLater(() -> {
+                pantallaCarga.dispose();
+                pantallaMain.setLocationRelativeTo(null);
+                pantallaMain.setVisible(true);
+            });
       }).start();
     }
 }

@@ -1,9 +1,12 @@
 package Vista;
 
+import Controlador.ctrlPantallaMain;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
@@ -85,37 +88,23 @@ public class jfrPantallaMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBienvenidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBienvenidaActionPerformed
-        // TODO add your handling code here:
+
+                ctrlPantallaMain Controlador = new ctrlPantallaMain(this, new jfrPantallaLogin());
+        
+                Controlador.iniciar();
     }//GEN-LAST:event_btnBienvenidaActionPerformed
     
     public static void main(String args[]) {
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+        jfrPantallaMain pantallaMain = new jfrPantallaMain();
+        jfrPantallaLogin pantallaLogin = new jfrPantallaLogin();
+        
+        // Crear el controlador con las instancias
+        ctrlPantallaMain controlador = new ctrlPantallaMain(pantallaMain, pantallaLogin);
+        
+        // Mostrar la pantalla principal
+        controlador.iniciar();
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(jfrPantallaMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(jfrPantallaMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(jfrPantallaMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(jfrPantallaMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new jfrPantallaMain().setVisible(true);
-            }
-        });
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnBienvenida;
