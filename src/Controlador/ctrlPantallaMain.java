@@ -26,6 +26,6 @@ public class ctrlPantallaMain {
     public void iniciar(){
       pantallaMain.setVisible(false);
       pantallaLogin.setLocationRelativeTo(null);
-        pantallaLogin.setVisible(true);
+      pantallaLogin.setVisible(true);
     }
 }

@@ -1,5 +1,8 @@
 package Vista;
 
+import Controlador.ctrlPantallaLogin;
+import Modelo.ClaseConexion;
+import Modelo.Usuarios;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
@@ -8,6 +11,7 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.geom.RoundRectangle2D;
+import java.sql.Connection;
 import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -30,8 +34,6 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
         Image scaledImage = icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
         btnVerContrasena.setIcon(new ImageIcon(scaledImage));
         
-        new Controlador.ctrlPantallaLogin(this);
-        
         
         RoundedPanel roundedPanel = new RoundedPanel();
         roundedPanel.setBackground(jpFondoAzul.getBackground());
@@ -42,7 +44,6 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
         
         btnIniciarSesion.setBounds(35, 320, 350, 40);
         roundedPanel.add(btnIniciarSesion);
-        
         btnIniciarSesion.setUI(new jfrPantallaLogin.RoundedButtonUI());
         
         txtEmail = new CustomTextField("Email");
@@ -60,12 +61,16 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
         roundedPanel.add(btnVerContrasena);
         btnVerContrasena.setLayout(null);
         
-        txtOlvidasteTuContrasena.setBounds(122, 360, 350, 40);
         roundedPanel.add(txtOlvidasteTuContrasena);
+        txtOlvidasteTuContrasena.setBounds(125, 340, 200, 100);
         
         jPanel1.remove(jpFondoAzul);
         jPanel1.add(roundedPanel);
         jpFondoAzul = roundedPanel;
+    }
+    
+    public static void initJfrPantallaMenuAdmin(){
+      
     }
 
     /**
@@ -112,6 +117,13 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
         btnIniciarSesion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarSesion.setText("Iniciar Sesión");
+        btnIniciarSesion.setActionCommand("");
+        btnIniciarSesion.setBorder(null);
+        btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIniciarSesionActionPerformed(evt);
+            }
+        });
 
         txtOlvidasteTuContrasena.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         txtOlvidasteTuContrasena.setForeground(new java.awt.Color(138, 210, 255));
@@ -120,7 +132,6 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
 
         btnVerContrasena.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/no_ver_password.png"))); // NOI18N
         btnVerContrasena.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnVerContrasena.setPreferredSize(new java.awt.Dimension(96, 96));
 
         javax.swing.GroupLayout jpFondoAzulLayout = new javax.swing.GroupLayout(jpFondoAzul);
         jpFondoAzul.setLayout(jpFondoAzulLayout);
@@ -209,6 +220,22 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
+
+    private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
+       try {
+        
+        Connection conexion = ClaseConexion.getConexion();
+
+        Usuarios modeloUsuarios = new Usuarios(conexion);
+
+        ctrlPantallaLogin Controlador = new ctrlPantallaLogin(this, modeloUsuarios);
+        
+        Controlador.procesarLogin();
+        
+    } catch (Exception ex) {
+        ex.printStackTrace();
+    }
+    }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     /**
      * @param args the command line arguments
