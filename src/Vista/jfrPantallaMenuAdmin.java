@@ -50,15 +50,27 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(951, 631));
 
         jPanel1.setBackground(new java.awt.Color(50, 55, 69));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jpPanelIzquierdo.setBackground(new java.awt.Color(62, 68, 83));
-        jpPanelIzquierdo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jpPanelIzquierdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 630));
+        jpPanelIzquierdo.setLayout(new java.awt.BorderLayout());
 
         jpPanelSuperior.setBackground(new java.awt.Color(62, 68, 83));
-        jpPanelSuperior.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jpPanelSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 870, 115));
+        jpPanelSuperior.setLayout(new java.awt.BorderLayout());
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jpPanelIzquierdo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jpPanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jpPanelIzquierdo, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jpPanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
