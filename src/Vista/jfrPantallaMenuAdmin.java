@@ -46,22 +46,11 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
 
         jpPanelIzquierdo.setBackground(new java.awt.Color(62, 68, 83));
         jpPanelIzquierdo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jpPanelIzquierdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 630));
+        jPanel1.add(jpPanelIzquierdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 630));
 
         jpPanelSuperior.setBackground(new java.awt.Color(62, 68, 83));
-
-        javax.swing.GroupLayout jpPanelSuperiorLayout = new javax.swing.GroupLayout(jpPanelSuperior);
-        jpPanelSuperior.setLayout(jpPanelSuperiorLayout);
-        jpPanelSuperiorLayout.setHorizontalGroup(
-            jpPanelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-        );
-        jpPanelSuperiorLayout.setVerticalGroup(
-            jpPanelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jpPanelSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 800, 80));
+        jpPanelSuperior.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jpPanelSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 870, 115));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
