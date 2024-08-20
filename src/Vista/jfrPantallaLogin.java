@@ -39,21 +39,24 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
         roundedPanel.setBackground(jpFondoAzul.getBackground());
         roundedPanel.setBounds(jpFondoAzul.getBounds());
         
-        BienvenidoLabel.setBounds(60, 50, 300, 50);
+        BienvenidoLabel.setBounds(65, 30, 300, 50);
         roundedPanel.add(BienvenidoLabel);
         
-        btnIniciarSesion.setBounds(35, 320, 350, 40);
+        BienvenidoLabel1.setBounds(60, 70, 300, 50);
+        roundedPanel.add(BienvenidoLabel1);
+        
+        btnIniciarSesion.setBounds(25, 390, 370, 40);
         roundedPanel.add(btnIniciarSesion);
         btnIniciarSesion.setUI(new jfrPantallaLogin.RoundedButtonUI());
         
         txtEmail = new CustomTextField("Email");
-        txtEmail.setBounds(35, 140, 350, 40);
+        txtEmail.setBounds(35, 180, 350, 40);
         ((CustomTextField) txtEmail).setHintVerticalOffset(10);
         roundedPanel.add(txtEmail);
         txtEmail.setLayout(null);
         
         txtContrasena = new CustomPasswordField("Contraseña");
-        txtContrasena.setBounds(35, 210, 350, 40);
+        txtContrasena.setBounds(35, 250, 350, 40);
         ((CustomPasswordField) txtContrasena).setHintVerticalOffset(10);
         roundedPanel.add(txtContrasena);
         txtContrasena.setLayout(null);
@@ -62,7 +65,7 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
         btnVerContrasena.setLayout(null);
         
         roundedPanel.add(txtOlvidasteTuContrasena);
-        txtOlvidasteTuContrasena.setBounds(125, 340, 200, 100);
+        txtOlvidasteTuContrasena.setBounds(125, 400, 200, 100);
         
         jPanel1.remove(jpFondoAzul);
         jPanel1.add(roundedPanel);
@@ -86,6 +89,7 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jpFondoAzul = new javax.swing.JPanel();
         BienvenidoLabel = new javax.swing.JLabel();
+        BienvenidoLabel1 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         btnIniciarSesion = new javax.swing.JButton();
         txtOlvidasteTuContrasena = new javax.swing.JLabel();
@@ -102,11 +106,17 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
 
         jpFondoAzul.setBackground(new java.awt.Color(31, 38, 76));
 
-        BienvenidoLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        BienvenidoLabel.setFont(new java.awt.Font("Roboto", 3, 36)); // NOI18N
         BienvenidoLabel.setForeground(new java.awt.Color(255, 255, 255));
         BienvenidoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BienvenidoLabel.setText("Bienvenido a ISSS Salud");
+        BienvenidoLabel.setText("Bienvenido a ");
 
+        BienvenidoLabel1.setFont(new java.awt.Font("Roboto", 3, 36)); // NOI18N
+        BienvenidoLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        BienvenidoLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BienvenidoLabel1.setText("ISSS Salud");
+
+        txtEmail.setFont(new java.awt.Font("Roboto", 2, 11)); // NOI18N
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
@@ -114,7 +124,7 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
         });
 
         btnIniciarSesion.setBackground(new java.awt.Color(41, 72, 152));
-        btnIniciarSesion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnIniciarSesion.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         btnIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarSesion.setText("Iniciar Sesión");
         btnIniciarSesion.setActionCommand("");
@@ -125,13 +135,18 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
             }
         });
 
-        txtOlvidasteTuContrasena.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        txtOlvidasteTuContrasena.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         txtOlvidasteTuContrasena.setForeground(new java.awt.Color(138, 210, 255));
         txtOlvidasteTuContrasena.setText("¿Olvidaste tu contraseña?");
         txtOlvidasteTuContrasena.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         btnVerContrasena.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/no_ver_password.png"))); // NOI18N
         btnVerContrasena.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnVerContrasena.setMaximumSize(new java.awt.Dimension(30, 30));
+        btnVerContrasena.setMinimumSize(new java.awt.Dimension(30, 30));
+        btnVerContrasena.setPreferredSize(new java.awt.Dimension(30, 30));
+
+        txtContrasena.setFont(new java.awt.Font("Roboto", 2, 11)); // NOI18N
 
         javax.swing.GroupLayout jpFondoAzulLayout = new javax.swing.GroupLayout(jpFondoAzul);
         jpFondoAzul.setLayout(jpFondoAzulLayout);
@@ -140,43 +155,48 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
             .addGroup(jpFondoAzulLayout.createSequentialGroup()
                 .addGroup(jpFondoAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpFondoAzulLayout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(BienvenidoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(145, 145, 145)
+                        .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpFondoAzulLayout.createSequentialGroup()
-                        .addGap(124, 124, 124)
-                        .addComponent(txtOlvidasteTuContrasena))
-                    .addGroup(jpFondoAzulLayout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(127, 127, 127)
+                        .addComponent(txtOlvidasteTuContrasena)))
+                .addContainerGap(128, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpFondoAzulLayout.createSequentialGroup()
-                .addGap(0, 34, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jpFondoAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpFondoAzulLayout.createSequentialGroup()
+                        .addComponent(btnVerContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpFondoAzulLayout.createSequentialGroup()
                         .addGroup(jpFondoAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(31, 31, 31))
+                        .addGap(32, 32, 32))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpFondoAzulLayout.createSequentialGroup()
-                        .addComponent(btnVerContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48))))
+                        .addComponent(BienvenidoLabel1)
+                        .addGap(145, 145, 145))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpFondoAzulLayout.createSequentialGroup()
+                        .addComponent(BienvenidoLabel)
+                        .addGap(101, 101, 101))))
         );
         jpFondoAzulLayout.setVerticalGroup(
             jpFondoAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpFondoAzulLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addComponent(BienvenidoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BienvenidoLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(txtContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81)
-                .addComponent(btnVerContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(38, 38, 38)
+                .addComponent(btnVerContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
                 .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtOlvidasteTuContrasena)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -186,9 +206,9 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(81, 81, 81)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
+                .addGap(61, 61, 61)
                 .addComponent(jpFondoAzul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,7 +220,7 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(82, 82, 82)
                         .addComponent(jpFondoAzul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -263,6 +283,7 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel BienvenidoLabel;
+    public javax.swing.JLabel BienvenidoLabel1;
     public javax.swing.JButton btnIniciarSesion;
     public javax.swing.JLabel btnVerContrasena;
     private javax.swing.JLabel jLabel1;
