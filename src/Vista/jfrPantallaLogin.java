@@ -222,19 +222,9 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailActionPerformed
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
-       try {
+            ctrlPantallaLogin Controlador = new ctrlPantallaLogin(this, new jfrPantallaMenuAdmin());
         
-        Connection conexion = ClaseConexion.getConexion();
-
-        Usuarios modeloUsuarios = new Usuarios(conexion);
-
-        ctrlPantallaLogin Controlador = new ctrlPantallaLogin(this, modeloUsuarios);
-        
-        Controlador.procesarLogin();
-        
-    } catch (Exception ex) {
-        ex.printStackTrace();
-    }
+                Controlador.iniciar();
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     /**

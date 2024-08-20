@@ -24,6 +24,14 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jpPanelIzquierdo = new jpPanelIzquierdo();
     }
 
+    
+    public static void initJfrPantallaAdmin(){
+      jfrPantallaMenuAdmin Vista = new jfrPantallaMenuAdmin();
+      
+      Vista.setVisible(true);
+     
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -107,7 +115,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+                initJfrPantallaAdmin();
             }
         });
     }
