@@ -33,34 +33,81 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        PanelAdmin = new javax.swing.JPanel();
         jpPanelIzquierdo = new javax.swing.JPanel();
+        imgMenuHamburguesa = new javax.swing.JLabel();
+        jpFondoBotonNavegable = new javax.swing.JPanel();
+        btnAdministrador = new javax.swing.JLabel();
         jpPanelSuperior = new javax.swing.JPanel();
+        imgLogoNoDesplegado = new javax.swing.JLabel();
+        trabajadores = new javax.swing.JLabel();
+        fondoCards = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(50, 55, 69));
         setMinimumSize(new java.awt.Dimension(951, 631));
 
-        jPanel1.setBackground(new java.awt.Color(50, 55, 69));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        PanelAdmin.setBackground(new java.awt.Color(50, 55, 69));
+        PanelAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jpPanelIzquierdo.setBackground(new java.awt.Color(62, 68, 83));
+        jpPanelIzquierdo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(204, 204, 204)));
         jpPanelIzquierdo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jpPanelIzquierdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 630));
+
+        imgMenuHamburguesa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/menu hamburgesa modo oscuro.png"))); // NOI18N
+        jpPanelIzquierdo.add(imgMenuHamburguesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        jpFondoBotonNavegable.setBackground(new java.awt.Color(41, 72, 152));
+        jpFondoBotonNavegable.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(204, 204, 204)));
+        jpFondoBotonNavegable.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnAdministrador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/administrador modo oscuro.png"))); // NOI18N
+        jpFondoBotonNavegable.add(btnAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jpPanelIzquierdo.add(jpFondoBotonNavegable, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 80, 70));
+
+        PanelAdmin.add(jpPanelIzquierdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 630));
 
         jpPanelSuperior.setBackground(new java.awt.Color(62, 68, 83));
+        jpPanelSuperior.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
         jpPanelSuperior.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jpPanelSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 870, 115));
+
+        imgLogoNoDesplegado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo isss modo oscuro sin desplegar.png"))); // NOI18N
+        jpPanelSuperior.add(imgLogoNoDesplegado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        trabajadores.setFont(new java.awt.Font("Roboto", 3, 36)); // NOI18N
+        trabajadores.setForeground(new java.awt.Color(255, 255, 255));
+        trabajadores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        trabajadores.setText("Trabajadores");
+        jpPanelSuperior.add(trabajadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
+
+        PanelAdmin.add(jpPanelSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 870, 115));
+
+        fondoCards.setBackground(new java.awt.Color(70, 76, 92));
+        fondoCards.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(204, 204, 204)));
+
+        javax.swing.GroupLayout fondoCardsLayout = new javax.swing.GroupLayout(fondoCards);
+        fondoCards.setLayout(fondoCardsLayout);
+        fondoCardsLayout.setHorizontalGroup(
+            fondoCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 359, Short.MAX_VALUE)
+        );
+        fondoCardsLayout.setVerticalGroup(
+            fondoCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 520, Short.MAX_VALUE)
+        );
+
+        PanelAdmin.add(fondoCards, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 110, 360, 520));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -102,9 +149,15 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel PanelAdmin;
+    public javax.swing.JLabel btnAdministrador;
+    public javax.swing.JPanel fondoCards;
+    public javax.swing.JLabel imgLogoNoDesplegado;
+    public javax.swing.JLabel imgMenuHamburguesa;
+    public javax.swing.JPanel jpFondoBotonNavegable;
     public javax.swing.JPanel jpPanelIzquierdo;
     public javax.swing.JPanel jpPanelSuperior;
+    public javax.swing.JLabel trabajadores;
     // End of variables declaration//GEN-END:variables
     public class jpPanelIzquierdo extends JPanel{
       @Override
