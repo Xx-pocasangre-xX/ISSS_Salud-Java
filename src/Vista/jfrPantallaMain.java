@@ -89,21 +89,12 @@ public class jfrPantallaMain extends javax.swing.JFrame {
 
     private void btnBienvenidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBienvenidaActionPerformed
 
-                ctrlPantallaMain Controlador = new ctrlPantallaMain(this, new jfrPantallaLogin());
-        
-                Controlador.iniciar();
+                
     }//GEN-LAST:event_btnBienvenidaActionPerformed
     
     public static void main(String args[]) {
-        jfrPantallaMain pantallaMain = new jfrPantallaMain();
-        jfrPantallaLogin pantallaLogin = new jfrPantallaLogin();
-        
-        // Crear el controlador con las instancias
-        ctrlPantallaMain controlador = new ctrlPantallaMain(pantallaMain, pantallaLogin);
-        
-        // Mostrar la pantalla principal
-        controlador.iniciar();
-            }
+       
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
