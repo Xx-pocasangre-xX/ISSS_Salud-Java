@@ -174,11 +174,11 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpFondoAzulLayout.createSequentialGroup()
-                        .addComponent(BienvenidoLabel1)
-                        .addGap(145, 145, 145))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpFondoAzulLayout.createSequentialGroup()
                         .addComponent(BienvenidoLabel)
-                        .addGap(101, 101, 101))))
+                        .addGap(101, 101, 101))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpFondoAzulLayout.createSequentialGroup()
+                        .addComponent(BienvenidoLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(135, 135, 135))))
         );
         jpFondoAzulLayout.setVerticalGroup(
             jpFondoAzulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
