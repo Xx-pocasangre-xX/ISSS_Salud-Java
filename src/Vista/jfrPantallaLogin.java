@@ -1,7 +1,6 @@
 package Vista;
 
 import Controlador.ctrlPantallaLogin;
-import Modelo.ClaseConexion;
 import Modelo.Usuarios;
 import java.awt.Color;
 import java.awt.Font;
@@ -11,7 +10,6 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.geom.RoundRectangle2D;
-import java.sql.Connection;
 import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -27,6 +25,9 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
     
     public jfrPantallaLogin() {
         initComponents();
+        
+        Usuarios modelo = new Usuarios();
+        ctrlPantallaLogin Controlador = new ctrlPantallaLogin(this, modelo);
         
         int width = btnVerContrasena.getWidth();
         int height = btnVerContrasena.getHeight();
