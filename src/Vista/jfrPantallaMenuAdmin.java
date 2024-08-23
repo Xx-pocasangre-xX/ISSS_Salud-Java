@@ -33,7 +33,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelAdmin = new javax.swing.JPanel();
+        
         jpPanelIzquierdo = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
