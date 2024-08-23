@@ -5,13 +5,10 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
-import javax.swing.UIManager;
 import javax.swing.plaf.basic.BasicButtonUI;
 
 
@@ -20,6 +17,8 @@ public class jfrPantallaMain extends javax.swing.JFrame {
     public jfrPantallaMain() {
         initComponents();
         
+        ctrlPantallaMain Controlador = new ctrlPantallaMain(this);
+        btnBienvenida.addActionListener(Controlador);
         btnBienvenida.setUI(new RoundedButtonUI());
     }
 
@@ -88,12 +87,11 @@ public class jfrPantallaMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBienvenidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBienvenidaActionPerformed
-
                 
     }//GEN-LAST:event_btnBienvenidaActionPerformed
     
     public static void main(String args[]) {
-       
+        
     }
 
 

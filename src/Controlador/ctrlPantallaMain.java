@@ -1,31 +1,25 @@
 package Controlador;
-
 import Vista.jfrPantallaLogin;
 import Vista.jfrPantallaMain;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.SwingUtilities;
 
-public class ctrlPantallaMain {
-    private jfrPantallaMain pantallaMain;
-    private jfrPantallaLogin pantallaLogin;
+public class ctrlPantallaMain implements ActionListener{
     
-    public ctrlPantallaMain(jfrPantallaMain pantallaMain, jfrPantallaLogin pantallaLogin){
-      System.out.println("Constructor ctrlPantallaMain llamado");
-      this.pantallaMain = pantallaMain;
-      this.pantallaLogin = pantallaLogin;
-      
-      this.pantallaMain.btnBienvenida.addActionListener(new ActionListener(){
-         @Override
-         public void actionPerformed(ActionEvent e){
-             iniciar();
-         }
-      });
+    private final jfrPantallaMain vista;
+    
+    public ctrlPantallaMain(jfrPantallaMain vista){
+       this.vista = vista;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == vista.btnBienvenida){
+          jfrPantallaLogin loginView = new jfrPantallaLogin();
+          loginView.setLocationRelativeTo(null);
+          loginView.setVisible(true);
+          vista.dispose();
+        }
     }
     
-    public void iniciar(){
-      pantallaMain.setVisible(false);
-      pantallaLogin.setLocationRelativeTo(null);
-      pantallaLogin.setVisible(true);
-    }
 }
