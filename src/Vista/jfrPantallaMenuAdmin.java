@@ -39,23 +39,23 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        txtContrasenaDoctor = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        txtNombreDoctor = new javax.swing.JTextField();
+        txtCorreoDoctor = new javax.swing.JTextField();
+        btnCargarImagen = new javax.swing.JButton();
+        btnAgregar = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
         cbEspecialidadesMedicas = new javax.swing.JComboBox<>();
         cbUnidadesMedicas = new javax.swing.JComboBox<>();
         profileImage = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(951, 631));
@@ -91,8 +91,8 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Roboto", 3, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Trabajadores");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, -1, -1));
+        jLabel4.setText("Doctores");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1020, 115));
 
@@ -101,16 +101,16 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 110, 410, 520));
 
-        jTextField1.setBackground(new java.awt.Color(50, 55, 65));
-        jTextField1.setFont(new java.awt.Font("Roboto", 2, 20)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtContrasenaDoctor.setBackground(new java.awt.Color(50, 55, 65));
+        txtContrasenaDoctor.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
+        txtContrasenaDoctor.setForeground(new java.awt.Color(255, 255, 255));
+        txtContrasenaDoctor.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
+        txtContrasenaDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtContrasenaDoctorActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 250, -1));
+        jPanel1.add(txtContrasenaDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 321, 290, 30));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -137,52 +137,52 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jLabel12.setText("Unidad Medica");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, -1, -1));
 
-        jTextField2.setBackground(new java.awt.Color(50, 55, 65));
-        jTextField2.setFont(new java.awt.Font("Roboto", 2, 20)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtNombreDoctor.setBackground(new java.awt.Color(50, 55, 65));
+        txtNombreDoctor.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
+        txtNombreDoctor.setForeground(new java.awt.Color(255, 255, 255));
+        txtNombreDoctor.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
+        txtNombreDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtNombreDoctorActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 250, -1));
+        jPanel1.add(txtNombreDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 290, 30));
 
-        jTextField3.setBackground(new java.awt.Color(50, 55, 65));
-        jTextField3.setFont(new java.awt.Font("Roboto", 2, 20)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtCorreoDoctor.setBackground(new java.awt.Color(50, 55, 65));
+        txtCorreoDoctor.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
+        txtCorreoDoctor.setForeground(new java.awt.Color(255, 255, 255));
+        txtCorreoDoctor.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
+        txtCorreoDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtCorreoDoctorActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 250, -1));
+        jPanel1.add(txtCorreoDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 290, 30));
 
-        jButton1.setBackground(new java.awt.Color(41, 72, 152));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Cargar Imagen");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCargarImagen.setBackground(new java.awt.Color(41, 72, 152));
+        btnCargarImagen.setForeground(new java.awt.Color(255, 255, 255));
+        btnCargarImagen.setText("Cargar Imagen");
+        btnCargarImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCargarImagenActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, 120, 50));
+        jPanel1.add(btnCargarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, 120, 50));
 
-        jButton2.setBackground(new java.awt.Color(41, 72, 152));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Agregar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregar.setBackground(new java.awt.Color(41, 72, 152));
+        btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnAgregarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 560, 120, 50));
+        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 560, 120, 50));
 
-        jButton3.setBackground(new java.awt.Color(41, 72, 152));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Actualizar");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 560, 120, 50));
+        btnActualizar.setBackground(new java.awt.Color(41, 72, 152));
+        btnActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizar.setText("Actualizar");
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 560, 120, 50));
 
         cbEspecialidadesMedicas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbEspecialidadesMedicas.addActionListener(new java.awt.event.ActionListener() {
@@ -190,7 +190,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
                 cbEspecialidadesMedicasActionPerformed(evt);
             }
         });
-        jPanel1.add(cbEspecialidadesMedicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 250, 30));
+        jPanel1.add(cbEspecialidadesMedicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 290, 30));
 
         cbUnidadesMedicas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbUnidadesMedicas.addActionListener(new java.awt.event.ActionListener() {
@@ -198,7 +198,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
                 cbUnidadesMedicasActionPerformed(evt);
             }
         });
-        jPanel1.add(cbUnidadesMedicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 250, 30));
+        jPanel1.add(cbUnidadesMedicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 290, 30));
 
         profileImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/profile.jpg"))); // NOI18N
         jPanel1.add(profileImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 180, 190));
@@ -208,25 +208,25 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jLabel9.setText("Especialidad");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, -1));
 
-        jButton4.setBackground(new java.awt.Color(41, 72, 152));
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Limpiar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnLimpiar.setBackground(new java.awt.Color(41, 72, 152));
+        btnLimpiar.setForeground(new java.awt.Color(255, 255, 255));
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnLimpiarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 560, 120, 50));
+        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 560, 120, 50));
 
-        jButton5.setBackground(new java.awt.Color(41, 72, 152));
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Eliminar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setBackground(new java.awt.Color(41, 72, 152));
+        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 560, 120, 50));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 560, 120, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -244,41 +244,41 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtContrasenaDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaDoctorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtContrasenaDoctorActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtNombreDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreDoctorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtNombreDoctorActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txtCorreoDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoDoctorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtCorreoDoctorActionPerformed
 
     private void cbUnidadesMedicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbUnidadesMedicasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbUnidadesMedicasActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void cbEspecialidadesMedicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEspecialidadesMedicasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbEspecialidadesMedicasActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnCargarImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarImagenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnCargarImagenActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnLimpiarActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -316,13 +316,13 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnActualizar;
+    public javax.swing.JButton btnAgregar;
+    public javax.swing.JButton btnCargarImagen;
+    public javax.swing.JButton btnEliminar;
+    public javax.swing.JButton btnLimpiar;
     public javax.swing.JComboBox<String> cbEspecialidadesMedicas;
     public javax.swing.JComboBox<String> cbUnidadesMedicas;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
@@ -338,9 +338,9 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     public javax.swing.JLabel profileImage;
+    public javax.swing.JTextField txtContrasenaDoctor;
+    public javax.swing.JTextField txtCorreoDoctor;
+    public javax.swing.JTextField txtNombreDoctor;
     // End of variables declaration//GEN-END:variables
 }
