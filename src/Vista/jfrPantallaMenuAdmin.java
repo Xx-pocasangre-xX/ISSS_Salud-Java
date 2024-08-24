@@ -1,12 +1,20 @@
 package Vista;
 
+import Controlador.ctrlPantallaMenuAdmin;
+import Modelo.ClaseConexion;
+import Modelo.EspecialidadDoctores;
 import java.awt.Image;
+import java.sql.Connection;
 import javax.swing.ImageIcon;
 
 public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
 
     public jfrPantallaMenuAdmin() {
         initComponents();
+        
+        Connection conexion = ClaseConexion.getConexion();
+        EspecialidadDoctores modelo = new EspecialidadDoctores(conexion);
+        ctrlPantallaMenuAdmin Controlador = new ctrlPantallaMenuAdmin(this, modelo);
         
         int width = profileImage.getWidth();
         int height = profileImage.getHeight();
@@ -39,7 +47,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbEspecialidadesMedicas = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         profileImage = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -173,13 +181,13 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jButton3.setText("Actualizar");
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 560, 120, 50));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        cbEspecialidadesMedicas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbEspecialidadesMedicas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                cbEspecialidadesMedicasActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 250, 30));
+        jPanel1.add(cbEspecialidadesMedicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 250, 30));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -253,9 +261,9 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cbEspecialidadesMedicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEspecialidadesMedicasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cbEspecialidadesMedicasActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -305,12 +313,12 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JComboBox<String> cbEspecialidadesMedicas;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
