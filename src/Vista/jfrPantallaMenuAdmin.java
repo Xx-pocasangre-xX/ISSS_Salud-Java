@@ -2,6 +2,7 @@ package Vista;
 
 import Controlador.ctrlPantallaMenuAdmin;
 import Modelo.ClaseConexion;
+import Modelo.Doctores;
 import Modelo.EspecialidadDoctores;
 import Modelo.UnidadesMedicas;
 import java.awt.Image;
@@ -16,8 +17,10 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         Connection conexion = ClaseConexion.getConexion();
         EspecialidadDoctores modelo = new EspecialidadDoctores(conexion);
         UnidadesMedicas modelo2 = new UnidadesMedicas(conexion);
+        Doctores modelo3 = new Doctores(conexion);
         ctrlPantallaMenuAdmin Controlador = new ctrlPantallaMenuAdmin(this, modelo);
         ctrlPantallaMenuAdmin Controlador2 = new ctrlPantallaMenuAdmin(this, modelo2);
+        ctrlPantallaMenuAdmin Controlador3 = new ctrlPantallaMenuAdmin(this, modelo3);
         
         int width = profileImage.getWidth();
         int height = profileImage.getHeight();
@@ -39,7 +42,6 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        txtContrasenaDoctor = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -56,6 +58,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        txtContrasenaDoctor = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(951, 631));
@@ -100,17 +103,6 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jPanel5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(156, 156, 156)));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 110, 410, 520));
-
-        txtContrasenaDoctor.setBackground(new java.awt.Color(50, 55, 65));
-        txtContrasenaDoctor.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
-        txtContrasenaDoctor.setForeground(new java.awt.Color(255, 255, 255));
-        txtContrasenaDoctor.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
-        txtContrasenaDoctor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtContrasenaDoctorActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtContrasenaDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 321, 290, 30));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -228,6 +220,11 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         });
         jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 560, 120, 50));
 
+        txtContrasenaDoctor.setBackground(new java.awt.Color(50, 55, 65));
+        txtContrasenaDoctor.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtContrasenaDoctor.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(txtContrasenaDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 290, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -243,10 +240,6 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtContrasenaDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaDoctorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtContrasenaDoctorActionPerformed
 
     private void txtNombreDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreDoctorActionPerformed
         // TODO add your handling code here:
@@ -339,7 +332,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     public javax.swing.JLabel profileImage;
-    public javax.swing.JTextField txtContrasenaDoctor;
+    public javax.swing.JPasswordField txtContrasenaDoctor;
     public javax.swing.JTextField txtCorreoDoctor;
     public javax.swing.JTextField txtNombreDoctor;
     // End of variables declaration//GEN-END:variables
