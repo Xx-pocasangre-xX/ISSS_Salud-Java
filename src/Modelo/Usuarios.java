@@ -23,35 +23,6 @@ public class Usuarios {
        return false;
        }
     
-<<<<<<< HEAD
-    private String Correo;
-    private String Contrasena;
-    private int codigoRecuperacion;
-
-    // Métodos getters y setters
-    public int getCodigoRecuperacion() {
-        return codigoRecuperacion;
-    }
-
-    public void setCodigoRecuperacion(int codigoRecuperacion) {
-        this.codigoRecuperacion = codigoRecuperacion;
-    }
-    
-     public String getCorreo() {
-        return Correo;
-    }
-
-    public void setCorreo(String Correo) {
-        this.Correo = Correo;
-    }
-
-    public String getContrasena() {
-        return Contrasena;
-    }
-
-    public void setContrasena(String Contrasena) {
-        this.Contrasena = Contrasena;
-=======
     public String encryptPassword(String password){
       try{
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
@@ -64,6 +35,5 @@ public class Usuarios {
       }catch(NoSuchAlgorithmException ex){
         throw new RuntimeException("Error al encriptar la contrasena", ex);
       }
->>>>>>> master
     }
     }

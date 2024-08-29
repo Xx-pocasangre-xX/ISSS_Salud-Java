@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Controlador;
 
 import Modelo.EnvioCorreo;
@@ -41,7 +37,7 @@ public class ctrlPantallaRecuperacionContra implements MouseListener {
         String subject = "Recuperacion de contraseña";
          Random random = new Random();
         int codigoRecuperacion = 100000 + random.nextInt(900000);
-        modelo.setCodigoRecuperacion(codigoRecuperacion);
+        //modelo.setCodigoRecuperacion(codigoRecuperacion);
         String content = "Este es el codigo de recuperacion" + codigoRecuperacion;
      
             EnvioCorreo.enviarCorreo(recipient, subject, content);
@@ -54,21 +50,17 @@ public class ctrlPantallaRecuperacionContra implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
