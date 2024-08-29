@@ -3,8 +3,12 @@ package Modelo;
 import Vista.jfrPantallaMenuAdmin;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.Insets;
 import java.io.File;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -12,6 +16,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
@@ -19,6 +25,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -174,28 +181,75 @@ public class Doctores {
         return listaDoctores;
     }
     
-    public void cargarCardsDoctores(JPanel jpCardsDoctores) {
+    public void cargarCardsDoctores(JPanel jpCardsDoctores) { 
+    JPanel panelCards = new JPanel();
+    panelCards.setLayout(new GridBagLayout()); 
+    
+    Color rgbColor = new Color(70, 76, 92);
+    panelCards.setBackground(rgbColor);
+    
+    GridBagConstraints gbc = new GridBagConstraints();
+    gbc.insets = new Insets(10, 10, 10, 10);
+    gbc.fill = GridBagConstraints.HORIZONTAL;
+    gbc.weightx = 1.0;
+        
     List<Doctores> doctores = obtenerDoctores(); 
-    jpCardsDoctores.setLayout(new GridLayout(0, 1, 10, 10)); 
+    int row = 0;
 
     for (Doctores doctor : doctores) {
         JPanel card = crearCard(doctor);
-        jpCardsDoctores.add(card);
+        gbc.gridy = row;
+        panelCards.add(card, gbc);
+        
+        gbc.gridy = row + 1;
+        panelCards.add(Box.createRigidArea(new Dimension(0, 20))); 
+        
+        row += 2;
     }
-
+    
+    jpCardsDoctores.removeAll();
+    
+    JScrollPane scrollPane = new JScrollPane(panelCards);
+    scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+    
+    jpCardsDoctores.setLayout(new BorderLayout());
+    jpCardsDoctores.add(scrollPane, BorderLayout.CENTER);
+    jpCardsDoctores.setBackground(rgbColor);
+    
     jpCardsDoctores.revalidate();
     jpCardsDoctores.repaint();
 }
     
     private JPanel crearCard(Doctores doctor) {
     JPanel card = new JPanel();
-    card.setLayout(new BorderLayout());
-    card.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+    card.setLayout(new BoxLayout(card, BoxLayout.Y_AXIS));
+    card.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+    
+    Color rgbColor = new Color(41, 72, 152);
+    card.setBackground(rgbColor);
 
-    JLabel lblNombre = new JLabel(doctor.getNombre());
-    lblNombre.setHorizontalAlignment(SwingConstants.CENTER);
-    card.add(lblNombre, BorderLayout.CENTER);
-
+    JLabel lblNombre = new JLabel("Dr(a): " + doctor.getNombre());
+    JLabel lblCorreo = new JLabel("Correo: " + doctor.getCorreo());
+    JLabel lblEspecialidad = new JLabel("Especialidad: " + doctor.getEspecialidad());
+    JLabel lblUnidadMedica = new JLabel("Unidad médica: " + doctor.getUnidadMedica());
+    
+    lblNombre.setAlignmentX(JLabel.LEFT_ALIGNMENT);
+    lblNombre.setForeground(Color.WHITE);
+    lblCorreo.setAlignmentX(JLabel.LEFT_ALIGNMENT);
+    lblCorreo.setForeground(Color.WHITE);
+    lblEspecialidad.setAlignmentX(JLabel.LEFT_ALIGNMENT);
+    lblEspecialidad.setForeground(Color.WHITE);
+    lblUnidadMedica.setAlignmentX(JLabel.LEFT_ALIGNMENT);
+    lblUnidadMedica.setForeground(Color.WHITE);
+    
+    card.add(lblNombre);
+    card.add(lblCorreo);
+    card.add(lblEspecialidad);
+    card.add(lblUnidadMedica);
+    
+    card.setPreferredSize(new Dimension(350, 100));
+    card.setMaximumSize(new Dimension(350, 100));
+    card.setMinimumSize(new Dimension(350, 100));
     
     return card;
 }
