@@ -2,15 +2,12 @@ package Modelo;
 
 import java.sql.*;
 import java.util.ArrayList;
+import javax.swing.JComboBox;
 
 public class UnidadesMedicas {
-    private Connection conexion;
-    
-    public UnidadesMedicas(Connection conexion){
-      this.conexion = conexion;
-    }
     
     public ArrayList<String> obtenerUnidadesMedicas(){
+       Connection conexion = ClaseConexion.getConexion();
        ArrayList<String> unidadesMedicas = new ArrayList<>();
        String query = "SELECT nombre_unidad FROM UnidadesMedicas";
        
@@ -24,5 +21,13 @@ public class UnidadesMedicas {
        }
        
        return unidadesMedicas;
+    }
+    
+    public void cargarUnidadesMedicas(JComboBox cbUnidadesMedicas){
+       ArrayList<String> unidades = obtenerUnidadesMedicas();
+       cbUnidadesMedicas.removeAllItems();
+       for(String unidad : unidades){
+         cbUnidadesMedicas.addItem(unidad);
+       }
     }
 }

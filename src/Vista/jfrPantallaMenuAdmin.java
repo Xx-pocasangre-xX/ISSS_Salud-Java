@@ -1,12 +1,10 @@
 package Vista;
 
 import Controlador.ctrlPantallaMenuAdmin;
-import Modelo.ClaseConexion;
 import Modelo.Doctores;
 import Modelo.EspecialidadDoctores;
 import Modelo.UnidadesMedicas;
 import java.awt.Image;
-import java.sql.Connection;
 import javax.swing.ImageIcon;
 
 public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
@@ -14,10 +12,10 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
     public jfrPantallaMenuAdmin() {
         initComponents();
         
-        Connection conexion = ClaseConexion.getConexion();
-        EspecialidadDoctores modelo = new EspecialidadDoctores(conexion);
-        UnidadesMedicas modelo2 = new UnidadesMedicas(conexion);
-        Doctores modelo3 = new Doctores(conexion);
+        
+        EspecialidadDoctores modelo = new EspecialidadDoctores();
+        UnidadesMedicas modelo2 = new UnidadesMedicas();
+        Doctores modelo3 = new Doctores();
         ctrlPantallaMenuAdmin Controlador = new ctrlPantallaMenuAdmin(this, modelo);
         ctrlPantallaMenuAdmin Controlador2 = new ctrlPantallaMenuAdmin(this, modelo2);
         ctrlPantallaMenuAdmin Controlador3 = new ctrlPantallaMenuAdmin(this, modelo3);
@@ -41,7 +39,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
+        jpCardsDoctores = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -99,10 +97,10 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1020, 115));
 
-        jPanel5.setBackground(new java.awt.Color(70, 76, 92));
-        jPanel5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(156, 156, 156)));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 110, 410, 520));
+        jpCardsDoctores.setBackground(new java.awt.Color(70, 76, 92));
+        jpCardsDoctores.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(156, 156, 156)));
+        jpCardsDoctores.setLayout(new java.awt.BorderLayout());
+        jPanel1.add(jpCardsDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 110, 410, 520));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -330,7 +328,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
+    public javax.swing.JPanel jpCardsDoctores;
     public javax.swing.JLabel profileImage;
     public javax.swing.JPasswordField txtContrasenaDoctor;
     public javax.swing.JTextField txtCorreoDoctor;
