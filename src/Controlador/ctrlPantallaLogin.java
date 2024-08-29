@@ -20,6 +20,7 @@ public class ctrlPantallaLogin implements ActionListener{
        this.vista = vista;
        this.modelo = modelo;
        this.vista.btnIniciarSesion.addActionListener(this);
+       this.vista.txtOlvidasteTuContrasena.addActionListener(this);
     }
 
     @Override

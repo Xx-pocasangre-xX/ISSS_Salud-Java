@@ -32,7 +32,6 @@ public class ctrlPantallaRecuperacionContra implements MouseListener {
         if(vista.txtCorreoRec.getText().isEmpty()){
             JOptionPane.showMessageDialog(vista, "Llene el campo del nombre");
         }
-        
         else if(!vista.txtCorreoRec.getText().contains("@") || !vista.txtCorreoRec.getText().contains(".com")){
                         JOptionPane.showMessageDialog(vista, "Correo inválido");
 
