@@ -10,13 +10,9 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-/**
- *
- * @author Kevin
- */
 public class EnvioCorreo {
     
-    public static void enviarCorreo(String recipient, String subject, String content) {
+    public static void envioCorreo(String recipient, String subject, String content) {
         
         //1- Propiedades del servidor de correo
         Properties properties = new Properties();

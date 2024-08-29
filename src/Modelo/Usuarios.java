@@ -36,4 +36,4 @@ public class Usuarios {
         throw new RuntimeException("Error al encriptar la contrasena", ex);
       }
     }
-    }
+}
