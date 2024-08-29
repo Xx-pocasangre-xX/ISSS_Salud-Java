@@ -37,8 +37,8 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtCorreoRec = new javax.swing.JTextField();
+        btnEnviarCorreo = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,7 +62,6 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Volver al inicio de sesión");
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
 
@@ -94,20 +93,20 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
         jLabel7.setText("la contraseña a tu cuenta");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
 
-        jTextField2.setBackground(new java.awt.Color(250, 250, 250));
-        jTextField2.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 265, 350, 30));
+        txtCorreoRec.setBackground(new java.awt.Color(250, 250, 250));
+        txtCorreoRec.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jPanel1.add(txtCorreoRec, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 265, 350, 30));
 
-        jButton1.setBackground(new java.awt.Color(144, 188, 255));
-        jButton1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(212, 226, 246));
-        jButton1.setText("Enviar código de verificación");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnEnviarCorreo.setBackground(new java.awt.Color(144, 188, 255));
+        btnEnviarCorreo.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        btnEnviarCorreo.setForeground(new java.awt.Color(212, 226, 246));
+        btnEnviarCorreo.setText("Enviar código de verificación");
+        btnEnviarCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnEnviarCorreoActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 350, -1));
+        jPanel1.add(btnEnviarCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 350, -1));
 
         jLabel8.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -130,9 +129,9 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnEnviarCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarCorreoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnEnviarCorreoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,7 +169,7 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton btnEnviarCorreo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -183,6 +182,6 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField2;
+    public javax.swing.JTextField txtCorreoRec;
     // End of variables declaration//GEN-END:variables
 }

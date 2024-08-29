@@ -3,6 +3,7 @@ package Controlador;
 import Modelo.Usuarios;
 import Vista.jfrPantallaLogin;
 import Vista.jfrPantallaMenuAdmin;
+import Vista.jfrRecuperacionContra;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -17,7 +18,11 @@ public class ctrlPantallaLogin implements ActionListener{
        this.vista = vista;
        this.modelo = modelo;
        this.vista.btnIniciarSesion.addActionListener(this);
+<<<<<<< HEAD
        this.vista.btnOlvidasteContra.addActionListener(this);
+=======
+       this.vista.txtOlvidasteTuContrasena.addActionListener(this);
+>>>>>>> 373766ff1401b8d9b1ac28d21ebf9f1ecc8cac61
     }
 
     @Override
@@ -38,6 +43,12 @@ public class ctrlPantallaLogin implements ActionListener{
              vista.txtEmail.setText("");
              vista.txtContrasena.setText("");
            }
+        }
+        if(e.getSource() == vista.txtOlvidasteTuContrasena){
+            jfrRecuperacionContra pantallaRec = new jfrRecuperacionContra();
+            pantallaRec.setLocationRelativeTo(null);
+            pantallaRec.setVisible(true);
+            vista.dispose();
         }
     }
    
