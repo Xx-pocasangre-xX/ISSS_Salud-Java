@@ -1,5 +1,7 @@
 package Modelo;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 
 public class Usuarios {
@@ -21,6 +23,7 @@ public class Usuarios {
        return false;
        }
     
+<<<<<<< HEAD
     private String Correo;
     private String Contrasena;
     private int codigoRecuperacion;
@@ -48,5 +51,19 @@ public class Usuarios {
 
     public void setContrasena(String Contrasena) {
         this.Contrasena = Contrasena;
+=======
+    public String encryptPassword(String password){
+      try{
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        byte[] hash = digest.digest(password.getBytes());
+        StringBuilder sb = new StringBuilder();
+        for (byte b : hash){
+          sb.append(String.format("%02x", b));
+        }
+        return sb.toString();
+      }catch(NoSuchAlgorithmException ex){
+        throw new RuntimeException("Error al encriptar la contrasena", ex);
+      }
+>>>>>>> master
     }
     }

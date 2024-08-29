@@ -6,8 +6,6 @@ import Vista.jfrPantallaMenuAdmin;
 import Vista.jfrRecuperacionContra;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import javax.swing.JOptionPane;
 
 
@@ -28,7 +26,7 @@ public class ctrlPantallaLogin implements ActionListener{
         if(e.getSource() == vista.btnIniciarSesion){
            String correo = vista.txtEmail.getText();
            String contrasena = new String(vista.txtContrasena.getPassword());
-           String contrasenaEncriptada = encryptPassword(contrasena);
+           String contrasenaEncriptada = modelo.encryptPassword(contrasena);
            
            if(modelo.validarCredenciales(correo, contrasenaEncriptada)){
              JOptionPane.showMessageDialog(vista, "Login exitoso");
@@ -50,17 +48,5 @@ public class ctrlPantallaLogin implements ActionListener{
         }
     }
    
-    private String encryptPassword(String password){
-      try{
-        MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        byte[] hash = digest.digest(password.getBytes());
-        StringBuilder sb = new StringBuilder();
-        for (byte b : hash){
-          sb.append(String.format("%02x", b));
-        }
-        return sb.toString();
-      }catch(NoSuchAlgorithmException ex){
-        throw new RuntimeException("Error al encriptar la contrasena", ex);
-      }
-    }
+    
 }

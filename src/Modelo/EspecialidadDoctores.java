@@ -2,15 +2,12 @@ package Modelo;
 
 import java.sql.*;
 import java.util.ArrayList;
+import javax.swing.JComboBox;
 
 public class EspecialidadDoctores {
-    private Connection conexion; 
-    
-    public EspecialidadDoctores(Connection conexion){
-       this.conexion = conexion;
-    }
     
     public ArrayList<String> obtenerEspecialidades(){
+       Connection conexion = ClaseConexion.getConexion();
        ArrayList<String> especialidades = new ArrayList<>();
        String query = "SELECT especialidad_doctor FROM EspecialidadDoctores";
        
@@ -24,5 +21,13 @@ public class EspecialidadDoctores {
        }
        
        return especialidades;
+    }
+    
+    public void cargarEspecialidadesMedicas(JComboBox cbEspecialidadesMedicas){
+      ArrayList<String> especialidades = obtenerEspecialidades();
+      cbEspecialidadesMedicas.removeAllItems();
+      for(String especialidad : especialidades){
+        cbEspecialidadesMedicas.addItem(especialidad);
+      }
     }
 }
