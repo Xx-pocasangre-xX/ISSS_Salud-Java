@@ -4,14 +4,8 @@ import Modelo.Doctores;
 import Modelo.EspecialidadDoctores;
 import Modelo.UnidadesMedicas;
 import Vista.jfrPantallaMenuAdmin;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.util.ArrayList;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
 
 public class ctrlPantallaMenuAdmin {
     private jfrPantallaMenuAdmin vista;
