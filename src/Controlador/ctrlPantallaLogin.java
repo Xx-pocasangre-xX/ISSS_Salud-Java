@@ -3,6 +3,7 @@ package Controlador;
 import Modelo.Usuarios;
 import Vista.jfrPantallaLogin;
 import Vista.jfrPantallaMenuAdmin;
+import Vista.jfrRecuperacionContra;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.security.MessageDigest;
@@ -39,6 +40,12 @@ public class ctrlPantallaLogin implements ActionListener{
              vista.txtEmail.setText("");
              vista.txtContrasena.setText("");
            }
+        }
+        if(e.getSource() == vista.txtOlvidasteTuContrasena){
+            jfrRecuperacionContra pantallaRec = new jfrRecuperacionContra();
+            pantallaRec.setLocationRelativeTo(null);
+            pantallaRec.setVisible(true);
+            vista.dispose();
         }
     }
    
