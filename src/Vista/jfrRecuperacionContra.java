@@ -42,6 +42,8 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(960, 640));
+        setMinimumSize(new java.awt.Dimension(960, 640));
 
         jPanel2.setBackground(new java.awt.Color(50, 55, 69));
         jPanel2.setMinimumSize(new java.awt.Dimension(960, 640));

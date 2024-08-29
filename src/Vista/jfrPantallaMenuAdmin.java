@@ -59,7 +59,8 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         txtContrasenaDoctor = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(951, 631));
+        setMaximumSize(new java.awt.Dimension(1200, 750));
+        setMinimumSize(new java.awt.Dimension(1200, 750));
 
         jPanel1.setBackground(new java.awt.Color(50, 55, 69));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,11 +77,11 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/administrador modo oscuro.png"))); // NOI18N
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 18, -1, -1));
 
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 80, 55));
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 80, 70));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 630));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 750));
 
         jPanel3.setBackground(new java.awt.Color(62, 68, 83));
         jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(156, 156, 156)));
@@ -93,39 +94,39 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Roboto", 3, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Doctores");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 30, -1, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1020, 115));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1120, 110));
 
         jpCardsDoctores.setBackground(new java.awt.Color(70, 76, 92));
         jpCardsDoctores.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(156, 156, 156)));
         jpCardsDoctores.setLayout(new java.awt.BorderLayout());
-        jPanel1.add(jpCardsDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 110, 410, 520));
+        jPanel1.add(jpCardsDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 110, 480, 640));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Contraseña");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Foto del doctor");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Nombre del doctor");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, 180, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 180, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Correo");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Unidad Medica");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, -1, -1));
 
         txtNombreDoctor.setBackground(new java.awt.Color(50, 55, 65));
         txtNombreDoctor.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -136,7 +137,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
                 txtNombreDoctorActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNombreDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 290, 30));
+        jPanel1.add(txtNombreDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 290, 30));
 
         txtCorreoDoctor.setBackground(new java.awt.Color(50, 55, 65));
         txtCorreoDoctor.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -147,7 +148,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
                 txtCorreoDoctorActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCorreoDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 290, 30));
+        jPanel1.add(txtCorreoDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 290, 30));
 
         btnCargarImagen.setBackground(new java.awt.Color(41, 72, 152));
         btnCargarImagen.setForeground(new java.awt.Color(255, 255, 255));
@@ -157,7 +158,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
                 btnCargarImagenActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCargarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, 120, 50));
+        jPanel1.add(btnCargarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 120, 50));
 
         btnAgregar.setBackground(new java.awt.Color(41, 72, 152));
         btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
@@ -167,12 +168,12 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
                 btnAgregarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 560, 120, 50));
+        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 670, 120, 50));
 
         btnActualizar.setBackground(new java.awt.Color(41, 72, 152));
         btnActualizar.setForeground(new java.awt.Color(255, 255, 255));
         btnActualizar.setText("Actualizar");
-        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 560, 120, 50));
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 670, 120, 50));
 
         cbEspecialidadesMedicas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbEspecialidadesMedicas.addActionListener(new java.awt.event.ActionListener() {
@@ -180,7 +181,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
                 cbEspecialidadesMedicasActionPerformed(evt);
             }
         });
-        jPanel1.add(cbEspecialidadesMedicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 290, 30));
+        jPanel1.add(cbEspecialidadesMedicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 440, 290, 30));
 
         cbUnidadesMedicas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbUnidadesMedicas.addActionListener(new java.awt.event.ActionListener() {
@@ -188,15 +189,15 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
                 cbUnidadesMedicasActionPerformed(evt);
             }
         });
-        jPanel1.add(cbUnidadesMedicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 290, 30));
+        jPanel1.add(cbUnidadesMedicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 520, 290, 30));
 
         profileImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/profile.jpg"))); // NOI18N
-        jPanel1.add(profileImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 180, 190));
+        jPanel1.add(profileImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 200, 200));
 
         jLabel9.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Especialidad");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, -1, -1));
 
         btnLimpiar.setBackground(new java.awt.Color(41, 72, 152));
         btnLimpiar.setForeground(new java.awt.Color(255, 255, 255));
@@ -206,7 +207,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
                 btnLimpiarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 560, 120, 50));
+        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 670, 120, 50));
 
         btnEliminar.setBackground(new java.awt.Color(41, 72, 152));
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
@@ -216,20 +217,18 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
                 btnEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 560, 120, 50));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 670, 120, 50));
 
         txtContrasenaDoctor.setBackground(new java.awt.Color(50, 55, 65));
         txtContrasenaDoctor.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtContrasenaDoctor.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtContrasenaDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 290, 30));
+        jPanel1.add(txtContrasenaDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 290, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1092, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

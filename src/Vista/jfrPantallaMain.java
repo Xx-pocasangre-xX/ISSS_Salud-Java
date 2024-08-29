@@ -31,6 +31,7 @@ public class jfrPantallaMain extends javax.swing.JFrame {
         btnBienvenida = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(960, 640));
         setMinimumSize(new java.awt.Dimension(960, 640));
 
         jPanel1.setBackground(new java.awt.Color(50, 55, 69));
