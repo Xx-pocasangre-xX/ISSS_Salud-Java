@@ -111,28 +111,13 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
-                              <Component id="btnIniciarSesion" min="-2" pref="133" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
-                              <Component id="txtOlvidasteTuContrasena" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
+                      <Component id="btnIniciarSesion" min="-2" pref="133" max="-2" attributes="0"/>
+                      <EmptySpace pref="162" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="48" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="txtContrasena" alignment="1" min="-2" pref="360" max="-2" attributes="0"/>
-                                  <Component id="txtEmail" min="-2" pref="360" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="BienvenidoLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
@@ -144,6 +129,17 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="btnVerContrasena" min="-2" pref="30" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="txtContrasena" alignment="1" min="-2" pref="360" max="-2" attributes="0"/>
+                                  <Component id="txtEmail" min="-2" pref="360" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="btnOlvidasteContra" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -162,11 +158,11 @@
                       <Component id="txtContrasena" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       <Component id="btnVerContrasena" min="-2" pref="30" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                       <Component id="btnIniciarSesion" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="txtOlvidasteTuContrasena" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnOlvidasteContra" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -239,22 +235,6 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="txtOlvidasteTuContrasena">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Roboto" size="14" style="3"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="d2" red="8a" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="&#xbf;Olvidaste tu contrase&#xf1;a?"/>
-                <Property name="horizontalTextPosition" type="int" value="0"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="jfrPantallaLogin_txtOlvidasteTuContrasena"/>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
             <Component class="javax.swing.JLabel" name="btnVerContrasena">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -281,6 +261,26 @@
                   <Font name="Roboto" size="11" style="2"/>
                 </Property>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnOlvidasteContra">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="4c" green="26" red="1f" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Roboto" size="14" style="3"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="d2" red="8a" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="&#xbf;olvidaste tu contrase&#xf1;a?"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOlvidasteContraActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>

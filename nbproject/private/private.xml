@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/ricar/Desktop/ISSS_Salud-Java/src/Vista/jfrPantallaMenuAdmin.java</file>
+            <file>file:/C:/Users/ricar/Desktop/ISSS_Salud-Java/src/Vista/jfrPantallaMenuDoctor.java</file>
+            <file>file:/C:/Users/ricar/Desktop/ISSS_Salud-Java/src/Controlador/ctrlPantallaMain.java</file>
+            <file>file:/C:/Users/ricar/Desktop/ISSS_Salud-Java/src/Controlador/ctrlPantallaLogin.java</file>
+            <file>file:/C:/Users/ricar/Desktop/ISSS_Salud-Java/src/Vista/jfrPantallaLogin.java</file>
+        </group>
     </open-files>
 </project-private>

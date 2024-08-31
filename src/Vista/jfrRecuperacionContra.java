@@ -62,6 +62,7 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Volver al inicio de sesión");
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
 
@@ -99,7 +100,7 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
 
         btnEnviarCorreo.setBackground(new java.awt.Color(144, 188, 255));
         btnEnviarCorreo.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        btnEnviarCorreo.setForeground(new java.awt.Color(212, 226, 246));
+        btnEnviarCorreo.setForeground(new java.awt.Color(255, 255, 255));
         btnEnviarCorreo.setText("Enviar código de verificación");
         btnEnviarCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
