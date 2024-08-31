@@ -350,4 +350,17 @@ public class Doctores {
         return false;
       }
     }
+    
+    public boolean eliminarDoctor(int idDoctor){
+      Connection conexion = ClaseConexion.getConexion();
+      String query = "DELETE FROM Doctores WHERE id_doctor = ?";
+      
+      try(PreparedStatement ps = conexion.prepareStatement(query)){
+        ps.setInt(1, idDoctor);
+        return ps.executeUpdate() > 0;
+      }catch(SQLException e){
+        e.printStackTrace();
+        return false;
+      }
+    }
 }

@@ -72,5 +72,25 @@ public class ctrlPantallaMenuAdmin {
           }
       
       });
+      
+      this.vista.btnEliminar.addActionListener(new ActionListener(){
+          @Override
+          public void actionPerformed(ActionEvent e) {
+              int idDoctor = modelo3.getIdDoctorActual();
+              
+              int confirmar = JOptionPane.showConfirmDialog(vista, "Estas seguro de que deseas aliminar a este doctor", "Confirmación", JOptionPane.YES_NO_OPTION);
+              if(confirmar == JOptionPane.YES_OPTION){
+                if(modelo3.eliminarDoctor(idDoctor)){
+                  JOptionPane.showMessageDialog(vista, "Doctor elimando exitosamente.");
+                  modelo3.cargarCardsDoctores(vista.jpCardsDoctores, vista);
+                  modelo3.limpiarCampos(vista.txtCorreoDoctor, vista.txtContrasenaDoctor, vista.txtNombreDoctor, vista.cbEspecialidadesMedicas, vista.cbUnidadesMedicas);
+                  vista.profileImage.setIcon(null);
+                }else{
+                  JOptionPane.showMessageDialog(vista, "Error al eiminar el doctor");
+                }
+              }
+          }
+      
+      });
     }
 }
