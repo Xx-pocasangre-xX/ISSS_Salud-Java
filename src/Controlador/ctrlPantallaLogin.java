@@ -18,7 +18,7 @@ public class ctrlPantallaLogin implements ActionListener{
        this.vista = vista;
        this.modelo = modelo;
        this.vista.btnIniciarSesion.addActionListener(this);
-       //this.vista.btnOlvidasteContra.addActionListener(this);
+       this.vista.btnOlvidasteContra.addActionListener(this);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class ctrlPantallaLogin implements ActionListener{
              vista.txtContrasena.setText("");
            }
         }
-        if(e.getSource() == vista.txtOlvidasteTuContrasena){
+        if(e.getSource() == vista.btnOlvidasteContra){
             jfrRecuperacionContra pantallaRec = new jfrRecuperacionContra();
             pantallaRec.setLocationRelativeTo(null);
             pantallaRec.setVisible(true);
