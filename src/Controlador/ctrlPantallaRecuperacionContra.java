@@ -3,11 +3,11 @@ package Controlador;
 import Modelo.EnvioCorreo;
 import Modelo.CredencialesCorreo;
 import Vista.jfrRecuperacionContra;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
 
-public class ctrlPantallaRecuperacionContra implements MouseListener {
+public class ctrlPantallaRecuperacionContra implements ActionListener {
     
     private CredencialesCorreo modelo;
     private jfrRecuperacionContra vista;
@@ -15,15 +15,20 @@ public class ctrlPantallaRecuperacionContra implements MouseListener {
     public ctrlPantallaRecuperacionContra(CredencialesCorreo modelo, jfrRecuperacionContra vista){
         this.modelo = modelo;
         this.vista = vista;
+<<<<<<< HEAD
         
         vista.btnEnviarCorreo.addMouseListener(this);
         
+=======
+       this.vista.btnEnviarCorreo.addActionListener(this);
+>>>>>>> 6a8409f730c5eb0a576dc0cc04baa1eb059caa0b
     }
 
     @Override
-    public void mouseClicked(MouseEvent e) {
+    public void actionPerformed(ActionEvent e) {
         
         if(e.getSource() == vista.btnEnviarCorreo){
+<<<<<<< HEAD
         
              Random random = new Random();
         
@@ -55,4 +60,18 @@ public class ctrlPantallaRecuperacionContra implements MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {
     }  
+=======
+            
+            Random random = new Random();  
+            
+            int numeroAleatorio =100000 + random.nextInt(999999);
+            String recipient = vista.txtCorreoRec.getText();
+            String subject = "recuperacion de contraseña";
+            String content = "Este es el codigo que utilizara para cambiar su contraseña";
+            
+            EnvioCorreo.envioCorreo(recipient, subject, content);
+        
+        }  
+    } 
+>>>>>>> 6a8409f730c5eb0a576dc0cc04baa1eb059caa0b
 }
