@@ -4,23 +4,18 @@
  */
 package Vista;
 
-import Modelo.CodigoRecu;
+import Controlador.ctrlPantallaCodigoRecu;
 
 /**
  *
  * @author ricar
  */
 public class jfrCodigoVerificacion extends javax.swing.JFrame {
-
-    /**
-     * Creates new form CodigoVerificacion
-     */
+    
     public jfrCodigoVerificacion() {
+        
         initComponents();
-    }
-
-    public jfrCodigoVerificacion(CodigoRecu modelo1) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ctrlPantallaCodigoRecu Controlador = new ctrlPantallaCodigoRecu(this);
     }
 
     /**

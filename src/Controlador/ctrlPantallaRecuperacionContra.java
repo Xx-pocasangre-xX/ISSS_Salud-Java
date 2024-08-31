@@ -1,6 +1,6 @@
 package Controlador;
 
-import Modelo.CodigoRecu;
+import Modelo.CodigoRecuperacion;
 import Modelo.EnvioCorreo;
 import Modelo.CredencialesCorreo;
 import Vista.jfrCodigoVerificacion;
@@ -13,12 +13,10 @@ import javax.swing.JOptionPane;
 public class ctrlPantallaRecuperacionContra implements ActionListener {
     
     private CredencialesCorreo modelo;
-    private CodigoRecu modelo1;
     private jfrRecuperacionContra vista;
     
-    public ctrlPantallaRecuperacionContra(CredencialesCorreo modelo, CodigoRecu modelo1, jfrRecuperacionContra vista){
+    public ctrlPantallaRecuperacionContra(CredencialesCorreo modelo, jfrRecuperacionContra vista){
        this.modelo = modelo;
-       this.modelo1 = modelo1;
        this.vista = vista;
        this.vista.btnEnviarCorreo.addActionListener(this);
     }
@@ -43,12 +41,12 @@ public class ctrlPantallaRecuperacionContra implements ActionListener {
                 String subject = "Recuperacion de contraseña";
                 Random random = new Random();
                 int codigoRecuperacion = 100000 + random.nextInt(999999);
-                modelo.setCodigoRecuperacion(codigoRecuperacion);
-                String content = "Este es el codigo de recuperacion" + codigoRecuperacion;
+                CodigoRecuperacion.setCodigoRecuperacion(codigoRecuperacion);
+                String content = "Este es el codigo de recuperacion: " + codigoRecuperacion;
 
                 EnvioCorreo.envioCorreo(recipient, subject, content);
                 JOptionPane.showMessageDialog(vista, "Correo enviado exitosamente.");
-                jfrCodigoVerificacion pantallaCod = new jfrCodigoVerificacion(modelo1);
+                jfrCodigoVerificacion pantallaCod = new jfrCodigoVerificacion();
                 pantallaCod.setVisible(true);
                 pantallaCod.setLocationRelativeTo(null);
                 vista.dispose();

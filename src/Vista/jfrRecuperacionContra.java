@@ -1,7 +1,6 @@
 package Vista;
 
 import Controlador.ctrlPantallaRecuperacionContra;
-import Modelo.CodigoRecu;
 import Modelo.CredencialesCorreo;
 
 public class jfrRecuperacionContra extends javax.swing.JFrame {
@@ -11,8 +10,7 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
         initComponents();
         
         CredencialesCorreo modelo = new CredencialesCorreo();
-        CodigoRecu modelo1 = new CodigoRecu();
-        ctrlPantallaRecuperacionContra controlador = new ctrlPantallaRecuperacionContra(modelo, modelo1, this);
+        ctrlPantallaRecuperacionContra controlador = new ctrlPantallaRecuperacionContra(modelo, this);
     }
 
     
