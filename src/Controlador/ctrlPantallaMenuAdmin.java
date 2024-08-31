@@ -6,6 +6,7 @@ import Modelo.UnidadesMedicas;
 import Vista.jfrPantallaMenuAdmin;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 public class ctrlPantallaMenuAdmin {
     private jfrPantallaMenuAdmin vista;
@@ -41,7 +42,35 @@ public class ctrlPantallaMenuAdmin {
          @Override
          public void actionPerformed(ActionEvent e){
            modelo3.agregarDoctor(vista.txtCorreoDoctor, vista.txtContrasenaDoctor, vista.txtNombreDoctor, vista.profileImage, vista.cbEspecialidadesMedicas, vista.cbUnidadesMedicas, vista);
+           modelo3.cargarCardsDoctores(vista.jpCardsDoctores, vista);
          }
+      });
+      
+      this.vista.btnActualizar.addActionListener(new ActionListener(){
+          @Override
+          public void actionPerformed(ActionEvent e) {
+              int idDoctor = modelo3.getIdDoctorActual();
+              String correo = vista.txtCorreoDoctor.getText();
+              String nombre = vista.txtNombreDoctor.getText();
+              int idEspecialidad = vista.cbEspecialidadesMedicas.getSelectedIndex() + 1;
+              int idUnidad = vista.cbUnidadesMedicas.getSelectedIndex() + 1;
+              
+              if(modelo3.actualizarDoctor(idDoctor, correo, nombre, idEspecialidad, idUnidad)){
+                JOptionPane.showMessageDialog(vista, "Actualización exitosa.");
+                modelo3.limpiarCampos(vista.txtCorreoDoctor, vista.txtContrasenaDoctor, vista.txtNombreDoctor, vista.cbEspecialidadesMedicas, vista.cbUnidadesMedicas);
+                modelo3.cargarCardsDoctores(vista.jpCardsDoctores, vista);
+              }else{
+                JOptionPane.showMessageDialog(vista, "Error al actualizar el doctor.");
+              }
+          }
+      });
+      
+      this.vista.btnLimpiar.addActionListener(new ActionListener(){
+          @Override
+          public void actionPerformed(ActionEvent e) {
+             modelo3.limpiarCampos(vista.txtCorreoDoctor, vista.txtContrasenaDoctor, vista.txtNombreDoctor, vista.cbEspecialidadesMedicas, vista.cbUnidadesMedicas);
+          }
+      
       });
     }
 }

@@ -6,7 +6,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
@@ -33,15 +32,23 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 
 public class Doctores {
     
+    private int idDoctorActual;
     private String foto;
     private String correo;
     private String nombre;
     private String especialidad;
     private String unidadMedica;
+    
+    public int getIdDoctorActual() {
+    return idDoctorActual;
+    }
+    
+    public void setIdDoctorActual(int id) {
+    this.idDoctorActual = id;
+    }
     
     public String getFoto() {
         return foto;
@@ -171,6 +178,7 @@ public class Doctores {
 
             while (rs.next()) {
                 Doctores doctor = new Doctores();
+                doctor.setIdDoctorActual(rs.getInt("id_doctor"));
                 doctor.setFoto(rs.getString("foto_doctor"));
                 doctor.setCorreo(rs.getString("correo_doctor"));
                 doctor.setNombre(rs.getString("nombre_doctor"));
@@ -298,6 +306,9 @@ public class Doctores {
 }
     
     private void actualizarCampos(Doctores doctor, jfrPantallaMenuAdmin vista){
+        
+      setIdDoctorActual(doctor.getIdDoctorActual());
+        
       vista.txtNombreDoctor.setText(doctor.getNombre());
       vista.txtCorreoDoctor.setText(doctor.getCorreo());
       
@@ -320,5 +331,23 @@ public class Doctores {
       ImageIcon iconoFoto = cargarImagen(doctor.getFoto());
       Image imgFoto = iconoFoto.getImage().getScaledInstance(vista.profileImage.getWidth(), vista.profileImage.getHeight(), Image.SCALE_SMOOTH);
       vista.profileImage.setIcon(new ImageIcon(imgFoto));
+    }
+    
+    public boolean actualizarDoctor(int idDoctor, String correo, String nombre, int idEspecialidad, int idUnidad){
+      Connection conexion = ClaseConexion.getConexion();
+      String query = "UPDATE Doctores SET correo_doctor = ?, nombre_doctor = ?, id_especialidad = ?, id_unidad = ? WHERE id_doctor = ?";
+      
+      try(PreparedStatement ps = conexion.prepareStatement(query)){
+         ps.setString(1, correo);
+         ps.setString(2, nombre);
+         ps.setInt(3, idEspecialidad);
+         ps.setInt(4, idUnidad);
+         ps.setInt(5, idDoctor);
+         
+         return ps.executeUpdate() > 0;
+      }catch(SQLException e){
+        e.printStackTrace();
+        return false;
+      }
     }
 }
