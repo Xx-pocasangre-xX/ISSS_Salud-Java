@@ -4,6 +4,9 @@
  */
 package Vista;
 
+import Controlador.ctrlPantallaRecuperacionContra;
+import Modelo.CredencialesCorreo;
+
 /**
  *
  * @author ricar
@@ -15,6 +18,14 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
      */
     public jfrRecuperacionContra() {
         initComponents();
+    }
+    
+    public static void initjfrRecuperacionContra(){
+        CredencialesCorreo modelo = new CredencialesCorreo();
+        jfrRecuperacionContra vista = new jfrRecuperacionContra();
+        ctrlPantallaRecuperacionContra controlador = new ctrlPantallaRecuperacionContra(modelo, vista);
+        
+        vista.setVisible(true);
     }
 
     /**
