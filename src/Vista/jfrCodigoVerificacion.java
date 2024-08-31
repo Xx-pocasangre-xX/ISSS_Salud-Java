@@ -5,6 +5,7 @@
 package Vista;
 
 import Controlador.ctrlPantallaCodigoRecu;
+import Modelo.CodigoRecuperacion;
 
 /**
  *
@@ -15,7 +16,8 @@ public class jfrCodigoVerificacion extends javax.swing.JFrame {
     public jfrCodigoVerificacion() {
         
         initComponents();
-        ctrlPantallaCodigoRecu Controlador = new ctrlPantallaCodigoRecu(this);
+        CodigoRecuperacion modelo = new CodigoRecuperacion();
+        ctrlPantallaCodigoRecu Controlador = new ctrlPantallaCodigoRecu(this, modelo);
     }
 
     /**
