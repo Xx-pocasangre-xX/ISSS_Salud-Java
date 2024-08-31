@@ -28,7 +28,7 @@ public class ctrlPantallaMenuAdmin {
     public ctrlPantallaMenuAdmin(jfrPantallaMenuAdmin vista, Doctores modelo3){
       this.vista = vista;
       this.modelo3 = modelo3;
-      this.modelo3.cargarCardsDoctores(vista.jpCardsDoctores);
+      this.modelo3.cargarCardsDoctores(vista.jpCardsDoctores, vista);
       
       this.vista.btnCargarImagen.addActionListener(new ActionListener(){
         @Override

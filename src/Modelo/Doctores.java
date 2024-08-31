@@ -9,6 +9,8 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.net.URL;
 import javax.imageio.ImageIO;
@@ -22,6 +24,7 @@ import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
@@ -184,7 +187,7 @@ public class Doctores {
         return listaDoctores;
     }
     
-    public void cargarCardsDoctores(JPanel jpCardsDoctores) { 
+    public void cargarCardsDoctores(JPanel jpCardsDoctores, jfrPantallaMenuAdmin vista) { 
     JPanel panelCards = new JPanel();
     panelCards.setLayout(new GridBagLayout()); 
     
@@ -200,7 +203,7 @@ public class Doctores {
     int row = 0;
 
     for (Doctores doctor : doctores) {
-        JPanel card = crearCard(doctor);
+        JButton card = crearCard(doctor, vista);
         gbc.gridy = row;
         panelCards.add(card, gbc);
         
@@ -240,8 +243,9 @@ public class Doctores {
       return imagen;
     }
     
-    private JPanel crearCard(Doctores doctor) {
-    JPanel card = new JPanel(new BorderLayout(10, 10));
+    private JButton crearCard(Doctores doctor, jfrPantallaMenuAdmin vista) {
+    JButton card = new JButton();
+    card.setLayout(new BorderLayout(10, 10));
     card.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
     
     Color rgbColor = new Color(41, 72, 152);
@@ -280,7 +284,41 @@ public class Doctores {
     card.setPreferredSize(new Dimension(350, 100));
     card.setMaximumSize(new Dimension(350, 100));
     card.setMinimumSize(new Dimension(350, 100));
+    card.setFocusable(true);
+    
+    card.addActionListener(new ActionListener(){
+        @Override
+       public void actionPerformed(ActionEvent e){
+           System.out.println("Card clicked: " + doctor.getNombre());
+           actualizarCampos(doctor, vista);
+    } 
+    });
     
     return card;
 }
+    
+    private void actualizarCampos(Doctores doctor, jfrPantallaMenuAdmin vista){
+      vista.txtNombreDoctor.setText(doctor.getNombre());
+      vista.txtCorreoDoctor.setText(doctor.getCorreo());
+      
+      JComboBox<String> cbEspecialidades = vista.cbEspecialidadesMedicas;
+      for(int i = 0; i < cbEspecialidades.getItemCount(); i++){
+        if(cbEspecialidades.getItemAt(i).equals(doctor.getEspecialidad())){
+          cbEspecialidades.setSelectedIndex(i);
+          break;
+        }
+      }
+      
+      JComboBox<String> cbUnidades = vista.cbUnidadesMedicas;
+      for(int i = 0; i < cbUnidades.getItemCount(); i++){
+        if(cbUnidades.getItemAt(i).equals(doctor.getUnidadMedica())){
+          cbUnidades.setSelectedIndex(i);
+          break;
+        }
+      }
+      
+      ImageIcon iconoFoto = cargarImagen(doctor.getFoto());
+      Image imgFoto = iconoFoto.getImage().getScaledInstance(vista.profileImage.getWidth(), vista.profileImage.getHeight(), Image.SCALE_SMOOTH);
+      vista.profileImage.setIcon(new ImageIcon(imgFoto));
+    }
 }
