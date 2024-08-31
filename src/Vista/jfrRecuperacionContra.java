@@ -18,14 +18,9 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
      */
     public jfrRecuperacionContra() {
         initComponents();
-    }
-    
-    public static void initjfrRecuperacionContra(){
-        CredencialesCorreo modelo = new CredencialesCorreo();
-        jfrRecuperacionContra vista = new jfrRecuperacionContra();
-        ctrlPantallaRecuperacionContra controlador = new ctrlPantallaRecuperacionContra(modelo, vista);
         
-        vista.setVisible(true);
+        CredencialesCorreo modelo = new CredencialesCorreo();
+        ctrlPantallaRecuperacionContra controlador = new ctrlPantallaRecuperacionContra(modelo, this);
     }
 
     /**
