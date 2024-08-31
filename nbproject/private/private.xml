@@ -4,15 +4,21 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Vista/jfrCambioContra.java</file>
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Controlador/ctrlPantallaMenuAdmin.java</file>
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/Doctores.java</file>
 =======
+=======
+>>>>>>> e7fe9a5fdf6e112932e8db87debc2224dddaaeaa
             <file>file:/C:/Users/ricar/Desktop/ISSS_Salud-Java/src/Vista/jfrPantallaMenuAdmin.java</file>
             <file>file:/C:/Users/ricar/Desktop/ISSS_Salud-Java/src/Vista/jfrPantallaMenuDoctor.java</file>
             <file>file:/C:/Users/ricar/Desktop/ISSS_Salud-Java/src/Controlador/ctrlPantallaMain.java</file>
             <file>file:/C:/Users/ricar/Desktop/ISSS_Salud-Java/src/Controlador/ctrlPantallaLogin.java</file>
             <file>file:/C:/Users/ricar/Desktop/ISSS_Salud-Java/src/Vista/jfrPantallaLogin.java</file>
+<<<<<<< HEAD
+>>>>>>> e7fe9a5fdf6e112932e8db87debc2224dddaaeaa
+=======
 >>>>>>> e7fe9a5fdf6e112932e8db87debc2224dddaaeaa
         </group>
     </open-files>
