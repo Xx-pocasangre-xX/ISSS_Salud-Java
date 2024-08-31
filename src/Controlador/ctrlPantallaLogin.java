@@ -46,7 +46,5 @@ public class ctrlPantallaLogin implements ActionListener{
             pantallaRec.setVisible(true);
             vista.dispose();
         }
-    }
-   
-    
+    }  
 }

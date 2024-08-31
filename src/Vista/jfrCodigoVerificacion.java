@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import Modelo.CodigoRecu;
+
 /**
  *
  * @author ricar
@@ -15,6 +17,10 @@ public class jfrCodigoVerificacion extends javax.swing.JFrame {
      */
     public jfrCodigoVerificacion() {
         initComponents();
+    }
+
+    public jfrCodigoVerificacion(CodigoRecu modelo1) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
@@ -120,7 +126,7 @@ public class jfrCodigoVerificacion extends javax.swing.JFrame {
 
         btnConfirmarCod.setBackground(new java.awt.Color(144, 188, 255));
         btnConfirmarCod.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        btnConfirmarCod.setForeground(new java.awt.Color(212, 226, 246));
+        btnConfirmarCod.setForeground(new java.awt.Color(255, 255, 255));
         btnConfirmarCod.setText("Confirmar");
         btnConfirmarCod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
