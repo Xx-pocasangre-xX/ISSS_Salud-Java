@@ -10,6 +10,9 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Insets;
 import java.io.File;
+import java.net.URL;
+import javax.imageio.ImageIO;
+import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
@@ -220,13 +223,37 @@ public class Doctores {
     jpCardsDoctores.repaint();
 }
     
+    private ImageIcon cargarImagen(String path){
+      ImageIcon imagen = null;
+      try{
+        if(path.startsWith("http")){
+          URL url = new URL(path);
+          Image img = ImageIO.read(url);
+          imagen = new ImageIcon(img);
+        }else{
+          imagen = new ImageIcon(path);
+        }
+      }catch(IOException e){
+        System.out.println("No se pudo cargar la imagen: " + path + ", usando imagen por defecto.");
+        imagen = new ImageIcon("Imagenes/profile.jpg");
+      }
+      return imagen;
+    }
+    
     private JPanel crearCard(Doctores doctor) {
-    JPanel card = new JPanel();
-    card.setLayout(new BoxLayout(card, BoxLayout.Y_AXIS));
+    JPanel card = new JPanel(new BorderLayout(10, 10));
     card.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
     
     Color rgbColor = new Color(41, 72, 152);
     card.setBackground(rgbColor);
+    
+    ImageIcon iconoDoctor = cargarImagen(doctor.getFoto());
+    Image img = iconoDoctor.getImage().getScaledInstance(100, 80, Image.SCALE_SMOOTH);
+    JLabel lblFoto = new JLabel(new ImageIcon(img));
+    
+    JPanel textPanel = new JPanel();
+    textPanel.setLayout(new BoxLayout(textPanel, BoxLayout.Y_AXIS));
+    textPanel.setBackground(rgbColor);
 
     JLabel lblNombre = new JLabel("Dr(a): " + doctor.getNombre());
     JLabel lblCorreo = new JLabel("Correo: " + doctor.getCorreo());
@@ -242,10 +269,13 @@ public class Doctores {
     lblUnidadMedica.setAlignmentX(JLabel.LEFT_ALIGNMENT);
     lblUnidadMedica.setForeground(Color.WHITE);
     
-    card.add(lblNombre);
-    card.add(lblCorreo);
-    card.add(lblEspecialidad);
-    card.add(lblUnidadMedica);
+    textPanel.add(lblNombre);
+    textPanel.add(lblCorreo);
+    textPanel.add(lblEspecialidad);
+    textPanel.add(lblUnidadMedica);
+    
+    card.add(lblFoto, BorderLayout.WEST);
+    card.add(textPanel, BorderLayout.CENTER);
     
     card.setPreferredSize(new Dimension(350, 100));
     card.setMaximumSize(new Dimension(350, 100));
