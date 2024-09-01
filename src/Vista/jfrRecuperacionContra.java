@@ -23,8 +23,6 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        btnVolverLogin = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -33,6 +31,7 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtCorreoRec = new javax.swing.JTextField();
         btnEnviarCorreo = new javax.swing.JButton();
+        btnVolverLogin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(960, 640));
@@ -49,16 +48,6 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(430, 480));
         jPanel1.setPreferredSize(new java.awt.Dimension(430, 480));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnVolverLogin.setBackground(new java.awt.Color(169, 171, 178));
-        btnVolverLogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel9.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Volver al inicio de sesión");
-        btnVolverLogin.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
-
-        jPanel1.add(btnVolverLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 430, 45));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Linea de division recu modo oscuro.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
@@ -100,6 +89,12 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnEnviarCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 350, -1));
+
+        btnVolverLogin.setBackground(new java.awt.Color(169, 171, 178));
+        btnVolverLogin.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnVolverLogin.setForeground(new java.awt.Color(0, 0, 0));
+        btnVolverLogin.setText("Volver al inicio de Sesión");
+        jPanel1.add(btnVolverLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 430, 40));
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, 430, 480));
 
@@ -152,7 +147,7 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnEnviarCorreo;
-    public javax.swing.JPanel btnVolverLogin;
+    public javax.swing.JButton btnVolverLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -160,7 +155,6 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     public javax.swing.JTextField txtCorreoRec;

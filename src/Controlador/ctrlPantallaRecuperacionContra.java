@@ -6,6 +6,7 @@ import Modelo.EnvioCorreo;
 import Modelo.CredencialesCorreo;
 import Modelo.Usuarios;
 import Vista.jfrCodigoVerificacion;
+import Vista.jfrPantallaLogin;
 import Vista.jfrRecuperacionContra;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,6 +24,7 @@ public class ctrlPantallaRecuperacionContra implements ActionListener {
        this.vista = vista;
        this.modelo2 = modelo2;
        this.vista.btnEnviarCorreo.addActionListener(this);
+       this.vista.btnVolverLogin.addActionListener(this);
     }
 
 
@@ -62,6 +64,13 @@ public class ctrlPantallaRecuperacionContra implements ActionListener {
                   vista.txtCorreoRec.setText("");
                }
             }  
+        }
+        
+        if(e.getSource() == vista.btnVolverLogin){
+          jfrPantallaLogin pantallaLogin = new jfrPantallaLogin();
+          pantallaLogin.setLocationRelativeTo(null);
+          pantallaLogin.setVisible(true);
+          vista.dispose();
         }
     }
 }

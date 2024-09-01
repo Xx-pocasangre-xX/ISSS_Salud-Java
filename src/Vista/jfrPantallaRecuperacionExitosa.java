@@ -1,20 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Vista;
 
-/**
- *
- * @author Eduardo Padilla
- */
+import Controlador.ctrlPantallaRecuperacionExitosa;
+
 public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
 
-    /**
-     * Creates new form jfrPantallaRecuperacionExitosa
-     */
+    
     public jfrPantallaRecuperacionExitosa() {
         initComponents();
+        
+        ctrlPantallaRecuperacionExitosa Controlafor = new ctrlPantallaRecuperacionExitosa(this);
     }
 
     /**
@@ -29,12 +23,12 @@ public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        txtVolverLogin = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        btnVolverLogin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(960, 640));
@@ -49,10 +43,6 @@ public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 320, 320));
 
         jPanel2.setBackground(new java.awt.Color(31, 38, 76));
-
-        txtVolverLogin.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        txtVolverLogin.setForeground(new java.awt.Color(255, 255, 255));
-        txtVolverLogin.setText("Aceptar");
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -74,6 +64,11 @@ public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("exitoso!");
 
+        btnVolverLogin.setBackground(new java.awt.Color(31, 38, 76));
+        btnVolverLogin.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnVolverLogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnVolverLogin.setText("Aceptar");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -83,17 +78,6 @@ public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(81, 81, 81))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addComponent(jLabel7))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(165, 165, 165)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtVolverLogin)
-                            .addComponent(jLabel6))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(86, 86, 86)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
@@ -101,6 +85,18 @@ public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
                         .addComponent(jLabel4)
                         .addGap(12, 12, 12)))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(jLabel7))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(165, 165, 165)
+                        .addComponent(jLabel6))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(154, 154, 154)
+                        .addComponent(btnVolverLogin)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,9 +111,9 @@ public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
-                .addGap(33, 33, 33)
-                .addComponent(txtVolverLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(btnVolverLogin)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 400, 320));
@@ -172,6 +168,7 @@ public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnVolverLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -180,6 +177,5 @@ public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    public javax.swing.JLabel txtVolverLogin;
     // End of variables declaration//GEN-END:variables
 }
