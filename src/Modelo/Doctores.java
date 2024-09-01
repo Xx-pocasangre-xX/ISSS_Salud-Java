@@ -152,6 +152,31 @@ public class Doctores {
       int idEspecialidad = cbEspecialidadesMedicas.getSelectedIndex() + 1;
       int idUnidad = cbUnidadesMedicas.getSelectedIndex() + 1;
       
+      if(correo.isEmpty() || contrasena.isEmpty() || nombre.isEmpty()){
+        JOptionPane.showMessageDialog(vista, "Para agregar un doctor debe llenar todas las casillas");
+        return;
+      }
+      
+      if(!correo.contains("@isss") || !correo.contains(".gob.sv")){
+        JOptionPane.showMessageDialog(vista, "Correo no válido. Ingresa un correo válido, ejemplo: ejemplo@isss.gob.sv");
+        return;
+      }
+      
+      if(contrasena.length() < 8 || !contrasena.matches(".*[!@#$%^&*(),.?\":{}|<>].*") || !contrasena.matches(".*\\d.*")){
+        JOptionPane.showMessageDialog(vista, "La contraseña debe contener mínimo 8 caracteres, un carácter especial y números");
+        return;
+      }
+      
+      if(!nombre.matches("[a-zA-Z\\s]+")){
+        JOptionPane.showMessageDialog(vista, "Nombre de doctor no válido");
+        return;
+      }
+      
+      if(profileImage.getText() == null){
+        JOptionPane.showMessageDialog(vista, "Debe subir una foto para agregar un doctor.");
+        return;
+      }
+      
       if(agregarDoctor(correo, contrasena, nombre, foto, idEspecialidad, idUnidad)){
         JOptionPane.showMessageDialog(vista, "Doctor agregado exitosamente.");
         limpiarCampos(txtCorreoDoctor, txtContrasenaDoctor, txtNombreDoctor, cbEspecialidadesMedicas, cbUnidadesMedicas);
