@@ -26,6 +26,17 @@ public class ctrlPantallaLogin implements ActionListener{
         if(e.getSource() == vista.btnIniciarSesion){
            String correo = vista.txtEmail.getText();
            String contrasena = new String(vista.txtContrasena.getPassword());
+           
+           if(correo.isEmpty() || contrasena.isEmpty()){
+             JOptionPane.showMessageDialog(vista, "Para iniciar sesión debe llenar todas las casillas.");
+             return;
+           }
+           
+           if(!correo.contains("@gmail") || !correo.contains(".com")){
+              JOptionPane.showMessageDialog(vista, "Correo no válido. Inténtelo de nuevo.");
+              return;
+           }
+           
            String contrasenaEncriptada = modelo.encryptPassword(contrasena);
            
            if(modelo.validarCredenciales(correo, contrasenaEncriptada)){
