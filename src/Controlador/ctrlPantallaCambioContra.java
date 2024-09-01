@@ -26,6 +26,8 @@ public class ctrlPantallaCambioContra implements ActionListener{
           
           if(nuevaContrasena.isEmpty() || repetirContrasena.isEmpty()){
             JOptionPane.showMessageDialog(vista, "Los campos de contraseña no pueden estar vacíos");
+          }else if(nuevaContrasena.length() < 8 || !nuevaContrasena.matches(".*[!@#$%^&*(),.?\":{}|<>].*") || !nuevaContrasena.matches(".*\\d.*")){
+            JOptionPane.showMessageDialog(vista, "La contraseña debe contener mínimo 8 caracteres, un carácter especial y números");
           }else if(!nuevaContrasena.equals(repetirContrasena)){
             JOptionPane.showMessageDialog(vista, "Las contraseñas no coinciden. Intente de nuevo.");
           }else{
