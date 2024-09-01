@@ -52,4 +52,19 @@ public class Usuarios {
       }
       return false;
     }
+    
+    public boolean actualizarContrasena(String correo, String nuevaContrasenaEncriptada){
+       String query = "UPDATE Usuarios SET contrasena = ? WHERE correo_electronico = ?";
+       try(Connection conexion = ClaseConexion.getConexion();
+               PreparedStatement pst = conexion.prepareStatement(query)){
+         pst.setString(1, nuevaContrasenaEncriptada);
+         pst.setString(2, correo);
+         int filasAfectadas = pst.executeUpdate();
+         
+         return filasAfectadas > 0;
+       }catch(SQLException e){
+         e.printStackTrace();
+       }
+       return false;
+    }
 }

@@ -1,20 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Vista;
 
-/**
- *
- * @author ricar
- */
+import Controlador.ctrlPantallaCambioContra;
+import Modelo.Usuarios;
+
 public class jfrCambioContra extends javax.swing.JFrame {
 
-    /**
-     * Creates new form jfrCambioContra
-     */
     public jfrCambioContra() {
         initComponents();
+        
+        Usuarios modelo = new Usuarios();
+        
+        ctrlPantallaCambioContra Controlador = new ctrlPantallaCambioContra(modelo, this);
+        
     }
 
     /**
@@ -34,12 +31,12 @@ public class jfrCambioContra extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtRepetirContrasenaNueva = new javax.swing.JTextField();
         btnActualizarContrasena = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        txtContrasenaNueva = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        txtContrasenaNueva = new javax.swing.JPasswordField();
+        txtRepetirContrasenaNueva = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(960, 640));
@@ -79,15 +76,6 @@ public class jfrCambioContra extends javax.swing.JFrame {
         jLabel7.setText("Repetir contraseña nueva");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
 
-        txtRepetirContrasenaNueva.setBackground(new java.awt.Color(250, 250, 250));
-        txtRepetirContrasenaNueva.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        txtRepetirContrasenaNueva.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtRepetirContrasenaNuevaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(txtRepetirContrasenaNueva, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 350, 30));
-
         btnActualizarContrasena.setBackground(new java.awt.Color(144, 188, 255));
         btnActualizarContrasena.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnActualizarContrasena.setForeground(new java.awt.Color(255, 255, 255));
@@ -105,10 +93,6 @@ public class jfrCambioContra extends javax.swing.JFrame {
         jLabel10.setText("números, letras y caracteres");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, -1));
 
-        txtContrasenaNueva.setBackground(new java.awt.Color(250, 250, 250));
-        txtContrasenaNueva.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jPanel2.add(txtContrasenaNueva, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 350, 30));
-
         jLabel8.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("especiales (!$@%).");
@@ -118,6 +102,12 @@ public class jfrCambioContra extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Contraseña nueva");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
+
+        txtContrasenaNueva.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtContrasenaNueva, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 350, 30));
+
+        txtRepetirContrasenaNueva.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtRepetirContrasenaNueva, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 350, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, 430, 490));
 
@@ -138,10 +128,6 @@ public class jfrCambioContra extends javax.swing.JFrame {
     private void btnActualizarContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarContrasenaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnActualizarContrasenaActionPerformed
-
-    private void txtRepetirContrasenaNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRepetirContrasenaNuevaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtRepetirContrasenaNuevaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,7 +177,7 @@ public class jfrCambioContra extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    public javax.swing.JTextField txtContrasenaNueva;
-    public javax.swing.JTextField txtRepetirContrasenaNueva;
+    public javax.swing.JPasswordField txtContrasenaNueva;
+    public javax.swing.JPasswordField txtRepetirContrasenaNueva;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,6 +1,7 @@
 package Controlador;
 
 import Modelo.CodigoRecuperacion;
+import Modelo.CorreoUsuario;
 import Modelo.EnvioCorreo;
 import Modelo.CredencialesCorreo;
 import Modelo.Usuarios;
@@ -40,6 +41,9 @@ public class ctrlPantallaRecuperacionContra implements ActionListener {
             }
             else {
                if(modelo2.existeCorreo(recipient)){
+                
+                CorreoUsuario.setCorreo(recipient);
+                   
                 String subject = "Recuperacion de contraseña";
                 Random random = new Random();
                 int codigoRecuperacion = 100000 + random.nextInt(999999);
@@ -49,11 +53,13 @@ public class ctrlPantallaRecuperacionContra implements ActionListener {
                 EnvioCorreo.envioCorreo(recipient, subject, content);
                 JOptionPane.showMessageDialog(vista, "Correo enviado exitosamente.");
                 jfrCodigoVerificacion pantallaCod = new jfrCodigoVerificacion();
+                
                 pantallaCod.setVisible(true);
                 pantallaCod.setLocationRelativeTo(null);
                 vista.dispose();
                }else{
                   JOptionPane.showMessageDialog(vista, "El correo no existe en la base de datos. Intente de nuevo con otro correo.");
+                  vista.txtCorreoRec.setText("");
                }
             }  
         }
