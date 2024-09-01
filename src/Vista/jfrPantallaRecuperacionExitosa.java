@@ -29,7 +29,7 @@ public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        txtVolverLogin = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -37,11 +37,12 @@ public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(960, 640));
         setMinimumSize(new java.awt.Dimension(960, 640));
-        setPreferredSize(new java.awt.Dimension(960, 640));
 
         jPanel1.setBackground(new java.awt.Color(50, 55, 69));
+        jPanel1.setMaximumSize(new java.awt.Dimension(960, 640));
+        jPanel1.setMinimumSize(new java.awt.Dimension(960, 640));
+        jPanel1.setPreferredSize(new java.awt.Dimension(960, 640));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoprueba.PNG"))); // NOI18N
@@ -49,9 +50,9 @@ public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(31, 38, 76));
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Aceptar");
+        txtVolverLogin.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        txtVolverLogin.setForeground(new java.awt.Color(255, 255, 255));
+        txtVolverLogin.setText("Aceptar");
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -89,7 +90,7 @@ public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(165, 165, 165)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
+                            .addComponent(txtVolverLogin)
                             .addComponent(jLabel6))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -115,7 +116,7 @@ public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addGap(33, 33, 33)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtVolverLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -172,7 +173,6 @@ public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -180,5 +180,6 @@ public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    public javax.swing.JLabel txtVolverLogin;
     // End of variables declaration//GEN-END:variables
 }

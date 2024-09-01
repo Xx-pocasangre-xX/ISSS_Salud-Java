@@ -34,13 +34,14 @@ public class jfrCambioContra extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtRepetirContrasenaNueva = new javax.swing.JTextField();
+        btnActualizarContrasena = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtContrasenaNueva = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(960, 640));
         setMinimumSize(new java.awt.Dimension(960, 640));
 
         jPanel1.setBackground(new java.awt.Color(50, 55, 69));
@@ -73,37 +74,52 @@ public class jfrCambioContra extends javax.swing.JFrame {
         jLabel6.setText("caracteres e incluir una combinación de ");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("especiales (!$@%).");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, -1));
+        jLabel7.setText("Repetir contraseña nueva");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
 
-        jTextField2.setBackground(new java.awt.Color(250, 250, 250));
-        jTextField2.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 350, 30));
-
-        jButton1.setBackground(new java.awt.Color(144, 188, 255));
-        jButton1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Cambiar contraseña");
-        jButton1.setToolTipText("");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        txtRepetirContrasenaNueva.setBackground(new java.awt.Color(250, 250, 250));
+        txtRepetirContrasenaNueva.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        txtRepetirContrasenaNueva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                txtRepetirContrasenaNuevaActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 399, 350, 40));
+        jPanel2.add(txtRepetirContrasenaNueva, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 350, 30));
+
+        btnActualizarContrasena.setBackground(new java.awt.Color(144, 188, 255));
+        btnActualizarContrasena.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnActualizarContrasena.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizarContrasena.setText("Cambiar contraseña");
+        btnActualizarContrasena.setToolTipText("");
+        btnActualizarContrasena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarContrasenaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnActualizarContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 350, 40));
 
         jLabel10.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("números, letras y caracteres");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, -1));
 
-        jTextField3.setBackground(new java.awt.Color(250, 250, 250));
-        jTextField3.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 350, 30));
+        txtContrasenaNueva.setBackground(new java.awt.Color(250, 250, 250));
+        txtContrasenaNueva.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jPanel2.add(txtContrasenaNueva, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 350, 30));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, 430, 480));
+        jLabel8.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("especiales (!$@%).");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Contraseña nueva");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, 430, 490));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,9 +135,13 @@ public class jfrCambioContra extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnActualizarContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarContrasenaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnActualizarContrasenaActionPerformed
+
+    private void txtRepetirContrasenaNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRepetirContrasenaNuevaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRepetirContrasenaNuevaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,7 +179,7 @@ public class jfrCambioContra extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton btnActualizarContrasena;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -167,9 +187,11 @@ public class jfrCambioContra extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    public javax.swing.JTextField txtContrasenaNueva;
+    public javax.swing.JTextField txtRepetirContrasenaNueva;
     // End of variables declaration//GEN-END:variables
 }

@@ -36,4 +36,20 @@ public class Usuarios {
         throw new RuntimeException("Error al encriptar la contrasena", ex);
       }
     }
+    
+    public boolean existeCorreo(String correo){
+      String query = "SELECT COUNT(*) FROM Usuarios WHERE correo_electronico = ?";
+      try(Connection conexion = ClaseConexion.getConexion();
+              PreparedStatement pst = conexion.prepareStatement(query)){
+         pst.setString(1, correo);
+         try(ResultSet rs = pst.executeQuery()){
+           if(rs.next()){
+             return rs.getInt(1) > 0;
+           }
+         }
+      }catch(SQLException e){
+        e.printStackTrace();
+      }
+      return false;
+    }
 }

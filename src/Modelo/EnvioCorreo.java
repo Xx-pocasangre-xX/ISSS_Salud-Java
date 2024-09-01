@@ -24,8 +24,8 @@ public class EnvioCorreo {
         
         
         //2- Credenciales de la cuenta de correo
-        final String myAccountEmail = "issssalud@gmail.com";
-        final String password = "ejwx ahup kxjy xjsw";
+        final String myAccountEmail = "dianagabypadilla006@gmail.com";
+        final String password = "mieb rtbj riir zqdw";
 
         // Crear sesión
         Session session = Session.getInstance(properties, new Authenticator() {

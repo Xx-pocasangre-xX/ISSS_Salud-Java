@@ -2,6 +2,7 @@ package Vista;
 
 import Controlador.ctrlPantallaRecuperacionContra;
 import Modelo.CredencialesCorreo;
+import Modelo.Usuarios;
 
 public class jfrRecuperacionContra extends javax.swing.JFrame {
 
@@ -10,7 +11,8 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
         initComponents();
         
         CredencialesCorreo modelo = new CredencialesCorreo();
-        ctrlPantallaRecuperacionContra controlador = new ctrlPantallaRecuperacionContra(modelo, this);
+        Usuarios modelo2 = new Usuarios();
+        ctrlPantallaRecuperacionContra controlador = new ctrlPantallaRecuperacionContra(modelo, this, modelo2);
     }
 
     
@@ -21,7 +23,7 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        btnVolverLogin = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -31,10 +33,8 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtCorreoRec = new javax.swing.JTextField();
         btnEnviarCorreo = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(960, 640));
         setMinimumSize(new java.awt.Dimension(960, 640));
 
         jPanel2.setBackground(new java.awt.Color(50, 55, 69));
@@ -50,15 +50,15 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(430, 480));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(169, 171, 178));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        btnVolverLogin.setBackground(new java.awt.Color(169, 171, 178));
+        btnVolverLogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Volver al inicio de sesión");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
+        btnVolverLogin.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 430, 45));
+        jPanel1.add(btnVolverLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 430, 45));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Linea de division recu modo oscuro.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
@@ -100,11 +100,6 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnEnviarCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 350, -1));
-
-        jLabel8.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Crear cuenta nueva");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, -1, -1));
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, 430, 480));
 
@@ -157,6 +152,7 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnEnviarCorreo;
+    public javax.swing.JPanel btnVolverLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -164,11 +160,9 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     public javax.swing.JTextField txtCorreoRec;
     // End of variables declaration//GEN-END:variables
 }
