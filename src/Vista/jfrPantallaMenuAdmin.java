@@ -58,7 +58,6 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         txtContrasenaDoctor = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1200, 750));
         setMinimumSize(new java.awt.Dimension(1200, 750));
 
         jPanel1.setBackground(new java.awt.Color(50, 55, 69));
@@ -156,7 +155,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
                 btnCargarImagenActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCargarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 120, 50));
+        jPanel1.add(btnCargarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 440, 140, 50));
 
         btnAgregar.setBackground(new java.awt.Color(41, 72, 152));
         btnAgregar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
