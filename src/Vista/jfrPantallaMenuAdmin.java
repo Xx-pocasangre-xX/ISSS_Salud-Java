@@ -33,9 +33,8 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -69,17 +68,15 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/menu hamburgesa modo oscuro.png"))); // NOI18N
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        jButton2.setBackground(new java.awt.Color(41, 72, 152));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/administrador modo oscuro.png"))); // NOI18N
+        jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 80, 70));
 
-        jPanel4.setBackground(new java.awt.Color(41, 72, 152));
-        jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(156, 156, 156)));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/administrador modo oscuro.png"))); // NOI18N
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 18, -1, -1));
-
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 80, 70));
+        jButton1.setBackground(new java.awt.Color(62, 68, 83));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/menu hamburgesa modo oscuro.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 750));
 
@@ -151,6 +148,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jPanel1.add(txtCorreoDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 290, 30));
 
         btnCargarImagen.setBackground(new java.awt.Color(41, 72, 152));
+        btnCargarImagen.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         btnCargarImagen.setForeground(new java.awt.Color(255, 255, 255));
         btnCargarImagen.setText("Cargar Imagen");
         btnCargarImagen.addActionListener(new java.awt.event.ActionListener() {
@@ -161,6 +159,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jPanel1.add(btnCargarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 120, 50));
 
         btnAgregar.setBackground(new java.awt.Color(41, 72, 152));
+        btnAgregar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregar.setText("Agregar");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -171,10 +170,12 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 670, 120, 50));
 
         btnActualizar.setBackground(new java.awt.Color(41, 72, 152));
+        btnActualizar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         btnActualizar.setForeground(new java.awt.Color(255, 255, 255));
         btnActualizar.setText("Actualizar");
         jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 670, 120, 50));
 
+        cbEspecialidadesMedicas.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         cbEspecialidadesMedicas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbEspecialidadesMedicas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,6 +184,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         });
         jPanel1.add(cbEspecialidadesMedicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 440, 290, 30));
 
+        cbUnidadesMedicas.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         cbUnidadesMedicas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbUnidadesMedicas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,6 +202,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, -1, -1));
 
         btnLimpiar.setBackground(new java.awt.Color(41, 72, 152));
+        btnLimpiar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         btnLimpiar.setForeground(new java.awt.Color(255, 255, 255));
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -210,6 +213,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 670, 120, 50));
 
         btnEliminar.setBackground(new java.awt.Color(41, 72, 152));
+        btnEliminar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -220,8 +224,9 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 670, 120, 50));
 
         txtContrasenaDoctor.setBackground(new java.awt.Color(50, 55, 65));
-        txtContrasenaDoctor.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtContrasenaDoctor.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         txtContrasenaDoctor.setForeground(new java.awt.Color(255, 255, 255));
+        txtContrasenaDoctor.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
         jPanel1.add(txtContrasenaDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 290, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -313,9 +318,9 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
     public javax.swing.JButton btnLimpiar;
     public javax.swing.JComboBox<String> cbEspecialidadesMedicas;
     public javax.swing.JComboBox<String> cbUnidadesMedicas;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -326,7 +331,6 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     public javax.swing.JPanel jpCardsDoctores;
     public javax.swing.JLabel profileImage;
     public javax.swing.JPasswordField txtContrasenaDoctor;

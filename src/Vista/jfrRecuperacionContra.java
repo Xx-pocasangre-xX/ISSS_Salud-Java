@@ -76,11 +76,11 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
 
         txtCorreoRec.setBackground(new java.awt.Color(250, 250, 250));
-        txtCorreoRec.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        txtCorreoRec.setFont(new java.awt.Font("Raleway Thin", 2, 16)); // NOI18N
         jPanel1.add(txtCorreoRec, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 265, 350, 30));
 
         btnEnviarCorreo.setBackground(new java.awt.Color(144, 188, 255));
-        btnEnviarCorreo.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        btnEnviarCorreo.setFont(new java.awt.Font("Roboto", 2, 12)); // NOI18N
         btnEnviarCorreo.setForeground(new java.awt.Color(255, 255, 255));
         btnEnviarCorreo.setText("Enviar código de verificación");
         btnEnviarCorreo.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +91,7 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
         jPanel1.add(btnEnviarCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 350, -1));
 
         btnVolverLogin.setBackground(new java.awt.Color(169, 171, 178));
-        btnVolverLogin.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnVolverLogin.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         btnVolverLogin.setForeground(new java.awt.Color(0, 0, 0));
         btnVolverLogin.setText("Volver al inicio de Sesión");
         jPanel1.add(btnVolverLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 430, 40));
