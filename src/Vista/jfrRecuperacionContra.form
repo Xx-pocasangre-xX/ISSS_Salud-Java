@@ -181,7 +181,7 @@
                   <Color blue="fa" green="fa" red="fa" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Dialog" size="16" style="0"/>
+                  <Font name="Raleway Thin" size="16" style="2"/>
                 </Property>
               </Properties>
               <AuxValues>
@@ -199,7 +199,7 @@
                   <Color blue="ff" green="bc" red="90" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Dialog" size="12" style="0"/>
+                  <Font name="Roboto" size="12" style="2"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -224,7 +224,7 @@
                   <Color blue="b2" green="ab" red="a9" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Dialog" size="14" style="0"/>
+                  <Font name="Roboto" size="14" style="2"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
