@@ -26,76 +26,65 @@ public class PanelChatDoctoresSinDesplegar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
+        jPanelMensajeriaDoctores = new javax.swing.JPanel();
+        imgLogoIsss = new javax.swing.JLabel();
+        MensajeriaDoctores = new javax.swing.JLabel();
+        jPanelChat = new javax.swing.JPanel();
+        chat = new javax.swing.JLabel();
+        jPanelChatsDoctores = new javax.swing.JPanel();
+        jPanelInfoPaciente = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(62, 68, 83));
         setMinimumSize(new java.awt.Dimension(1120, 750));
         setPreferredSize(new java.awt.Dimension(1120, 750));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(62, 68, 83));
-        jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(156, 156, 156)));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelMensajeriaDoctores.setBackground(new java.awt.Color(62, 68, 83));
+        jPanelMensajeriaDoctores.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(156, 156, 156)));
+        jPanelMensajeriaDoctores.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo isss modo oscuro sin desplegar.png"))); // NOI18N
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        imgLogoIsss.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo isss modo oscuro sin desplegar.png"))); // NOI18N
+        jPanelMensajeriaDoctores.add(imgLogoIsss, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("Roboto", 3, 36)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Mensajeria");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, -1, -1));
+        MensajeriaDoctores.setBackground(new java.awt.Color(255, 255, 255));
+        MensajeriaDoctores.setFont(new java.awt.Font("Roboto", 3, 36)); // NOI18N
+        MensajeriaDoctores.setForeground(new java.awt.Color(255, 255, 255));
+        MensajeriaDoctores.setText("Mensajeria");
+        jPanelMensajeriaDoctores.add(MensajeriaDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, -1, -1));
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 110));
+        add(jPanelMensajeriaDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 110));
 
-        jPanel1.setBackground(new java.awt.Color(73, 80, 96));
-        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(156, 156, 156)));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelChat.setBackground(new java.awt.Color(73, 80, 96));
+        jPanelChat.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(156, 156, 156)));
+        jPanelChat.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Roboto", 3, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Chat");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 60, -1));
+        chat.setBackground(new java.awt.Color(255, 255, 255));
+        chat.setFont(new java.awt.Font("Roboto", 3, 24)); // NOI18N
+        chat.setForeground(new java.awt.Color(255, 255, 255));
+        chat.setText("Chat");
+        jPanelChat.add(chat, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 60, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 251, 75));
+        add(jPanelChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 251, 75));
 
-        jPanel2.setBackground(new java.awt.Color(76, 82, 99));
-        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 185, 251, 565));
+        jPanelChatsDoctores.setBackground(new java.awt.Color(76, 82, 99));
+        jPanelChatsDoctores.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
+        jPanelChatsDoctores.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(jPanelChatsDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 185, 251, 565));
 
-        jPanel4.setBackground(new java.awt.Color(76, 82, 99));
-        jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(156, 156, 156)));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 870, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 74, Short.MAX_VALUE)
-        );
-
-        add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 870, 75));
+        jPanelInfoPaciente.setBackground(new java.awt.Color(76, 82, 99));
+        jPanelInfoPaciente.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(156, 156, 156)));
+        jPanelInfoPaciente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(jPanelInfoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 870, 75));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    public javax.swing.JLabel MensajeriaDoctores;
+    public javax.swing.JLabel chat;
+    public javax.swing.JLabel imgLogoIsss;
+    public javax.swing.JPanel jPanelChat;
+    public javax.swing.JPanel jPanelChatsDoctores;
+    public javax.swing.JPanel jPanelInfoPaciente;
+    public javax.swing.JPanel jPanelMensajeriaDoctores;
     // End of variables declaration//GEN-END:variables
 }

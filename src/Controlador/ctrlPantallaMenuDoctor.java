@@ -1,7 +1,7 @@
 package Controlador;
 
 import Vista.PanelChatDoctoresSinDesplegar;
-import Vista.PanelMenuMensajeriaSinDesplegar;
+import Vista.PanelCitasMedicasDoctor;
 import Vista.jfrPantallaMenuDoctor;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -9,19 +9,22 @@ import java.awt.event.MouseListener;
 public class ctrlPantallaMenuDoctor implements MouseListener {
 
     jfrPantallaMenuDoctor vista;
-    //PanelChatDoctoresSinDesplegar panel;
-    PanelMenuMensajeriaSinDesplegar panel;
+    PanelChatDoctoresSinDesplegar panel;
+    PanelCitasMedicasDoctor panel1;
     
-    public ctrlPantallaMenuDoctor(jfrPantallaMenuDoctor Vista, PanelMenuMensajeriaSinDesplegar Panel ){
+    
+    public ctrlPantallaMenuDoctor(jfrPantallaMenuDoctor Vista, PanelChatDoctoresSinDesplegar Panel, PanelCitasMedicasDoctor Panel1){
         this.vista = Vista;
         this.panel = Panel;
-        
+        this.panel1 = Panel1;
         
         vista.btnMensajeria.addMouseListener(this);
-        vista.btnExpediente.addMouseListener(this);
         vista.btnMenuDesplegablePrincipal.addMouseListener(this);
-        panel.btnCitasMedicas.addMouseListener(this);
-        panel.btnMenuDesplegable.addMouseListener(this);
+        vista.btnCitasMedicas.addMouseListener(this);
+        
+        
+        PanelCitasMedicasDoctor objMenu = new PanelCitasMedicasDoctor();
+        vista.jpPanelInfo.add(objMenu);
     }
     
     @Override
@@ -29,21 +32,29 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
         
         if(e.getSource() == vista.btnMensajeria){
             //1-Creo un objeto del panel que quiero mostrar
-            PanelMenuMensajeriaSinDesplegar objMenu = new PanelMenuMensajeriaSinDesplegar();
+            PanelChatDoctoresSinDesplegar objMenu = new PanelChatDoctoresSinDesplegar();
+            vista.btnMensajeria.setBackground(new java.awt.Color(41, 72, 152));
+            vista.btnCitasMedicas.setBackground(new java.awt.Color(62, 68, 83));
             
             //2- Limpio el panel contendor (por si acaso)
-            vista.jpPanelMenuNoDesplegado.removeAll();
+            vista.jpPanelInfo.removeAll();
             //3- muestro el panel que quiero
-            vista.jpPanelMenuNoDesplegado.add(objMenu);
+            vista.jpPanelInfo.add(objMenu);
             
             //4- Refrescar todo
-            vista.jpPanelMenuNoDesplegado.revalidate();
-            vista.jpPanelMenuNoDesplegado.repaint();
+            vista.jpPanelInfo.revalidate();
+            vista.jpPanelInfo.repaint();
         }
         
-        if(e.getSource() == panel.btnCitasMedicas){
-            jfrPantallaMenuDoctor objMenu = new jfrPantallaMenuDoctor();
+        if(e.getSource() == vista.btnCitasMedicas){
+            PanelCitasMedicasDoctor objMenu = new PanelCitasMedicasDoctor();
+            vista.btnMensajeria.setBackground(new java.awt.Color(62, 68, 83));
+            vista.btnCitasMedicas.setBackground(new java.awt.Color(41, 72, 152));
             
+            vista.jpPanelInfo.removeAll();
+            vista.jpPanelInfo.add(objMenu);
+            vista.jpPanelInfo.revalidate();
+            vista.jpPanelInfo.repaint();
         }
     }
 
