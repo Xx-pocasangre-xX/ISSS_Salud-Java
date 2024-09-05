@@ -13,9 +13,9 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
     private void initComponents() {
 
         jpPanelMenuNoDesplegado = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnMenuDesplegablePrincipal = new javax.swing.JButton();
+        si = new javax.swing.JButton();
+        btnMensajeria = new javax.swing.JButton();
         jpPanelInfo = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -31,42 +31,43 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton4 = new javax.swing.JButton();
+        txtDUI = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
+        txtMotivoCita = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
+        cmbTipoSangre = new javax.swing.JComboBox<>();
+        btnExpediente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1200, 750));
         setMinimumSize(new java.awt.Dimension(1200, 750));
 
         jpPanelMenuNoDesplegado.setBackground(new java.awt.Color(62, 68, 83));
         jpPanelMenuNoDesplegado.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
+        jpPanelMenuNoDesplegado.setMinimumSize(new java.awt.Dimension(80, 750));
+        jpPanelMenuNoDesplegado.setPreferredSize(new java.awt.Dimension(80, 750));
         jpPanelMenuNoDesplegado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(62, 68, 83));
-        jButton1.setForeground(new java.awt.Color(62, 68, 83));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/menu hamburgesa modo oscuro.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jpPanelMenuNoDesplegado.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        btnMenuDesplegablePrincipal.setBackground(new java.awt.Color(62, 68, 83));
+        btnMenuDesplegablePrincipal.setForeground(new java.awt.Color(62, 68, 83));
+        btnMenuDesplegablePrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/menu hamburgesa modo oscuro.png"))); // NOI18N
+        btnMenuDesplegablePrincipal.setBorder(null);
+        jpPanelMenuNoDesplegado.add(btnMenuDesplegablePrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(41, 72, 152));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/citas medicas modo oscuro.png"))); // NOI18N
-        jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
-        jpPanelMenuNoDesplegado.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 80, 70));
+        si.setBackground(new java.awt.Color(41, 72, 152));
+        si.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/citas medicas modo oscuro.png"))); // NOI18N
+        si.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
+        jpPanelMenuNoDesplegado.add(si, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 80, 70));
 
-        jButton3.setBackground(new java.awt.Color(62, 68, 83));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono chat modo oscuro.png"))); // NOI18N
-        jButton3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnMensajeria.setBackground(new java.awt.Color(62, 68, 83));
+        btnMensajeria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono chat modo oscuro.png"))); // NOI18N
+        btnMensajeria.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
+        btnMensajeria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnMensajeriaActionPerformed(evt);
             }
         });
-        jpPanelMenuNoDesplegado.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 80, 60));
+        jpPanelMenuNoDesplegado.add(btnMensajeria, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 80, 60));
 
         jpPanelInfo.setBackground(new java.awt.Color(50, 55, 69));
         jpPanelInfo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -139,48 +140,48 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Correo");
-        jPanel7.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
+        jPanel7.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Motivo de la cita");
         jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
 
-        jTextField1.setBackground(new java.awt.Color(70, 76, 92));
-        jTextField1.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 150, 30));
+        txtDUI.setBackground(new java.awt.Color(70, 76, 92));
+        txtDUI.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        txtDUI.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
+        jPanel7.add(txtDUI, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 150, 30));
 
-        jTextField2.setBackground(new java.awt.Color(70, 76, 92));
-        jTextField2.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 270, 30));
+        txtNombre.setBackground(new java.awt.Color(70, 76, 92));
+        txtNombre.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        txtNombre.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
+        jPanel7.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 270, 30));
 
-        jTextField4.setBackground(new java.awt.Color(70, 76, 92));
-        jTextField4.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 270, 30));
+        txtDireccion.setBackground(new java.awt.Color(70, 76, 92));
+        txtDireccion.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        txtDireccion.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
+        jPanel7.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 270, 30));
 
-        jTextField5.setBackground(new java.awt.Color(70, 76, 92));
-        jTextField5.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        jTextField5.setToolTipText("");
-        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 350, 100));
+        txtMotivoCita.setBackground(new java.awt.Color(70, 76, 92));
+        txtMotivoCita.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        txtMotivoCita.setToolTipText("");
+        txtMotivoCita.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
+        jPanel7.add(txtMotivoCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 350, 100));
 
-        jTextField6.setBackground(new java.awt.Color(70, 76, 92));
-        jTextField6.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        jTextField6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 270, 30));
+        txtCorreo.setBackground(new java.awt.Color(70, 76, 92));
+        txtCorreo.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        txtCorreo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
+        jPanel7.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 270, 30));
 
-        jComboBox1.setFont(new java.awt.Font("Roboto", 2, 13)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", " AB-" }));
-        jPanel7.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 150, 30));
+        cmbTipoSangre.setFont(new java.awt.Font("Roboto", 2, 13)); // NOI18N
+        cmbTipoSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", " AB-" }));
+        jPanel7.add(cmbTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 150, 30));
 
-        jButton4.setBackground(new java.awt.Color(41, 72, 152));
-        jButton4.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        jButton4.setText("Expediente");
-        jButton4.setBorder(null);
-        jPanel7.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 120, 40));
+        btnExpediente.setBackground(new java.awt.Color(41, 72, 152));
+        btnExpediente.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnExpediente.setText("Expediente");
+        btnExpediente.setBorder(null);
+        jPanel7.add(btnExpediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 120, 40));
 
         jpPanelInfo.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 740, 560));
 
@@ -198,16 +199,16 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jpPanelMenuNoDesplegado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jpPanelInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jpPanelInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jpPanelMenuNoDesplegado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnMensajeriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMensajeriaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnMensajeriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,11 +246,10 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
+    public javax.swing.JButton btnExpediente;
+    public javax.swing.JButton btnMensajeria;
+    public javax.swing.JButton btnMenuDesplegablePrincipal;
+    public javax.swing.JComboBox<String> cmbTipoSangre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -264,12 +264,13 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     public javax.swing.JPanel jpPanelInfo;
     public javax.swing.JPanel jpPanelMenuNoDesplegado;
+    private javax.swing.JButton si;
+    public javax.swing.JTextField txtCorreo;
+    public javax.swing.JTextField txtDUI;
+    private javax.swing.JTextField txtDireccion;
+    public javax.swing.JTextField txtMotivoCita;
+    public javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
