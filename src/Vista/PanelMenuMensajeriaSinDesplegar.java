@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import Controlador.ctrlPantallaMenuDoctor;
+
 /**
  *
  * @author ricar
@@ -15,6 +17,12 @@ public class PanelMenuMensajeriaSinDesplegar extends javax.swing.JPanel {
      */
     public PanelMenuMensajeriaSinDesplegar() {
         initComponents();
+        
+        PanelMenuMensajeriaSinDesplegar panel= this;
+        jfrPantallaMenuDoctor vista = new jfrPantallaMenuDoctor();
+        
+        ctrlPantallaMenuDoctor controlador = new ctrlPantallaMenuDoctor(vista, panel);
+        
     }
 
     /**

@@ -1,11 +1,21 @@
 package Vista;
 
+import Controlador.ctrlPantallaMenuDoctor;
+
 public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
 
 
     public jfrPantallaMenuDoctor() {
         initComponents();
+        
     }
+    
+    public static void initjfrPantallaMenuDoctor(){
+        jfrPantallaMenuDoctor vista = new jfrPantallaMenuDoctor();
+        PanelMenuMensajeriaSinDesplegar panel = new PanelMenuMensajeriaSinDesplegar();
+        ctrlPantallaMenuDoctor controlador = new ctrlPantallaMenuDoctor(vista,panel);
+        vista.setVisible(true);
+    } 
 
    
     @SuppressWarnings("unchecked")
@@ -208,7 +218,7 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMensajeriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMensajeriaActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnMensajeriaActionPerformed
 
     /**
@@ -241,7 +251,7 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new jfrPantallaMenuDoctor().setVisible(true);
+                initjfrPantallaMenuDoctor();
             }
         });
     }

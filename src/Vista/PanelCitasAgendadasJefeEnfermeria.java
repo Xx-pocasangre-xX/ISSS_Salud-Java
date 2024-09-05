@@ -124,47 +124,47 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("DUI");
-        jPanel7.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 40, -1));
+        jPanel7.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 40, -1));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombre del paciente");
-        jPanel7.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, 200, -1));
+        jPanel7.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, 200, -1));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Tipo sangre");
-        jPanel7.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 140, -1));
+        jPanel7.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, 140, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Dirección");
-        jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, -1, -1));
+        jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Correo");
-        jPanel7.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, -1, -1));
+        jPanel7.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Motivo de la cita");
-        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, -1, -1));
+        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 160, -1));
 
         txtDUI.setBackground(new java.awt.Color(70, 76, 92));
         txtDUI.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         txtDUI.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtDUI, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 270, 30));
+        jPanel7.add(txtDUI, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 270, 30));
 
         txtNombre.setBackground(new java.awt.Color(70, 76, 92));
         txtNombre.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         txtNombre.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 270, 30));
+        jPanel7.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 270, 30));
 
         txtDireccion.setBackground(new java.awt.Color(70, 76, 92));
         txtDireccion.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         txtDireccion.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 270, 60));
+        jPanel7.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, 270, 60));
 
         txtMotivoCita.setBackground(new java.awt.Color(70, 76, 92));
         txtMotivoCita.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
@@ -175,18 +175,23 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
         txtCorreo.setBackground(new java.awt.Color(70, 76, 92));
         txtCorreo.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         txtCorreo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 270, 30));
+        jPanel7.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, 270, 30));
 
         btnExpediente.setBackground(new java.awt.Color(41, 72, 152));
         btnExpediente.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         btnExpediente.setText("Actualizar información");
         btnExpediente.setBorder(null);
-        jPanel7.add(btnExpediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 470, 170, 40));
+        btnExpediente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExpedienteActionPerformed(evt);
+            }
+        });
+        jPanel7.add(btnExpediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 470, 170, 40));
 
         txtTipoSangre.setBackground(new java.awt.Color(70, 76, 92));
         txtTipoSangre.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         txtTipoSangre.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, 270, 30));
+        jPanel7.add(txtTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 270, 30));
 
         jLabel11.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -240,6 +245,10 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
 
         add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 740, 560));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnExpedienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExpedienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExpedienteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
