@@ -32,7 +32,7 @@ public class PanelCitasMedicasDoctor extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jPanelInformacionCitaDoctor = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(50, 55, 69));
         setMinimumSize(new java.awt.Dimension(1120, 750));
@@ -55,7 +55,7 @@ public class PanelCitasMedicasDoctor extends javax.swing.JPanel {
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 110));
 
         jPanel5.setBackground(new java.awt.Color(73, 80, 96));
-        jPanel5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(156, 156, 156)));
+        jPanel5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(156, 156, 156)));
         jPanel5.setMinimumSize(new java.awt.Dimension(400, 80));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -68,7 +68,7 @@ public class PanelCitasMedicasDoctor extends javax.swing.JPanel {
         add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 380, 80));
 
         jPanel6.setBackground(new java.awt.Color(76, 82, 99));
-        jPanel6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(156, 156, 156)));
+        jPanel6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 1, 0, new java.awt.Color(156, 156, 156)));
         jPanel6.setMinimumSize(new java.awt.Dimension(400, 80));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -80,11 +80,12 @@ public class PanelCitasMedicasDoctor extends javax.swing.JPanel {
 
         add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 740, 80));
 
-        jPanel1.setBackground(new java.awt.Color(70, 76, 92));
-        jPanel1.setMinimumSize(new java.awt.Dimension(740, 560));
-        jPanel1.setPreferredSize(new java.awt.Dimension(740, 560));
-        jPanel1.setLayout(new java.awt.BorderLayout());
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, -1, -1));
+        jPanelInformacionCitaDoctor.setBackground(new java.awt.Color(70, 76, 92));
+        jPanelInformacionCitaDoctor.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(156, 156, 156)));
+        jPanelInformacionCitaDoctor.setMinimumSize(new java.awt.Dimension(740, 560));
+        jPanelInformacionCitaDoctor.setPreferredSize(new java.awt.Dimension(740, 560));
+        jPanelInformacionCitaDoctor.setLayout(new java.awt.BorderLayout());
+        add(jPanelInformacionCitaDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -93,10 +94,10 @@ public class PanelCitasMedicasDoctor extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    public javax.swing.JPanel jPanelInformacionCitaDoctor;
     // End of variables declaration//GEN-END:variables
 
 }

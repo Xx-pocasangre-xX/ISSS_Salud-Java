@@ -62,19 +62,19 @@ public class PanelChatDoctoresSinDesplegar extends javax.swing.JPanel {
         chat.setFont(new java.awt.Font("Roboto", 3, 24)); // NOI18N
         chat.setForeground(new java.awt.Color(255, 255, 255));
         chat.setText("Chat");
-        jPanelChat.add(chat, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 60, -1));
+        jPanelChat.add(chat, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 25, 60, -1));
 
-        add(jPanelChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 251, 75));
+        add(jPanelChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 251, 80));
 
         jPanelChatsDoctores.setBackground(new java.awt.Color(76, 82, 99));
         jPanelChatsDoctores.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
         jPanelChatsDoctores.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jPanelChatsDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 185, 251, 565));
+        add(jPanelChatsDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 251, 560));
 
         jPanelInfoPaciente.setBackground(new java.awt.Color(76, 82, 99));
         jPanelInfoPaciente.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(156, 156, 156)));
         jPanelInfoPaciente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jPanelInfoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 870, 75));
+        add(jPanelInfoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 870, 80));
     }// </editor-fold>//GEN-END:initComponents
 
 

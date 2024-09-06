@@ -14,7 +14,8 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
         jfrPantallaMenuDoctor vista = new jfrPantallaMenuDoctor();
         PanelChatDoctoresSinDesplegar panel = new PanelChatDoctoresSinDesplegar();
         PanelCitasMedicasDoctor panel1 = new PanelCitasMedicasDoctor();
-        ctrlPantallaMenuDoctor controlador = new ctrlPantallaMenuDoctor(vista, panel, panel1);
+        PanelInfoCitaDoctor panel2 = new PanelInfoCitaDoctor();
+        ctrlPantallaMenuDoctor controlador = new ctrlPantallaMenuDoctor(vista, panel, panel1, panel2);
         vista.setVisible(true);
     } 
 
@@ -31,7 +32,6 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1200, 750));
-        setPreferredSize(new java.awt.Dimension(1200, 750));
 
         jpPanelMenuNoDesplegado.setBackground(new java.awt.Color(62, 68, 83));
         jpPanelMenuNoDesplegado.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
@@ -58,7 +58,7 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
                 btnMensajeriaActionPerformed(evt);
             }
         });
-        jpPanelMenuNoDesplegado.add(btnMensajeria, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 80, 60));
+        jpPanelMenuNoDesplegado.add(btnMensajeria, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 80, 70));
 
         jpPanelInfo.setBackground(new java.awt.Color(50, 55, 69));
         jpPanelInfo.setLayout(new java.awt.BorderLayout());
