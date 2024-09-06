@@ -7,8 +7,6 @@ import Vista.PanelInfoCitaDoctor;
 import Vista.jfrPantallaMenuDoctor;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
 
 public class ctrlPantallaMenuDoctor implements MouseListener {
 

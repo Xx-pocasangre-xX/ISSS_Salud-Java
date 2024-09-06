@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import Controlador.ctrlPantallaMenuJefesEnfermeria;
+
 /**
  *
  * @author ricar
@@ -16,6 +18,13 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
     public jfrPantallaMenuJefesEnfermeria() {
         initComponents();
     }
+    
+    public static void initjfrPantallaMenuJefesEnfermeria(){
+        jfrPantallaMenuJefesEnfermeria vista = new jfrPantallaMenuJefesEnfermeria();
+        PanelSolicitudesCitas panel = new PanelSolicitudesCitas() ;
+        ctrlPantallaMenuJefesEnfermeria controlador = new ctrlPantallaMenuJefesEnfermeria(vista, panel);
+        vista.setVisible(true);
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,42 +35,18 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        txtDUI = new javax.swing.JTextField();
-        txtNombre = new javax.swing.JTextField();
-        txtDireccion = new javax.swing.JTextField();
-        txtMotivoCita = new javax.swing.JTextField();
-        txtCorreo = new javax.swing.JTextField();
-        btnExpediente = new javax.swing.JButton();
-        txtTipoSangre = new javax.swing.JTextField();
+        btnSolicitudes = new javax.swing.JButton();
+        btnAgendadas = new javax.swing.JButton();
+        jPanelInfoJefes = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         btnMenuDesplegablePrincipal = new javax.swing.JButton();
         btnCitasMedicasE = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1200, 750));
-        setPreferredSize(new java.awt.Dimension(1200, 750));
-
-        jPanel1.setBackground(new java.awt.Color(50, 55, 69));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 750));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 750));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(62, 68, 83));
         jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(156, 156, 156)));
@@ -76,117 +61,21 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
         jLabel6.setText("Citas medicas");
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(41, 72, 152));
-        jButton1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jButton1.setText("Solicitudes");
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 35, 110, 40));
+        btnSolicitudes.setBackground(new java.awt.Color(41, 72, 152));
+        btnSolicitudes.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnSolicitudes.setText("Solicitudes");
+        jPanel3.add(btnSolicitudes, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 35, 110, 40));
 
-        jButton2.setBackground(new java.awt.Color(183, 184, 187));
-        jButton2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(61, 61, 61));
-        jButton2.setText("Agendadas");
-        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 35, 110, 40));
+        btnAgendadas.setBackground(new java.awt.Color(183, 184, 187));
+        btnAgendadas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnAgendadas.setForeground(new java.awt.Color(61, 61, 61));
+        btnAgendadas.setText("Agendadas");
+        jPanel3.add(btnAgendadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 35, 110, 40));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 110));
-
-        jPanel5.setBackground(new java.awt.Color(73, 80, 96));
-        jPanel5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(156, 156, 156)));
-        jPanel5.setMinimumSize(new java.awt.Dimension(400, 80));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Roboto", 3, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Solicitudes");
-        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 25, 130, -1));
-
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 380, 80));
-
-        jPanel6.setBackground(new java.awt.Color(62, 68, 83));
-        jPanel6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(156, 156, 156)));
-        jPanel6.setMinimumSize(new java.awt.Dimension(400, 80));
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Roboto", 3, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Información de la cita médica ");
-        jPanel6.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 25, 350, -1));
-
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 740, 80));
-
-        jPanel7.setBackground(new java.awt.Color(70, 76, 92));
-        jPanel7.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(156, 156, 156)));
-        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("DUI");
-        jPanel7.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 40, -1));
-
-        jLabel2.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Nombre");
-        jPanel7.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 80, -1));
-
-        jLabel5.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Tipo sangre");
-        jPanel7.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 140, -1));
-
-        jLabel8.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Dirección");
-        jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Correo");
-        jPanel7.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
-
-        jLabel10.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Motivo de la cita");
-        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
-
-        txtDUI.setBackground(new java.awt.Color(70, 76, 92));
-        txtDUI.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        txtDUI.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtDUI, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 150, 30));
-
-        txtNombre.setBackground(new java.awt.Color(70, 76, 92));
-        txtNombre.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        txtNombre.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 270, 30));
-
-        txtDireccion.setBackground(new java.awt.Color(70, 76, 92));
-        txtDireccion.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        txtDireccion.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 270, 30));
-
-        txtMotivoCita.setBackground(new java.awt.Color(70, 76, 92));
-        txtMotivoCita.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        txtMotivoCita.setToolTipText("");
-        txtMotivoCita.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtMotivoCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 350, 100));
-
-        txtCorreo.setBackground(new java.awt.Color(70, 76, 92));
-        txtCorreo.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        txtCorreo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 270, 30));
-
-        btnExpediente.setBackground(new java.awt.Color(41, 72, 152));
-        btnExpediente.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnExpediente.setText("Agendar cita");
-        btnExpediente.setBorder(null);
-        jPanel7.add(btnExpediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 120, 40));
-
-        txtTipoSangre.setBackground(new java.awt.Color(70, 76, 92));
-        txtTipoSangre.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        txtTipoSangre.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 150, 30));
-
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 740, 560));
+        jPanelInfoJefes.setBackground(new java.awt.Color(50, 55, 69));
+        jPanelInfoJefes.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanelInfoJefes.setMinimumSize(new java.awt.Dimension(1120, 640));
+        jPanelInfoJefes.setLayout(new java.awt.BorderLayout());
 
         jPanel2.setBackground(new java.awt.Color(62, 68, 83));
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
@@ -211,13 +100,18 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1120, Short.MAX_VALUE)
+                    .addComponent(jPanelInfoJefes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanelInfoJefes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -253,38 +147,20 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new jfrPantallaMenuJefesEnfermeria().setVisible(true);
+                initjfrPantallaMenuJefesEnfermeria();
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnAgendadas;
     public javax.swing.JButton btnCitasMedicasE;
-    private javax.swing.JButton btnExpediente;
     public javax.swing.JButton btnMenuDesplegablePrincipal;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
+    public javax.swing.JButton btnSolicitudes;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JTextField txtCorreo;
-    private javax.swing.JTextField txtDUI;
-    private javax.swing.JTextField txtDireccion;
-    private javax.swing.JTextField txtMotivoCita;
-    private javax.swing.JTextField txtNombre;
-    public javax.swing.JTextField txtTipoSangre;
+    public javax.swing.JPanel jPanelInfoJefes;
     // End of variables declaration//GEN-END:variables
 }
