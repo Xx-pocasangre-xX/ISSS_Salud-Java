@@ -59,7 +59,6 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1200, 750));
-        setPreferredSize(new java.awt.Dimension(1200, 750));
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(62, 68, 83));
@@ -97,7 +96,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jpCardsDoctores.setBackground(new java.awt.Color(70, 76, 92));
         jpCardsDoctores.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(156, 156, 156)));
         jpCardsDoctores.setLayout(new java.awt.BorderLayout());
-        jPanel1.add(jpCardsDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 480, 640));
+        jPanel1.add(jpCardsDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 490, 650));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
