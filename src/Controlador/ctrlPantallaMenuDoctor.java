@@ -27,11 +27,13 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
         vista.btnCitasMedicas.addMouseListener(this);
         panel2.btnExpediente.addMouseListener(this);
         
-        /*PanelCitasMedicasDoctor objMenu = new PanelCitasMedicasDoctor();
-        PanelInfoCitaDoctor objInfo = new PanelInfoCitaDoctor();
-        PanelExpedienteMedico objExpediente = new PanelExpedienteMedico();
-        vista.jpPanelInfo.add(objMenu);
-        objMenu.jPanelInformacionCitaDoctor.add(objInfo);*/
+        vista.jpPanelInfo.removeAll();
+        panel1.jPanelInformacionCitaDoctor.removeAll();
+        vista.jpPanelInfo.add(panel1);
+        panel1.jPanelInformacionCitaDoctor.add(panel2);
+        vista.revalidate();
+        vista.repaint();
+        
     }
     
     
@@ -55,17 +57,15 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
         }
         
         if(e.getSource() == vista.btnCitasMedicas){
-            PanelCitasMedicasDoctor objMenu = new PanelCitasMedicasDoctor();
-            PanelInfoCitaDoctor objInfo = new PanelInfoCitaDoctor();
-            
             vista.btnMensajeria.setBackground(new java.awt.Color(62, 68, 83));
             vista.btnCitasMedicas.setBackground(new java.awt.Color(41, 72, 152));
             
             vista.jpPanelInfo.removeAll();
-            vista.jpPanelInfo.add(objMenu);
-            objMenu.jPanelInformacionCitaDoctor.add(objInfo);
-            vista.jpPanelInfo.revalidate();
-            vista.jpPanelInfo.repaint();
+            panel1.jPanelInformacionCitaDoctor.removeAll();
+            vista.jpPanelInfo.add(panel1);
+            panel1.jPanelInformacionCitaDoctor.add(panel2);
+            vista.revalidate();
+            vista.repaint();
             
             
         }
@@ -74,8 +74,9 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
             
             panel1.jPanelInformacionCitaDoctor.removeAll();
             panel1.jPanelInformacionCitaDoctor.add(objExpediente);
-            panel1.jPanelInformacionCitaDoctor.revalidate();
-            panel1.jPanelInformacionCitaDoctor.repaint();
+            panel2.initPanelInfoCitaDoctor();
+            panel1.revalidate();
+            panel1.repaint();
             
             if (panel1.jPanelInformacionCitaDoctor.getComponentCount() > 0 && panel1.jPanelInformacionCitaDoctor.getComponent(0) == objExpediente) {
                 System.out.println("PanelExpedienteMedico agregado correctamente.");

@@ -17,11 +17,15 @@ public class PanelInfoCitaDoctor extends javax.swing.JPanel {
      */
     public PanelInfoCitaDoctor() {
         initComponents();
-        
+    }
+    
+    public static void initPanelInfoCitaDoctor(){
+            
         jfrPantallaMenuDoctor vista = new jfrPantallaMenuDoctor();
         PanelChatDoctoresSinDesplegar panel = new PanelChatDoctoresSinDesplegar();
         PanelCitasMedicasDoctor panel1 = new PanelCitasMedicasDoctor();
-        PanelInfoCitaDoctor panel2 = this;
+        PanelInfoCitaDoctor panel2 = new PanelInfoCitaDoctor();
+        
         ctrlPantallaMenuDoctor controlador = new ctrlPantallaMenuDoctor(vista, panel, panel1, panel2);
         
     }
