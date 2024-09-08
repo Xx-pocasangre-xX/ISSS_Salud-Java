@@ -25,8 +25,9 @@ public class PanelInfoCitaDoctor extends javax.swing.JPanel {
         PanelChatDoctoresSinDesplegar panel = new PanelChatDoctoresSinDesplegar();
         PanelCitasMedicasDoctor panel1 = new PanelCitasMedicasDoctor();
         PanelInfoCitaDoctor panel2 = new PanelInfoCitaDoctor();
+        PanelExpedienteMedico panel3 = new PanelExpedienteMedico();
         
-        ctrlPantallaMenuDoctor controlador = new ctrlPantallaMenuDoctor(vista, panel, panel1, panel2);
+        ctrlPantallaMenuDoctor controlador = new ctrlPantallaMenuDoctor(vista, panel, panel1, panel2, panel3);
         
     }
 
@@ -59,7 +60,6 @@ public class PanelInfoCitaDoctor extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel7.setBackground(new java.awt.Color(70, 76, 92));
-        jPanel7.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 0, new java.awt.Color(156, 156, 156)));
         jPanel7.setMinimumSize(new java.awt.Dimension(740, 560));
         jPanel7.setName(""); // NOI18N
         jPanel7.setPreferredSize(new java.awt.Dimension(740, 560));

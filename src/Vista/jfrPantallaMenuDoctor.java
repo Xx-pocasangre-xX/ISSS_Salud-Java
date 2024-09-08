@@ -15,7 +15,10 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
         PanelChatDoctoresSinDesplegar panel = new PanelChatDoctoresSinDesplegar();
         PanelCitasMedicasDoctor panel1 = new PanelCitasMedicasDoctor();
         PanelInfoCitaDoctor panel2 = new PanelInfoCitaDoctor();
-        ctrlPantallaMenuDoctor controlador = new ctrlPantallaMenuDoctor(vista, panel, panel1, panel2);
+        PanelExpedienteMedico panel3 = new PanelExpedienteMedico();
+        
+        ctrlPantallaMenuDoctor controlador = new ctrlPantallaMenuDoctor(vista, panel, panel1, panel2, panel3);
+        
         vista.setVisible(true);
     } 
 
@@ -31,7 +34,9 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
         jpPanelInfo = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1200, 750));
         setMinimumSize(new java.awt.Dimension(1200, 750));
+        setResizable(false);
 
         jpPanelMenuNoDesplegado.setBackground(new java.awt.Color(62, 68, 83));
         jpPanelMenuNoDesplegado.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));

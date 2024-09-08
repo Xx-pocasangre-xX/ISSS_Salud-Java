@@ -47,6 +47,7 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1200, 750));
+        setResizable(false);
 
         jPanel3.setBackground(new java.awt.Color(62, 68, 83));
         jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(156, 156, 156)));

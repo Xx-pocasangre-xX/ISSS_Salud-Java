@@ -14,26 +14,28 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
     PanelChatDoctoresSinDesplegar panel;
     PanelCitasMedicasDoctor panel1;
     PanelInfoCitaDoctor panel2;
+    PanelExpedienteMedico panel3;
     
     
-    public ctrlPantallaMenuDoctor(jfrPantallaMenuDoctor Vista, PanelChatDoctoresSinDesplegar Panel, PanelCitasMedicasDoctor Panel1, PanelInfoCitaDoctor Panel2){
+    public ctrlPantallaMenuDoctor(jfrPantallaMenuDoctor Vista, PanelChatDoctoresSinDesplegar Panel, PanelCitasMedicasDoctor Panel1, PanelInfoCitaDoctor Panel2, PanelExpedienteMedico Panel3){
         this.vista = Vista;
         this.panel = Panel;
         this.panel1 = Panel1;
         this.panel2 = Panel2;
+        this.panel3 = Panel3;
         
         vista.btnMensajeria.addMouseListener(this);
         vista.btnMenuDesplegablePrincipal.addMouseListener(this);
         vista.btnCitasMedicas.addMouseListener(this);
         panel2.btnExpediente.addMouseListener(this);
+        panel3.btnRegresar.addMouseListener(this);
         
         vista.jpPanelInfo.removeAll();
         panel1.jPanelInformacionCitaDoctor.removeAll();
         vista.jpPanelInfo.add(panel1);
         panel1.jPanelInformacionCitaDoctor.add(panel2);
         vista.revalidate();
-        vista.repaint();
-        
+        vista.repaint(); 
     }
     
     
@@ -65,25 +67,30 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
             vista.jpPanelInfo.add(panel1);
             panel1.jPanelInformacionCitaDoctor.add(panel2);
             vista.revalidate();
-            vista.repaint();
-            
-            
+            vista.repaint(); 
         }
         if(e.getSource() == panel2.btnExpediente){
-            PanelExpedienteMedico objExpediente = new PanelExpedienteMedico();
             
             panel1.jPanelInformacionCitaDoctor.removeAll();
-            panel1.jPanelInformacionCitaDoctor.add(objExpediente);
+            panel1.jPanelInformacionCitaDoctor.add(panel3);
             panel2.initPanelInfoCitaDoctor();
             panel1.revalidate();
             panel1.repaint();
             
-            if (panel1.jPanelInformacionCitaDoctor.getComponentCount() > 0 && panel1.jPanelInformacionCitaDoctor.getComponent(0) == objExpediente) {
+            if (panel1.jPanelInformacionCitaDoctor.getComponentCount() > 0 && panel1.jPanelInformacionCitaDoctor.getComponent(0) == panel3) {
                 System.out.println("PanelExpedienteMedico agregado correctamente.");
             } else {
                 System.out.println("Error: No se pudo agregar PanelExpedienteMedico.");
             }
-        }   
+        }
+        if(e.getSource() == panel3.btnRegresar){
+            
+            panel1.jPanelInformacionCitaDoctor.removeAll();
+            panel1.jPanelInformacionCitaDoctor.add(panel2);
+            panel3.initPanelExpedienteMedico();
+            panel1.revalidate();
+            panel1.repaint();
+        }
     }
 
     @Override
