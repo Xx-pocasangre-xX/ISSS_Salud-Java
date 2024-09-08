@@ -80,7 +80,7 @@ public class ctrlPantallaMenuAdmin {
               
               int confirmar = JOptionPane.showConfirmDialog(vista, "Estas seguro de que deseas aliminar a este doctor", "Confirmación", JOptionPane.YES_NO_OPTION);
               if(confirmar == JOptionPane.YES_OPTION){
-                if(modelo3.eliminarDoctor(idDoctor)){
+                if(modelo3.eliminarDoctor(idDoctor, vista)){
                   JOptionPane.showMessageDialog(vista, "Doctor elimando exitosamente.");
                   modelo3.cargarCardsDoctores(vista.jpCardsDoctores, vista);
                   modelo3.limpiarCampos(vista.txtCorreoDoctor, vista.txtContrasenaDoctor, vista.txtNombreDoctor, vista.cbEspecialidadesMedicas, vista.cbUnidadesMedicas);

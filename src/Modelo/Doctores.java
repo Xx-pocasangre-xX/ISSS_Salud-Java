@@ -167,11 +167,6 @@ public class Doctores {
         return;
       }
       
-      if(!nombre.matches("[a-zA-Z\\s]+")){
-        JOptionPane.showMessageDialog(vista, "Nombre de doctor no válido");
-        return;
-      }
-      
       if(profileImage.getText() == null){
         JOptionPane.showMessageDialog(vista, "Debe subir una foto para agregar un doctor.");
         return;
@@ -376,13 +371,16 @@ public class Doctores {
       }
     }
     
-    public boolean eliminarDoctor(int idDoctor){
+    public boolean eliminarDoctor(int idDoctor, jfrPantallaMenuAdmin vista){
       Connection conexion = ClaseConexion.getConexion();
       String query = "DELETE FROM Doctores WHERE id_doctor = ?";
       
       try(PreparedStatement ps = conexion.prepareStatement(query)){
         ps.setInt(1, idDoctor);
         return ps.executeUpdate() > 0;
+      }catch(SQLIntegrityConstraintViolationException e){
+         JOptionPane.showMessageDialog(vista, "No se pudo eliminar al doctor debido a que tiene un historial de citas médicas.", "Error", JOptionPane.ERROR_MESSAGE);
+         return false;
       }catch(SQLException e){
         e.printStackTrace();
         return false;
