@@ -48,6 +48,7 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1200, 750));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(62, 68, 83));
         jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(156, 156, 156)));
@@ -73,10 +74,13 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
         btnAgendadas.setText("Agendadas");
         jPanel3.add(btnAgendadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 35, 110, 40));
 
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1120, 110));
+
         jPanelInfoJefes.setBackground(new java.awt.Color(50, 55, 69));
         jPanelInfoJefes.setMaximumSize(new java.awt.Dimension(1120, 640));
         jPanelInfoJefes.setMinimumSize(new java.awt.Dimension(1120, 640));
         jPanelInfoJefes.setLayout(new java.awt.BorderLayout());
+        getContentPane().add(jPanelInfoJefes, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 1120, 640));
 
         jPanel2.setBackground(new java.awt.Color(62, 68, 83));
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
@@ -95,25 +99,7 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
         btnCitasMedicasE.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
         jPanel2.add(btnCitasMedicasE, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 80, 70));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1120, Short.MAX_VALUE)
-                    .addComponent(jPanelInfoJefes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanelInfoJefes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

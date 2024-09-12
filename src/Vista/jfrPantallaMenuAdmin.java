@@ -34,6 +34,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        btnAgregarJefes = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -68,12 +69,22 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(41, 72, 152));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/administrador modo oscuro.png"))); // NOI18N
         jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 80, 70));
 
         jButton1.setBackground(new java.awt.Color(62, 68, 83));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/menu hamburgesa modo oscuro.png"))); // NOI18N
         jButton1.setBorder(null);
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+
+        btnAgregarJefes.setBackground(new java.awt.Color(62, 68, 83));
+        btnAgregarJefes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AgregarJefesEnfermeria.png"))); // NOI18N
+        btnAgregarJefes.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
+        jPanel2.add(btnAgregarJefes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 80, 70));
 
         jPanel1.setBackground(new java.awt.Color(50, 55, 69));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -280,6 +291,10 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -318,6 +333,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnActualizar;
     public javax.swing.JButton btnAgregar;
+    public javax.swing.JButton btnAgregarJefes;
     public javax.swing.JButton btnCargarImagen;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnLimpiar;

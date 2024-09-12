@@ -29,6 +29,7 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
         vista.btnCitasMedicas.addMouseListener(this);
         panel2.btnExpediente.addMouseListener(this);
         panel3.btnRegresar.addMouseListener(this);
+        panel3.btnEditarActualizarExpediente.addMouseListener(this);
         
         vista.jpPanelInfo.removeAll();
         panel1.jPanelInformacionCitaDoctor.removeAll();
@@ -90,6 +91,9 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
             panel3.initPanelExpedienteMedico();
             panel1.revalidate();
             panel1.repaint();
+        }
+        if(e.getSource() == panel3.btnEditarActualizarExpediente){
+            
         }
     }
 

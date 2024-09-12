@@ -12,12 +12,17 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Vista/jfrPantallaMenuAdmin.java</file>
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Controlador/ctrlPantallaCambioContra.java</file>
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Vista/jfrPantallaMenuDoctor.java</file>
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Controlador/ctrlPantallaLogin.java</file>
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/Usuarios.java</file>
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Vista/jfrCambioContra.java</file>
+=======
+            <file>file:/C:/Users/ricar/Desktop/ISSS_Salud-Java/src/Vista/PanelExpedienteMedico.java</file>
+            <file>file:/C:/Users/ricar/Desktop/ISSS_Salud-Java/src/Controlador/ctrlPantallaMenuDoctor.java</file>
+>>>>>>> 7395c10e24983cdde784bfb6065b77b0b0a3c0a8
         </group>
     </open-files>
 </project-private>
