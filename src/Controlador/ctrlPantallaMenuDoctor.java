@@ -1,5 +1,6 @@
 package Controlador;
 
+import Modelo.CitasMedicas;
 import Vista.PanelChatDoctoresSinDesplegar;
 import Vista.PanelCitasMedicasDoctor;
 import Vista.PanelExpedienteMedico;
@@ -15,14 +16,17 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
     PanelCitasMedicasDoctor panel1;
     PanelInfoCitaDoctor panel2;
     PanelExpedienteMedico panel3;
+    private CitasMedicas modelo;
     
     
-    public ctrlPantallaMenuDoctor(jfrPantallaMenuDoctor Vista, PanelChatDoctoresSinDesplegar Panel, PanelCitasMedicasDoctor Panel1, PanelInfoCitaDoctor Panel2, PanelExpedienteMedico Panel3){
+    public ctrlPantallaMenuDoctor(jfrPantallaMenuDoctor Vista, PanelChatDoctoresSinDesplegar Panel, PanelCitasMedicasDoctor Panel1, PanelInfoCitaDoctor Panel2, PanelExpedienteMedico Panel3, CitasMedicas modelo){
         this.vista = Vista;
         this.panel = Panel;
         this.panel1 = Panel1;
         this.panel2 = Panel2;
         this.panel3 = Panel3;
+        this.modelo = modelo;
+        this.modelo.cargarCardsCitasMedicas(panel1.jpCardsCitasAgendadas, vista);
         
         vista.btnMensajeria.addMouseListener(this);
         vista.btnMenuDesplegablePrincipal.addMouseListener(this);

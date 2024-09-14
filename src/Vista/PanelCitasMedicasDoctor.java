@@ -33,6 +33,7 @@ public class PanelCitasMedicasDoctor extends javax.swing.JPanel {
         jPanel6 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanelInformacionCitaDoctor = new javax.swing.JPanel();
+        jpCardsCitasAgendadas = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(50, 55, 69));
         setMinimumSize(new java.awt.Dimension(1120, 750));
@@ -86,6 +87,9 @@ public class PanelCitasMedicasDoctor extends javax.swing.JPanel {
         jPanelInformacionCitaDoctor.setPreferredSize(new java.awt.Dimension(740, 560));
         jPanelInformacionCitaDoctor.setLayout(new java.awt.BorderLayout());
         add(jPanelInformacionCitaDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, -1, -1));
+
+        jpCardsCitasAgendadas.setLayout(new java.awt.BorderLayout());
+        add(jpCardsCitasAgendadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 380, 560));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -98,6 +102,7 @@ public class PanelCitasMedicasDoctor extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     public javax.swing.JPanel jPanelInformacionCitaDoctor;
+    public javax.swing.JPanel jpCardsCitasAgendadas;
     // End of variables declaration//GEN-END:variables
 
 }

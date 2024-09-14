@@ -1,6 +1,7 @@
 package Vista;
 
 import Controlador.ctrlPantallaMenuDoctor;
+import Modelo.CitasMedicas;
 
 public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
 
@@ -16,8 +17,9 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
         PanelCitasMedicasDoctor panel1 = new PanelCitasMedicasDoctor();
         PanelInfoCitaDoctor panel2 = new PanelInfoCitaDoctor();
         PanelExpedienteMedico panel3 = new PanelExpedienteMedico();
+        CitasMedicas modelo = new CitasMedicas();
         
-        ctrlPantallaMenuDoctor controlador = new ctrlPantallaMenuDoctor(vista, panel, panel1, panel2, panel3);
+        ctrlPantallaMenuDoctor controlador = new ctrlPantallaMenuDoctor(vista, panel, panel1, panel2, panel3, modelo);
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
     } 
