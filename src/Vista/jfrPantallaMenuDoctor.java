@@ -18,7 +18,7 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
         PanelExpedienteMedico panel3 = new PanelExpedienteMedico();
         
         ctrlPantallaMenuDoctor controlador = new ctrlPantallaMenuDoctor(vista, panel, panel1, panel2, panel3);
-        
+        vista.setLocationRelativeTo(null);
         vista.setVisible(true);
     } 
 

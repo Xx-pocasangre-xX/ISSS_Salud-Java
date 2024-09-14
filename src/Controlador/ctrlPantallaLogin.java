@@ -4,6 +4,7 @@ import Modelo.Usuarios;
 import Vista.jfrPantallaLogin;
 import Vista.jfrPantallaMenuAdmin;
 import Vista.jfrPantallaMenuDoctor;
+import static Vista.jfrPantallaMenuDoctor.initjfrPantallaMenuDoctor;
 import Vista.jfrPantallaMenuJefesEnfermeria;
 import Vista.jfrRecuperacionContra;
 import java.awt.event.ActionEvent;
@@ -71,9 +72,7 @@ public class ctrlPantallaLogin implements ActionListener{
            }else{
              if (modelo.esDoctor(correo, contrasenaEncriptada)) {
                     JOptionPane.showMessageDialog(vista, "Login exitoso");
-                    jfrPantallaMenuDoctor menuDoctor = new jfrPantallaMenuDoctor();
-                    menuDoctor.setVisible(true);
-                    menuDoctor.setLocationRelativeTo(null);
+                    initjfrPantallaMenuDoctor();
                     vista.dispose();
                 } else {
                     JOptionPane.showMessageDialog(vista, "Credenciales incorrectas. Inténtalo de nuevo.");
