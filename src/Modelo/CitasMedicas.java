@@ -167,7 +167,7 @@ public class CitasMedicas {
        textPanel.setBackground(rgbColor);
        
        JLabel lblFechaCita = new JLabel("Fecha de la cita: " + citasAgendadas.getFecha_cita());
-       JLabel lblHoraCita = new JLabel("Hora de la ciat: " + citasAgendadas.getHora_cita());
+       JLabel lblHoraCita = new JLabel("Hora de la cita: " + citasAgendadas.getHora_cita());
        JLabel lblSolicitante = new JLabel("Solicitante: " + citasAgendadas.getSolicitante());
        JLabel lblDoctor = new JLabel("Doctor designado: " + citasAgendadas.getDoctor());
        
