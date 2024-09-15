@@ -1,5 +1,6 @@
 package Modelo;
 
+import Vista.PanelInfoCitaDoctor;
 import Vista.jfrPantallaMenuDoctor;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -94,7 +95,7 @@ public class CitasMedicas {
       return listaCitasMedicas;
     }
     
-    public void cargarCardsCitasMedicas(JPanel jpCardsCitasAgendadas, jfrPantallaMenuDoctor vista){
+    public void cargarCardsCitasMedicas(JPanel jpCardsCitasAgendadas, jfrPantallaMenuDoctor vista, PanelInfoCitaDoctor panel2){
        JPanel panelCards = new JPanel();
        panelCards.setLayout(new GridBagLayout());
        
@@ -110,7 +111,7 @@ public class CitasMedicas {
        int row = 0;
        
        for(CitasMedicas citaAgendada : citasAgendadas){
-          JButton card = crearCard(citaAgendada, vista);
+          JButton card = crearCard(citaAgendada, vista, panel2);
           gbc.gridy = row;
           panelCards.add(card, gbc);
         
@@ -150,7 +151,7 @@ public class CitasMedicas {
       return imagen;
     }
     
-    private JButton crearCard(CitasMedicas citasAgendadas, jfrPantallaMenuDoctor vista){
+    private JButton crearCard(CitasMedicas citasAgendadas, jfrPantallaMenuDoctor vista, PanelInfoCitaDoctor panel2){
        JButton card = new JButton();
        card.setLayout(new BorderLayout(10, 10));
        card.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -193,6 +194,33 @@ public class CitasMedicas {
        card.setMinimumSize(new Dimension(350, 100));
        card.setFocusable(true);
        
+       card.addActionListener((e) -> {
+          actualizarTextFieldsConDatos(citasAgendadas, panel2);
+       });
+       
        return card;
+    }
+    
+    private void actualizarTextFieldsConDatos(CitasMedicas citasAgendadas, PanelInfoCitaDoctor panel2){
+       panel2.txtNombreDoctor.setText(citasAgendadas.getDoctor());
+       panel2.txtCorreoPaciente.setText(citasAgendadas.getSolicitante());
+       panel2.txtFechaCita.setText(citasAgendadas.getFecha_cita());
+       panel2.txtHoraCita.setText(citasAgendadas.getHora_cita());
+       
+       String query = "SELECT u.sexo, u.dui, u.tipo_sangre FROM Usuarios u WHERE u.correo_electronico = ?";
+       
+       try(Connection conexion = ClaseConexion.getConexion();
+           PreparedStatement stmt = conexion.prepareStatement(query)){
+           stmt.setString(1, citasAgendadas.getSolicitante());
+           ResultSet rs = stmt.executeQuery();
+           
+           if(rs.next()){
+             panel2.txtSexoPaciente.setText(rs.getString("sexo"));
+             panel2.txtDuiPaciente.setText(rs.getString("dui"));
+             panel2.txtTipoSangrePaciente.setText(rs.getString("tipo_sangre"));
+           }
+       }catch(SQLException e){
+         e.printStackTrace();
+       }
     }
 }
