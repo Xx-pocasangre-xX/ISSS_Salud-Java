@@ -58,7 +58,7 @@ public class PanelInfoCitaDoctor extends javax.swing.JPanel {
         txtTipoSangrePaciente = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         txtFechaCita = new javax.swing.JTextField();
-        btnExpediente1 = new javax.swing.JButton();
+        btnExpediente = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(740, 560));
         setPreferredSize(new java.awt.Dimension(740, 560));
@@ -161,12 +161,12 @@ public class PanelInfoCitaDoctor extends javax.swing.JPanel {
         txtFechaCita.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
         jPanel7.add(txtFechaCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, 350, 30));
 
-        btnExpediente1.setBackground(new java.awt.Color(41, 72, 152));
-        btnExpediente1.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnExpediente1.setForeground(new java.awt.Color(255, 255, 255));
-        btnExpediente1.setText("Ver expediente");
-        btnExpediente1.setBorder(null);
-        jPanel7.add(btnExpediente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, 120, 40));
+        btnExpediente.setBackground(new java.awt.Color(41, 72, 152));
+        btnExpediente.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnExpediente.setForeground(new java.awt.Color(255, 255, 255));
+        btnExpediente.setText("Ver expediente");
+        btnExpediente.setBorder(null);
+        jPanel7.add(btnExpediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, 120, 40));
 
         add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 560));
     }// </editor-fold>//GEN-END:initComponents
@@ -177,7 +177,7 @@ public class PanelInfoCitaDoctor extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnExpediente1;
+    public javax.swing.JButton btnExpediente;
     public javax.swing.JButton btnLimpiar;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel10;
