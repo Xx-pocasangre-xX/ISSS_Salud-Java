@@ -97,7 +97,8 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
             panel1.repaint();
         }
         if(e.getSource() == panel3.btnEditarActualizarExpediente){
-            
+            System.err.println("He sido clickeado");
+            modelo.guardarCambiosExpediente(panel3, modelo, modelo2);
         }
     }
 

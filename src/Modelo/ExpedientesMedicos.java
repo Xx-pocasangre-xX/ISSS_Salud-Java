@@ -12,6 +12,15 @@ public class ExpedientesMedicos {
     private String salud_actual;
     private String resultados_examenes_laboratorios;
     private String fichaIngreso;
+    private int idExpediente;
+
+    public int getIdExpediente() {
+        return idExpediente;
+    }
+
+    public void setIdExpediente(int idExpediente) {
+        this.idExpediente = idExpediente;
+    }
     
      public String getDui() {
         return dui;

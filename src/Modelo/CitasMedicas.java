@@ -22,8 +22,10 @@ import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 public class CitasMedicas {
     private String fecha_cita;
@@ -31,6 +33,15 @@ public class CitasMedicas {
     private String foto_usuario;
     private String solicitante;
     private String doctor;
+    private int idUsuario;
+
+    public int getIdUsuario() {
+    return idUsuario;
+}
+
+    public void setIdUsuario(int idUsuario) {
+    this.idUsuario = idUsuario;
+}
     
     public String getFecha_cita() {
       return fecha_cita;
@@ -74,7 +85,7 @@ public class CitasMedicas {
     
     public List<CitasMedicas> obtenerCitasMedicas(){
       List<CitasMedicas> listaCitasMedicas = new ArrayList<>();
-      String query = "SELECT cm.id_cita, cm.fecha_cita, cm.hora_cita, u.foto_usuario, u.correo_electronico AS solicitante, d.nombre_doctor AS doctor FROM CitasMedicas cm INNER JOIN Usuarios u ON cm.id_usuario = u.id_usuario INNER JOIN Doctores d ON cm.id_doctor = d.id_doctor";
+      String query = "SELECT cm.id_cita, cm.fecha_cita, cm.hora_cita, u.id_usuario, u.foto_usuario, u.correo_electronico AS solicitante, d.nombre_doctor AS doctor FROM CitasMedicas cm INNER JOIN Usuarios u ON cm.id_usuario = u.id_usuario INNER JOIN Doctores d ON cm.id_doctor = d.id_doctor";
       
       try(Connection conexion = ClaseConexion.getConexion();
             PreparedStatement stmt = conexion.prepareStatement(query);
@@ -87,6 +98,7 @@ public class CitasMedicas {
             citasAgendadas.setFoto_usuario(rs.getString("foto_usuario"));
             citasAgendadas.setSolicitante(rs.getString("solicitante"));
             citasAgendadas.setDoctor(rs.getString("doctor"));
+            citasAgendadas.setIdUsuario(rs.getInt("id_usuario"));
             listaCitasMedicas.add(citasAgendadas);
           }
       }catch(SQLException e){
@@ -236,7 +248,7 @@ public class CitasMedicas {
          System.out.println("Entrando a mostrarDatosExpediente");
           panel3.txtCorreoPaciente.setText(citasAgendadas.getSolicitante());
 
-    String queryExpediente = "SELECT u.dui, u.sexo, u.telefono, u.correo_electronico, u.tipo_sangre, u.edad, e.antecedentes_familiares, e.problemas_salud_preexistentes, e.alergias, e.salud_actual, e.resultados_examenes_laboratorio, e.ficha_ingreso FROM ExpedientesMedicos e INNER JOIN Usuarios u ON e.id_usuario = u.id_usuario WHERE u.correo_electronico = ?";
+    String queryExpediente = "SELECT e.id_expediente, u.dui, u.sexo, u.telefono, u.correo_electronico, u.tipo_sangre, u.edad, e.antecedentes_familiares, e.problemas_salud_preexistentes, e.alergias, e.salud_actual, e.resultados_examenes_laboratorio, e.ficha_ingreso FROM ExpedientesMedicos e INNER JOIN Usuarios u ON e.id_usuario = u.id_usuario WHERE u.correo_electronico = ?";
 
     try (Connection conexion = ClaseConexion.getConexion();
          PreparedStatement stmt = conexion.prepareStatement(queryExpediente)) {
@@ -246,6 +258,9 @@ public class CitasMedicas {
         if (rs.next()) {
             
             System.out.println("DUI recuperado: " + rs.getString("dui"));
+            
+            int idExpediente = rs.getInt("id_expediente");
+            expedientes.setIdExpediente(idExpediente);
             
             expedientes.setDui(rs.getString("dui"));
             expedientes.setSexo(rs.getString("sexo"));
@@ -271,10 +286,84 @@ public class CitasMedicas {
             panel3.txtSaludActual.setText(expedientes.getSaludActual());
             panel3.txtExamenesDeLaboratotios.setText(expedientes.getResultadosLab());
             panel3.txtFichaIngreso.setText(expedientes.getFichaIngreso());
+            
+            panel3.txtDuiPaciente.setEditable(false);
+            panel3.txtSexoPaciente.setEditable(false);
+            panel3.txtTelefonoPaciente.setEditable(false);
+            panel3.txtTipoSangrePaciente.setEditable(false);
+            panel3.txtEdadPaciente.setEditable(false);
         }
     } catch (SQLException e) {
         e.printStackTrace();
     }
     
+    }
+    
+    public void actualizarExpediente(CitasMedicas citasAgendadas, ExpedientesMedicos expedientes, String nuevoAntecedentes, String nuevoSaludPreexistentes, String nuevoAlergias, String nuevoSaludActual, String nuevoExamenesLab, String nuevoFichaIngreso) {
+         String queryUpdate = "UPDATE ExpedientesMedicos SET antecedentes_familiares = ?, problemas_salud_preexistentes = ?, alergias = ?, salud_actual = ?, resultados_examenes_laboratorio = ?, ficha_ingreso = ? WHERE id_expediente = ?";
+        
+        try (Connection conexion = ClaseConexion.getConexion();
+                PreparedStatement stmtUpdate = conexion.prepareStatement(queryUpdate)) {
+            
+           stmtUpdate.setString(1, nuevoAntecedentes);
+        stmtUpdate.setString(2, nuevoSaludPreexistentes);
+        stmtUpdate.setString(3, nuevoAlergias);
+        stmtUpdate.setString(4, nuevoSaludActual);
+        stmtUpdate.setString(5, nuevoExamenesLab);
+        stmtUpdate.setString(6, nuevoFichaIngreso);
+        stmtUpdate.setInt(7, expedientes.getIdExpediente());
+        
+            int filasActualizadas = stmtUpdate.executeUpdate();
+            
+            if (filasActualizadas > 0) {
+            JOptionPane.showMessageDialog(null, "El expediente ha sido actualizado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "No se encontró el expediente para actualizar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al actualizar el expediente: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            ex.printStackTrace();
+        }
+    }
+    
+    public void guardarCambiosExpediente(PanelExpedienteMedico panel3, CitasMedicas citasAgendadas, ExpedientesMedicos expedientes){
+           // Obtén el texto actual de los JTextArea
+    String antecedentesFamiliaresActual = panel3.txtAntencedentesFamiliares.getText();
+    String saludPreexistentesActual = panel3.txtSaludPreexistentes.getText();
+    String alergiasActual = panel3.txtAlergias.getText();
+    String saludActual = panel3.txtSaludActual.getText();
+    String examenesLaboratorioActual = panel3.txtExamenesDeLaboratotios.getText();
+    String fichaIngresoActual = panel3.txtFichaIngreso.getText();
+
+    // Obtén los valores nuevos
+    String nuevoAntecedentesFamiliares = obtenerTextoNuevo(panel3.txtAntencedentesFamiliares, antecedentesFamiliaresActual);
+    String nuevoSaludPreexistentes = obtenerTextoNuevo(panel3.txtSaludPreexistentes, saludPreexistentesActual);
+    String nuevoAlergias = obtenerTextoNuevo(panel3.txtAlergias, alergiasActual);
+    String nuevoSaludActual = obtenerTextoNuevo(panel3.txtSaludActual, saludActual);
+    String nuevoExamenesLaboratorio = obtenerTextoNuevo(panel3.txtExamenesDeLaboratotios, examenesLaboratorioActual);
+    String nuevoFichaIngreso = obtenerTextoNuevo(panel3.txtFichaIngreso, fichaIngresoActual);
+
+    // Actualiza el texto de los JTextArea con el nuevo historial
+    panel3.txtAntencedentesFamiliares.setText(antecedentesFamiliaresActual + "\n" + nuevoAntecedentesFamiliares);
+    panel3.txtSaludPreexistentes.setText(saludPreexistentesActual + "\n" + nuevoSaludPreexistentes);
+    panel3.txtAlergias.setText(alergiasActual + "\n" + nuevoAlergias);
+    panel3.txtSaludActual.setText(saludActual + "\n" + nuevoSaludActual);
+    panel3.txtExamenesDeLaboratotios.setText(examenesLaboratorioActual + "\n" + nuevoExamenesLaboratorio);
+    panel3.txtFichaIngreso.setText(fichaIngresoActual + "\n" + nuevoFichaIngreso);
+    
+          actualizarExpediente(citasAgendadas, expedientes, panel3.txtAntencedentesFamiliares.getText(),
+            panel3.txtSaludPreexistentes.getText(), panel3.txtAlergias.getText(),
+            panel3.txtSaludActual.getText(), panel3.txtExamenesDeLaboratotios.getText(),
+            panel3.txtFichaIngreso.getText());
+    }
+    
+    private String obtenerTextoNuevo(JTextArea textArea, String textoActual){
+      String textoCompleto = textArea.getText();
+      if(textoCompleto.startsWith(textoActual)){
+         return textoCompleto.substring(textoActual.length()).trim();
+      }else{
+        return textoCompleto.trim();
+      }
     }
 }
