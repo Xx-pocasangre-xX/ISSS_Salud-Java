@@ -199,6 +199,10 @@ public class CitasMedicas {
           System.out.println("Card clicked: " + citasAgendadas.getSolicitante());
           actualizarTextFieldsConDatos(citasAgendadas, panel2);
           mostrarDatosExpediente(citasAgendadas, panel3, expedientes);
+          
+          ImageIcon iconoPaciente = cargarImagen(citasAgendadas.getFoto_usuario());
+          Image imgPaciente = iconoPaciente.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH); 
+          panel3.jlFotoPaciente.setIcon(new ImageIcon(imgPaciente));
        });
        
        return card;
