@@ -6,6 +6,7 @@ package Vista;
 
 import Controlador.ctrlPantallaMenuDoctor;
 import Modelo.CitasMedicas;
+import Modelo.ExpedientesMedicos;
 
 /**
  *
@@ -28,8 +29,9 @@ public class PanelInfoCitaDoctor extends javax.swing.JPanel {
         PanelInfoCitaDoctor panel2 = new PanelInfoCitaDoctor();
         PanelExpedienteMedico panel3 = new PanelExpedienteMedico();
         CitasMedicas modelo = new CitasMedicas();
+        ExpedientesMedicos modelo2 = new ExpedientesMedicos();
         
-        ctrlPantallaMenuDoctor controlador = new ctrlPantallaMenuDoctor(vista, panel, panel1, panel2, panel3, modelo);
+        ctrlPantallaMenuDoctor controlador = new ctrlPantallaMenuDoctor(vista, panel, panel1, panel2, panel3, modelo, modelo2);
         
     }
 

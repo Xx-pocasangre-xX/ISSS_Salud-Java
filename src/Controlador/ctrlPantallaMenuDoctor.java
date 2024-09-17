@@ -1,6 +1,7 @@
 package Controlador;
 
 import Modelo.CitasMedicas;
+import Modelo.ExpedientesMedicos;
 import Vista.PanelChatDoctoresSinDesplegar;
 import Vista.PanelCitasMedicasDoctor;
 import Vista.PanelExpedienteMedico;
@@ -17,16 +18,17 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
     PanelInfoCitaDoctor panel2;
     PanelExpedienteMedico panel3;
     private CitasMedicas modelo;
+    private ExpedientesMedicos modelo2;
     
-    
-    public ctrlPantallaMenuDoctor(jfrPantallaMenuDoctor Vista, PanelChatDoctoresSinDesplegar Panel, PanelCitasMedicasDoctor Panel1, PanelInfoCitaDoctor Panel2, PanelExpedienteMedico Panel3, CitasMedicas modelo){
+    public ctrlPantallaMenuDoctor(jfrPantallaMenuDoctor Vista, PanelChatDoctoresSinDesplegar Panel, PanelCitasMedicasDoctor Panel1, PanelInfoCitaDoctor Panel2, PanelExpedienteMedico Panel3, CitasMedicas modelo, ExpedientesMedicos modelo2){
         this.vista = Vista;
         this.panel = Panel;
         this.panel1 = Panel1;
         this.panel2 = Panel2;
         this.panel3 = Panel3;
         this.modelo = modelo;
-        this.modelo.cargarCardsCitasMedicas(panel1.jpCardsCitasAgendadas, vista, panel2);
+        this.modelo2 = modelo2;
+        this.modelo.cargarCardsCitasMedicas(panel1.jpCardsCitasAgendadas, vista, panel2, panel3, modelo2);
         
         vista.btnMensajeria.addMouseListener(this);
         vista.btnMenuDesplegablePrincipal.addMouseListener(this);
@@ -74,7 +76,6 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
             vista.repaint(); 
         }
         if(e.getSource() == panel2.btnExpediente){
-            
             panel1.jPanelInformacionCitaDoctor.removeAll();
             panel1.jPanelInformacionCitaDoctor.add(panel3);
             panel2.initPanelInfoCitaDoctor();
@@ -83,12 +84,12 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
             
             if (panel1.jPanelInformacionCitaDoctor.getComponentCount() > 0 && panel1.jPanelInformacionCitaDoctor.getComponent(0) == panel3) {
                 System.out.println("PanelExpedienteMedico agregado correctamente.");
+                
             } else {
                 System.out.println("Error: No se pudo agregar PanelExpedienteMedico.");
             }
         }
         if(e.getSource() == panel3.btnRegresar){
-            
             panel1.jPanelInformacionCitaDoctor.removeAll();
             panel1.jPanelInformacionCitaDoctor.add(panel2);
             panel3.initPanelExpedienteMedico();

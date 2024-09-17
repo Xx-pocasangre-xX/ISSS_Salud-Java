@@ -1,5 +1,6 @@
 package Modelo;
 
+import Vista.PanelExpedienteMedico;
 import Vista.PanelInfoCitaDoctor;
 import Vista.jfrPantallaMenuDoctor;
 import java.awt.BorderLayout;
@@ -95,7 +96,7 @@ public class CitasMedicas {
       return listaCitasMedicas;
     }
     
-    public void cargarCardsCitasMedicas(JPanel jpCardsCitasAgendadas, jfrPantallaMenuDoctor vista, PanelInfoCitaDoctor panel2){
+    public void cargarCardsCitasMedicas(JPanel jpCardsCitasAgendadas, jfrPantallaMenuDoctor vista, PanelInfoCitaDoctor panel2, PanelExpedienteMedico panel3, ExpedientesMedicos expedientes){
        JPanel panelCards = new JPanel();
        panelCards.setLayout(new GridBagLayout());
        
@@ -111,7 +112,7 @@ public class CitasMedicas {
        int row = 0;
        
        for(CitasMedicas citaAgendada : citasAgendadas){
-          JButton card = crearCard(citaAgendada, vista, panel2);
+          JButton card = crearCard(citaAgendada, vista, panel2, panel3, expedientes);
           gbc.gridy = row;
           panelCards.add(card, gbc);
         
@@ -134,7 +135,7 @@ public class CitasMedicas {
        jpCardsCitasAgendadas.repaint();
     }
     
-    private ImageIcon cargarImagen(String path){
+    public ImageIcon cargarImagen(String path){
        ImageIcon imagen = null;
        try{
         if(path.startsWith("http")){
@@ -151,7 +152,7 @@ public class CitasMedicas {
       return imagen;
     }
     
-    private JButton crearCard(CitasMedicas citasAgendadas, jfrPantallaMenuDoctor vista, PanelInfoCitaDoctor panel2){
+    private JButton crearCard(CitasMedicas citasAgendadas, jfrPantallaMenuDoctor vista, PanelInfoCitaDoctor panel2, PanelExpedienteMedico panel3, ExpedientesMedicos expedientes){
        JButton card = new JButton();
        card.setLayout(new BorderLayout(10, 10));
        card.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -195,7 +196,9 @@ public class CitasMedicas {
        card.setFocusable(true);
        
        card.addActionListener((e) -> {
+          System.out.println("Card clicked: " + citasAgendadas.getSolicitante());
           actualizarTextFieldsConDatos(citasAgendadas, panel2);
+          mostrarDatosExpediente(citasAgendadas, panel3, expedientes);
        });
        
        return card;
@@ -222,5 +225,52 @@ public class CitasMedicas {
        }catch(SQLException e){
          e.printStackTrace();
        }
+}
+    
+    private void mostrarDatosExpediente(CitasMedicas citasAgendadas, PanelExpedienteMedico panel3, ExpedientesMedicos expedientes){
+        
+         System.out.println("Entrando a mostrarDatosExpediente");
+          panel3.txtCorreoPaciente.setText(citasAgendadas.getSolicitante());
+
+    String queryExpediente = "SELECT u.dui, u.sexo, u.telefono, u.correo_electronico, u.tipo_sangre, u.edad, e.antecedentes_familiares, e.problemas_salud_preexistentes, e.alergias, e.salud_actual, e.resultados_examenes_laboratorio, e.ficha_ingreso FROM ExpedientesMedicos e INNER JOIN Usuarios u ON e.id_usuario = u.id_usuario WHERE u.correo_electronico = ?";
+
+    try (Connection conexion = ClaseConexion.getConexion();
+         PreparedStatement stmt = conexion.prepareStatement(queryExpediente)) {
+        stmt.setString(1, citasAgendadas.getSolicitante());
+        ResultSet rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            
+            System.out.println("DUI recuperado: " + rs.getString("dui"));
+            
+            expedientes.setDui(rs.getString("dui"));
+            expedientes.setSexo(rs.getString("sexo"));
+            expedientes.setTelefono(rs.getString("telefono"));
+            expedientes.setTipo_sangre(rs.getString("tipo_sangre"));
+            expedientes.setEdad(rs.getString("edad"));
+            expedientes.setAntecedentes(rs.getString("antecedentes_familiares"));
+            expedientes.setProblemasSalud(rs.getString("problemas_salud_preexistentes"));
+            expedientes.setAlergias(rs.getString("alergias"));
+            expedientes.setSaludActual(rs.getString("salud_actual"));
+            expedientes.setResultadosLab(rs.getString("resultados_examenes_laboratorio"));
+            expedientes.setFichaIngreso(rs.getString("ficha_ingreso"));
+
+            
+            panel3.txtDuiPaciente.setText(expedientes.getDui());
+            panel3.txtSexoPaciente.setText(expedientes.getSexo());
+            panel3.txtTelefonoPaciente.setText(expedientes.getTelefono());
+            panel3.txtTipoSangrePaciente.setText(expedientes.getTipo_Sangre());
+            panel3.txtEdadPaciente.setText(expedientes.getEdad());
+            panel3.txtAntencedentesFamiliares.setText(expedientes.getAntecedentes());
+            panel3.txtSaludPreexistentes.setText(expedientes.getProblemasSalud());
+            panel3.txtAlergias.setText(expedientes.getAlergias());
+            panel3.txtSaludActual.setText(expedientes.getSaludActual());
+            panel3.txtExamenesDeLaboratotios.setText(expedientes.getResultadosLab());
+            panel3.txtFichaIngreso.setText(expedientes.getFichaIngreso());
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    
     }
 }
