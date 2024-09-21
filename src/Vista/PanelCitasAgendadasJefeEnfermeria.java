@@ -107,7 +107,7 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
 
         jLabel8.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Dirección");
+        jLabel8.setText("Ubicación");
         jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
