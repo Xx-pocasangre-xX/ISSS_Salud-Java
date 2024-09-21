@@ -15,8 +15,6 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
      */
     public PanelSolicitudesCitas() {
         initComponents();
-        
-       
     }
 
     /**
@@ -30,6 +28,7 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
 
         jPanel5 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        jpCardsDoctores = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
@@ -47,6 +46,7 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
         btnAgendarCita = new javax.swing.JButton();
         txtTipoSangre = new javax.swing.JTextField();
         jpCardsSolicitudCitas = new javax.swing.JPanel();
+        jpCardsDoctores1 = new javax.swing.JPanel();
 
         setMaximumSize(new java.awt.Dimension(1120, 640));
         setMinimumSize(new java.awt.Dimension(1120, 640));
@@ -61,6 +61,11 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Solicitudes");
         jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 25, 130, -1));
+
+        jpCardsDoctores.setBackground(new java.awt.Color(70, 76, 92));
+        jpCardsDoctores.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(156, 156, 156)));
+        jpCardsDoctores.setLayout(new java.awt.BorderLayout());
+        jPanel5.add(jpCardsDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 480, 650));
 
         jPanel6.setBackground(new java.awt.Color(62, 68, 83));
         jPanel6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(156, 156, 156)));
@@ -147,6 +152,11 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
         jpCardsSolicitudCitas.setBackground(new java.awt.Color(50, 55, 69));
         jpCardsSolicitudCitas.setLayout(new java.awt.BorderLayout());
 
+        jpCardsDoctores1.setBackground(new java.awt.Color(70, 76, 92));
+        jpCardsDoctores1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(156, 156, 156)));
+        jpCardsDoctores1.setLayout(new java.awt.BorderLayout());
+        jpCardsSolicitudCitas.add(jpCardsDoctores1, java.awt.BorderLayout.LINE_END);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -154,8 +164,8 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jpCardsSolicitudCitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jpCardsSolicitudCitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -166,9 +176,11 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jpCardsSolicitudCitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(0, 0, 0)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jpCardsSolicitudCitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -186,6 +198,8 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    public javax.swing.JPanel jpCardsDoctores;
+    public javax.swing.JPanel jpCardsDoctores1;
     public javax.swing.JPanel jpCardsSolicitudCitas;
     public javax.swing.JTextField txtCorreo;
     public javax.swing.JTextField txtDUI;
