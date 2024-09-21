@@ -4,8 +4,6 @@
  */
 package Vista;
 
-import Controlador.ctrlPantallaMenuJefesEnfermeria;
-
 /**
  *
  * @author ricar
@@ -18,12 +16,7 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
     public PanelSolicitudesCitas() {
         initComponents();
         
-        jfrPantallaMenuJefesEnfermeria vista = new jfrPantallaMenuJefesEnfermeria();
-        PanelSolicitudesCitas panel = new PanelSolicitudesCitas() ;
-        PanelCitasAgendadasJefeEnfermeria Panel1 = new PanelCitasAgendadasJefeEnfermeria();
-        jfrActualizarCita MiniPanel2 = new jfrActualizarCita();
-        jfrAgendarCitasJefesEnfermeria MiniPanel1 = new jfrAgendarCitasJefesEnfermeria();
-        ctrlPantallaMenuJefesEnfermeria controlador = new ctrlPantallaMenuJefesEnfermeria(vista, panel, Panel1, MiniPanel2, MiniPanel1);
+       
     }
 
     /**

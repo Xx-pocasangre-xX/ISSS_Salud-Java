@@ -3,9 +3,8 @@ package Controlador;
 import Modelo.Usuarios;
 import Vista.jfrPantallaLogin;
 import Vista.jfrPantallaMenuAdminDoctores;
-import Vista.jfrPantallaMenuDoctor;
 import static Vista.jfrPantallaMenuDoctor.initjfrPantallaMenuDoctor;
-import Vista.jfrPantallaMenuJefesEnfermeria;
+import static Vista.jfrPantallaMenuJefesEnfermeria.initjfrPantallaMenuJefesEnfermeria;
 import Vista.jfrRecuperacionContra;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -57,9 +56,7 @@ public class ctrlPantallaLogin implements ActionListener{
                     
                     case 3: 
                     JOptionPane.showMessageDialog(vista, "Login exitoso");
-                    jfrPantallaMenuJefesEnfermeria menuJefesEnfermeria = new jfrPantallaMenuJefesEnfermeria();
-                    menuJefesEnfermeria.setVisible(true);
-                    menuJefesEnfermeria.setLocationRelativeTo(null);
+                    initjfrPantallaMenuJefesEnfermeria();
                     vista.dispose();
                     break;
                     

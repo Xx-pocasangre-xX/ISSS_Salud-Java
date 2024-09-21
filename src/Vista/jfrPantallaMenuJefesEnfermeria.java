@@ -20,12 +20,15 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
     }
     
     public static void initjfrPantallaMenuJefesEnfermeria(){
+        
         jfrPantallaMenuJefesEnfermeria vista = new jfrPantallaMenuJefesEnfermeria();
         PanelSolicitudesCitas panel = new PanelSolicitudesCitas() ;
         PanelCitasAgendadasJefeEnfermeria Panel1 = new PanelCitasAgendadasJefeEnfermeria();
         jfrActualizarCita MiniPanel2 = new jfrActualizarCita();
         jfrAgendarCitasJefesEnfermeria MiniPanel1 = new jfrAgendarCitasJefesEnfermeria();
+        
         ctrlPantallaMenuJefesEnfermeria controlador = new ctrlPantallaMenuJefesEnfermeria(vista, panel, Panel1, MiniPanel2, MiniPanel1);
+        vista.setLocationRelativeTo(null);
         vista.setVisible(true);
     } 
 

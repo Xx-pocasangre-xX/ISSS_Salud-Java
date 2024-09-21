@@ -30,7 +30,7 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
         panel1.btnActualizarCita.addMouseListener(this);
         miniPanel2.btnGuardarCambios.addMouseListener(this);
         
-        PanelSolicitudesCitas panel = new PanelSolicitudesCitas();
+        
         vista.jPanelInfoJefes.add(panel);
     }
 
