@@ -67,7 +67,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton2.setBackground(new java.awt.Color(41, 72, 152));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/administrador modo oscuro.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AgregarJefesEnfermeria.png"))); // NOI18N
         jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,7 +82,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         btnAgregarJefes.setBackground(new java.awt.Color(62, 68, 83));
-        btnAgregarJefes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AgregarJefesEnfermeria.png"))); // NOI18N
+        btnAgregarJefes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnNoticiasModoOscuro.png"))); // NOI18N
         btnAgregarJefes.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
         jPanel2.add(btnAgregarJefes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 80, 70));
 
@@ -107,7 +107,7 @@ public class jfrPantallaMenuAdmin extends javax.swing.JFrame {
         jpCardsDoctores.setBackground(new java.awt.Color(70, 76, 92));
         jpCardsDoctores.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(156, 156, 156)));
         jpCardsDoctores.setLayout(new java.awt.BorderLayout());
-        jPanel1.add(jpCardsDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 490, 650));
+        jPanel1.add(jpCardsDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 480, 650));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
