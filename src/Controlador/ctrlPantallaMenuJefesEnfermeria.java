@@ -1,5 +1,6 @@
 package Controlador;
 
+import Modelo.SolicitudCitas;
 import Vista.PanelCitasAgendadasJefeEnfermeria;
 import Vista.PanelSolicitudesCitas;
 import Vista.jfrActualizarCita;
@@ -15,13 +16,16 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
     PanelCitasAgendadasJefeEnfermeria panel1;
     jfrActualizarCita miniPanel2;
     jfrAgendarCitasJefesEnfermeria miniPanel1;
+    SolicitudCitas modelo;
     
-    public ctrlPantallaMenuJefesEnfermeria(jfrPantallaMenuJefesEnfermeria Vista, PanelSolicitudesCitas Panel, PanelCitasAgendadasJefeEnfermeria Panel1, jfrActualizarCita MiniPanel2, jfrAgendarCitasJefesEnfermeria MiniPanel1){
+    public ctrlPantallaMenuJefesEnfermeria(jfrPantallaMenuJefesEnfermeria Vista, PanelSolicitudesCitas Panel, PanelCitasAgendadasJefeEnfermeria Panel1, jfrActualizarCita MiniPanel2, jfrAgendarCitasJefesEnfermeria MiniPanel1, SolicitudCitas modelo){
         this.vista = Vista;
         this.panel = Panel;
         this.panel1 = Panel1;
         this.miniPanel1 = MiniPanel1;
         this.miniPanel2 = MiniPanel2;
+        this.modelo = modelo;
+        this.modelo.cargarCardsSolicitudCitas(panel.jpCardsSolicitudCitas);
         
         vista.btnSolicitudes.addMouseListener(this);
         vista.btnAgendadas.addMouseListener(this);
@@ -79,6 +83,7 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
         if(e.getSource() == vista.btnSolicitudes){
             //1-Creo un objeto del panel que quiero mostrar
             PanelSolicitudesCitas objMenu = new PanelSolicitudesCitas();
+            this.modelo.cargarCardsSolicitudCitas(objMenu.jpCardsSolicitudCitas);
             vista.btnAgendadas.setBackground(new java.awt.Color(183, 184, 187));
             vista.btnSolicitudes.setBackground(new java.awt.Color(41, 72, 152));
             
