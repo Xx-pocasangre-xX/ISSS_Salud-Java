@@ -21,6 +21,7 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -364,6 +365,58 @@ public class CitasMedicas {
          return textoCompleto.substring(textoActual.length()).trim();
       }else{
         return textoCompleto.trim();
+      }
+    }
+    
+    public ArrayList<String> obtenerDoctores(){
+      Connection conexion = ClaseConexion.getConexion();
+      ArrayList<String> doctores = new ArrayList<>();
+      String query = "SELECT nombre_doctor FROM Doctores";
+      
+      try(PreparedStatement stmt = conexion.prepareStatement(query);
+              ResultSet rs = stmt.executeQuery()){
+          
+          while(rs.next()){
+             doctores.add(rs.getString("nombre_doctor"));
+          }
+      }catch(SQLException e){
+        e.printStackTrace();
+      }
+      
+      return doctores;
+    }
+    
+    public ArrayList<String> obtenerPacientes(){
+      Connection conexion = ClaseConexion.getConexion();
+      ArrayList<String> pacientes = new ArrayList<>();
+      String query = "SELECT correo_electronico FROM Usuarios WHERE id_rol = 2";
+      
+      try(PreparedStatement stmt = conexion.prepareStatement(query);
+           ResultSet rs = stmt.executeQuery()){
+      
+          while(rs.next()){
+            pacientes.add(rs.getString("correo_electronico"));
+          }
+      }catch(SQLException e){
+        e.printStackTrace();
+      }
+      
+      return pacientes;
+    }
+    
+    public void cargarDoctores(JComboBox cbDoctor){
+      ArrayList<String> doctores = obtenerDoctores();
+      cbDoctor.removeAllItems();
+      for(String doctor2 : doctores){
+        cbDoctor.addItem(doctor2);
+      }
+    }
+    
+    public void cargarPacientes(JComboBox cbPacientes){
+      ArrayList<String> pacientes = obtenerPacientes();
+      cbPacientes.removeAllItems();
+      for(String paciente : pacientes){
+        cbPacientes.addItem(paciente);
       }
     }
 }

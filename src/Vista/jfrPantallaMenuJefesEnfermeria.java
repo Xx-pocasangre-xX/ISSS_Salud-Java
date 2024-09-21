@@ -5,6 +5,7 @@
 package Vista;
 
 import Controlador.ctrlPantallaMenuJefesEnfermeria;
+import Modelo.CitasMedicas;
 import Modelo.SolicitudCitas;
 
 /**
@@ -28,8 +29,9 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
         jfrActualizarCita MiniPanel2 = new jfrActualizarCita();
         jfrAgendarCitasJefesEnfermeria MiniPanel1 = new jfrAgendarCitasJefesEnfermeria();
         SolicitudCitas modelo = new SolicitudCitas();
+        CitasMedicas modelo2 = new CitasMedicas();
         
-        ctrlPantallaMenuJefesEnfermeria controlador = new ctrlPantallaMenuJefesEnfermeria(vista, panel, Panel1, MiniPanel2, MiniPanel1, modelo);
+        ctrlPantallaMenuJefesEnfermeria controlador = new ctrlPantallaMenuJefesEnfermeria(vista, panel, Panel1, MiniPanel2, MiniPanel1, modelo, modelo2);
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
     } 
