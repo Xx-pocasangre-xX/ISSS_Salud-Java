@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import Controlador.ctrlPantallaMenuJefesEnfermeria;
+
 /**
  *
  * @author ricar
@@ -16,6 +18,16 @@ public class jfrActualizarCita extends javax.swing.JFrame {
     public jfrActualizarCita() {
         initComponents();
     }
+    
+    public static void initjfrActualizarCita(){
+        jfrPantallaMenuJefesEnfermeria vista = new jfrPantallaMenuJefesEnfermeria();
+        PanelSolicitudesCitas panel = new PanelSolicitudesCitas() ;
+        PanelCitasAgendadasJefeEnfermeria Panel1 = new PanelCitasAgendadasJefeEnfermeria();
+        jfrActualizarCita MiniPanel2 = new jfrActualizarCita();
+        jfrAgendarCitasJefesEnfermeria MiniPanel1 = new jfrAgendarCitasJefesEnfermeria();
+        ctrlPantallaMenuJefesEnfermeria controlador = new ctrlPantallaMenuJefesEnfermeria(vista, panel, Panel1, MiniPanel2, MiniPanel1);
+        vista.setVisible(true);
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,31 +39,30 @@ public class jfrActualizarCita extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         txtHora = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         txtDia = new javax.swing.JTextField();
-        btnActualizarCita = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        btnGuardarCambios = new javax.swing.JButton();
+        cmbNombreDoctor = new javax.swing.JComboBox<>();
+        cmbEspecialista = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(760, 560));
-        setPreferredSize(new java.awt.Dimension(760, 560));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(70, 76, 92));
         jPanel1.setMinimumSize(new java.awt.Dimension(760, 560));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(70, 76, 92));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ImagenBtnRegresarModoOscuro.png"))); // NOI18N
-        jButton1.setToolTipText("");
-        jButton1.setBorder(null);
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 50));
+        btnRegresar.setBackground(new java.awt.Color(70, 76, 92));
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ImagenBtnRegresarModoOscuro.png"))); // NOI18N
+        btnRegresar.setToolTipText("");
+        btnRegresar.setBorder(null);
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 50));
 
         jLabel11.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -83,33 +94,33 @@ public class jfrActualizarCita extends javax.swing.JFrame {
         txtDia.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
         jPanel1.add(txtDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 270, 30));
 
-        btnActualizarCita.setBackground(new java.awt.Color(41, 72, 152));
-        btnActualizarCita.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnActualizarCita.setText("Guardar cambios");
-        btnActualizarCita.setBorder(null);
-        btnActualizarCita.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardarCambios.setBackground(new java.awt.Color(41, 72, 152));
+        btnGuardarCambios.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnGuardarCambios.setText("Guardar cambios");
+        btnGuardarCambios.setBorder(null);
+        btnGuardarCambios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActualizarCitaActionPerformed(evt);
+                btnGuardarCambiosActionPerformed(evt);
             }
         });
-        jPanel1.add(btnActualizarCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 160, 40));
+        jPanel1.add(btnGuardarCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 160, 40));
 
-        jComboBox1.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 270, 30));
+        cmbNombreDoctor.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        cmbNombreDoctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(cmbNombreDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 270, 30));
 
-        jComboBox2.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 270, 30));
+        cmbEspecialista.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        cmbEspecialista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(cmbEspecialista, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 270, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnActualizarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarCitaActionPerformed
+    private void btnGuardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCambiosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnActualizarCitaActionPerformed
+    }//GEN-LAST:event_btnGuardarCambiosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,16 +152,16 @@ public class jfrActualizarCita extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new jfrActualizarCita().setVisible(true);
+                initjfrActualizarCita();
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnActualizarCita;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    public javax.swing.JButton btnGuardarCambios;
+    public javax.swing.JButton btnRegresar;
+    public javax.swing.JComboBox<String> cmbEspecialista;
+    public javax.swing.JComboBox<String> cmbNombreDoctor;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
