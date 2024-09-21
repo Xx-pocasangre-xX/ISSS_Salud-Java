@@ -46,11 +46,7 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
         txtCorreo = new javax.swing.JTextField();
         btnAgendarCita = new javax.swing.JButton();
         txtTipoSangre = new javax.swing.JTextField();
-<<<<<<< HEAD
         jpCardsSolicitudCitas = new javax.swing.JPanel();
-=======
-        jpCardsSolicitudesJefes = new javax.swing.JPanel();
->>>>>>> 52b4eda238b84350d7ba606971613501a4db29a1
 
         setMaximumSize(new java.awt.Dimension(1120, 640));
         setMinimumSize(new java.awt.Dimension(1120, 640));
@@ -148,13 +144,8 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
         txtTipoSangre.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
         jPanel7.add(txtTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 150, 30));
 
-<<<<<<< HEAD
         jpCardsSolicitudCitas.setBackground(new java.awt.Color(50, 55, 69));
         jpCardsSolicitudCitas.setLayout(new java.awt.BorderLayout());
-=======
-        jpCardsSolicitudesJefes.setBackground(new java.awt.Color(50, 55, 69));
-        jpCardsSolicitudesJefes.setLayout(new java.awt.BorderLayout());
->>>>>>> 52b4eda238b84350d7ba606971613501a4db29a1
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -163,11 +154,7 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-<<<<<<< HEAD
                     .addComponent(jpCardsSolicitudCitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-=======
-                    .addComponent(jpCardsSolicitudesJefes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
->>>>>>> 52b4eda238b84350d7ba606971613501a4db29a1
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
