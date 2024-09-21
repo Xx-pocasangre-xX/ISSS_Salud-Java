@@ -70,10 +70,10 @@ public class jfrPantallaMenuAdminDoctores extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnAgregarTrabajadores.setBackground(new java.awt.Color(41, 72, 152));
-        btnAgregarTrabajadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AgregarJefesEnfermeria.png"))); // NOI18N
-        btnAgregarTrabajadores.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
-        btnAgregarTrabajadores.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setBackground(new java.awt.Color(41, 72, 152));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AgregarJefesEnfermeria.png"))); // NOI18N
+        jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarTrabajadoresActionPerformed(evt);
             }
