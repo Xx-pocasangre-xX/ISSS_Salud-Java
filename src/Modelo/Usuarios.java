@@ -1,10 +1,63 @@
 package Modelo;
 
+import Vista.jfrPantallaMenuDoctor;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Image;
+import java.awt.Insets;
+import java.io.IOException;
+import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 public class Usuarios {
+    
+    @Override
+public String toString() {
+    return "Correo Electrónico: " + correo_electronico + ", Foto Usuario: " + foto_usuario;
+}
+    
+    private String foto_usuario;
+    private String correo_electronico;
+    
+    public String getFoto_usuario2() {
+        
+       return foto_usuario;
+    
+    }
+
+    public void setFoto_Usuario2(String foto_usuario) {
+        
+       this.foto_usuario = foto_usuario;
+    
+    }
+    
+    public String getCorreo_Electronico2() {
+        
+       return correo_electronico;
+    
+    }
+
+    public void setCorreo_Electronico2(String correo_electronico) {
+        
+       this.correo_electronico = correo_electronico;
+    
+    }
     
     public int validarCredenciales(String correo, String contrasena){
        String query = "SELECT id_rol FROM Usuarios WHERE correo_electronico = ? AND contrasena = ?";
@@ -89,5 +142,116 @@ public class Usuarios {
          e.printStackTrace();
        }
        return false;
+    }
+    
+    public List<Usuarios> obtenerPacientes(){
+       List<Usuarios> listaPacientes = new ArrayList<>();
+       String query = "SELECT foto_usuario, correo_electronico from Usuarios WHERE id_rol = 2";
+       
+       try(Connection conexion = ClaseConexion.getConexion();
+           PreparedStatement stmt = conexion.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery()){
+           
+               while(rs.next()){
+                 Usuarios pacientes = new Usuarios();
+                 pacientes.setFoto_Usuario2(rs.getString("foto_usuario"));
+                 pacientes.setCorreo_Electronico2(rs.getString("correo_electronico"));
+                 listaPacientes.add(pacientes);
+                 System.err.println("Esta es la lista de pacientes:" + listaPacientes);
+               }
+            }catch(SQLException e){
+              e.printStackTrace();
+            }
+       return listaPacientes;
+    }
+    
+    public void cargarCardsPacientes(JPanel jPanelChatsDoctores){
+       JPanel panelCards = new JPanel();
+       panelCards.setLayout(new GridBagLayout());
+       
+       Color rgbColor = new Color(70, 76, 92);
+       panelCards.setBackground(rgbColor);
+       
+       GridBagConstraints gbc = new GridBagConstraints();
+       gbc.insets = new Insets(10, 10, 10, 10);
+       gbc.fill = GridBagConstraints.HORIZONTAL;
+       gbc.weightx = 1.0;
+       
+       List<Usuarios> pacientes = obtenerPacientes();
+       int row = 0;
+       
+       for(Usuarios paciente : pacientes){
+          JButton card = crearCard(paciente);
+          gbc.gridy = row;
+          panelCards.add(card, gbc);
+        
+          gbc.gridy = row + 1;
+          panelCards.add(Box.createRigidArea(new Dimension(0, 20))); 
+        
+          row += 2;
+       }
+       
+       jPanelChatsDoctores.removeAll();
+       
+       JScrollPane scrollPane = new JScrollPane(panelCards);
+       scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+       
+       jPanelChatsDoctores.setLayout(new BorderLayout());
+       jPanelChatsDoctores.add(scrollPane, BorderLayout.CENTER);
+       jPanelChatsDoctores.setBackground(rgbColor);
+       
+       jPanelChatsDoctores.revalidate();
+       jPanelChatsDoctores.repaint();
+    }
+    
+    public ImageIcon cargarImagen(String path){
+       ImageIcon imagen = null;
+       try{
+        if(path.startsWith("http")){
+          URL url = new URL(path);
+          Image img = ImageIO.read(url);
+          imagen = new ImageIcon(img);
+        }else{
+          imagen = new ImageIcon(path);
+        }
+      }catch(IOException e){
+        System.out.println("No se pudo cargar la imagen: " + path + ", usando imagen por defecto.");
+        imagen = new ImageIcon("Imagenes/profile.jpg");
+      }
+      return imagen;
+    }
+    
+    private JButton crearCard(Usuarios pacientes){
+      JButton card = new JButton();
+       card.setLayout(new BorderLayout(10, 10));
+       card.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+       
+       Color rgbColor = new Color(41, 72, 152);
+       card.setBackground(rgbColor);
+       
+       ImageIcon iconoPacientes = cargarImagen(pacientes.getFoto_usuario2());
+       Image img = iconoPacientes.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+       JLabel lblFoto = new JLabel(new ImageIcon(img));
+       
+       JPanel textPanel = new JPanel();
+       textPanel.setLayout(new BoxLayout(textPanel, BoxLayout.Y_AXIS));
+       textPanel.setBackground(rgbColor);
+       
+       JLabel lblNombrePaciente = new JLabel(pacientes.getCorreo_Electronico2());
+       
+       lblNombrePaciente.setAlignmentX(JLabel.LEFT_ALIGNMENT);
+       lblNombrePaciente.setForeground(Color.WHITE);
+       
+       textPanel.add(lblNombrePaciente);
+       
+       card.add(lblFoto, BorderLayout.WEST);
+       card.add(textPanel, BorderLayout.CENTER);
+       
+       card.setPreferredSize(new Dimension(300, 80));
+       card.setMaximumSize(new Dimension(300, 80));
+       card.setMinimumSize(new Dimension(300, 80));
+       card.setFocusable(true);
+       
+       return card;
     }
 }

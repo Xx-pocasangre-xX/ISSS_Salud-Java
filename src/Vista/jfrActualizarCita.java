@@ -40,7 +40,6 @@ public class jfrActualizarCita extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(760, 560));
-        setPreferredSize(new java.awt.Dimension(760, 560));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(70, 76, 92));
@@ -56,12 +55,12 @@ public class jfrActualizarCita extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Especialista");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 120, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 120, -1));
 
         jLabel12.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Nombre del doctor");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 180, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, 180, -1));
 
         jLabel13.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));

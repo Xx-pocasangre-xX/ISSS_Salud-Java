@@ -3,6 +3,7 @@ package Vista;
 import Controlador.ctrlPantallaMenuDoctor;
 import Modelo.CitasMedicas;
 import Modelo.ExpedientesMedicos;
+import Modelo.Usuarios;
 
 public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
 
@@ -20,8 +21,9 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
         PanelExpedienteMedico panel3 = new PanelExpedienteMedico();
         CitasMedicas modelo = new CitasMedicas();
         ExpedientesMedicos modelo2 = new ExpedientesMedicos();
+        Usuarios modelo3 = new Usuarios();
         
-        ctrlPantallaMenuDoctor controlador = new ctrlPantallaMenuDoctor(vista, panel, panel1, panel2, panel3, modelo, modelo2);
+        ctrlPantallaMenuDoctor controlador = new ctrlPantallaMenuDoctor(vista, panel, panel1, panel2, panel3, modelo, modelo2, modelo3);
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
     } 
