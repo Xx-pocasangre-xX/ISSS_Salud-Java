@@ -19,8 +19,11 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
         initComponents();
         
         jfrPantallaMenuJefesEnfermeria vista = new jfrPantallaMenuJefesEnfermeria();
-        PanelSolicitudesCitas panel = this;
-        ctrlPantallaMenuJefesEnfermeria controlador = new ctrlPantallaMenuJefesEnfermeria(vista, panel);
+        PanelSolicitudesCitas panel = new PanelSolicitudesCitas() ;
+        PanelCitasAgendadasJefeEnfermeria Panel1 = new PanelCitasAgendadasJefeEnfermeria();
+        jfrActualizarCita MiniPanel2 = new jfrActualizarCita();
+        jfrAgendarCitasJefesEnfermeria MiniPanel1 = new jfrAgendarCitasJefesEnfermeria();
+        ctrlPantallaMenuJefesEnfermeria controlador = new ctrlPantallaMenuJefesEnfermeria(vista, panel, Panel1, MiniPanel2, MiniPanel1);
     }
 
     /**
