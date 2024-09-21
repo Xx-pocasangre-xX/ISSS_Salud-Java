@@ -3,30 +3,30 @@ package Controlador;
 import Modelo.Doctores;
 import Modelo.EspecialidadDoctores;
 import Modelo.UnidadesMedicas;
-import Vista.jfrPantallaMenuAdmin;
+import Vista.jfrPantallaMenuAdminDoctores;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 public class ctrlPantallaMenuAdmin {
-    private jfrPantallaMenuAdmin vista;
+    private jfrPantallaMenuAdminDoctores vista;
     private EspecialidadDoctores modelo;
     private UnidadesMedicas modelo2;
     private Doctores modelo3;
     
-    public ctrlPantallaMenuAdmin(jfrPantallaMenuAdmin vista, EspecialidadDoctores modelo){
+    public ctrlPantallaMenuAdmin(jfrPantallaMenuAdminDoctores vista, EspecialidadDoctores modelo){
        this.vista = vista;
        this.modelo = modelo;
        this.modelo.cargarEspecialidadesMedicas(vista.cbEspecialidadesMedicas);
     }
     
-    public ctrlPantallaMenuAdmin(jfrPantallaMenuAdmin vista, UnidadesMedicas modelo2){
+    public ctrlPantallaMenuAdmin(jfrPantallaMenuAdminDoctores vista, UnidadesMedicas modelo2){
       this.vista = vista;
       this.modelo2 = modelo2;
       this.modelo2.cargarUnidadesMedicas(vista.cbUnidadesMedicas);
     }
     
-    public ctrlPantallaMenuAdmin(jfrPantallaMenuAdmin vista, Doctores modelo3){
+    public ctrlPantallaMenuAdmin(jfrPantallaMenuAdminDoctores vista, Doctores modelo3){
       this.vista = vista;
       this.modelo3 = modelo3;
       this.modelo3.cargarCardsDoctores(vista.jpCardsDoctores, vista);

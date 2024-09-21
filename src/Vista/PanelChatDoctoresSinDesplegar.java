@@ -32,6 +32,7 @@ public class PanelChatDoctoresSinDesplegar extends javax.swing.JPanel {
         jPanelChat = new javax.swing.JPanel();
         chat = new javax.swing.JLabel();
         jPanelChatsDoctores = new javax.swing.JPanel();
+        JpCardsPacientes = new javax.swing.JPanel();
         jPanelInfoPaciente = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(62, 68, 83));
@@ -62,14 +63,18 @@ public class PanelChatDoctoresSinDesplegar extends javax.swing.JPanel {
         chat.setFont(new java.awt.Font("Roboto", 3, 24)); // NOI18N
         chat.setForeground(new java.awt.Color(255, 255, 255));
         chat.setText("Chat");
-        jPanelChat.add(chat, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 25, 60, -1));
+        jPanelChat.add(chat, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 60, -1));
 
-        add(jPanelChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 251, 80));
+        add(jPanelChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 340, 80));
 
         jPanelChatsDoctores.setBackground(new java.awt.Color(76, 82, 99));
         jPanelChatsDoctores.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
-        jPanelChatsDoctores.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jPanelChatsDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 251, 560));
+        jPanelChatsDoctores.setLayout(new java.awt.BorderLayout());
+
+        JpCardsPacientes.setLayout(new java.awt.BorderLayout());
+        jPanelChatsDoctores.add(JpCardsPacientes, java.awt.BorderLayout.CENTER);
+
+        add(jPanelChatsDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 340, 560));
 
         jPanelInfoPaciente.setBackground(new java.awt.Color(76, 82, 99));
         jPanelInfoPaciente.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(156, 156, 156)));
@@ -79,6 +84,7 @@ public class PanelChatDoctoresSinDesplegar extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JPanel JpCardsPacientes;
     public javax.swing.JLabel MensajeriaDoctores;
     public javax.swing.JLabel chat;
     public javax.swing.JLabel imgLogoIsss;

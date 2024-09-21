@@ -2,6 +2,7 @@ package Controlador;
 
 import Modelo.CitasMedicas;
 import Modelo.ExpedientesMedicos;
+import Modelo.Usuarios;
 import Vista.PanelChatDoctoresSinDesplegar;
 import Vista.PanelCitasMedicasDoctor;
 import Vista.PanelExpedienteMedico;
@@ -19,8 +20,9 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
     PanelExpedienteMedico panel3;
     private CitasMedicas modelo;
     private ExpedientesMedicos modelo2;
+    private Usuarios modelo3;
     
-    public ctrlPantallaMenuDoctor(jfrPantallaMenuDoctor Vista, PanelChatDoctoresSinDesplegar Panel, PanelCitasMedicasDoctor Panel1, PanelInfoCitaDoctor Panel2, PanelExpedienteMedico Panel3, CitasMedicas modelo, ExpedientesMedicos modelo2){
+    public ctrlPantallaMenuDoctor(jfrPantallaMenuDoctor Vista, PanelChatDoctoresSinDesplegar Panel, PanelCitasMedicasDoctor Panel1, PanelInfoCitaDoctor Panel2, PanelExpedienteMedico Panel3, CitasMedicas modelo, ExpedientesMedicos modelo2, Usuarios modelo3){
         this.vista = Vista;
         this.panel = Panel;
         this.panel1 = Panel1;
@@ -28,6 +30,7 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
         this.panel3 = Panel3;
         this.modelo = modelo;
         this.modelo2 = modelo2;
+        this.modelo3 = modelo3;
         this.modelo.cargarCardsCitasMedicas(panel1.jpCardsCitasAgendadas, vista, panel2, panel3, modelo2);
         
         vista.btnMensajeria.addMouseListener(this);
@@ -53,7 +56,7 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
             PanelChatDoctoresSinDesplegar objMenu = new PanelChatDoctoresSinDesplegar();
             vista.btnMensajeria.setBackground(new java.awt.Color(41, 72, 152));
             vista.btnCitasMedicas.setBackground(new java.awt.Color(62, 68, 83));
-            
+             
             //2- Limpio el panel contendor (por si acaso)
             vista.jpPanelInfo.removeAll();
             //3- muestro el panel que quiero
@@ -62,6 +65,8 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
             //4- Refrescar todo
             vista.jpPanelInfo.revalidate();
             vista.jpPanelInfo.repaint();
+            
+             this.modelo3.cargarCardsPacientes(objMenu.JpCardsPacientes);
         }
         
         if(e.getSource() == vista.btnCitasMedicas){

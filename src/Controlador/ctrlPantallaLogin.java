@@ -2,7 +2,7 @@ package Controlador;
 
 import Modelo.Usuarios;
 import Vista.jfrPantallaLogin;
-import Vista.jfrPantallaMenuAdmin;
+import Vista.jfrPantallaMenuAdminDoctores;
 import Vista.jfrPantallaMenuDoctor;
 import static Vista.jfrPantallaMenuDoctor.initjfrPantallaMenuDoctor;
 import Vista.jfrPantallaMenuJefesEnfermeria;
@@ -43,7 +43,7 @@ public class ctrlPantallaLogin implements ActionListener{
                switch (idRol){
                    case 1: 
                     JOptionPane.showMessageDialog(vista, "Login exitoso");
-                    jfrPantallaMenuAdmin menuAdmin = new jfrPantallaMenuAdmin();
+                    jfrPantallaMenuAdminDoctores menuAdmin = new jfrPantallaMenuAdminDoctores();
                     menuAdmin.setVisible(true);
                     menuAdmin.setLocationRelativeTo(null);
                     vista.dispose();

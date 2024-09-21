@@ -1,6 +1,6 @@
 package Modelo;
 
-import Vista.jfrPantallaMenuAdmin;
+import Vista.jfrPantallaMenuAdminDoctores;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -127,7 +127,7 @@ public class Doctores {
       }
     }
     
-    public void cargarImagen(JLabel profileImage, jfrPantallaMenuAdmin vista){
+    public void cargarImagen(JLabel profileImage, jfrPantallaMenuAdminDoctores vista){
       JFileChooser fileChooser = new JFileChooser();
       int result = fileChooser.showOpenDialog(vista);
       if(result == JFileChooser.APPROVE_OPTION){
@@ -144,7 +144,7 @@ public class Doctores {
       }
     }
     
-    public void agregarDoctor(JTextField txtCorreoDoctor, JPasswordField txtContrasenaDoctor, JTextField txtNombreDoctor, JLabel profileImage, JComboBox cbEspecialidadesMedicas, JComboBox cbUnidadesMedicas, jfrPantallaMenuAdmin vista){
+    public void agregarDoctor(JTextField txtCorreoDoctor, JPasswordField txtContrasenaDoctor, JTextField txtNombreDoctor, JLabel profileImage, JComboBox cbEspecialidadesMedicas, JComboBox cbUnidadesMedicas, jfrPantallaMenuAdminDoctores vista){
       String correo = txtCorreoDoctor.getText();
       String contrasena = new String(txtContrasenaDoctor.getPassword());
       String nombre = txtNombreDoctor.getText();
@@ -215,7 +215,7 @@ public class Doctores {
         return listaDoctores;
     }
     
-    public void cargarCardsDoctores(JPanel jpCardsDoctores, jfrPantallaMenuAdmin vista) { 
+    public void cargarCardsDoctores(JPanel jpCardsDoctores, jfrPantallaMenuAdminDoctores vista) { 
     JPanel panelCards = new JPanel();
     panelCards.setLayout(new GridBagLayout()); 
     
@@ -271,7 +271,7 @@ public class Doctores {
       return imagen;
     }
     
-    private JButton crearCard(Doctores doctor, jfrPantallaMenuAdmin vista) {
+    private JButton crearCard(Doctores doctor, jfrPantallaMenuAdminDoctores vista) {
     JButton card = new JButton();
     card.setLayout(new BorderLayout(10, 10));
     card.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -325,7 +325,7 @@ public class Doctores {
     return card;
 }
     
-    private void actualizarCampos(Doctores doctor, jfrPantallaMenuAdmin vista){
+    private void actualizarCampos(Doctores doctor, jfrPantallaMenuAdminDoctores vista){
         
       setIdDoctorActual(doctor.getIdDoctorActual());
         
@@ -371,7 +371,7 @@ public class Doctores {
       }
     }
     
-    public boolean eliminarDoctor(int idDoctor, jfrPantallaMenuAdmin vista){
+    public boolean eliminarDoctor(int idDoctor, jfrPantallaMenuAdminDoctores vista){
       Connection conexion = ClaseConexion.getConexion();
       String query = "DELETE FROM Doctores WHERE id_doctor = ?";
       
