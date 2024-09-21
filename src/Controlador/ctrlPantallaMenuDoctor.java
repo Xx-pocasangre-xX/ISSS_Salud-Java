@@ -62,11 +62,10 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
             //3- muestro el panel que quiero
             vista.jpPanelInfo.add(objMenu);
             
+            this.modelo3.cargarCardsPacientes(objMenu.JpCardsPacientes);
             //4- Refrescar todo
             vista.jpPanelInfo.revalidate();
             vista.jpPanelInfo.repaint();
-            
-             this.modelo3.cargarCardsPacientes(objMenu.JpCardsPacientes);
         }
         
         if(e.getSource() == vista.btnCitasMedicas){
