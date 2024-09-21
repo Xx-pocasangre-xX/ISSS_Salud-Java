@@ -1,5 +1,6 @@
 package Modelo;
 
+import Vista.PanelSolicitudesCitas;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -113,7 +114,7 @@ public class SolicitudCitas {
       return listaSolicitudCitas;
     }
     
-    public void cargarCardsSolicitudCitas(JPanel jpCardsSolicitudCitas){
+    public void cargarCardsSolicitudCitas(JPanel jpCardsSolicitudCitas, PanelSolicitudesCitas panel){
        JPanel panelCards = new JPanel();
        panelCards.setLayout(new GridBagLayout());
        
@@ -129,7 +130,7 @@ public class SolicitudCitas {
        int row = 0;
        
        for(SolicitudCitas solicitudCita : solicitudCitas){
-          JButton card = crearCard(solicitudCita);
+          JButton card = crearCard(solicitudCita, panel);
           gbc.gridy = row;
           panelCards.add(card, gbc);
         
@@ -169,7 +170,7 @@ public class SolicitudCitas {
       return imagen;
     }
     
-    private JButton crearCard(SolicitudCitas solicitudCitas){
+    private JButton crearCard(SolicitudCitas solicitudCitas, PanelSolicitudesCitas panel){
        JButton card = new JButton();
        card.setLayout(new BorderLayout(10, 10));
        card.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -220,6 +221,19 @@ public class SolicitudCitas {
        card.setMinimumSize(new Dimension(350, 100));
        card.setFocusable(true);
        
+       card.addActionListener((e) ->{
+         actualizarTextFieldsConDatos(solicitudCitas, panel);
+       });
+       
        return card;
+    }
+    
+    private void actualizarTextFieldsConDatos(SolicitudCitas solicitudCitas, PanelSolicitudesCitas panel){
+      panel.txtNombreSolicitante.setText(solicitudCitas.getNombresolicitante());
+      panel.txtTelefono.setText(solicitudCitas.getTelefono());
+      panel.txtCorreo.setText(solicitudCitas.getCorreoElectronico3());
+      panel.txtMotivoCita.setText(solicitudCitas.getMotivoCita());
+      panel.txtDUI.setText(solicitudCitas.getDui2());
+      panel.txtFechaSolicitud.setText(solicitudCitas.getFechaSolicitud());
     }
 }

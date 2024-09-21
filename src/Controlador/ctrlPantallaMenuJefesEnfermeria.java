@@ -25,7 +25,7 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
         this.miniPanel1 = MiniPanel1;
         this.miniPanel2 = MiniPanel2;
         this.modelo = modelo;
-        this.modelo.cargarCardsSolicitudCitas(panel.jpCardsSolicitudCitas);
+        this.modelo.cargarCardsSolicitudCitas(panel.jpCardsSolicitudCitas, panel);
         
         vista.btnSolicitudes.addMouseListener(this);
         vista.btnAgendadas.addMouseListener(this);
@@ -83,7 +83,7 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
         if(e.getSource() == vista.btnSolicitudes){
             //1-Creo un objeto del panel que quiero mostrar
             PanelSolicitudesCitas objMenu = new PanelSolicitudesCitas();
-            this.modelo.cargarCardsSolicitudCitas(objMenu.jpCardsSolicitudCitas);
+            this.modelo.cargarCardsSolicitudCitas(objMenu.jpCardsSolicitudCitas, panel);
             vista.btnAgendadas.setBackground(new java.awt.Color(183, 184, 187));
             vista.btnSolicitudes.setBackground(new java.awt.Color(41, 72, 152));
             

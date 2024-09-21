@@ -39,12 +39,12 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         txtDUI = new javax.swing.JTextField();
-        txtNombre = new javax.swing.JTextField();
-        txtDireccion = new javax.swing.JTextField();
+        txtNombreSolicitante = new javax.swing.JTextField();
+        txtTelefono = new javax.swing.JTextField();
         txtMotivoCita = new javax.swing.JTextField();
         txtCorreo = new javax.swing.JTextField();
         btnAgendarCita = new javax.swing.JButton();
-        txtTipoSangre = new javax.swing.JTextField();
+        txtFechaSolicitud = new javax.swing.JTextField();
         jpCardsSolicitudCitas = new javax.swing.JPanel();
         jpCardsDoctores1 = new javax.swing.JPanel();
 
@@ -94,12 +94,12 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
 
         jLabel5.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Tipo sangre");
-        jPanel7.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 140, -1));
+        jLabel5.setText("Fecha de la solicitud");
+        jPanel7.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 210, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Dirección");
+        jLabel8.setText("Teléfono");
         jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
@@ -114,27 +114,32 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
 
         txtDUI.setBackground(new java.awt.Color(70, 76, 92));
         txtDUI.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        txtDUI.setForeground(new java.awt.Color(255, 255, 255));
         txtDUI.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
         jPanel7.add(txtDUI, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 150, 30));
 
-        txtNombre.setBackground(new java.awt.Color(70, 76, 92));
-        txtNombre.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        txtNombre.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 270, 30));
+        txtNombreSolicitante.setBackground(new java.awt.Color(70, 76, 92));
+        txtNombreSolicitante.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        txtNombreSolicitante.setForeground(new java.awt.Color(255, 255, 255));
+        txtNombreSolicitante.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
+        jPanel7.add(txtNombreSolicitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 270, 30));
 
-        txtDireccion.setBackground(new java.awt.Color(70, 76, 92));
-        txtDireccion.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        txtDireccion.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 270, 30));
+        txtTelefono.setBackground(new java.awt.Color(70, 76, 92));
+        txtTelefono.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        txtTelefono.setForeground(new java.awt.Color(255, 255, 255));
+        txtTelefono.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
+        jPanel7.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 270, 30));
 
         txtMotivoCita.setBackground(new java.awt.Color(70, 76, 92));
         txtMotivoCita.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        txtMotivoCita.setForeground(new java.awt.Color(255, 255, 255));
         txtMotivoCita.setToolTipText("");
         txtMotivoCita.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
         jPanel7.add(txtMotivoCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 350, 100));
 
         txtCorreo.setBackground(new java.awt.Color(70, 76, 92));
         txtCorreo.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        txtCorreo.setForeground(new java.awt.Color(255, 255, 255));
         txtCorreo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
         jPanel7.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 270, 30));
 
@@ -144,10 +149,11 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
         btnAgendarCita.setBorder(null);
         jPanel7.add(btnAgendarCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 120, 40));
 
-        txtTipoSangre.setBackground(new java.awt.Color(70, 76, 92));
-        txtTipoSangre.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        txtTipoSangre.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 150, 30));
+        txtFechaSolicitud.setBackground(new java.awt.Color(70, 76, 92));
+        txtFechaSolicitud.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        txtFechaSolicitud.setForeground(new java.awt.Color(255, 255, 255));
+        txtFechaSolicitud.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
+        jPanel7.add(txtFechaSolicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 210, 30));
 
         jpCardsSolicitudCitas.setBackground(new java.awt.Color(50, 55, 69));
         jpCardsSolicitudCitas.setLayout(new java.awt.BorderLayout());
@@ -203,9 +209,9 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
     public javax.swing.JPanel jpCardsSolicitudCitas;
     public javax.swing.JTextField txtCorreo;
     public javax.swing.JTextField txtDUI;
-    private javax.swing.JTextField txtDireccion;
+    public javax.swing.JTextField txtFechaSolicitud;
     public javax.swing.JTextField txtMotivoCita;
-    public javax.swing.JTextField txtNombre;
-    public javax.swing.JTextField txtTipoSangre;
+    public javax.swing.JTextField txtNombreSolicitante;
+    public javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }
