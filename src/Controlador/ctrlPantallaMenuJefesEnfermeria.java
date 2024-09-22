@@ -70,7 +70,7 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
         }
         
         if(e.getSource() == miniPanel1.btnAsignarDatosCita){
-            //validar campos y hacer el insert con una alerta de que los datos si se asignaron
+            modelo2.insertarCitaMedica(miniPanel1.jdcFechaCita, miniPanel1.txtHoraCita, miniPanel1.cbPacientes, miniPanel1.cbDoctor);
         }
         
         if(e.getSource() == miniPanel1.btnRegresar){

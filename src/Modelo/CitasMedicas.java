@@ -3,6 +3,7 @@ package Modelo;
 import Vista.PanelExpedienteMedico;
 import Vista.PanelInfoCitaDoctor;
 import Vista.jfrPantallaMenuDoctor;
+import com.toedter.calendar.JDateChooser;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -13,6 +14,7 @@ import java.awt.Insets;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.imageio.ImageIO;
@@ -27,6 +29,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 public class CitasMedicas {
     private String fecha_cita;
@@ -419,4 +422,87 @@ public class CitasMedicas {
         cbPacientes.addItem(paciente);
       }
     }
+    
+    public void insertarCitaMedica(JDateChooser jdcFechaCita, JTextField txtHoraCita, JComboBox<String> cbPacientes, JComboBox<String> cbDoctor){
+      String query = "INSERT INTO CitasMedicas (fecha_cita, hora_cita, id_usuario, id_doctor) VALUES (?, ?, ?, ?)";
+      
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        String fechaCita = sdf.format(jdcFechaCita.getDate());
+        String horaCita = txtHoraCita.getText();
+        
+        java.util.Date fechaActual = new java.util.Date();
+        if(jdcFechaCita.getDate().before(fechaActual)){
+          JOptionPane.showMessageDialog(null, "La fecha seleccionada no puede ser anterior al día de hoy.", "Fecha inválida", JOptionPane.WARNING_MESSAGE);
+          return;
+        }
+        
+        int idUsuario2 = obtenerIdUsuario(cbPacientes.getSelectedItem().toString());
+        int idDoctor = obtenerIdDoctor(cbDoctor.getSelectedItem().toString());
+        
+        if(fechaCita.isEmpty() || horaCita.isEmpty() || idUsuario == -1 || idDoctor == -1){
+           JOptionPane.showMessageDialog(null, "Por favor, completa todos los campos antes de guardar la cita.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+           return;
+        }
+        
+        try(Connection conexion = ClaseConexion.getConexion(); 
+                PreparedStatement stmt = conexion.prepareStatement(query)){
+        
+            stmt.setString(1, fechaCita);
+            stmt.setString(2, horaCita);
+            stmt.setInt(3, idUsuario2);
+            stmt.setInt(4, idDoctor);
+            
+            int filasInsertadas = stmt.executeUpdate();
+            
+            if(filasInsertadas > 0){
+              JOptionPane.showMessageDialog(null, "La cita médica ha sido registrada exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            }else{
+              JOptionPane.showMessageDialog(null, "No se pudo registrar la cita médica.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }catch(SQLException e){
+          JOptionPane.showMessageDialog(null, "Error al insertar la cita médica: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+          e.printStackTrace();
+        }
+    }
+    
+    public int obtenerIdUsuario(String correo){
+      int idUsuario2 = -1;
+      String query = "SELECT id_usuario FROM Usuarios WHERE correo_electronico = ?";
+      
+      try(Connection conexion = ClaseConexion.getConexion();
+          PreparedStatement stmt = conexion.prepareStatement(query)){
+          
+          stmt.setString(1, correo);
+          ResultSet rs = stmt.executeQuery();
+          
+          if(rs.next()){
+            idUsuario2 = rs.getInt("id_usuario");
+          }
+      }catch(SQLException e){
+        e.printStackTrace();
+      }
+      
+      return idUsuario2;
+    }
+    
+    public int obtenerIdDoctor(String nombreDoctor){
+      int idDoctor = -1;
+      String query = "SELECT id_doctor FROM Doctores WHERE nombre_doctor = ?";
+      
+      try(Connection conexion = ClaseConexion.getConexion();
+          PreparedStatement stmt = conexion.prepareStatement(query)){
+      
+          stmt.setString(1, nombreDoctor);
+          ResultSet rs = stmt.executeQuery();
+          
+          if(rs.next()){
+            idDoctor = rs.getInt("id_doctor");
+          }
+      }catch(SQLException e){
+         e.printStackTrace();
+      }
+      
+      return idDoctor;
+    }
+    
 }

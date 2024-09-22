@@ -80,6 +80,7 @@ public class jfrAgendarCitasJefesEnfermeria extends javax.swing.JFrame {
 
         txtHoraCita.setBackground(new java.awt.Color(70, 76, 92));
         txtHoraCita.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        txtHoraCita.setForeground(new java.awt.Color(255, 255, 255));
         txtHoraCita.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
         jPanel1.add(txtHoraCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 270, 40));
 
@@ -111,7 +112,7 @@ public class jfrAgendarCitasJefesEnfermeria extends javax.swing.JFrame {
         cbPacientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(cbPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 310, 30));
 
-        jdcFechaCita.setDateFormatString("dd/MM/yyyy");
+        jdcFechaCita.setDateFormatString("dd-MM-yyyy");
         jPanel1.add(jdcFechaCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 320, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 560));
