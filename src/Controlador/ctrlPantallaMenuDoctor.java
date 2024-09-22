@@ -32,11 +32,13 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
         this.modelo2 = modelo2;
         this.modelo3 = modelo3;
         this.modelo.cargarCardsCitasMedicas(panel1.jpCardsCitasAgendadas, vista, panel2, panel3, modelo2);
+        this.modelo.bloquearTextFields(panel2.txtNombreDoctor, panel2.txtCorreoPaciente, panel2.txtFechaCita, panel2.txtHoraCita, panel2.txtSexoPaciente, panel2.txtDuiPaciente, panel2.txtTipoSangrePaciente);
         
         vista.btnMensajeria.addMouseListener(this);
         vista.btnMenuDesplegablePrincipal.addMouseListener(this);
         vista.btnCitasMedicas.addMouseListener(this);
         panel2.btnExpediente.addMouseListener(this);
+        panel2.btnLimpiar.addMouseListener(this);
         panel3.btnRegresar.addMouseListener(this);
         panel3.btnEditarActualizarExpediente.addMouseListener(this);
         
@@ -103,6 +105,10 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
         if(e.getSource() == panel3.btnEditarActualizarExpediente){
             System.err.println("He sido clickeado");
             modelo.guardarCambiosExpediente(panel3, modelo, modelo2);
+        }
+        
+        if(e.getSource() == panel2.btnLimpiar){
+          modelo.limpiarCampos(panel2.txtNombreDoctor, panel2.txtCorreoPaciente, panel2.txtFechaCita, panel2.txtHoraCita, panel2.txtSexoPaciente, panel2.txtDuiPaciente, panel2.txtTipoSangrePaciente);
         }
     }
 

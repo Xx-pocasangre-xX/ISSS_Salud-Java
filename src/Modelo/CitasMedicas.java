@@ -331,11 +331,32 @@ public class CitasMedicas {
              panel2.txtSexoPaciente.setText(rs.getString("sexo"));
              panel2.txtDuiPaciente.setText(rs.getString("dui"));
              panel2.txtTipoSangrePaciente.setText(rs.getString("tipo_sangre"));
+             
            }
        }catch(SQLException e){
          e.printStackTrace();
        }
 }
+    
+    public void limpiarCampos(JTextField txtNombreDoctor, JTextField txtCorreoPaciente, JTextField txtFechaCita, JTextField txtHoraCita, JTextField txtSexoPaciente, JTextField txtDuiPaciente, JTextField txtTipoSangrePaciente){
+       txtNombreDoctor.setText("");
+       txtCorreoPaciente.setText("");
+       txtFechaCita.setText("");
+       txtHoraCita.setText("");
+       txtSexoPaciente.setText("");
+       txtDuiPaciente.setText("");
+       txtTipoSangrePaciente.setText("");
+    }
+    
+    public void bloquearTextFields(JTextField txtNombreDoctor, JTextField txtCorreoPaciente, JTextField txtFechaCita, JTextField txtHoraCita, JTextField txtSexoPaciente, JTextField txtDuiPaciente, JTextField txtTipoSangrePaciente){
+       txtDuiPaciente.setEditable(false);
+       txtSexoPaciente.setEditable(false);
+       txtTipoSangrePaciente.setEditable(false);
+       txtNombreDoctor.setEditable(false);
+       txtCorreoPaciente.setEditable(false);
+       txtFechaCita.setEditable(false);
+       txtHoraCita.setEditable(false);
+    }
     
     
     private void mostrarDatosExpediente(CitasMedicas citasAgendadas, PanelExpedienteMedico panel3, ExpedientesMedicos expedientes){
