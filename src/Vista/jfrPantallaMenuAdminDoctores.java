@@ -16,9 +16,10 @@ public class jfrPantallaMenuAdminDoctores extends javax.swing.JFrame {
         EspecialidadDoctores modelo = new EspecialidadDoctores();
         UnidadesMedicas modelo2 = new UnidadesMedicas();
         Doctores modelo3 = new Doctores();
+        jfrPantallaMenuAdminJefesEnfermeria vista2 = new jfrPantallaMenuAdminJefesEnfermeria();
         ctrlPantallaMenuAdmin Controlador = new ctrlPantallaMenuAdmin(this, modelo);
         ctrlPantallaMenuAdmin Controlador2 = new ctrlPantallaMenuAdmin(this, modelo2);
-        ctrlPantallaMenuAdmin Controlador3 = new ctrlPantallaMenuAdmin(this, modelo3);
+        ctrlPantallaMenuAdmin Controlador3 = new ctrlPantallaMenuAdmin(this, modelo3, vista2);
         
         int width = profileImage.getWidth();
         int height = profileImage.getHeight();
@@ -34,7 +35,7 @@ public class jfrPantallaMenuAdminDoctores extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btnAgregarTrabajadores = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        btnAgregarJefes = new javax.swing.JButton();
+        btnNoticias = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -84,10 +85,10 @@ public class jfrPantallaMenuAdminDoctores extends javax.swing.JFrame {
         jButton1.setBorder(null);
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
-        btnAgregarJefes.setBackground(new java.awt.Color(62, 68, 83));
-        btnAgregarJefes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnNoticiasModoOscuro.png"))); // NOI18N
-        btnAgregarJefes.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
-        jPanel2.add(btnAgregarJefes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 80, 70));
+        btnNoticias.setBackground(new java.awt.Color(62, 68, 83));
+        btnNoticias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnNoticiasModoOscuro.png"))); // NOI18N
+        btnNoticias.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
+        jPanel2.add(btnNoticias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 80, 70));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 760));
 
@@ -334,13 +335,13 @@ public class jfrPantallaMenuAdminDoctores extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnActualizar;
     public javax.swing.JButton btnAgregar;
-    public javax.swing.JButton btnAgregarJefes;
     public javax.swing.JButton btnAgregarTrabajadores;
     public javax.swing.JButton btnCargarImagen;
     public javax.swing.JButton btnDoctores;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnJefes;
     public javax.swing.JButton btnLimpiar;
+    public javax.swing.JButton btnNoticias;
     public javax.swing.JComboBox<String> cbEspecialidadesMedicas;
     public javax.swing.JComboBox<String> cbUnidadesMedicas;
     private javax.swing.JButton jButton1;
