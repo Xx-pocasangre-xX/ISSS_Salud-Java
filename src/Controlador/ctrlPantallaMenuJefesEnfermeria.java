@@ -43,6 +43,7 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
         panel1.btnActualizarCita.addMouseListener(this);
         miniPanel1.btnRegresar.addMouseListener(this);
         miniPanel2.btnGuardarCambios.addMouseListener(this);
+        miniPanel2.btnRegresar.addMouseListener(this);
         
         vista.jPanelInfoJefes.removeAll();
         vista.jPanelInfoJefes.add(panel);
@@ -68,6 +69,29 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
             //4- Refrescar todo
             vista.jPanelInfoJefes.revalidate();
             vista.jPanelInfoJefes.repaint();
+            
+            objMenu.btnActualizarCita.addMouseListener(new MouseListener(){
+              @Override
+              public void mouseClicked(MouseEvent e){
+                initjfrActualizarCita();
+              }
+              
+                          @Override
+    public void mousePressed(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+    }
+            });
         }
         
         if(e.getSource() == panel.btnAgendarCita){
@@ -83,6 +107,10 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
         
         if(e.getSource() == miniPanel1.btnRegresar){
             miniPanel1.dispose();
+        }
+        
+        if(e.getSource() == miniPanel2.btnRegresar){
+           miniPanel2.dispose();
         }
         
         if(e.getSource() == vista.btnSolicitudes){
