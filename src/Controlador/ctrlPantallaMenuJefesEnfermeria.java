@@ -3,6 +3,8 @@ package Controlador;
 import Modelo.CitasMedicas;
 import Modelo.SolicitudCitas;
 import Vista.PanelCitasAgendadasJefeEnfermeria;
+import Vista.PanelExpedienteMedico;
+import Vista.PanelInfoCitaDoctor;
 import Vista.PanelSolicitudesCitas;
 import Vista.jfrActualizarCita;
 import Vista.jfrAgendarCitasJefesEnfermeria;
@@ -55,6 +57,7 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
             PanelCitasAgendadasJefeEnfermeria objMenu = new PanelCitasAgendadasJefeEnfermeria();
             vista.btnSolicitudes.setBackground(new java.awt.Color(183, 184, 187));
             vista.btnAgendadas.setBackground(new java.awt.Color(41, 72, 152));
+            modelo2.cargarCardsCitasMedicas2(objMenu.jpCardsCitasAgendadas2);
             
             //2- Limpio el panel contendor (por si acaso)
             vista.jPanelInfoJefes.removeAll();

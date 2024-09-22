@@ -3,6 +3,7 @@ package Modelo;
 import Vista.PanelExpedienteMedico;
 import Vista.PanelInfoCitaDoctor;
 import Vista.jfrPantallaMenuDoctor;
+import Vista.jfrPantallaMenuJefesEnfermeria;
 import com.toedter.calendar.JDateChooser;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -151,6 +152,45 @@ public class CitasMedicas {
        jpCardsCitasAgendadas.repaint();
     }
     
+    public void cargarCardsCitasMedicas2(JPanel jpCardsCitasAgendadas2){
+       JPanel panelCards = new JPanel();
+       panelCards.setLayout(new GridBagLayout());
+       
+       Color rgbColor = new Color(70, 76, 92);
+       panelCards.setBackground(rgbColor);
+    
+       GridBagConstraints gbc = new GridBagConstraints();
+       gbc.insets = new Insets(10, 10, 10, 10);
+       gbc.fill = GridBagConstraints.HORIZONTAL;
+       gbc.weightx = 1.0;
+       
+       List<CitasMedicas> citasAgendadas = obtenerCitasMedicas();
+       int row = 0;
+       
+       for(CitasMedicas citaAgendada : citasAgendadas){
+          JButton card = crearCard2(citaAgendada);
+          gbc.gridy = row;
+          panelCards.add(card, gbc);
+        
+          gbc.gridy = row + 1;
+          panelCards.add(Box.createRigidArea(new Dimension(0, 20))); 
+        
+          row += 2;
+       }
+       
+       jpCardsCitasAgendadas2.removeAll();
+       
+       JScrollPane scrollPane = new JScrollPane(panelCards);
+       scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+       
+       jpCardsCitasAgendadas2.setLayout(new BorderLayout());
+       jpCardsCitasAgendadas2.add(scrollPane, BorderLayout.CENTER);
+       jpCardsCitasAgendadas2.setBackground(rgbColor);
+       
+       jpCardsCitasAgendadas2.revalidate();
+       jpCardsCitasAgendadas2.repaint();
+    }
+    
     public ImageIcon cargarImagen(String path){
        ImageIcon imagen = null;
        try{
@@ -224,6 +264,56 @@ public class CitasMedicas {
        return card;
     }
     
+    private JButton crearCard2(CitasMedicas citasAgendadas){
+       JButton card = new JButton();
+       card.setLayout(new BorderLayout(10, 10));
+       card.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+       
+       Color rgbColor = new Color(41, 72, 152);
+       card.setBackground(rgbColor);
+       
+       ImageIcon iconoCitasMedicas = cargarImagen(citasAgendadas.getFoto_usuario());
+       Image img = iconoCitasMedicas.getImage().getScaledInstance(100, 80, Image.SCALE_SMOOTH);
+       JLabel lblFoto = new JLabel(new ImageIcon(img));
+       
+       JPanel textPanel = new JPanel();
+       textPanel.setLayout(new BoxLayout(textPanel, BoxLayout.Y_AXIS));
+       textPanel.setBackground(rgbColor);
+       
+       JLabel lblFechaCita = new JLabel("Fecha de la cita: " + citasAgendadas.getFecha_cita());
+       JLabel lblHoraCita = new JLabel("Hora de la cita: " + citasAgendadas.getHora_cita());
+       JLabel lblSolicitante = new JLabel("Solicitante: " + citasAgendadas.getSolicitante());
+       JLabel lblDoctor = new JLabel("Doctor designado: " + citasAgendadas.getDoctor());
+       
+       lblFechaCita.setAlignmentX(JLabel.LEFT_ALIGNMENT);
+       lblFechaCita.setForeground(Color.WHITE);
+       lblHoraCita.setAlignmentX(JLabel.LEFT_ALIGNMENT);
+       lblHoraCita.setForeground(Color.WHITE);
+       lblSolicitante.setAlignmentX(JLabel.LEFT_ALIGNMENT);
+       lblSolicitante.setForeground(Color.WHITE);
+       lblDoctor.setAlignmentX(JLabel.LEFT_ALIGNMENT);
+       lblDoctor.setForeground(Color.WHITE);
+       
+       textPanel.add(lblFechaCita);
+       textPanel.add(lblHoraCita);
+       textPanel.add(lblSolicitante);
+       textPanel.add(lblDoctor);
+       
+       card.add(lblFoto, BorderLayout.WEST);
+       card.add(textPanel, BorderLayout.CENTER);
+       
+       card.setPreferredSize(new Dimension(350, 100));
+       card.setMaximumSize(new Dimension(350, 100));
+       card.setMinimumSize(new Dimension(350, 100));
+       card.setFocusable(true);
+       
+       card.addActionListener((e) -> {
+          
+       });
+       
+       return card;
+    }
+    
     private void actualizarTextFieldsConDatos(CitasMedicas citasAgendadas, PanelInfoCitaDoctor panel2){
        panel2.txtNombreDoctor.setText(citasAgendadas.getDoctor());
        panel2.txtCorreoPaciente.setText(citasAgendadas.getSolicitante());
@@ -246,6 +336,7 @@ public class CitasMedicas {
          e.printStackTrace();
        }
 }
+    
     
     private void mostrarDatosExpediente(CitasMedicas citasAgendadas, PanelExpedienteMedico panel3, ExpedientesMedicos expedientes){
         

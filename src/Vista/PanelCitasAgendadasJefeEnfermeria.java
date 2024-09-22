@@ -54,6 +54,7 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
         txtDia = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         txtUnidadMedica = new javax.swing.JTextField();
+        jpCardsCitasAgendadas2 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(50, 55, 69));
         setMinimumSize(new java.awt.Dimension(1120, 750));
@@ -213,6 +214,9 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
         jPanel7.add(txtUnidadMedica, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 270, 30));
 
         add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 740, 560));
+
+        jpCardsCitasAgendadas2.setLayout(new java.awt.BorderLayout());
+        add(jpCardsCitasAgendadas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 380, 560));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnActualizarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarCitaActionPerformed
@@ -238,6 +242,7 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    public javax.swing.JPanel jpCardsCitasAgendadas2;
     public javax.swing.JTextField txtCorreo;
     public javax.swing.JTextField txtDUI;
     public javax.swing.JTextField txtDia;
