@@ -89,7 +89,7 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
             //1-Creo un objeto del panel que quiero mostrar
             PanelSolicitudesCitas objMenu = new PanelSolicitudesCitas();
             
-            this.modelo.cargarCardsSolicitudCitas(objMenu.jpCardsSolicitudCitas, panel);
+            this.modelo.cargarCardsSolicitudCitas(objMenu.jpCardsSolicitudCitas, objMenu);
             vista.btnAgendadas.setBackground(new java.awt.Color(183, 184, 187));
             vista.btnSolicitudes.setBackground(new java.awt.Color(41, 72, 152));
             

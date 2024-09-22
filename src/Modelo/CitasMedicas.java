@@ -544,17 +544,30 @@ public class CitasMedicas {
       }
     }
     
-    public void insertarCitaMedica(JDateChooser jdcFechaCita, JTextField txtHoraCita, JComboBox<String> cbPacientes, JComboBox<String> cbDoctor){
+    public void insertarCitaMedica(JDateChooser jdcFechaCita, JTextField txtHoraCita, JComboBox<String> cbPacientes, JComboBox<String> cbDoctor){ 
       String query = "INSERT INTO CitasMedicas (fecha_cita, hora_cita, id_usuario, id_doctor) VALUES (?, ?, ?, ?)";
+      String horaCita = txtHoraCita.getText();
       
       if (jdcFechaCita.getDate() == null) {
-        JOptionPane.showMessageDialog(null, "Por favor, selecciona una fecha para la cita.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Por favor, llena todas las casillas", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+      
+      String horaPattern = "^(0[1-9]|1[0-2]):([0-5][0-9])\\s?(A\\.M\\.|P\\.M\\.)$";
+    if (!horaCita.matches(horaPattern)) {
+        JOptionPane.showMessageDialog(null, "Por favor, ingresa una hora válida en formato 12 horas (ej. 10:30 A.M. o 02:45 P.M.).", "Hora inválida", JOptionPane.WARNING_MESSAGE);
         return;
     }
       
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        String fechaCita = sdf.format(jdcFechaCita.getDate());
-        String horaCita = txtHoraCita.getText();
+    sdf.setLenient(false); // Desactivar interpretación flexible de fechas
+    String fechaCita;
+    try {
+        fechaCita = sdf.format(jdcFechaCita.getDate());
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Fecha inválida. Por favor, usa el formato dd-MM-yyyy.", "Fecha inválida", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
         
         java.util.Date fechaActual = new java.util.Date();
         if(jdcFechaCita.getDate().before(fechaActual)){
@@ -565,7 +578,7 @@ public class CitasMedicas {
         int idUsuario2 = obtenerIdUsuario(cbPacientes.getSelectedItem().toString());
         int idDoctor = obtenerIdDoctor(cbDoctor.getSelectedItem().toString());
         
-        if (fechaCita.isEmpty() || horaCita.isEmpty() || idUsuario2 == -1 || idDoctor == -1) {
+        if (horaCita.isEmpty() || idUsuario2 == -1 || idDoctor == -1) {
         JOptionPane.showMessageDialog(null, "Por favor, completa todos los campos antes de guardar la cita.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         return;
     }
@@ -582,6 +595,8 @@ public class CitasMedicas {
             
             if(filasInsertadas > 0){
               JOptionPane.showMessageDialog(null, "La cita médica ha sido registrada exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+              txtHoraCita.setText("");
+              jdcFechaCita.setDate(null);
             }else{
               JOptionPane.showMessageDialog(null, "No se pudo registrar la cita médica.", "Error", JOptionPane.ERROR_MESSAGE);
             }
