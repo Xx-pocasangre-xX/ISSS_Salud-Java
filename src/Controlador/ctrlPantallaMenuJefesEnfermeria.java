@@ -33,6 +33,7 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
         this.modelo = modelo;
         this.modelo2 = modelo2;
         this.modelo.cargarCardsSolicitudCitas(panel.jpCardsSolicitudCitas, panel);
+        this.modelo.bloquearTextFields(panel.txtNombreSolicitante, panel.txtTelefono, panel.txtCorreo, panel.txtMotivoCita, panel.txtDUI, panel.txtFechaSolicitud);
         this.modelo2.cargarDoctores(miniPanel1.cbDoctor);
         this.modelo2.cargarPacientes(miniPanel1.cbPacientes);
         
@@ -118,6 +119,7 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
             PanelSolicitudesCitas objMenu = new PanelSolicitudesCitas();
             
             this.modelo.cargarCardsSolicitudCitas(objMenu.jpCardsSolicitudCitas, objMenu);
+            this.modelo.bloquearTextFields(objMenu.txtNombreSolicitante, objMenu.txtTelefono, objMenu.txtCorreo, objMenu.txtMotivoCita, objMenu.txtDUI, objMenu.txtFechaSolicitud);
             vista.btnAgendadas.setBackground(new java.awt.Color(183, 184, 187));
             vista.btnSolicitudes.setBackground(new java.awt.Color(41, 72, 152));
             

@@ -22,6 +22,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 
 public class SolicitudCitas {
     private String nombre_solicitante;
@@ -235,5 +236,14 @@ public class SolicitudCitas {
       panel.txtMotivoCita.setText(solicitudCitas.getMotivoCita());
       panel.txtDUI.setText(solicitudCitas.getDui2());
       panel.txtFechaSolicitud.setText(solicitudCitas.getFechaSolicitud());
+    }
+    
+    public void bloquearTextFields(JTextField txtNombreSolicitante, JTextField txtTelefono, JTextField txtCorreo, JTextField txtMotivoCita, JTextField txtDUI, JTextField txtFechaSolicitud){
+      txtNombreSolicitante.setEditable(false);
+      txtTelefono.setEditable(false);
+      txtCorreo.setEditable(false);
+      txtMotivoCita.setEditable(false);
+      txtDUI.setEditable(false);
+      txtFechaSolicitud.setEditable(false);
     }
 }
