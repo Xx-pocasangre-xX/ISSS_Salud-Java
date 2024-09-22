@@ -4,6 +4,10 @@
  */
 package Vista;
 
+import Controlador.ctrlPantallaMenuJefesEnfermeria;
+import Modelo.CitasMedicas;
+import Modelo.SolicitudCitas;
+
 /**
  *
  * @author ricar
@@ -44,16 +48,12 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
         txtCorreo = new javax.swing.JTextField();
         btnActualizarCita = new javax.swing.JButton();
         txtTIpoSangre = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        txtEspecialista = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         txtNombreDoctor = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         txtHora = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         txtDia = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        txtUnidadMedica = new javax.swing.JTextField();
         jpCardsCitasAgendadas2 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(50, 55, 69));
@@ -108,7 +108,7 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
 
         jLabel8.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Ubicación");
+        jLabel8.setText("Sexo");
         jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
@@ -118,8 +118,8 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
 
         jLabel10.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Motivo de la cita");
-        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 160, -1));
+        jLabel10.setText("Teléfono");
+        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 160, -1));
 
         txtDUI.setBackground(new java.awt.Color(70, 76, 92));
         txtDUI.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
@@ -134,13 +134,13 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
         txtDireccion.setBackground(new java.awt.Color(70, 76, 92));
         txtDireccion.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         txtDireccion.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 360, 270, 60));
+        jPanel7.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 360, 270, 40));
 
         txtMotivoCita.setBackground(new java.awt.Color(70, 76, 92));
         txtMotivoCita.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         txtMotivoCita.setToolTipText("");
         txtMotivoCita.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtMotivoCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 350, 100));
+        jPanel7.add(txtMotivoCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 290, 40));
 
         txtCorreo.setBackground(new java.awt.Color(70, 76, 92));
         txtCorreo.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
@@ -156,62 +156,42 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
                 btnActualizarCitaActionPerformed(evt);
             }
         });
-        jPanel7.add(btnActualizarCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 470, 170, 40));
+        jPanel7.add(btnActualizarCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 470, 210, 40));
 
         txtTIpoSangre.setBackground(new java.awt.Color(70, 76, 92));
         txtTIpoSangre.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         txtTIpoSangre.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
         jPanel7.add(txtTIpoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 270, 30));
 
-        jLabel11.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Especialista");
-        jPanel7.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 200, -1));
-
-        txtEspecialista.setBackground(new java.awt.Color(70, 76, 92));
-        txtEspecialista.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        txtEspecialista.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtEspecialista, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 270, 30));
-
         jLabel12.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Nombre del doctor");
-        jPanel7.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 180, -1));
+        jPanel7.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 180, -1));
 
         txtNombreDoctor.setBackground(new java.awt.Color(70, 76, 92));
         txtNombreDoctor.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         txtNombreDoctor.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtNombreDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 270, 30));
+        jPanel7.add(txtNombreDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 270, 30));
 
         jLabel13.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Hora");
-        jPanel7.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 140, -1));
+        jPanel7.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 140, -1));
 
         txtHora.setBackground(new java.awt.Color(70, 76, 92));
         txtHora.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         txtHora.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 270, 30));
+        jPanel7.add(txtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 270, 30));
 
         jLabel14.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Dia");
-        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 255, -1, -1));
+        jLabel14.setText("Fecha de la cita");
+        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
 
         txtDia.setBackground(new java.awt.Color(70, 76, 92));
         txtDia.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         txtDia.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 270, 30));
-
-        jLabel15.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("Unidad medica");
-        jPanel7.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, -1));
-
-        txtUnidadMedica.setBackground(new java.awt.Color(70, 76, 92));
-        txtUnidadMedica.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
-        txtUnidadMedica.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtUnidadMedica, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 270, 30));
+        jPanel7.add(txtDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 270, 30));
 
         add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 740, 560));
 
@@ -228,11 +208,9 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
     public javax.swing.JButton btnActualizarCita;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -247,12 +225,10 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
     public javax.swing.JTextField txtDUI;
     public javax.swing.JTextField txtDia;
     public javax.swing.JTextField txtDireccion;
-    public javax.swing.JTextField txtEspecialista;
     public javax.swing.JTextField txtHora;
     public javax.swing.JTextField txtMotivoCita;
     public javax.swing.JTextField txtNombreDoctor;
     public javax.swing.JTextField txtNombrePaciente;
     public javax.swing.JTextField txtTIpoSangre;
-    public javax.swing.JTextField txtUnidadMedica;
     // End of variables declaration//GEN-END:variables
 }

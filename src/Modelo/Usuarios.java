@@ -254,4 +254,9 @@ public String toString() {
        
        return card;
     }
+    
+    public boolean validarCorreo(String correo){
+       String regex = "^[\\w._%+-]+@(gmail\\.com|isss\\.gob\\.sv)$";
+       return correo.matches(regex);
+    }
 }

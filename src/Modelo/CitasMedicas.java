@@ -517,6 +517,11 @@ public class CitasMedicas {
     public void insertarCitaMedica(JDateChooser jdcFechaCita, JTextField txtHoraCita, JComboBox<String> cbPacientes, JComboBox<String> cbDoctor){
       String query = "INSERT INTO CitasMedicas (fecha_cita, hora_cita, id_usuario, id_doctor) VALUES (?, ?, ?, ?)";
       
+      if (jdcFechaCita.getDate() == null) {
+        JOptionPane.showMessageDialog(null, "Por favor, selecciona una fecha para la cita.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+      
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         String fechaCita = sdf.format(jdcFechaCita.getDate());
         String horaCita = txtHoraCita.getText();
@@ -530,10 +535,10 @@ public class CitasMedicas {
         int idUsuario2 = obtenerIdUsuario(cbPacientes.getSelectedItem().toString());
         int idDoctor = obtenerIdDoctor(cbDoctor.getSelectedItem().toString());
         
-        if(fechaCita.isEmpty() || horaCita.isEmpty() || idUsuario == -1 || idDoctor == -1){
-           JOptionPane.showMessageDialog(null, "Por favor, completa todos los campos antes de guardar la cita.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-           return;
-        }
+        if (fechaCita.isEmpty() || horaCita.isEmpty() || idUsuario2 == -1 || idDoctor == -1) {
+        JOptionPane.showMessageDialog(null, "Por favor, completa todos los campos antes de guardar la cita.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
         
         try(Connection conexion = ClaseConexion.getConexion(); 
                 PreparedStatement stmt = conexion.prepareStatement(query)){

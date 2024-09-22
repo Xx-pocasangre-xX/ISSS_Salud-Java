@@ -7,6 +7,7 @@ import Vista.PanelExpedienteMedico;
 import Vista.PanelInfoCitaDoctor;
 import Vista.PanelSolicitudesCitas;
 import Vista.jfrActualizarCita;
+import static Vista.jfrActualizarCita.initjfrActualizarCita;
 import Vista.jfrAgendarCitasJefesEnfermeria;
 import static Vista.jfrAgendarCitasJefesEnfermeria.initjfrAgendarCitasJefesEnfermeria;
 import Vista.jfrPantallaMenuJefesEnfermeria;
@@ -68,8 +69,12 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
             vista.jPanelInfoJefes.revalidate();
             vista.jPanelInfoJefes.repaint();
         }
+        
         if(e.getSource() == panel.btnAgendarCita){
-            initjfrAgendarCitasJefesEnfermeria();
+            if (miniPanel1 == null || !miniPanel1.isVisible()) {
+            miniPanel1 = new jfrAgendarCitasJefesEnfermeria(); 
+            initjfrAgendarCitasJefesEnfermeria(); 
+    }
         }
         
         if(e.getSource() == miniPanel1.btnAsignarDatosCita){
@@ -83,6 +88,7 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
         if(e.getSource() == vista.btnSolicitudes){
             //1-Creo un objeto del panel que quiero mostrar
             PanelSolicitudesCitas objMenu = new PanelSolicitudesCitas();
+            
             this.modelo.cargarCardsSolicitudCitas(objMenu.jpCardsSolicitudCitas, panel);
             vista.btnAgendadas.setBackground(new java.awt.Color(183, 184, 187));
             vista.btnSolicitudes.setBackground(new java.awt.Color(41, 72, 152));
@@ -95,6 +101,29 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
             //4- Refrescar todo
             vista.jPanelInfoJefes.revalidate();
             vista.jPanelInfoJefes.repaint();
+            
+            objMenu.btnAgendarCita.addMouseListener(new MouseListener(){
+               @Override
+               public void mouseClicked(MouseEvent e){
+                 initjfrAgendarCitasJefesEnfermeria();
+               }
+               
+               @Override
+    public void mousePressed(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+    }
+            });
         }
         if(e.getSource() == miniPanel2.btnGuardarCambios){
             //validar campos y hacer el update con una alerta de que los datos si se actualizaron

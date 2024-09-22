@@ -34,6 +34,11 @@ public class ctrlPantallaLogin implements ActionListener{
              return;
            }
            
+           if(!modelo.validarCorreo(correo)){
+             JOptionPane.showMessageDialog(vista, "El correo no es válido. Debe ser ejemplo@gmail.com o ejemplo@isss.gob.sv.");
+             return;
+           }
+           
            String contrasenaEncriptada = modelo.encryptPassword(contrasena);
            
            int idRol = modelo.validarCredenciales(correo, contrasenaEncriptada);
