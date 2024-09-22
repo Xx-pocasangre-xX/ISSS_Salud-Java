@@ -444,15 +444,25 @@ public class CitasMedicas {
     }
     
     public void guardarCambiosExpediente(PanelExpedienteMedico panel3, CitasMedicas citasAgendadas, ExpedientesMedicos expedientes){
-           // Obtén el texto actual de los JTextArea
+           
     String antecedentesFamiliaresActual = panel3.txtAntencedentesFamiliares.getText();
     String saludPreexistentesActual = panel3.txtSaludPreexistentes.getText();
     String alergiasActual = panel3.txtAlergias.getText();
     String saludActual = panel3.txtSaludActual.getText();
     String examenesLaboratorioActual = panel3.txtExamenesDeLaboratotios.getText();
     String fichaIngresoActual = panel3.txtFichaIngreso.getText();
+    
+    if (antecedentesFamiliaresActual.trim().isEmpty() ||
+        saludPreexistentesActual.trim().isEmpty() ||
+        alergiasActual.trim().isEmpty() ||
+        saludActual.trim().isEmpty() ||
+        examenesLaboratorioActual.trim().isEmpty() ||
+        fichaIngresoActual.trim().isEmpty()) {
+        
+        JOptionPane.showMessageDialog(panel3, "Para actualizar el expediente debe llenar todas las casillas.");
+        return; // Salir del método si hay campos vacíos
+    }
 
-    // Obtén los valores nuevos
     String nuevoAntecedentesFamiliares = obtenerTextoNuevo(panel3.txtAntencedentesFamiliares, antecedentesFamiliaresActual);
     String nuevoSaludPreexistentes = obtenerTextoNuevo(panel3.txtSaludPreexistentes, saludPreexistentesActual);
     String nuevoAlergias = obtenerTextoNuevo(panel3.txtAlergias, alergiasActual);
@@ -460,7 +470,6 @@ public class CitasMedicas {
     String nuevoExamenesLaboratorio = obtenerTextoNuevo(panel3.txtExamenesDeLaboratotios, examenesLaboratorioActual);
     String nuevoFichaIngreso = obtenerTextoNuevo(panel3.txtFichaIngreso, fichaIngresoActual);
 
-    // Actualiza el texto de los JTextArea con el nuevo historial
     panel3.txtAntencedentesFamiliares.setText(antecedentesFamiliaresActual + "\n" + nuevoAntecedentesFamiliares);
     panel3.txtSaludPreexistentes.setText(saludPreexistentesActual + "\n" + nuevoSaludPreexistentes);
     panel3.txtAlergias.setText(alergiasActual + "\n" + nuevoAlergias);
