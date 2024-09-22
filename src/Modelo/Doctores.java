@@ -129,9 +129,15 @@ public class Doctores {
     
     public void cargarImagen(JLabel profileImage, jfrPantallaMenuAdminDoctores vista){
       JFileChooser fileChooser = new JFileChooser();
+      
+       fileChooser.setAcceptAllFileFilterUsed(false);
+       fileChooser.addChoosableFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Imágenes", "jpg", "jpeg", "png", "gif", "bmp"));
+    
       int result = fileChooser.showOpenDialog(vista);
       if(result == JFileChooser.APPROVE_OPTION){
         File selectedFile = fileChooser.getSelectedFile();
+        
+        if(validarArchivoImagen(selectedFile)){
         
         ImageIcon icon = new ImageIcon(selectedFile.getAbsolutePath());
         
@@ -141,6 +147,10 @@ public class Doctores {
         
         vista.profileImage.setIcon(new ImageIcon(scaledImage));
         vista.profileImage.setText(selectedFile.getAbsolutePath());
+        
+        }else{
+          JOptionPane.showMessageDialog(vista, "Por favor, seleccione un archivo de imagen válido (jpg, jpeg, png, gif, bmp).", "Archivo no válido", JOptionPane.ERROR_MESSAGE);
+        }
       }
     }
     
@@ -157,35 +167,51 @@ public class Doctores {
         return;
       }
       
+      if(!validarNombre(nombre)){
+        JOptionPane.showMessageDialog(vista, "Nombre de doctor inválido.");
+        return;
+      }
+      
       if(!correo.contains("@isss") || !correo.contains(".gob.sv")){
         JOptionPane.showMessageDialog(vista, "Correo no válido. Ingresa un correo válido, ejemplo: ejemplo@isss.gob.sv");
         return;
       }
       
-      if(contrasena.length() < 8 || !contrasena.matches(".*[!@#$%^&*(),.?\":{}|<>].*") || !contrasena.matches(".*\\d.*")){
-        JOptionPane.showMessageDialog(vista, "La contraseña debe contener mínimo 8 caracteres, un carácter especial y números");
+      if(contrasena.length() < 6 || !contrasena.matches(".*[!@#$%^&*(),.?\":{}|<>].*") || !contrasena.matches(".*\\d.*")){
+        JOptionPane.showMessageDialog(vista, "La contraseña debe contener mínimo 6 caracteres, un carácter especial y números");
         return;
       }
       
-      if(profileImage.getText() == null){
+      if (foto == null || foto.trim().isEmpty()) {
         JOptionPane.showMessageDialog(vista, "Debe subir una foto para agregar un doctor.");
         return;
-      }
+    }
       
       if(agregarDoctor(correo, contrasena, nombre, foto, idEspecialidad, idUnidad)){
         JOptionPane.showMessageDialog(vista, "Doctor agregado exitosamente.");
-        limpiarCampos(txtCorreoDoctor, txtContrasenaDoctor, txtNombreDoctor, cbEspecialidadesMedicas, cbUnidadesMedicas);
+        limpiarCampos(txtCorreoDoctor, txtContrasenaDoctor, txtNombreDoctor, cbEspecialidadesMedicas, cbUnidadesMedicas, profileImage);
       }else{
         JOptionPane.showMessageDialog(vista, "Error al agregar el doctor");
       }
     }
     
-     public void limpiarCampos(JTextField txtCorreoDoctor, JPasswordField txtContrasenaDoctor, JTextField txtNombreDoctor, JComboBox cbEspecialidadesMedicas, JComboBox cbUnidadesMedicas) {
+     public void limpiarCampos(JTextField txtCorreoDoctor, JPasswordField txtContrasenaDoctor, JTextField txtNombreDoctor, JComboBox cbEspecialidadesMedicas, JComboBox cbUnidadesMedicas, JLabel profileImage) {
         txtCorreoDoctor.setText("");
+        profileImage.setIcon(null);
         txtContrasenaDoctor.setText("");
         txtNombreDoctor.setText("");
         cbEspecialidadesMedicas.setSelectedIndex(0);
         cbUnidadesMedicas.setSelectedIndex(0);
+        
+        String defaultImageUrl = "https://i.pinimg.com/236x/2a/2e/7f/2a2e7f0f60b750dfb36c15c268d0118d.jpg";
+        
+     try {
+        ImageIcon icon = new ImageIcon(new URL(defaultImageUrl));
+        Image img = icon.getImage().getScaledInstance(profileImage.getWidth(), profileImage.getHeight(), Image.SCALE_SMOOTH);
+        profileImage.setIcon(new ImageIcon(img));
+    } catch (IOException e) {
+        e.printStackTrace();
+    }  
     }
      
     public List <Doctores> obtenerDoctores() {
@@ -385,5 +411,22 @@ public class Doctores {
         e.printStackTrace();
         return false;
       }
+    }
+    
+    private boolean validarNombre(String nombre){
+      return nombre.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+");
+    }
+    
+    private boolean validarArchivoImagen(File file){
+      String[] extensionesValidas = {"jpg", "jpeg", "png", "gif", "bmp"};
+      String nombreArchivo = file.getName().toLowerCase();
+      
+      for(String ext : extensionesValidas){
+        if(nombreArchivo.endsWith("." + ext)){
+           return true;
+        }
+      }
+      
+      return false;
     }
 }

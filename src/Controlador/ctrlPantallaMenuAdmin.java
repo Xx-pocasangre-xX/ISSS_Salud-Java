@@ -42,8 +42,7 @@ public class ctrlPantallaMenuAdmin {
          @Override
          public void actionPerformed(ActionEvent e){
            modelo3.agregarDoctor(vista.txtCorreoDoctor, vista.txtContrasenaDoctor, vista.txtNombreDoctor, vista.profileImage, vista.cbEspecialidadesMedicas, vista.cbUnidadesMedicas, vista);
-           modelo3.cargarCardsDoctores(vista.jpCardsDoctores, vista);
-         }
+           modelo3.cargarCardsDoctores(vista.jpCardsDoctores, vista);         }
       });
       
       this.vista.btnActualizar.addActionListener(new ActionListener(){
@@ -57,7 +56,8 @@ public class ctrlPantallaMenuAdmin {
               
               if(modelo3.actualizarDoctor(idDoctor, correo, nombre, idEspecialidad, idUnidad)){
                 JOptionPane.showMessageDialog(vista, "Actualización exitosa.");
-                modelo3.limpiarCampos(vista.txtCorreoDoctor, vista.txtContrasenaDoctor, vista.txtNombreDoctor, vista.cbEspecialidadesMedicas, vista.cbUnidadesMedicas);
+                vista.profileImage.setIcon(null);
+                modelo3.limpiarCampos(vista.txtCorreoDoctor, vista.txtContrasenaDoctor, vista.txtNombreDoctor, vista.cbEspecialidadesMedicas, vista.cbUnidadesMedicas, vista.profileImage);
                 modelo3.cargarCardsDoctores(vista.jpCardsDoctores, vista);
               }else{
                 JOptionPane.showMessageDialog(vista, "Error al actualizar el doctor.");
@@ -68,7 +68,7 @@ public class ctrlPantallaMenuAdmin {
       this.vista.btnLimpiar.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent e) {
-             modelo3.limpiarCampos(vista.txtCorreoDoctor, vista.txtContrasenaDoctor, vista.txtNombreDoctor, vista.cbEspecialidadesMedicas, vista.cbUnidadesMedicas);
+             modelo3.limpiarCampos(vista.txtCorreoDoctor, vista.txtContrasenaDoctor, vista.txtNombreDoctor, vista.cbEspecialidadesMedicas, vista.cbUnidadesMedicas, vista.profileImage);
           }
       
       });
@@ -83,7 +83,7 @@ public class ctrlPantallaMenuAdmin {
                 if(modelo3.eliminarDoctor(idDoctor, vista)){
                   JOptionPane.showMessageDialog(vista, "Doctor elimando exitosamente.");
                   modelo3.cargarCardsDoctores(vista.jpCardsDoctores, vista);
-                  modelo3.limpiarCampos(vista.txtCorreoDoctor, vista.txtContrasenaDoctor, vista.txtNombreDoctor, vista.cbEspecialidadesMedicas, vista.cbUnidadesMedicas);
+                  modelo3.limpiarCampos(vista.txtCorreoDoctor, vista.txtContrasenaDoctor, vista.txtNombreDoctor, vista.cbEspecialidadesMedicas, vista.cbUnidadesMedicas, vista.profileImage);
                   vista.profileImage.setIcon(null);
                 }else{
                   JOptionPane.showMessageDialog(vista, "Error al eiminar el doctor");
