@@ -69,6 +69,7 @@ public class ctrlPantallaMenuAdmin {
             public void actionPerformed(ActionEvent e){
             System.err.println("Clic");
             modelo4.agregarJefe(pantallaJefes);
+            modelo4.cargarCardsJefes(pantallaJefes.jpCardsJefes, pantallaJefes);
           }
       });
             
@@ -77,6 +78,24 @@ public class ctrlPantallaMenuAdmin {
             public void actionPerformed(ActionEvent e){
             System.err.println("Clic");
             modelo4.limpiarCampos(pantallaJefes);
+          }
+      });
+            
+            pantallaJefes.btnActualizarJefe.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+            int id_usuario = modelo4.getIdUsuario();
+            System.out.println("ID de usuario seleccionado: " + id_usuario); 
+            String correo = pantallaJefes.txtCorreoJefe.getText();
+            String telefono = pantallaJefes.txtTelefonoJefe.getText();
+            
+            if(modelo4.actualizarJefe(id_usuario, correo, telefono, pantallaJefes)){
+              JOptionPane.showMessageDialog(vista, "Actualización exitosa.");
+              modelo4.limpiarCampos(pantallaJefes);
+              modelo4.cargarCardsJefes(pantallaJefes.jpCardsJefes, pantallaJefes);
+            }else{
+               JOptionPane.showMessageDialog(vista, "Error al actualizar el jefe de enfermería");
+            }
           }
       });
 

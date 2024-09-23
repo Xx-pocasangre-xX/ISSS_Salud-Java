@@ -221,6 +221,12 @@ public class JefesEnfermeria {
         vista.cbTipoSangre.setSelectedIndex(0);
         vista.cbSexoJefe.setSelectedIndex(0);
         vista.jdcEdadJefe.setDate(null);
+        vista.cbTipoSangre.setEnabled(true);
+        vista.jdcEdadJefe.setEnabled(true);
+        vista.cbSexoJefe.setEnabled(true);
+        vista.txtDuiJefe.setEditable(true);
+       vista.txtContrasenaJefe.setEditable(true);
+       vista.btnCargarImagenJefe.setEnabled(true);
         
         String defaultImageUrl = "https://i.pinimg.com/236x/2a/2e/7f/2a2e7f0f60b750dfb36c15c268d0118d.jpg";
         
@@ -235,7 +241,7 @@ public class JefesEnfermeria {
     
     public List<JefesEnfermeria> obtenerJefes(){
        List<JefesEnfermeria> listaJefes = new ArrayList<>();
-       String query = "SELECT dui, tipo_sangre, telefono, foto_usuario, correo_electronico, sexo, edad from Usuarios where id_rol = 3";
+       String query = "SELECT id_usuario, dui, tipo_sangre, telefono, foto_usuario, correo_electronico, sexo, edad from Usuarios where id_rol = 3";
        
        try(Connection conexion = ClaseConexion.getConexion();
            PreparedStatement stmt = conexion.prepareStatement(query);
@@ -243,6 +249,7 @@ public class JefesEnfermeria {
            
                while(rs.next()){
                  JefesEnfermeria jefes = new JefesEnfermeria();
+                 jefes.setIdUsuario(rs.getInt("id_usuario"));
                  jefes.setDui(rs.getString("dui"));
                  jefes.setTipoSangre(rs.getString("tipo_sangre"));
                  jefes.setTelefono(rs.getString("telefono"));
@@ -252,7 +259,8 @@ public class JefesEnfermeria {
                  jefes.setCorreoElectronico(rs.getString("correo_electronico"));
                  
                  listaJefes.add(jefes);
-                 System.err.println("Esta es la lista de pacientes:" + listaJefes);
+                 System.err.println("id_usuario: " + jefes.getIdUsuario());
+
                }
             }catch(SQLException e){
               e.printStackTrace();
@@ -379,9 +387,19 @@ public class JefesEnfermeria {
     }
     
     private void actualizarTextFieldsConDatos(JefesEnfermeria jefesEnfermeria, jfrPantallaMenuAdminJefesEnfermeria vista){
+        
+      setIdUsuario(jefesEnfermeria.getIdUsuario());
+        
       vista.txtDuiJefe.setText(jefesEnfermeria.getDui());
       vista.txtTelefonoJefe.setText(jefesEnfermeria.getTelefono());
       vista.txtCorreoJefe.setText(jefesEnfermeria.getCorreoElectronico());
+      
+      vista.txtDuiJefe.setEditable(false);
+      vista.txtContrasenaJefe.setEditable(false);
+      vista.cbTipoSangre.setEnabled(false);
+      vista.jdcEdadJefe.setEnabled(false);
+      vista.cbSexoJefe.setEnabled(false);
+      vista.btnCargarImagenJefe.setEnabled(false);
       
       String fechaString = jefesEnfermeria.getEdad();
     SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
@@ -416,5 +434,21 @@ public class JefesEnfermeria {
       ImageIcon iconoFoto = cargarImagen(jefesEnfermeria.getPathImagenJefe());
       Image imgFoto = iconoFoto.getImage().getScaledInstance(vista.profileImageJefe.getWidth(), vista.profileImageJefe.getHeight(), Image.SCALE_SMOOTH);
       vista.profileImageJefe.setIcon(new ImageIcon(imgFoto));
+    }
+    
+    public boolean actualizarJefe(int id_usuario, String correo, String telefono, jfrPantallaMenuAdminJefesEnfermeria vista){
+      Connection conexion = ClaseConexion.getConexion();
+      String query = "UPDATE Usuarios set correo_electronico = ?, telefono = ? WHERE id_usuario = ?";
+      
+      try(PreparedStatement ps = conexion.prepareStatement(query)){
+         ps.setString(1, correo);
+         ps.setString(2, telefono);
+         ps.setInt(3, id_usuario);
+         
+         return ps.executeUpdate() > 0;
+      }catch(SQLException e){
+        e.printStackTrace();
+        return false;
+      }
     }
 }
