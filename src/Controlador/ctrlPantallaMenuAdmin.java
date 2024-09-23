@@ -124,7 +124,7 @@ public class ctrlPantallaMenuAdmin {
                         int confirmar = JOptionPane.showConfirmDialog(vista, "Estas seguro de que deseas aliminar a este jefe de enfermería", "Confirmación", JOptionPane.YES_NO_OPTION);
                         if (confirmar == JOptionPane.YES_OPTION) {
                             if (modelo4.eliminarJefe(id_usuario, pantallaJefes)) {
-                                JOptionPane.showMessageDialog(vista, "Jefe de enfermería elimando exitosamente.");
+                                JOptionPane.showMessageDialog(vista, "Jefe de enfermería elimando exitosamente. Intenta seleccionar una card o selecciona otro jefe de enfermería");
                                 modelo4.cargarCardsJefes(pantallaJefes.jpCardsJefes, pantallaJefes);
                                 modelo4.limpiarCampos(pantallaJefes);
                                 vista.profileImage.setIcon(null);
@@ -233,7 +233,7 @@ public class ctrlPantallaMenuAdmin {
                         modelo3.limpiarCampos(vista.txtCorreoDoctor, vista.txtContrasenaDoctor, vista.txtNombreDoctor, vista.cbEspecialidadesMedicas, vista.cbUnidadesMedicas, vista.profileImage);
                         vista.profileImage.setIcon(null);
                     } else {
-                        JOptionPane.showMessageDialog(vista, "Error al eiminar el doctor");
+                        JOptionPane.showMessageDialog(vista, "Error al eiminar el doctor, Intenta seleccionar una card o selecciona otro doctor");
                     }
                 }
             }
