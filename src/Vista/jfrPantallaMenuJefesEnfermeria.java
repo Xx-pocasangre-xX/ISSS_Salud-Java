@@ -54,6 +54,7 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btnMenuDesplegablePrincipal = new javax.swing.JButton();
         btnCitasMedicasE = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1200, 750));
@@ -109,6 +110,10 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
         btnCitasMedicasE.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
         jPanel2.add(btnCitasMedicasE, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 80, 70));
 
+        btnCerrarSesion.setBackground(new java.awt.Color(62, 68, 83));
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salida 1.png"))); // NOI18N
+        jPanel2.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 690, 80, 60));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -151,6 +156,7 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAgendadas;
+    public javax.swing.JButton btnCerrarSesion;
     public javax.swing.JButton btnCitasMedicasE;
     public javax.swing.JButton btnMenuDesplegablePrincipal;
     public javax.swing.JButton btnSolicitudes;

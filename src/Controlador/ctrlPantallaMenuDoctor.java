@@ -7,6 +7,7 @@ import Vista.PanelChatDoctoresSinDesplegar;
 import Vista.PanelCitasMedicasDoctor;
 import Vista.PanelExpedienteMedico;
 import Vista.PanelInfoCitaDoctor;
+import Vista.jfrPantallaLogin;
 import Vista.jfrPantallaMenuDoctor;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -37,6 +38,7 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
         vista.btnMensajeria.addMouseListener(this);
         vista.btnMenuDesplegablePrincipal.addMouseListener(this);
         vista.btnCitasMedicas.addMouseListener(this);
+        vista.btnCerrarSesion.addMouseListener(this);
         panel2.btnExpediente.addMouseListener(this);
         panel2.btnLimpiar.addMouseListener(this);
         panel3.btnRegresar.addMouseListener(this);
@@ -68,6 +70,13 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
             //4- Refrescar todo
             vista.jpPanelInfo.revalidate();
             vista.jpPanelInfo.repaint();
+        }
+        
+        if(e.getSource() == vista.btnCerrarSesion){
+           jfrPantallaLogin inicio = new jfrPantallaLogin();
+           inicio.setVisible(true);
+           inicio.setLocationRelativeTo(null);
+           vista.dispose();
         }
         
         if(e.getSource() == vista.btnCitasMedicas){

@@ -37,10 +37,10 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
         btnMenuDesplegablePrincipal = new javax.swing.JButton();
         btnCitasMedicas = new javax.swing.JButton();
         btnMensajeria = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
         jpPanelInfo = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1200, 750));
         setMinimumSize(new java.awt.Dimension(1200, 750));
         setResizable(false);
 
@@ -71,6 +71,16 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
         });
         jpPanelMenuNoDesplegado.add(btnMensajeria, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 80, 70));
 
+        btnCerrarSesion.setBackground(new java.awt.Color(62, 68, 83));
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salida 1.png"))); // NOI18N
+        btnCerrarSesion.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSesionActionPerformed(evt);
+            }
+        });
+        jpPanelMenuNoDesplegado.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 680, 80, 70));
+
         jpPanelInfo.setBackground(new java.awt.Color(50, 55, 69));
         jpPanelInfo.setLayout(new java.awt.BorderLayout());
 
@@ -95,6 +105,10 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
     private void btnMensajeriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMensajeriaActionPerformed
         
     }//GEN-LAST:event_btnMensajeriaActionPerformed
+
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,6 +146,7 @@ public class jfrPantallaMenuDoctor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnCerrarSesion;
     public javax.swing.JButton btnCitasMedicas;
     public javax.swing.JButton btnMensajeria;
     public javax.swing.JButton btnMenuDesplegablePrincipal;

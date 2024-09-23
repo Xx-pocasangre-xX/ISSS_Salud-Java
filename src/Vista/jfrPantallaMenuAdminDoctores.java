@@ -38,6 +38,7 @@ public class jfrPantallaMenuAdminDoctores extends javax.swing.JFrame {
         btnAgregarTrabajadores = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         btnNoticias = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -91,6 +92,10 @@ public class jfrPantallaMenuAdminDoctores extends javax.swing.JFrame {
         btnNoticias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnNoticiasModoOscuro.png"))); // NOI18N
         btnNoticias.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
         jPanel2.add(btnNoticias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 80, 70));
+
+        btnCerrarSesion.setBackground(new java.awt.Color(62, 68, 83));
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salida 1.png"))); // NOI18N
+        jPanel2.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 690, 80, 60));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 760));
 
@@ -339,6 +344,7 @@ public class jfrPantallaMenuAdminDoctores extends javax.swing.JFrame {
     public javax.swing.JButton btnAgregar;
     public javax.swing.JButton btnAgregarTrabajadores;
     public javax.swing.JButton btnCargarImagen;
+    public javax.swing.JButton btnCerrarSesion;
     public javax.swing.JButton btnDoctores;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnJefes;

@@ -10,6 +10,7 @@ import Vista.jfrActualizarCita;
 import static Vista.jfrActualizarCita.initjfrActualizarCita;
 import Vista.jfrAgendarCitasJefesEnfermeria;
 import static Vista.jfrAgendarCitasJefesEnfermeria.initjfrAgendarCitasJefesEnfermeria;
+import Vista.jfrPantallaLogin;
 import Vista.jfrPantallaMenuJefesEnfermeria;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -39,6 +40,7 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
         
         vista.btnSolicitudes.addMouseListener(this);
         vista.btnAgendadas.addMouseListener(this);
+        vista.btnCerrarSesion.addMouseListener(this);
         panel.btnAgendarCita.addMouseListener(this);
         miniPanel1.btnAsignarDatosCita.addMouseListener(this);
         panel1.btnActualizarCita.addMouseListener(this);
@@ -54,6 +56,13 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        
+        if(e.getSource() == vista.btnCerrarSesion){
+           jfrPantallaLogin login = new jfrPantallaLogin();
+           login.setVisible(true);
+           login.setLocationRelativeTo(null);
+           vista.dispose();
+        }
         
         if(e.getSource() == vista.btnAgendadas){
             //1-Creo un objeto del panel que quiero mostrar
