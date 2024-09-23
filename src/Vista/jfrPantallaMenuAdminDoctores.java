@@ -3,6 +3,7 @@ package Vista;
 import Controlador.ctrlPantallaMenuAdmin;
 import Modelo.Doctores;
 import Modelo.EspecialidadDoctores;
+import Modelo.JefesEnfermeria;
 import Modelo.UnidadesMedicas;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -16,10 +17,11 @@ public class jfrPantallaMenuAdminDoctores extends javax.swing.JFrame {
         EspecialidadDoctores modelo = new EspecialidadDoctores();
         UnidadesMedicas modelo2 = new UnidadesMedicas();
         Doctores modelo3 = new Doctores();
+        JefesEnfermeria modelo4 = new JefesEnfermeria();
         jfrPantallaMenuAdminJefesEnfermeria vista2 = new jfrPantallaMenuAdminJefesEnfermeria();
         ctrlPantallaMenuAdmin Controlador = new ctrlPantallaMenuAdmin(this, modelo);
         ctrlPantallaMenuAdmin Controlador2 = new ctrlPantallaMenuAdmin(this, modelo2);
-        ctrlPantallaMenuAdmin Controlador3 = new ctrlPantallaMenuAdmin(this, modelo3, vista2);
+        ctrlPantallaMenuAdmin Controlador3 = new ctrlPantallaMenuAdmin(this, modelo3, vista2, modelo4);
         
         int width = profileImage.getWidth();
         int height = profileImage.getHeight();

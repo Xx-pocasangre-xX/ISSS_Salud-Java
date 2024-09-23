@@ -37,20 +37,27 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         btnJefes = new javax.swing.JButton();
         btnDoctores = new javax.swing.JButton();
         jpCardsJefesEnfermeria = new javax.swing.JPanel();
+        jpCardsJefes = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        txtNombreJefe = new javax.swing.JTextField();
+        txtDuiJefe = new javax.swing.JTextField();
         txtCorreoJefe = new javax.swing.JTextField();
-        btnCargarImagen = new javax.swing.JButton();
-        btnAgregar = new javax.swing.JButton();
-        btnActualizar = new javax.swing.JButton();
-        cbUnidadesMedicas = new javax.swing.JComboBox<>();
-        profileImage = new javax.swing.JLabel();
-        btnLimpiar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
+        btnCargarImagenJefe = new javax.swing.JButton();
+        btnAgregarJefe = new javax.swing.JButton();
+        btnActualizarJefe = new javax.swing.JButton();
+        cbSexoJefe = new javax.swing.JComboBox<>();
+        profileImageJefe = new javax.swing.JLabel();
+        btnLimpiarJefe = new javax.swing.JButton();
+        btnEliminarJefe = new javax.swing.JButton();
+        cbTipoSangre = new javax.swing.JComboBox<>();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txtTelefonoJefe = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jdcEdadJefe = new com.toedter.calendar.JDateChooser();
         txtContrasenaJefe = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -116,43 +123,47 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         jpCardsJefesEnfermeria.setBackground(new java.awt.Color(70, 76, 92));
         jpCardsJefesEnfermeria.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(156, 156, 156)));
         jpCardsJefesEnfermeria.setLayout(new java.awt.BorderLayout());
+
+        jpCardsJefes.setLayout(new java.awt.BorderLayout());
+        jpCardsJefesEnfermeria.add(jpCardsJefes, java.awt.BorderLayout.CENTER);
+
         jPanel1.add(jpCardsJefesEnfermeria, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 480, 650));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Contraseña");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
+        jLabel5.setText("Edad");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 480, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Foto del jefe de enfermeria");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Nombre del jefe de enfermeria");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 260, -1));
+        jLabel7.setText("Teléfono");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 140, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Correo");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Unidad Medica");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, -1, -1));
+        jLabel12.setText("Tipo de Sangre");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 560, -1, -1));
 
-        txtNombreJefe.setBackground(new java.awt.Color(50, 55, 65));
-        txtNombreJefe.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
-        txtNombreJefe.setForeground(new java.awt.Color(255, 255, 255));
-        txtNombreJefe.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
-        txtNombreJefe.addActionListener(new java.awt.event.ActionListener() {
+        txtDuiJefe.setBackground(new java.awt.Color(50, 55, 65));
+        txtDuiJefe.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
+        txtDuiJefe.setForeground(new java.awt.Color(255, 255, 255));
+        txtDuiJefe.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
+        txtDuiJefe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreJefeActionPerformed(evt);
+                txtDuiJefeActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNombreJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 290, 30));
+        jPanel1.add(txtDuiJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 290, 30));
 
         txtCorreoJefe.setBackground(new java.awt.Color(50, 55, 65));
         txtCorreoJefe.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -163,75 +174,92 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
                 txtCorreoJefeActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCorreoJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 290, 30));
+        jPanel1.add(txtCorreoJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 290, 30));
 
-        btnCargarImagen.setBackground(new java.awt.Color(41, 72, 152));
-        btnCargarImagen.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnCargarImagen.setForeground(new java.awt.Color(255, 255, 255));
-        btnCargarImagen.setText("Cargar Imagen");
-        btnCargarImagen.addActionListener(new java.awt.event.ActionListener() {
+        btnCargarImagenJefe.setBackground(new java.awt.Color(41, 72, 152));
+        btnCargarImagenJefe.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnCargarImagenJefe.setForeground(new java.awt.Color(255, 255, 255));
+        btnCargarImagenJefe.setText("Cargar Imagen");
+        btnCargarImagenJefe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCargarImagenActionPerformed(evt);
+                btnCargarImagenJefeActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCargarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 430, 140, 50));
+        jPanel1.add(btnCargarImagenJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 400, 140, 50));
 
-        btnAgregar.setBackground(new java.awt.Color(41, 72, 152));
-        btnAgregar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
-        btnAgregar.setText("Agregar");
-        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarJefe.setBackground(new java.awt.Color(41, 72, 152));
+        btnAgregarJefe.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnAgregarJefe.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregarJefe.setText("Agregar");
+        btnAgregarJefe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarActionPerformed(evt);
+                btnAgregarJefeActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 660, 120, 50));
+        jPanel1.add(btnAgregarJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 660, 120, 50));
 
-        btnActualizar.setBackground(new java.awt.Color(41, 72, 152));
-        btnActualizar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnActualizar.setForeground(new java.awt.Color(255, 255, 255));
-        btnActualizar.setText("Actualizar");
-        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 660, 120, 50));
+        btnActualizarJefe.setBackground(new java.awt.Color(41, 72, 152));
+        btnActualizarJefe.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnActualizarJefe.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizarJefe.setText("Actualizar");
+        jPanel1.add(btnActualizarJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 660, 120, 50));
 
-        cbUnidadesMedicas.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
-        cbUnidadesMedicas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbUnidadesMedicas.addActionListener(new java.awt.event.ActionListener() {
+        cbSexoJefe.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
+        cbSexoJefe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Femenino", "Masculino" }));
+        cbSexoJefe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbUnidadesMedicasActionPerformed(evt);
+                cbSexoJefeActionPerformed(evt);
             }
         });
-        jPanel1.add(cbUnidadesMedicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 290, 30));
+        jPanel1.add(cbSexoJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, 290, 30));
 
-        profileImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/profile.jpg"))); // NOI18N
-        jPanel1.add(profileImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 200, 200));
+        profileImageJefe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/profile.jpg"))); // NOI18N
+        jPanel1.add(profileImageJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 200, 200));
 
-        btnLimpiar.setBackground(new java.awt.Color(41, 72, 152));
-        btnLimpiar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnLimpiar.setForeground(new java.awt.Color(255, 255, 255));
-        btnLimpiar.setText("Limpiar");
-        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+        btnLimpiarJefe.setBackground(new java.awt.Color(41, 72, 152));
+        btnLimpiarJefe.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnLimpiarJefe.setForeground(new java.awt.Color(255, 255, 255));
+        btnLimpiarJefe.setText("Limpiar");
+        btnLimpiarJefe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiarActionPerformed(evt);
+                btnLimpiarJefeActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 660, 120, 50));
+        jPanel1.add(btnLimpiarJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 660, 120, 50));
 
-        btnEliminar.setBackground(new java.awt.Color(41, 72, 152));
-        btnEliminar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        btnEliminar.setText("Eliminar");
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminarJefe.setBackground(new java.awt.Color(41, 72, 152));
+        btnEliminarJefe.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnEliminarJefe.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminarJefe.setText("Eliminar");
+        btnEliminarJefe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
+                btnEliminarJefeActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 660, 120, 50));
+        jPanel1.add(btnEliminarJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 660, 120, 50));
 
-        txtContrasenaJefe.setBackground(new java.awt.Color(50, 55, 65));
-        txtContrasenaJefe.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
-        txtContrasenaJefe.setForeground(new java.awt.Color(255, 255, 255));
-        txtContrasenaJefe.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
-        jPanel1.add(txtContrasenaJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 290, 30));
+        cbTipoSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" }));
+        jPanel1.add(cbTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 290, 30));
+
+        jLabel13.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Sexo");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Dui");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 260, -1));
+        jPanel1.add(txtTelefonoJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 290, 30));
+
+        jLabel10.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Contraseña");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
+
+        jdcEdadJefe.setDateFormatString("dd-MM-yyyy");
+        jPanel1.add(jdcEdadJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 510, 260, 30));
+        jPanel1.add(txtContrasenaJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 290, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1122, -1));
 
@@ -242,33 +270,33 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAgregarTrabajadoresActionPerformed
 
-    private void txtNombreJefeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreJefeActionPerformed
+    private void txtDuiJefeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDuiJefeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreJefeActionPerformed
+    }//GEN-LAST:event_txtDuiJefeActionPerformed
 
     private void txtCorreoJefeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoJefeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCorreoJefeActionPerformed
 
-    private void btnCargarImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarImagenActionPerformed
+    private void btnCargarImagenJefeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarImagenJefeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnCargarImagenActionPerformed
+    }//GEN-LAST:event_btnCargarImagenJefeActionPerformed
 
-    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+    private void btnAgregarJefeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarJefeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregarActionPerformed
+    }//GEN-LAST:event_btnAgregarJefeActionPerformed
 
-    private void cbUnidadesMedicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbUnidadesMedicasActionPerformed
+    private void cbSexoJefeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSexoJefeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cbUnidadesMedicasActionPerformed
+    }//GEN-LAST:event_cbSexoJefeActionPerformed
 
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+    private void btnLimpiarJefeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarJefeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnLimpiarActionPerformed
+    }//GEN-LAST:event_btnLimpiarJefeActionPerformed
 
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+    private void btnEliminarJefeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarJefeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminarActionPerformed
+    }//GEN-LAST:event_btnEliminarJefeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -306,31 +334,38 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnActualizar;
-    public javax.swing.JButton btnAgregar;
+    public javax.swing.JButton btnActualizarJefe;
+    public javax.swing.JButton btnAgregarJefe;
     public javax.swing.JButton btnAgregarJefes;
     public javax.swing.JButton btnAgregarTrabajadores;
-    public javax.swing.JButton btnCargarImagen;
+    public javax.swing.JButton btnCargarImagenJefe;
     public javax.swing.JButton btnDoctores;
-    public javax.swing.JButton btnEliminar;
+    public javax.swing.JButton btnEliminarJefe;
     public javax.swing.JButton btnJefes;
-    public javax.swing.JButton btnLimpiar;
-    public javax.swing.JComboBox<String> cbUnidadesMedicas;
+    public javax.swing.JButton btnLimpiarJefe;
+    public javax.swing.JComboBox<String> cbSexoJefe;
+    public javax.swing.JComboBox<String> cbTipoSangre;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    public com.toedter.calendar.JDateChooser jdcEdadJefe;
+    public javax.swing.JPanel jpCardsJefes;
     public javax.swing.JPanel jpCardsJefesEnfermeria;
-    public javax.swing.JLabel profileImage;
+    public javax.swing.JLabel profileImageJefe;
     public javax.swing.JPasswordField txtContrasenaJefe;
     public javax.swing.JTextField txtCorreoJefe;
-    public javax.swing.JTextField txtNombreJefe;
+    public javax.swing.JTextField txtDuiJefe;
+    public javax.swing.JTextField txtTelefonoJefe;
     // End of variables declaration//GEN-END:variables
 }
