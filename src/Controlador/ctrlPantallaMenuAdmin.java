@@ -98,6 +98,25 @@ public class ctrlPantallaMenuAdmin {
             }
           }
       });
+            
+            pantallaJefes.btnEliminarJefe.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+            System.err.println("Clic");
+            int id_usuario = modelo4.getIdUsuario();
+              
+              int confirmar = JOptionPane.showConfirmDialog(vista, "Estas seguro de que deseas aliminar a este jefe de enfermería", "Confirmación", JOptionPane.YES_NO_OPTION);
+              if(confirmar == JOptionPane.YES_OPTION){
+                if(modelo4.eliminarJefe(id_usuario, pantallaJefes)){
+                  JOptionPane.showMessageDialog(vista, "Jefe de enfermería elimando exitosamente.");
+                  modelo4.cargarCardsJefes(pantallaJefes.jpCardsJefes, pantallaJefes);
+                  modelo4.limpiarCampos(pantallaJefes);                  vista.profileImage.setIcon(null);
+                }else{
+                  JOptionPane.showMessageDialog(vista, "Error al eiminar el doctor");
+                }
+              }
+          }
+      });
 
          } 
       });

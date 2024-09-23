@@ -451,4 +451,20 @@ public class JefesEnfermeria {
         return false;
       }
     }
+    
+    public boolean eliminarJefe(int id_usuario, jfrPantallaMenuAdminJefesEnfermeria vista){
+      Connection conexion = ClaseConexion.getConexion();
+      String query = "DELETE FROM Usuarios WHERE id_usuario = ?";
+      
+      try(PreparedStatement ps = conexion.prepareStatement(query)){
+        ps.setInt(1, id_usuario);
+        return ps.executeUpdate() > 0;
+      }catch(SQLIntegrityConstraintViolationException e){
+         JOptionPane.showMessageDialog(vista, "No se pudo eliminar al doctor debido a que tiene un historial", "Error", JOptionPane.ERROR_MESSAGE);
+         return false;
+      }catch(SQLException e){
+        e.printStackTrace();
+        return false;
+      }
+    }
 }
