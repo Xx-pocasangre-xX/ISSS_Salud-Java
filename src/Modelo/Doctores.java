@@ -345,6 +345,8 @@ public class Doctores {
        public void actionPerformed(ActionEvent e){
            System.out.println("Card clicked: " + doctor.getNombre());
            actualizarCampos(doctor, vista);
+           vista.txtContrasenaDoctor.setEnabled(false);
+           vista.btnCargarImagen.setEnabled(false);
     } 
     });
     
@@ -413,7 +415,7 @@ public class Doctores {
       }
     }
     
-    private boolean validarNombre(String nombre){
+    public boolean validarNombre(String nombre){
       return nombre.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+");
     }
     

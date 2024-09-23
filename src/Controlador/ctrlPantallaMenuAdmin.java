@@ -89,6 +89,21 @@ public class ctrlPantallaMenuAdmin {
                         System.out.println("ID de usuario seleccionado: " + id_usuario);
                         String correo = pantallaJefes.txtCorreoJefe.getText();
                         String telefono = pantallaJefes.txtTelefonoJefe.getText();
+                        
+                        if(telefono.isEmpty() || correo.isEmpty()){
+                          JOptionPane.showMessageDialog(null, "Selecciona una card en orden de actualizar");
+                          return;
+                        }
+                        
+                        if (!telefono.matches("\\d{4}-\\d{4}")) {
+                        JOptionPane.showMessageDialog(null, "Teléfono inválido. Debe tener el formato 0000-0000.");
+                        return;
+                        }
+                        
+                        if (!correo.matches("^[\\w._%+-]+@gmail\\.com$")) {
+                        JOptionPane.showMessageDialog(null, "Correo inválido. Solo se permiten correos que terminen en @gmail.com.");
+                        return;
+                       }
 
                         if (modelo4.actualizarJefe(id_usuario, correo, telefono, pantallaJefes)) {
                             JOptionPane.showMessageDialog(vista, "Actualización exitosa.");
@@ -166,6 +181,23 @@ public class ctrlPantallaMenuAdmin {
                 String nombre = vista.txtNombreDoctor.getText();
                 int idEspecialidad = vista.cbEspecialidadesMedicas.getSelectedIndex() + 1;
                 int idUnidad = vista.cbUnidadesMedicas.getSelectedIndex() + 1;
+                
+                
+                
+                if(correo.isEmpty() || nombre.isEmpty()){
+                          JOptionPane.showMessageDialog(null, "Selecciona una card en orden de actualizar");
+                          return;
+                        }
+                
+                if(!modelo3.validarNombre(nombre)){
+                JOptionPane.showMessageDialog(vista, "Nombre de doctor inválido.");
+                return;
+                }
+                
+                if(!correo.contains("@isss") || !correo.contains(".gob.sv")){
+               JOptionPane.showMessageDialog(vista, "Correo no válido. Ingresa un correo válido, ejemplo: ejemplo@isss.gob.sv");
+               return;
+                }
 
                 if (modelo3.actualizarDoctor(idDoctor, correo, nombre, idEspecialidad, idUnidad)) {
                     JOptionPane.showMessageDialog(vista, "Actualización exitosa.");
@@ -181,6 +213,8 @@ public class ctrlPantallaMenuAdmin {
         this.vista.btnLimpiar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                vista.txtContrasenaDoctor.setEnabled(true);
+                vista.btnCargarImagen.setEnabled(true);
                 modelo3.limpiarCampos(vista.txtCorreoDoctor, vista.txtContrasenaDoctor, vista.txtNombreDoctor, vista.cbEspecialidadesMedicas, vista.cbUnidadesMedicas, vista.profileImage);
             }
 
