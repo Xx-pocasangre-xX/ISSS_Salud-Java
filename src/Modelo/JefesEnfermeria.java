@@ -3,7 +3,6 @@ package Modelo;
 import Vista.PanelSolicitudesCitas;
 import Vista.jfrPantallaMenuAdminDoctores;
 import Vista.jfrPantallaMenuAdminJefesEnfermeria;
-import com.toedter.calendar.JDateChooser;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -20,6 +19,9 @@ import java.security.MessageDigest;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import javax.imageio.ImageIO;
@@ -123,20 +125,65 @@ public class JefesEnfermeria {
         String contrasena = new String(vista.txtContrasenaJefe.getPassword());
         String contrasenaEncriptada = encriptarContrasena(contrasena);
         String sexo = vista.cbSexoJefe.getSelectedItem().toString();
-
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        sdf.setLenient(false); 
-        String fechaCita;
-    
-        try {
-            fechaCita = sdf.format(vista.jdcEdadJefe.getDate());
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Fecha inválida. Por favor, usa el formato dd-MM-yyyy.", "Fecha inválida", JOptionPane.WARNING_MESSAGE);
+        
+        if (!dui.matches("\\d{8}-\\d{1}")) {
+            JOptionPane.showMessageDialog(null, "DUI inválido. Debe tener el formato 00000000-0.");
             return;
         }
+        
+        if (!telefono.matches("\\d{4}-\\d{4}")) {
+            JOptionPane.showMessageDialog(null, "Teléfono inválido. Debe tener el formato 0000-0000.");
+            return;
+        }
+        
+        if (!correoElectronico.matches("^[\\w._%+-]+@gmail\\.com$")) {
+            JOptionPane.showMessageDialog(null, "Correo inválido. Solo se permiten correos que terminen en @gmail.com.");
+            return;
+        }
+        
+        if (dui.isEmpty() || telefono.isEmpty() || correoElectronico.isEmpty() || contrasena.isEmpty() || sexo.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Todos los campos deben estar completos.");
+            return;
+        }
+        
+        if (vista.jdcEdadJefe.getDate() == null) {
+        JOptionPane.showMessageDialog(null, "Por favor, elige una fecha", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    
+        if (vista.jdcEdadJefe.getDate() == null) {
+        JOptionPane.showMessageDialog(null, "Por favor, llena todas las casillas", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+        
+        java.util.Date fechaNacimientoDate = vista.jdcEdadJefe.getDate();
+        LocalDate fechaNacimiento = fechaNacimientoDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate fechaActual = LocalDate.now();
+
+        // Calcular la edad
+        int edad = Period.between(fechaNacimiento, fechaActual).getYears();
+        if (edad < 18) {
+            JOptionPane.showMessageDialog(null, "El jefe de enfermería debe ser mayor de 18 años.");
+            return;
+        }
+        
+       SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+       sdf.setLenient(false); // Desactivar interpretación flexible de fechas
+       String fechaCita;
+      try {
+        fechaCita = sdf.format(vista.jdcEdadJefe.getDate());
+      } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Fecha inválida. Por favor, usa el formato dd-MM-yyyy.", "Fecha inválida", JOptionPane.WARNING_MESSAGE);
+        return;
+      }
 
         // Usa pathImagenJefe para la ruta de la imagen
         String rutaImagen = this.getPathImagenJefe(); 
+        
+        if (rutaImagen == null || rutaImagen.trim().isEmpty()) {
+        JOptionPane.showMessageDialog(vista, "Debe subir una foto para agregar un doctor.");
+        return;
+         }
         
         pstmt.setString(1, dui);
         pstmt.setString(2, tipoSangre);
@@ -156,7 +203,7 @@ public class JefesEnfermeria {
         
     } catch (Exception e) {
         e.printStackTrace();
-        JOptionPane.showMessageDialog(null, "Error al agregar usuario.");
+        JOptionPane.showMessageDialog(null, "Error al agregar jefe de enfermería.");
     }
     
     }
