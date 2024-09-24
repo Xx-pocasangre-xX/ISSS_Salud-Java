@@ -7,6 +7,7 @@ import Modelo.UnidadesMedicas;
 import Vista.jfrPantallaLogin;
 import Vista.jfrPantallaMenuAdminDoctores;
 import Vista.jfrPantallaMenuAdminJefesEnfermeria;
+import Vista.jfrPantallaMenuAdminNoticias;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -18,6 +19,7 @@ public class ctrlPantallaMenuAdmin {
     private UnidadesMedicas modelo2;
     private Doctores modelo3;
     private jfrPantallaMenuAdminJefesEnfermeria vista2;
+    private jfrPantallaMenuAdminNoticias vista3;
     private JefesEnfermeria modelo4;
 
     public ctrlPantallaMenuAdmin(jfrPantallaMenuAdminDoctores vista, EspecialidadDoctores modelo) {
