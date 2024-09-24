@@ -92,7 +92,8 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
 
         btnCerrarSesion.setBackground(new java.awt.Color(62, 68, 83));
         btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salida 1.png"))); // NOI18N
-        jPanel2.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 690, 80, 60));
+        btnCerrarSesion.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
+        jPanel2.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 680, 80, 70));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 760));
 
@@ -110,15 +111,16 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Roboto", 3, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Trabajadores");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, -1, -1));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 230, -1));
 
         btnJefes.setBackground(new java.awt.Color(41, 72, 152));
-        btnJefes.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnJefes.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
+        btnJefes.setForeground(new java.awt.Color(255, 255, 255));
         btnJefes.setText("Jefes de enfermeria");
         jPanel3.add(btnJefes, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 40, 170, 40));
 
         btnDoctores.setBackground(new java.awt.Color(183, 184, 187));
-        btnDoctores.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnDoctores.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         btnDoctores.setForeground(new java.awt.Color(61, 61, 61));
         btnDoctores.setText("Doctores");
         jPanel3.add(btnDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 40, 110, 40));
@@ -129,6 +131,7 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         jpCardsJefesEnfermeria.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(156, 156, 156)));
         jpCardsJefesEnfermeria.setLayout(new java.awt.BorderLayout());
 
+        jpCardsJefes.setBackground(new java.awt.Color(70, 76, 92));
         jpCardsJefes.setLayout(new java.awt.BorderLayout());
         jpCardsJefesEnfermeria.add(jpCardsJefes, java.awt.BorderLayout.CENTER);
 
@@ -137,12 +140,12 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Edad");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 480, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 540, 50, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Foto del jefe de enfermeria");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 230, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,49 +155,49 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Correo");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 60, -1));
 
         jLabel12.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Tipo de Sangre");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 560, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 130, -1));
 
         txtDuiJefe.setBackground(new java.awt.Color(50, 55, 65));
         txtDuiJefe.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
-        txtDuiJefe.setForeground(new java.awt.Color(255, 255, 255));
+        txtDuiJefe.setForeground(java.awt.Color.white);
         txtDuiJefe.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
         txtDuiJefe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDuiJefeActionPerformed(evt);
             }
         });
-        jPanel1.add(txtDuiJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 290, 30));
+        jPanel1.add(txtDuiJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 235, 290, 30));
 
         txtCorreoJefe.setBackground(new java.awt.Color(50, 55, 65));
         txtCorreoJefe.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
-        txtCorreoJefe.setForeground(new java.awt.Color(255, 255, 255));
+        txtCorreoJefe.setForeground(java.awt.Color.white);
         txtCorreoJefe.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
         txtCorreoJefe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCorreoJefeActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCorreoJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 290, 30));
+        jPanel1.add(txtCorreoJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 315, 290, 30));
 
         btnCargarImagenJefe.setBackground(new java.awt.Color(41, 72, 152));
         btnCargarImagenJefe.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnCargarImagenJefe.setForeground(new java.awt.Color(255, 255, 255));
+        btnCargarImagenJefe.setForeground(java.awt.Color.white);
         btnCargarImagenJefe.setText("Cargar Imagen");
         btnCargarImagenJefe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCargarImagenJefeActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCargarImagenJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 400, 140, 50));
+        jPanel1.add(btnCargarImagenJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 140, 50));
 
         btnAgregarJefe.setBackground(new java.awt.Color(41, 72, 152));
         btnAgregarJefe.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnAgregarJefe.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregarJefe.setForeground(java.awt.Color.white);
         btnAgregarJefe.setText("Agregar");
         btnAgregarJefe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -205,68 +208,80 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
 
         btnActualizarJefe.setBackground(new java.awt.Color(41, 72, 152));
         btnActualizarJefe.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnActualizarJefe.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizarJefe.setForeground(java.awt.Color.white);
         btnActualizarJefe.setText("Actualizar");
-        jPanel1.add(btnActualizarJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 660, 120, 50));
+        jPanel1.add(btnActualizarJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 660, 120, 50));
 
         cbSexoJefe.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
+        cbSexoJefe.setForeground(java.awt.Color.white);
         cbSexoJefe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Femenino", "Masculino" }));
         cbSexoJefe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbSexoJefeActionPerformed(evt);
             }
         });
-        jPanel1.add(cbSexoJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, 290, 30));
+        jPanel1.add(cbSexoJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 290, 30));
 
         profileImageJefe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/profile.jpg"))); // NOI18N
-        jPanel1.add(profileImageJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 200, 200));
+        jPanel1.add(profileImageJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 200, 200));
 
         btnLimpiarJefe.setBackground(new java.awt.Color(41, 72, 152));
         btnLimpiarJefe.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnLimpiarJefe.setForeground(new java.awt.Color(255, 255, 255));
+        btnLimpiarJefe.setForeground(java.awt.Color.white);
         btnLimpiarJefe.setText("Limpiar");
         btnLimpiarJefe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimpiarJefeActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLimpiarJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 660, 120, 50));
+        jPanel1.add(btnLimpiarJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 660, 120, 50));
 
         btnEliminarJefe.setBackground(new java.awt.Color(41, 72, 152));
         btnEliminarJefe.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnEliminarJefe.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminarJefe.setForeground(java.awt.Color.white);
         btnEliminarJefe.setText("Eliminar");
         btnEliminarJefe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarJefeActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminarJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 660, 120, 50));
+        jPanel1.add(btnEliminarJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 660, 120, 50));
 
+        cbTipoSangre.setForeground(java.awt.Color.white);
         cbTipoSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" }));
-        jPanel1.add(cbTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 290, 30));
+        jPanel1.add(cbTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, 290, 30));
 
         jLabel13.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Sexo");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 50, -1));
 
         jLabel9.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Dui");
+        jLabel9.setText("DUI");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 260, -1));
-        jPanel1.add(txtTelefonoJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 290, 30));
+
+        txtTelefonoJefe.setBackground(new java.awt.Color(50, 55, 65));
+        txtTelefonoJefe.setForeground(java.awt.Color.white);
+        txtTelefonoJefe.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
+        jPanel1.add(txtTelefonoJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 155, 290, 30));
 
         jLabel10.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Contraseña");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 100, -1));
 
+        jdcEdadJefe.setBackground(new java.awt.Color(50, 55, 65));
+        jdcEdadJefe.setForeground(java.awt.Color.white);
         jdcEdadJefe.setDateFormatString("dd-MM-yyyy");
-        jPanel1.add(jdcEdadJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 510, 260, 30));
-        jPanel1.add(txtContrasenaJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 290, 30));
+        jPanel1.add(jdcEdadJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 570, 260, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1122, -1));
+        txtContrasenaJefe.setBackground(new java.awt.Color(50, 55, 65));
+        txtContrasenaJefe.setForeground(java.awt.Color.white);
+        txtContrasenaJefe.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
+        jPanel1.add(txtContrasenaJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 395, 290, 30));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1122, 750));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -34,6 +34,7 @@ public class PanelChatDoctoresSinDesplegar extends javax.swing.JPanel {
         jPanelChatsDoctores = new javax.swing.JPanel();
         JpCardsPacientes = new javax.swing.JPanel();
         jPanelInfoPaciente = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(62, 68, 83));
         setMinimumSize(new java.awt.Dimension(1120, 750));
@@ -60,10 +61,10 @@ public class PanelChatDoctoresSinDesplegar extends javax.swing.JPanel {
         jPanelChat.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         chat.setBackground(new java.awt.Color(255, 255, 255));
-        chat.setFont(new java.awt.Font("Roboto", 3, 24)); // NOI18N
+        chat.setFont(new java.awt.Font("Roboto", 3, 30)); // NOI18N
         chat.setForeground(new java.awt.Color(255, 255, 255));
         chat.setText("Chat");
-        jPanelChat.add(chat, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 60, -1));
+        jPanelChat.add(chat, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 25, 70, -1));
 
         add(jPanelChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 340, 80));
 
@@ -71,6 +72,7 @@ public class PanelChatDoctoresSinDesplegar extends javax.swing.JPanel {
         jPanelChatsDoctores.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
         jPanelChatsDoctores.setLayout(new java.awt.BorderLayout());
 
+        JpCardsPacientes.setBackground(new java.awt.Color(76, 82, 99));
         JpCardsPacientes.setLayout(new java.awt.BorderLayout());
         jPanelChatsDoctores.add(JpCardsPacientes, java.awt.BorderLayout.CENTER);
 
@@ -79,7 +81,10 @@ public class PanelChatDoctoresSinDesplegar extends javax.swing.JPanel {
         jPanelInfoPaciente.setBackground(new java.awt.Color(76, 82, 99));
         jPanelInfoPaciente.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(156, 156, 156)));
         jPanelInfoPaciente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jPanelInfoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 870, 80));
+        add(jPanelInfoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 780, 80));
+
+        jPanel1.setBackground(new java.awt.Color(62, 68, 83));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 780, 560));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -88,6 +93,7 @@ public class PanelChatDoctoresSinDesplegar extends javax.swing.JPanel {
     public javax.swing.JLabel MensajeriaDoctores;
     public javax.swing.JLabel chat;
     public javax.swing.JLabel imgLogoIsss;
+    private javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanelChat;
     public javax.swing.JPanel jPanelChatsDoctores;
     public javax.swing.JPanel jPanelInfoPaciente;

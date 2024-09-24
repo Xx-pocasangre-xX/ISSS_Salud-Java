@@ -72,15 +72,16 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Roboto", 3, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Citas medicas");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, -1, -1));
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 250, -1));
 
         btnSolicitudes.setBackground(new java.awt.Color(41, 72, 152));
-        btnSolicitudes.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnSolicitudes.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
+        btnSolicitudes.setForeground(new java.awt.Color(255, 255, 255));
         btnSolicitudes.setText("Solicitudes");
         jPanel3.add(btnSolicitudes, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 35, 110, 40));
 
         btnAgendadas.setBackground(new java.awt.Color(183, 184, 187));
-        btnAgendadas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnAgendadas.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         btnAgendadas.setForeground(new java.awt.Color(61, 61, 61));
         btnAgendadas.setText("Agendadas");
         jPanel3.add(btnAgendadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 35, 110, 40));
@@ -112,7 +113,8 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
 
         btnCerrarSesion.setBackground(new java.awt.Color(62, 68, 83));
         btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salida 1.png"))); // NOI18N
-        jPanel2.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 690, 80, 60));
+        btnCerrarSesion.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
+        jPanel2.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 680, 80, 70));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 

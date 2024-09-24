@@ -191,6 +191,7 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
 
         add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 740, 560));
 
+        jpCardsCitasAgendadas2.setBackground(new java.awt.Color(50, 55, 69));
         jpCardsCitasAgendadas2.setLayout(new java.awt.BorderLayout());
         add(jpCardsCitasAgendadas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 380, 560));
     }// </editor-fold>//GEN-END:initComponents

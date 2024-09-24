@@ -60,25 +60,25 @@ public class jfrCodigoVerificacion extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(430, 480));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 32)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Roboto", 3, 32)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Verifique su código");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("su correo electrónico");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 150, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 150, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ingrese correctamente el código que ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("se le ha enviado con anterioridad a");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 130, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 130, 220, -1));
 
         txtNum6.setFont(new java.awt.Font("Dialog", 0, 40)); // NOI18N
         txtNum6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -122,7 +122,7 @@ public class jfrCodigoVerificacion extends javax.swing.JFrame {
         jPanel1.add(txtNum5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 50, 70));
 
         btnConfirmarCod.setBackground(new java.awt.Color(144, 188, 255));
-        btnConfirmarCod.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
+        btnConfirmarCod.setFont(new java.awt.Font("Roboto", 2, 20)); // NOI18N
         btnConfirmarCod.setForeground(new java.awt.Color(255, 255, 255));
         btnConfirmarCod.setText("Confirmar");
         btnConfirmarCod.addActionListener(new java.awt.event.ActionListener() {

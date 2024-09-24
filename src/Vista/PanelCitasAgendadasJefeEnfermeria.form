@@ -527,6 +527,11 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jpCardsCitasAgendadas2">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="45" green="37" red="32" type="rgb"/>
+        </Property>
+      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>

@@ -145,7 +145,7 @@ public class PanelInfoCitaDoctor extends javax.swing.JPanel {
                 btnLimpiarActionPerformed(evt);
             }
         });
-        jPanel7.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, 120, 40));
+        jPanel7.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 370, 120, 40));
 
         txtTipoSangrePaciente.setBackground(new java.awt.Color(70, 76, 92));
         txtTipoSangrePaciente.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N

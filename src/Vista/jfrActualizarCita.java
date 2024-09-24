@@ -88,12 +88,12 @@ public class jfrActualizarCita extends javax.swing.JFrame {
                 txtHoraActualizadaActionPerformed(evt);
             }
         });
-        jPanel1.add(txtHoraActualizada, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, 270, 30));
+        jPanel1.add(txtHoraActualizada, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 270, 40));
 
         jLabel14.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Fecha designada");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 170, -1));
 
         btnGuardarCambios.setBackground(new java.awt.Color(41, 72, 152));
         btnGuardarCambios.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
@@ -108,10 +108,10 @@ public class jfrActualizarCita extends javax.swing.JFrame {
 
         cmbNombreDoctorAct.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         cmbNombreDoctorAct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(cmbNombreDoctorAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 300, 30));
+        jPanel1.add(cmbNombreDoctorAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 300, 30));
 
         jdcFechaActualizada.setDateFormatString("dd-MM-yyyy");
-        jPanel1.add(jdcFechaActualizada, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 300, 40));
+        jPanel1.add(jdcFechaActualizada, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 300, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 560));
 

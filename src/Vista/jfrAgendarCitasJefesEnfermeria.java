@@ -73,31 +73,31 @@ public class jfrAgendarCitasJefesEnfermeria extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Doctor designado");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 180, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 180, -1));
 
         jLabel13.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Hora");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 140, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 140, -1));
 
         txtHoraCita.setBackground(new java.awt.Color(70, 76, 92));
         txtHoraCita.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         txtHoraCita.setForeground(new java.awt.Color(255, 255, 255));
         txtHoraCita.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel1.add(txtHoraCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 270, 40));
+        jPanel1.add(txtHoraCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 270, 40));
 
         jLabel14.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Fecha designada");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 170, -1));
 
         jLabel15.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Paciente");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, -1, -1));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, -1, -1));
 
         btnAsignarDatosCita.setBackground(new java.awt.Color(41, 72, 152));
-        btnAsignarDatosCita.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnAsignarDatosCita.setFont(new java.awt.Font("Roboto", 3, 16)); // NOI18N
         btnAsignarDatosCita.setText("Agendar Cita");
         btnAsignarDatosCita.setBorder(null);
         btnAsignarDatosCita.addActionListener(new java.awt.event.ActionListener() {
@@ -105,17 +105,17 @@ public class jfrAgendarCitasJefesEnfermeria extends javax.swing.JFrame {
                 btnAsignarDatosCitaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAsignarDatosCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 440, 280, 40));
+        jPanel1.add(btnAsignarDatosCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 470, 140, 40));
 
         cbDoctor.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         cbDoctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(cbDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 270, 30));
+        jPanel1.add(cbDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 270, 40));
 
         cbPacientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(cbPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 310, 30));
+        jPanel1.add(cbPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 310, 40));
 
         jdcFechaCita.setDateFormatString("dd-MM-yyyy");
-        jPanel1.add(jdcFechaCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 320, 40));
+        jPanel1.add(jdcFechaCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 270, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 560));
 

@@ -45,7 +45,7 @@ public class jfrPantallaMain extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 314, 333));
 
         btnBienvenida.setBackground(new java.awt.Color(255, 255, 255));
-        btnBienvenida.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBienvenida.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         btnBienvenida.setForeground(new java.awt.Color(41, 72, 152));
         btnBienvenida.setText("Iniciar Sesión");
         btnBienvenida.addActionListener(new java.awt.event.ActionListener() {

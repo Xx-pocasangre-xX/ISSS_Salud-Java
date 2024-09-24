@@ -88,6 +88,7 @@ public class PanelCitasMedicasDoctor extends javax.swing.JPanel {
         jPanelInformacionCitaDoctor.setLayout(new java.awt.BorderLayout());
         add(jPanelInformacionCitaDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, -1, -1));
 
+        jpCardsCitasAgendadas.setBackground(new java.awt.Color(50, 55, 69));
         jpCardsCitasAgendadas.setLayout(new java.awt.BorderLayout());
         add(jpCardsCitasAgendadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 380, 560));
     }// </editor-fold>//GEN-END:initComponents
