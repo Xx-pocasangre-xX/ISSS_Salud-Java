@@ -129,7 +129,7 @@ public class ctrlPantallaMenuAdmin {
                                 modelo4.limpiarCampos(pantallaJefes);
                                 vista.profileImage.setIcon(null);
                             } else {
-                                JOptionPane.showMessageDialog(vista, "Error al eiminar el doctor");
+                                JOptionPane.showMessageDialog(vista, "Error al eiminar el jefe enfermería, selecciona una card o elige otro jefe de enfermería");
                             }
                         }
                     }

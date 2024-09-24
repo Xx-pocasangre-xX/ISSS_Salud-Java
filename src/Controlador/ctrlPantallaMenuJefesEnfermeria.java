@@ -37,6 +37,8 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
         this.modelo.bloquearTextFields(panel.txtNombreSolicitante, panel.txtTelefono, panel.txtCorreo, panel.txtMotivoCita, panel.txtDUI, panel.txtFechaSolicitud);
         this.modelo2.cargarDoctores(miniPanel1.cbDoctor);
         this.modelo2.cargarPacientes(miniPanel1.cbPacientes);
+        this.modelo2.cargarDoctores2(miniPanel2.cmbNombreDoctorAct);
+        this.modelo2.cargarCardsCitasMedicas2(panel1.jpCardsCitasAgendadas2, panel1, miniPanel2);
         
         vista.btnSolicitudes.addMouseListener(this);
         vista.btnAgendadas.addMouseListener(this);
@@ -69,7 +71,8 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
             PanelCitasAgendadasJefeEnfermeria objMenu = new PanelCitasAgendadasJefeEnfermeria();
             vista.btnSolicitudes.setBackground(new java.awt.Color(183, 184, 187));
             vista.btnAgendadas.setBackground(new java.awt.Color(41, 72, 152));
-            modelo2.cargarCardsCitasMedicas2(objMenu.jpCardsCitasAgendadas2);
+            modelo2.cargarCardsCitasMedicas2(objMenu.jpCardsCitasAgendadas2, objMenu, miniPanel2);
+            
             
             //2- Limpio el panel contendor (por si acaso)
             vista.jPanelInfoJefes.removeAll();
@@ -83,7 +86,13 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
             objMenu.btnActualizarCita.addMouseListener(new MouseListener(){
               @Override
               public void mouseClicked(MouseEvent e){
-                initjfrActualizarCita();
+                if (miniPanel2 == null) {
+                
+                miniPanel2 = new jfrActualizarCita();
+                initjfrActualizarCita();  
+            }
+            miniPanel2.setVisible(true); 
+            miniPanel2.setLocationRelativeTo(null);
               }
               
                           @Override

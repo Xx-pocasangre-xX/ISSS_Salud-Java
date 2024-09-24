@@ -1,7 +1,9 @@
 package Modelo;
 
+import Vista.PanelCitasAgendadasJefeEnfermeria;
 import Vista.PanelExpedienteMedico;
 import Vista.PanelInfoCitaDoctor;
+import Vista.jfrActualizarCita;
 import Vista.jfrPantallaMenuDoctor;
 import Vista.jfrPantallaMenuJefesEnfermeria;
 import com.toedter.calendar.JDateChooser;
@@ -15,6 +17,7 @@ import java.awt.Insets;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +36,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class CitasMedicas {
+    private int id_cita;
     private String fecha_cita;
     private String hora_cita;
     private String foto_usuario;
@@ -46,6 +50,14 @@ public class CitasMedicas {
 
     public void setIdUsuario(int idUsuario) {
     this.idUsuario = idUsuario;
+}
+    
+    public int getIdCita() {
+    return id_cita;
+}
+
+    public void setIdCita(int id_cita) {
+    this.id_cita = id_cita;
 }
     
     public String getFecha_cita() {
@@ -98,6 +110,7 @@ public class CitasMedicas {
             
           while(rs.next()){
             CitasMedicas citasAgendadas = new CitasMedicas();
+            citasAgendadas.setIdCita(rs.getInt("id_cita"));
             citasAgendadas.setFecha_cita(rs.getString("fecha_cita"));
             citasAgendadas.setHora_cita(rs.getString("hora_cita"));
             citasAgendadas.setFoto_usuario(rs.getString("foto_usuario"));
@@ -152,7 +165,7 @@ public class CitasMedicas {
        jpCardsCitasAgendadas.repaint();
     }
     
-    public void cargarCardsCitasMedicas2(JPanel jpCardsCitasAgendadas2){
+    public void cargarCardsCitasMedicas2(JPanel jpCardsCitasAgendadas2, PanelCitasAgendadasJefeEnfermeria vista, jfrActualizarCita vista2){
        JPanel panelCards = new JPanel();
        panelCards.setLayout(new GridBagLayout());
        
@@ -168,7 +181,7 @@ public class CitasMedicas {
        int row = 0;
        
        for(CitasMedicas citaAgendada : citasAgendadas){
-          JButton card = crearCard2(citaAgendada);
+          JButton card = crearCard2(citaAgendada, vista, vista2);
           gbc.gridy = row;
           panelCards.add(card, gbc);
         
@@ -264,7 +277,7 @@ public class CitasMedicas {
        return card;
     }
     
-    private JButton crearCard2(CitasMedicas citasAgendadas){
+    private JButton crearCard2(CitasMedicas citasAgendadas, PanelCitasAgendadasJefeEnfermeria vista, jfrActualizarCita vista2){
        JButton card = new JButton();
        card.setLayout(new BorderLayout(10, 10));
        card.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -308,7 +321,8 @@ public class CitasMedicas {
        card.setFocusable(true);
        
        card.addActionListener((e) -> {
-          
+          ActualizarTextFields(citasAgendadas, vista);
+          Actualizar2(citasAgendadas, vista2);
        });
        
        return card;
@@ -536,6 +550,14 @@ public class CitasMedicas {
       }
     }
     
+    public void cargarDoctores2(JComboBox cmbNombreDoctorAct){
+      ArrayList<String> doctores = obtenerDoctores();
+      cmbNombreDoctorAct.removeAllItems();
+      for(String doctor2 : doctores){
+        cmbNombreDoctorAct.addItem(doctor2);
+      }
+    }
+    
     public void cargarPacientes(JComboBox cbPacientes){
       ArrayList<String> pacientes = obtenerPacientes();
       cbPacientes.removeAllItems();
@@ -549,7 +571,7 @@ public class CitasMedicas {
       String horaCita = txtHoraCita.getText();
       
       if (jdcFechaCita.getDate() == null) {
-        JOptionPane.showMessageDialog(null, "Por favor, llena todas las casillas", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Por favor, elige una fecha", "Advertencia", JOptionPane.WARNING_MESSAGE);
         return;
     }
       
@@ -644,6 +666,67 @@ public class CitasMedicas {
       }
       
       return idDoctor;
+    }    
+    
+    private void ActualizarTextFields(CitasMedicas citasAgendadas, PanelCitasAgendadasJefeEnfermeria vista){
+        vista.txtNombreDoctor.setText(citasAgendadas.getDoctor());
+        vista.txtHora.setText(citasAgendadas.getHora_cita());
+        vista.txtDia.setText(citasAgendadas.getFecha_cita());
+        vista.txtNombrePaciente.setText(citasAgendadas.getSolicitante());
+        
+        vista.txtNombreDoctor.setEditable(false);
+        vista.txtHora.setEditable(false);
+        vista.txtDia.setEditable(false);
+        vista.txtNombrePaciente.setEditable(false);
+        vista.txtSexo.setEditable(false);
+        vista.txtDUI.setEditable(false);
+        vista.txtTIpoSangre.setEditable(false);
+        vista.txtTelefono.setEditable(false);
+        
+        String query = "SELECT u.sexo, u.dui, u.telefono, u.tipo_sangre FROM Usuarios u WHERE u.correo_electronico = ?";
+       
+       try(Connection conexion = ClaseConexion.getConexion();
+           PreparedStatement stmt = conexion.prepareStatement(query)){
+           stmt.setString(1, citasAgendadas.getSolicitante());
+           ResultSet rs = stmt.executeQuery();
+           
+           if(rs.next()){
+             vista.txtSexo.setText(rs.getString("sexo"));
+             vista.txtDUI.setText(rs.getString("dui"));
+             vista.txtTIpoSangre.setText(rs.getString("tipo_sangre"));
+             vista.txtTelefono.setText(rs.getNString("telefono"));
+           }
+       }catch(SQLException e){
+         e.printStackTrace();
+       }
     }
     
+    private void Actualizar2(CitasMedicas citasAgendadas, jfrActualizarCita vista){
+       vista.txtHoraActualizada.setText(citasAgendadas.getHora_cita());
+       
+       JComboBox<String> cbDoctor = vista.cmbNombreDoctorAct;
+      for(int i = 0; i < cbDoctor.getItemCount(); i++){
+        if(cbDoctor.getItemAt(i).equals(citasAgendadas.getDoctor())){
+          cbDoctor.setSelectedIndex(i);
+          break;
+        }
+      }
+       
+       String fechaString = citasAgendadas.getFecha_cita();
+fechaString = fechaString.split(" ")[0];  // Obtener solo la parte de la fecha (antes del espacio)
+
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); // Ajusta el formato a 'yyyy-MM-dd' para que coincida con la fecha obtenida
+try {
+    // Convertir la cadena a java.util.Date
+    java.util.Date fechaDate = sdf.parse(fechaString);
+    
+    // Convertir java.util.Date a java.sql.Date
+    java.sql.Date fechaSqlDate = new java.sql.Date(fechaDate.getTime());
+    
+    vista.jdcFechaActualizada.setDate(fechaSqlDate);
+} catch (ParseException e) {
+    e.printStackTrace();
+    JOptionPane.showMessageDialog(vista, "Error al convertir la fecha: " + e.getMessage(), "Error de fecha", JOptionPane.ERROR_MESSAGE);
+}
+    }
 }
