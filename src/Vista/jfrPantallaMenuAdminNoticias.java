@@ -30,6 +30,7 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         btnAgregarTrabajadores = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         btnAgregarJefes = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -39,20 +40,19 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txtNombreJefe = new javax.swing.JTextField();
-        btnCargarImagen = new javax.swing.JButton();
+        txtTituloNoticia = new javax.swing.JTextField();
+        btnCargarImagenNoticia = new javax.swing.JButton();
         btnAgregar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
-        profileImage = new javax.swing.JLabel();
+        imgNoticia = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
-        txtContrasenaJefe = new javax.swing.JPasswordField();
+        txtFechaPublicacion = new javax.swing.JPasswordField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtDescripcionNoticia = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1200, 750));
-        setPreferredSize(new java.awt.Dimension(1200, 750));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -80,7 +80,12 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         btnAgregarJefes.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
         jPanel2.add(btnAgregarJefes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 80, 70));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 760));
+        btnCerrarSesion.setBackground(new java.awt.Color(62, 68, 83));
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salida 1.png"))); // NOI18N
+        btnCerrarSesion.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
+        jPanel2.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 680, 80, 70));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 750));
 
         jPanel1.setBackground(new java.awt.Color(50, 55, 69));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -103,7 +108,7 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         jpCardsNoticias.setBackground(new java.awt.Color(70, 76, 92));
         jpCardsNoticias.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(156, 156, 156)));
         jpCardsNoticias.setLayout(new java.awt.BorderLayout());
-        jPanel1.add(jpCardsNoticias, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 480, 650));
+        jPanel1.add(jpCardsNoticias, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 480, 640));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -125,27 +130,27 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         jLabel8.setText("Descripción");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
 
-        txtNombreJefe.setBackground(new java.awt.Color(50, 55, 65));
-        txtNombreJefe.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
-        txtNombreJefe.setForeground(new java.awt.Color(255, 255, 255));
-        txtNombreJefe.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
-        txtNombreJefe.addActionListener(new java.awt.event.ActionListener() {
+        txtTituloNoticia.setBackground(new java.awt.Color(50, 55, 65));
+        txtTituloNoticia.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
+        txtTituloNoticia.setForeground(new java.awt.Color(255, 255, 255));
+        txtTituloNoticia.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
+        txtTituloNoticia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreJefeActionPerformed(evt);
+                txtTituloNoticiaActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNombreJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 290, 30));
+        jPanel1.add(txtTituloNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 290, 30));
 
-        btnCargarImagen.setBackground(new java.awt.Color(41, 72, 152));
-        btnCargarImagen.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnCargarImagen.setForeground(new java.awt.Color(255, 255, 255));
-        btnCargarImagen.setText("Cargar Imagen");
-        btnCargarImagen.addActionListener(new java.awt.event.ActionListener() {
+        btnCargarImagenNoticia.setBackground(new java.awt.Color(41, 72, 152));
+        btnCargarImagenNoticia.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnCargarImagenNoticia.setForeground(new java.awt.Color(255, 255, 255));
+        btnCargarImagenNoticia.setText("Cargar Imagen");
+        btnCargarImagenNoticia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCargarImagenActionPerformed(evt);
+                btnCargarImagenNoticiaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCargarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 265, 150, 40));
+        jPanel1.add(btnCargarImagenNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 265, 150, 40));
 
         btnAgregar.setBackground(new java.awt.Color(41, 72, 152));
         btnAgregar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
@@ -164,8 +169,8 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         btnActualizar.setText("Actualizar");
         jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 660, 120, 50));
 
-        profileImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/profile.jpg"))); // NOI18N
-        jPanel1.add(profileImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 550, 100));
+        imgNoticia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/profile.jpg"))); // NOI18N
+        jPanel1.add(imgNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 550, 100));
 
         btnLimpiar.setBackground(new java.awt.Color(41, 72, 152));
         btnLimpiar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
@@ -189,17 +194,17 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         });
         jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 660, 120, 50));
 
-        txtContrasenaJefe.setBackground(new java.awt.Color(50, 55, 65));
-        txtContrasenaJefe.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
-        txtContrasenaJefe.setForeground(new java.awt.Color(255, 255, 255));
-        txtContrasenaJefe.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
-        jPanel1.add(txtContrasenaJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 560, 290, 30));
+        txtFechaPublicacion.setBackground(new java.awt.Color(50, 55, 65));
+        txtFechaPublicacion.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
+        txtFechaPublicacion.setForeground(new java.awt.Color(255, 255, 255));
+        txtFechaPublicacion.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
+        jPanel1.add(txtFechaPublicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 560, 290, 30));
 
-        jTextArea1.setBackground(new java.awt.Color(50, 55, 65));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtDescripcionNoticia.setBackground(new java.awt.Color(50, 55, 65));
+        txtDescripcionNoticia.setColumns(20);
+        txtDescripcionNoticia.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
+        txtDescripcionNoticia.setRows(5);
+        jScrollPane1.setViewportView(txtDescripcionNoticia);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 550, 160));
 
@@ -212,13 +217,13 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAgregarTrabajadoresActionPerformed
 
-    private void txtNombreJefeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreJefeActionPerformed
+    private void txtTituloNoticiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTituloNoticiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreJefeActionPerformed
+    }//GEN-LAST:event_txtTituloNoticiaActionPerformed
 
-    private void btnCargarImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarImagenActionPerformed
+    private void btnCargarImagenNoticiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarImagenNoticiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnCargarImagenActionPerformed
+    }//GEN-LAST:event_btnCargarImagenNoticiaActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
@@ -272,9 +277,11 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
     public javax.swing.JButton btnAgregar;
     public javax.swing.JButton btnAgregarJefes;
     public javax.swing.JButton btnAgregarTrabajadores;
-    public javax.swing.JButton btnCargarImagen;
+    public javax.swing.JButton btnCargarImagenNoticia;
+    public javax.swing.JButton btnCerrarSesion;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnLimpiar;
+    public javax.swing.JLabel imgNoticia;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -286,10 +293,9 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     public javax.swing.JPanel jpCardsNoticias;
-    public javax.swing.JLabel profileImage;
-    public javax.swing.JPasswordField txtContrasenaJefe;
-    public javax.swing.JTextField txtNombreJefe;
+    public javax.swing.JTextArea txtDescripcionNoticia;
+    public javax.swing.JPasswordField txtFechaPublicacion;
+    public javax.swing.JTextField txtTituloNoticia;
     // End of variables declaration//GEN-END:variables
 }

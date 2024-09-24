@@ -54,6 +54,8 @@ public class jfrActualizarCita extends javax.swing.JFrame {
         btnGuardarCambios = new javax.swing.JButton();
         cmbNombreDoctorAct = new javax.swing.JComboBox<>();
         jdcFechaActualizada = new com.toedter.calendar.JDateChooser();
+        jLabel15 = new javax.swing.JLabel();
+        txtEspecialista = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(760, 560));
@@ -72,7 +74,7 @@ public class jfrActualizarCita extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Nombre del doctor");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 180, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 180, -1));
 
         jLabel13.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -92,8 +94,8 @@ public class jfrActualizarCita extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Fecha designada");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 170, -1));
+        jLabel14.setText("Fecha de la cita médica");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 230, -1));
 
         btnGuardarCambios.setBackground(new java.awt.Color(41, 72, 152));
         btnGuardarCambios.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
@@ -108,10 +110,26 @@ public class jfrActualizarCita extends javax.swing.JFrame {
 
         cmbNombreDoctorAct.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         cmbNombreDoctorAct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(cmbNombreDoctorAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 300, 30));
+        jPanel1.add(cmbNombreDoctorAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 270, 40));
 
         jdcFechaActualizada.setDateFormatString("dd-MM-yyyy");
-        jPanel1.add(jdcFechaActualizada, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 300, 40));
+        jPanel1.add(jdcFechaActualizada, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 270, 40));
+
+        jLabel15.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Especialidad del doctor");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 220, -1));
+
+        txtEspecialista.setBackground(new java.awt.Color(70, 76, 92));
+        txtEspecialista.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        txtEspecialista.setForeground(new java.awt.Color(255, 255, 255));
+        txtEspecialista.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
+        txtEspecialista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEspecialistaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtEspecialista, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 270, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 560));
 
@@ -125,6 +143,10 @@ public class jfrActualizarCita extends javax.swing.JFrame {
     private void txtHoraActualizadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHoraActualizadaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtHoraActualizadaActionPerformed
+
+    private void txtEspecialistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEspecialistaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEspecialistaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,8 +190,10 @@ public class jfrActualizarCita extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JPanel jPanel1;
     public com.toedter.calendar.JDateChooser jdcFechaActualizada;
+    public javax.swing.JTextField txtEspecialista;
     public javax.swing.JTextField txtHoraActualizada;
     // End of variables declaration//GEN-END:variables
 }
