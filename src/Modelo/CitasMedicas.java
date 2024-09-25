@@ -102,12 +102,14 @@ public class CitasMedicas {
     
     public List<CitasMedicas> obtenerCitasMedicas(){
       List<CitasMedicas> listaCitasMedicas = new ArrayList<>();
-      String query = "SELECT cm.id_cita, cm.fecha_cita, cm.hora_cita, u.id_usuario, u.foto_usuario, u.correo_electronico AS solicitante, d.nombre_doctor AS doctor FROM CitasMedicas cm INNER JOIN Usuarios u ON cm.id_usuario = u.id_usuario INNER JOIN Doctores d ON cm.id_doctor = d.id_doctor";
+      int idDoctor = Usuarios.getIdDoctor(); 
+      String query = "SELECT cm.id_cita, cm.fecha_cita, cm.hora_cita, u.id_usuario, u.foto_usuario, u.correo_electronico AS solicitante, d.nombre_doctor AS doctor FROM CitasMedicas cm INNER JOIN Usuarios u ON cm.id_usuario = u.id_usuario INNER JOIN Doctores d ON cm.id_doctor = d.id_doctor WHERE d.id_doctor = ?";
       
       try(Connection conexion = ClaseConexion.getConexion();
-            PreparedStatement stmt = conexion.prepareStatement(query);
-            ResultSet rs = stmt.executeQuery()){
+            PreparedStatement stmt = conexion.prepareStatement(query)){
+            stmt.setInt(1, idDoctor); 
             
+      try(ResultSet rs = stmt.executeQuery()){
           while(rs.next()){
             CitasMedicas citasAgendadas = new CitasMedicas();
             citasAgendadas.setIdCita(rs.getInt("id_cita"));
@@ -119,6 +121,7 @@ public class CitasMedicas {
             citasAgendadas.setIdUsuario(rs.getInt("id_usuario"));
             listaCitasMedicas.add(citasAgendadas);
           }
+        }
       }catch(SQLException e){
         e.printStackTrace();
       }

@@ -34,6 +34,7 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
         this.modelo3 = modelo3;
         this.modelo.cargarCardsCitasMedicas(panel1.jpCardsCitasAgendadas, vista, panel2, panel3, modelo2);
         this.modelo.bloquearTextFields(panel2.txtNombreDoctor, panel2.txtCorreoPaciente, panel2.txtFechaCita, panel2.txtHoraCita, panel2.txtSexoPaciente, panel2.txtDuiPaciente, panel2.txtTipoSangrePaciente);
+        int idDoctor = modelo3.getIdDoctor(); 
         
         vista.btnMensajeria.addMouseListener(this);
         vista.btnMenuDesplegablePrincipal.addMouseListener(this);

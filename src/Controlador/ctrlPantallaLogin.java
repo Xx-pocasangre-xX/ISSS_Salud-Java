@@ -72,15 +72,17 @@ public class ctrlPantallaLogin implements ActionListener{
                         break;
                }
            }else{
-             if (modelo.esDoctor(correo, contrasenaEncriptada)) {
-                    JOptionPane.showMessageDialog(vista, "Login exitoso");
-                    initjfrPantallaMenuDoctor();
-                    vista.dispose();
-                } else {
-                    JOptionPane.showMessageDialog(vista, "Credenciales incorrectas. Inténtalo de nuevo.");
-                    vista.txtEmail.setText("");
-                    vista.txtContrasena.setText("");
-                }
+             int idDoctor = modelo.obtenerIdDoctor(correo, contrasenaEncriptada);
+             if (idDoctor != -1) {
+               modelo.setIdDoctor(idDoctor);  // Guarda el idDoctor en la clase de sesión
+               JOptionPane.showMessageDialog(vista, "Login exitoso");
+               initjfrPantallaMenuDoctor();  // Ya no es necesario pasar el idDoctor
+               vista.dispose();
+             } else {
+               JOptionPane.showMessageDialog(vista, "Credenciales incorrectas. Inténtalo de nuevo.");
+               vista.txtEmail.setText("");
+               vista.txtContrasena.setText("");
+}
            }
         }
         if(e.getSource() == vista.btnOlvidasteContra){

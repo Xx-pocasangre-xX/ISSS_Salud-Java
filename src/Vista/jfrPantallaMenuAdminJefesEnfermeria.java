@@ -160,7 +160,7 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Tipo de Sangre");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 130, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 150, -1));
 
         txtDuiJefe.setBackground(new java.awt.Color(50, 55, 65));
         txtDuiJefe.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -213,7 +213,7 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         jPanel1.add(btnActualizarJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 660, 120, 50));
 
         cbSexoJefe.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
-        cbSexoJefe.setForeground(java.awt.Color.white);
+        cbSexoJefe.setForeground(java.awt.Color.black);
         cbSexoJefe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Femenino", "Masculino" }));
         cbSexoJefe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -247,7 +247,7 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         });
         jPanel1.add(btnEliminarJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 660, 120, 50));
 
-        cbTipoSangre.setForeground(java.awt.Color.white);
+        cbTipoSangre.setForeground(java.awt.Color.black);
         cbTipoSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" }));
         jPanel1.add(cbTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, 290, 30));
 
@@ -272,7 +272,7 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 100, -1));
 
         jdcEdadJefe.setBackground(new java.awt.Color(50, 55, 65));
-        jdcEdadJefe.setForeground(java.awt.Color.white);
+        jdcEdadJefe.setForeground(java.awt.Color.black);
         jdcEdadJefe.setDateFormatString("dd-MM-yyyy");
         jPanel1.add(jdcEdadJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 570, 260, 30));
 

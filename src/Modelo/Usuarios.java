@@ -34,6 +34,15 @@ public String toString() {
     
     private String foto_usuario;
     private String correo_electronico;
+    private static int idDoctor;
+
+    public static int getIdDoctor() {
+        return idDoctor;
+    }
+
+    public static void setIdDoctor(int idDoctor) {
+        Usuarios.idDoctor = idDoctor;
+    }
     
     public String getFoto_usuario2() {
         
@@ -76,28 +85,23 @@ public String toString() {
        return -1;
        }
     
-    public boolean esDoctor(String correo, String contrasena){
-      String query = "SELECT COUNT(*) FROM Doctores WHERE correo_doctor = ? AND contrasena_doctor = ?";
-      
-      System.out.println("Correo ingresado: " + correo);
-      System.out.println("Contraseña encriptada ingresada: " + contrasena);
-    
-      try(Connection conexion = ClaseConexion.getConexion();
-              PreparedStatement pst = conexion.prepareStatement(query)){
+    public int obtenerIdDoctor(String correo, String contrasena) {
+    String query = "SELECT id_doctor FROM Doctores WHERE correo_doctor = ? AND contrasena_doctor = ?";
+    try (Connection conexion = ClaseConexion.getConexion();
+         PreparedStatement pst = conexion.prepareStatement(query)) {
         pst.setString(1, correo);
         pst.setString(2, contrasena);
-        try(ResultSet rs = pst.executeQuery()){
-          if(rs.next()){
-              System.out.println("Consulta SQL ejecutada, valor devuelto: " + rs.getInt(1));
-            return rs.getInt(1) > 0;
-          }
+        try (ResultSet rs = pst.executeQuery()) {
+            if (rs.next()) {
+                return rs.getInt("id_doctor");
+            }
         }
-      }catch(SQLException e){
-           System.out.println("Error en la consulta SQL: " + e.getMessage());
+    } catch (SQLException e) {
+        System.out.println("Error en la consulta SQL: " + e.getMessage());
         e.printStackTrace();
-      }
-      return false;
     }
+    return -1;  // Retorna -1 si no se encuentra el doctor
+}
     
     public String encryptPassword(String password){
       try{

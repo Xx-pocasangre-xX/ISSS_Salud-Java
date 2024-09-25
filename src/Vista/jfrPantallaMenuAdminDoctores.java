@@ -211,7 +211,7 @@ public class jfrPantallaMenuAdminDoctores extends javax.swing.JFrame {
         jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 660, 120, 50));
 
         cbEspecialidadesMedicas.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
-        cbEspecialidadesMedicas.setForeground(new java.awt.Color(255, 255, 255));
+        cbEspecialidadesMedicas.setForeground(new java.awt.Color(0, 0, 0));
         cbEspecialidadesMedicas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbEspecialidadesMedicas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,7 +221,7 @@ public class jfrPantallaMenuAdminDoctores extends javax.swing.JFrame {
         jPanel1.add(cbEspecialidadesMedicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 290, 30));
 
         cbUnidadesMedicas.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
-        cbUnidadesMedicas.setForeground(new java.awt.Color(255, 255, 255));
+        cbUnidadesMedicas.setForeground(new java.awt.Color(0, 0, 0));
         cbUnidadesMedicas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbUnidadesMedicas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
