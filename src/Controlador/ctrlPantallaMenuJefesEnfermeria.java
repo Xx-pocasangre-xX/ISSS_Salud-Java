@@ -1,6 +1,7 @@
 package Controlador;
 
 import Modelo.CitasMedicas;
+import Modelo.CitasMedicasJefes;
 import Modelo.SolicitudCitas;
 import Vista.PanelCitasAgendadasJefeEnfermeria;
 import Vista.PanelExpedienteMedico;
@@ -24,8 +25,9 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
     jfrAgendarCitasJefesEnfermeria miniPanel1;
     SolicitudCitas modelo;
     private CitasMedicas modelo2;
+    private CitasMedicasJefes modelo3;
     
-    public ctrlPantallaMenuJefesEnfermeria(jfrPantallaMenuJefesEnfermeria Vista, PanelSolicitudesCitas Panel, PanelCitasAgendadasJefeEnfermeria Panel1, jfrActualizarCita MiniPanel2, jfrAgendarCitasJefesEnfermeria MiniPanel1, SolicitudCitas modelo, CitasMedicas modelo2){
+    public ctrlPantallaMenuJefesEnfermeria(jfrPantallaMenuJefesEnfermeria Vista, PanelSolicitudesCitas Panel, PanelCitasAgendadasJefeEnfermeria Panel1, jfrActualizarCita MiniPanel2, jfrAgendarCitasJefesEnfermeria MiniPanel1, SolicitudCitas modelo, CitasMedicas modelo2, CitasMedicasJefes modelo3){
         this.vista = Vista;
         this.panel = Panel;
         this.panel1 = Panel1;
@@ -33,12 +35,13 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
         this.miniPanel2 = MiniPanel2;
         this.modelo = modelo;
         this.modelo2 = modelo2;
+        this.modelo3 = modelo3;
         this.modelo.cargarCardsSolicitudCitas(panel.jpCardsSolicitudCitas, panel);
         this.modelo.bloquearTextFields(panel.txtNombreSolicitante, panel.txtTelefono, panel.txtCorreo, panel.txtMotivoCita, panel.txtDUI, panel.txtFechaSolicitud);
         this.modelo2.cargarDoctores(miniPanel1.cbDoctor);
         this.modelo2.cargarPacientes(miniPanel1.cbPacientes);
         this.modelo2.cargarDoctores2(miniPanel2.cmbNombreDoctorAct);
-        this.modelo2.cargarCardsCitasMedicas2(panel1.jpCardsCitasAgendadas2, panel1, miniPanel2);
+        this.modelo3.cargarCardsCitasMedicas(panel1.jpCardsCitasAgendadas2, panel1, miniPanel2);
         
         vista.btnSolicitudes.addMouseListener(this);
         vista.btnAgendadas.addMouseListener(this);
@@ -71,7 +74,7 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
             PanelCitasAgendadasJefeEnfermeria objMenu = new PanelCitasAgendadasJefeEnfermeria();
             vista.btnSolicitudes.setBackground(new java.awt.Color(183, 184, 187));
             vista.btnAgendadas.setBackground(new java.awt.Color(41, 72, 152));
-            modelo2.cargarCardsCitasMedicas2(objMenu.jpCardsCitasAgendadas2, objMenu, miniPanel2);
+            modelo3.cargarCardsCitasMedicas(objMenu.jpCardsCitasAgendadas2, objMenu, miniPanel2);
             
             
             //2- Limpio el panel contendor (por si acaso)
