@@ -225,6 +225,8 @@ public class CitasMedicasJefes {
         vista.txtDia.setText(citasAgendadas.getFechaCita());
         vista.txtNombrePaciente.setText(citasAgendadas.getSolicitante());
         
+        this.setIdCita(citasAgendadas.getIdCita());
+        
         vista.txtNombreDoctor.setEditable(false);
         vista.txtHora.setEditable(false);
         vista.txtDia.setEditable(false);
@@ -255,13 +257,26 @@ public class CitasMedicasJefes {
      private void Actualizar2(CitasMedicasJefes citasAgendadas, jfrActualizarCita vista){
        vista.txtHoraActualizada.setText(citasAgendadas.getHoraCita());
        
-       JComboBox<String> cbDoctor = vista.cmbNombreDoctorAct;
-        for(int i = 0; i < cbDoctor.getItemCount(); i++){
-        if(cbDoctor.getItemAt(i).equals(citasAgendadas.getDoctor())){
-          cbDoctor.setSelectedIndex(i);
-          break;
-        }
+       this.setIdCita(citasAgendadas.getIdCita());
+       
+       JComboBox<String> cbDoctor = vista.cbDoctor;
+       JComboBox<String> cbEspecialidad = vista.cbEspecialidadDoctor;
+       
+        for(int i = 0; i < cbDoctor.getItemCount(); i++) {
+        if(cbDoctor.getItemAt(i).equals(citasAgendadas.getDoctor())) {
+        cbDoctor.setSelectedIndex(i);
+        break;
+    }
       }
+        
+        String especialidad = obtenerEspecialidadPorDoctor(citasAgendadas.getDoctor());
+        
+        for(int i = 0; i < cbEspecialidad.getItemCount(); i++){
+          if(cbEspecialidad.getItemAt(i).equals(especialidad)){
+            cbEspecialidad.setSelectedIndex(i);
+            break;
+          }
+        }
        
        String fechaString = citasAgendadas.getFechaCita();
        fechaString = fechaString.split(" ")[0];  // Obtener solo la parte de la fecha (antes del espacio)
@@ -280,4 +295,98 @@ public class CitasMedicasJefes {
         JOptionPane.showMessageDialog(vista, "Error al convertir la fecha: " + e.getMessage(), "Error de fecha", JOptionPane.ERROR_MESSAGE);
 }
     }
+     
+     public String obtenerEspecialidadPorDoctor(String doctor){
+    Connection conexion = ClaseConexion.getConexion();
+    String especialidad = "";
+    String query = "SELECT especialidad_doctor FROM EspecialidadDoctores ed JOIN Doctores d ON ed.id_especialidad = d.id_especialidad WHERE d.nombre_doctor = ?";
+    
+    try(PreparedStatement stmt = conexion.prepareStatement(query)){
+        stmt.setString(1, doctor);
+        ResultSet rs = stmt.executeQuery();
+        
+        if(rs.next()){
+            especialidad = rs.getString("especialidad_doctor");
+        }
+    }catch(SQLException e){
+        e.printStackTrace();
+    }
+    
+    return especialidad;
+}
+     
+     public int obtenerIdDoctorPorNombre(String nombreDoctor){
+        Connection conexion = ClaseConexion.getConexion();
+        int idDoctor = -1;
+        String query = "SELECT id_doctor FROM Doctores WHERE nombre_doctor = ?";
+        
+        try(PreparedStatement stmt = conexion.prepareStatement(query)){
+          stmt.setString(1, nombreDoctor);
+          ResultSet rs = stmt.executeQuery();
+          
+          if(rs.next()){
+            idDoctor = rs.getInt("id_doctor");
+          }
+        }catch(SQLException e){
+          e.printStackTrace();
+        }
+        
+        return idDoctor;
+     }
+     
+     public void actualizarCita(int idCita, java.util.Date fechaSeleccionada, String horaCita, String nombreDoctor, jfrActualizarCita miniPanel2){
+        java.util.Date fechaActual = new java.util.Date();
+    if (fechaSeleccionada.before(fechaActual)) {
+        JOptionPane.showMessageDialog(null, "Seleccione una fecha válida. No puede ser una fecha pasada.", "Fecha inválida", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    // Validar formato de la hora
+    if (!horaCita.matches("^(0[1-9]|1[0-2]):([0-5][0-9])\\s?(A\\.M\\.|P\\.M\\.)$")) {
+        JOptionPane.showMessageDialog(null, "Por favor, ingresa una hora válida en formato 12 horas (ej. 10:30 A.M. o 02:45 P.M.).", "Hora inválida", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    // Validar que el doctor sea válido
+    int idDoctor = obtenerIdDoctorPorNombre(nombreDoctor);
+    if (idDoctor == -1) {
+        JOptionPane.showMessageDialog(null, "Seleccione un doctor válido.", "Doctor inválido", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+    String fechaFormateada = sdf.format(fechaSeleccionada);
+    miniPanel2.txtHoraActualizada.setText(fechaFormateada);
+    java.sql.Date fechaSqlDate = new java.sql.Date(fechaSeleccionada.getTime());
+    
+    System.out.println("ID Cita: " + getIdCita());
+    System.out.println("Fecha SQL: " + fechaSqlDate);
+    System.out.println("Hora: " + horaCita);
+    System.out.println("ID Doctor: " + idDoctor);
+
+    // Conexión y actualización en la base de datos
+    Connection conexion = ClaseConexion.getConexion();
+    String query = "UPDATE CitasMedicas SET fecha_cita = ?, hora_cita = ?, id_doctor = ? WHERE id_cita = ?";
+
+    try (PreparedStatement stmt = conexion.prepareStatement(query)) {
+        stmt.setDate(1, fechaSqlDate);
+        stmt.setString(2, horaCita);
+        stmt.setInt(3, idDoctor);
+        stmt.setInt(4, idCita);
+
+        int filasActualizadas = stmt.executeUpdate();
+        System.out.println("Filas actualizadas: " + filasActualizadas);
+
+        if (filasActualizadas > 0) {
+            miniPanel2.txtHoraActualizada.setText("");
+            miniPanel2.jdcFechaActualizada.setDate(null);
+            JOptionPane.showMessageDialog(null, "La cita ha sido actualizada con éxito.", "Actualización exitosa", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "No se pudo actualizar la cita. Verifique los datos.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(null, "Error al actualizar la cita: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
 }

@@ -8,6 +8,7 @@ import Vista.PanelCitasAgendadasJefeEnfermeria;
 import Vista.PanelExpedienteMedico;
 import Vista.PanelInfoCitaDoctor;
 import Vista.PanelSolicitudesCitas;
+import java.sql.SQLException;
 import Vista.jfrActualizarCita;
 import static Vista.jfrActualizarCita.initjfrActualizarCita;
 import Vista.jfrAgendarCitasJefesEnfermeria;
@@ -16,6 +17,7 @@ import Vista.jfrPantallaLogin;
 import Vista.jfrPantallaMenuJefesEnfermeria;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.JOptionPane;
 
 public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
     
@@ -44,7 +46,8 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
         this.modelo2.cargarDoctores(miniPanel1.cbDoctor);
         this.modelo2.cargarPacientes(miniPanel1.cbPacientes);
         this.modelo4.cargarEspecialidadesMedicas2(MiniPanel1.cbEspecialidadDoctor, MiniPanel1.cbDoctor);
-        this.modelo2.cargarDoctores2(miniPanel2.cmbNombreDoctorAct);
+        this.modelo4.cargarEspecialidadesMedicas2(MiniPanel2.cbEspecialidadDoctor, MiniPanel2.cbDoctor);
+        this.modelo2.cargarDoctores2(miniPanel2.cbDoctor);
         this.modelo3.cargarCardsCitasMedicas(panel1.jpCardsCitasAgendadas2, panel1, miniPanel2);
         
         vista.btnSolicitudes.addMouseListener(this);
@@ -181,17 +184,21 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
             });
         }
         if(e.getSource() == miniPanel2.btnGuardarCambios){
-            //validar campos y hacer el update con una alerta de que los datos si se actualizaron
+                System.err.println("Clicked");
+    
+                
+    // Recolectar los datos del formulario
+    java.util.Date fechaSeleccionada = miniPanel2.jdcFechaActualizada.getDate();
+    String horaCita = miniPanel2.txtHoraActualizada.getText();
+    String nombreDoctor = (String) miniPanel2.cbDoctor.getSelectedItem();
+
+    int idCita = modelo3.getIdCita(); // Obtener el ID de la cita a actualizar
+
+    // Llamar al método del modelo que realiza la actualización y validaciones
+    modelo3.actualizarCita(idCita, fechaSeleccionada, horaCita, nombreDoctor, miniPanel2);
+    modelo3.cargarCardsCitasMedicas(panel1.jpCardsCitasAgendadas2, panel1, miniPanel2);
         }
         
-        if(e.getSource() == miniPanel2.btnRegresar){
-            //1-Creo un objeto del panel que quiero mostrar
-            jfrActualizarCita objMenu = new jfrActualizarCita();
-            
-            vista.remove(objMenu);
-            vista.revalidate();
-            vista.repaint();
-        }
     }
 
     @Override
