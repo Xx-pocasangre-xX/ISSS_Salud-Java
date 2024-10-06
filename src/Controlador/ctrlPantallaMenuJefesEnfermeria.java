@@ -2,6 +2,7 @@ package Controlador;
 
 import Modelo.CitasMedicas;
 import Modelo.CitasMedicasJefes;
+import Modelo.EspecialidadDoctores;
 import Modelo.SolicitudCitas;
 import Vista.PanelCitasAgendadasJefeEnfermeria;
 import Vista.PanelExpedienteMedico;
@@ -26,8 +27,9 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
     SolicitudCitas modelo;
     private CitasMedicas modelo2;
     private CitasMedicasJefes modelo3;
+    private EspecialidadDoctores modelo4;
     
-    public ctrlPantallaMenuJefesEnfermeria(jfrPantallaMenuJefesEnfermeria Vista, PanelSolicitudesCitas Panel, PanelCitasAgendadasJefeEnfermeria Panel1, jfrActualizarCita MiniPanel2, jfrAgendarCitasJefesEnfermeria MiniPanel1, SolicitudCitas modelo, CitasMedicas modelo2, CitasMedicasJefes modelo3){
+    public ctrlPantallaMenuJefesEnfermeria(jfrPantallaMenuJefesEnfermeria Vista, PanelSolicitudesCitas Panel, PanelCitasAgendadasJefeEnfermeria Panel1, jfrActualizarCita MiniPanel2, jfrAgendarCitasJefesEnfermeria MiniPanel1, SolicitudCitas modelo, CitasMedicas modelo2, CitasMedicasJefes modelo3, EspecialidadDoctores modelo4){
         this.vista = Vista;
         this.panel = Panel;
         this.panel1 = Panel1;
@@ -36,10 +38,12 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
         this.modelo = modelo;
         this.modelo2 = modelo2;
         this.modelo3 = modelo3;
+        this.modelo4 = modelo4;
         this.modelo.cargarCardsSolicitudCitas(panel.jpCardsSolicitudCitas, panel);
         this.modelo.bloquearTextFields(panel.txtNombreSolicitante, panel.txtTelefono, panel.txtCorreo, panel.txtMotivoCita, panel.txtDUI, panel.txtFechaSolicitud);
         this.modelo2.cargarDoctores(miniPanel1.cbDoctor);
         this.modelo2.cargarPacientes(miniPanel1.cbPacientes);
+        this.modelo4.cargarEspecialidadesMedicas2(MiniPanel1.cbEspecialidadDoctor, MiniPanel1.cbDoctor);
         this.modelo2.cargarDoctores2(miniPanel2.cmbNombreDoctorAct);
         this.modelo3.cargarCardsCitasMedicas(panel1.jpCardsCitasAgendadas2, panel1, miniPanel2);
         
