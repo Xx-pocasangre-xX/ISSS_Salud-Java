@@ -88,7 +88,7 @@ public class CitasMedicasJefes {
     // Método para obtener todas las citas médicas (sin WHERE)
     public List<CitasMedicasJefes> obtenerCitasMedicas() {
         List<CitasMedicasJefes> listaCitasMedicas = new ArrayList<>();
-        String query = "SELECT cm.id_cita, cm.fecha_cita, cm.hora_cita, u.foto_usuario, u.correo_electronico AS solicitante, d.nombre_doctor AS doctor FROM CitasMedicas cm INNER JOIN Usuarios u ON cm.id_usuario = u.id_usuario INNER JOIN Doctores d ON cm.id_doctor = d.id_doctor";
+        String query = "SELECT cm.id_cita, cm.fecha_cita, cm.hora_cita, u.foto_usuario, u.nombre_usuario AS solicitante, d.nombre_doctor AS doctor FROM CitasMedicas cm INNER JOIN Usuarios u ON cm.id_usuario = u.id_usuario INNER JOIN Doctores d ON cm.id_doctor = d.id_doctor";
 
         try (Connection conexion = ClaseConexion.getConexion();
              PreparedStatement stmt = conexion.prepareStatement(query)) {
@@ -234,7 +234,7 @@ public class CitasMedicasJefes {
         vista.txtTIpoSangre.setEditable(false);
         vista.txtTelefono.setEditable(false);
         
-        String query = "SELECT u.sexo, u.dui, u.telefono, u.tipo_sangre FROM Usuarios u WHERE u.correo_electronico = ?";
+        String query = "SELECT u.sexo, u.dui, u.telefono, u.tipo_sangre FROM Usuarios u WHERE u.nombre_usuario = ?";
        
        try(Connection conexion = ClaseConexion.getConexion();
            PreparedStatement stmt = conexion.prepareStatement(query)){

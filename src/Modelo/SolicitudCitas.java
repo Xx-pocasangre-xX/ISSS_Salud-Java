@@ -25,7 +25,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 public class SolicitudCitas {
-    private String nombre_solicitante;
+    private String nombre_usuario;
     private String telefono;
     private String correo_electronico;
     private String motivo_cita;
@@ -33,12 +33,12 @@ public class SolicitudCitas {
     private String fecha_solicitud;
     private String foto_usuario;
     
-    public String getNombresolicitante() {
-      return nombre_solicitante;
+    public String getNombreUsuario() {
+      return nombre_usuario;
     }
     
-    public void setNombreSolicitante(String nombre_solicitante) {
-      this.nombre_solicitante = nombre_solicitante;
+    public void setNombreUsuario(String nombre_usuario) {
+      this.nombre_usuario = nombre_usuario;
     }
     
     public String getFotoUsuario() {
@@ -91,7 +91,7 @@ public class SolicitudCitas {
     
     public List<SolicitudCitas> obtenerSolicitudCitas(){
       List<SolicitudCitas> listaSolicitudCitas = new ArrayList<>();
-      String query = "SELECT s.nombre_solicitante, u.telefono, u.correo_electronico, s.motivo_cita, u.dui, u.foto_usuario, s.fecha_solicitud FROM SolicitudCitas s INNER JOIN Usuarios u ON s.id_usuario = u.id_usuario";
+      String query = "SELECT u.telefono, u.nombre_usuario, u.correo_electronico, s.motivo_cita, u.dui, u.foto_usuario, s.fecha_solicitud FROM SolicitudCitas s INNER JOIN Usuarios u ON s.id_usuario = u.id_usuario";
       
       try(Connection conexion = ClaseConexion.getConexion();
           PreparedStatement stmt = conexion.prepareStatement(query);
@@ -99,8 +99,8 @@ public class SolicitudCitas {
          
           while(rs.next()){
             SolicitudCitas solicitudCitas = new SolicitudCitas();
-            solicitudCitas.setNombreSolicitante(rs.getString("nombre_solicitante"));
             solicitudCitas.setTelefono(rs.getString("telefono"));
+            solicitudCitas.setNombreUsuario(rs.getString("nombre_usuario"));
             solicitudCitas.setCorreoElectronico3(rs.getString("correo_electronico"));
             solicitudCitas.setMotivoCita(rs.getString("motivo_cita"));
             solicitudCitas.setDui2(rs.getString("dui"));
@@ -187,15 +187,15 @@ public class SolicitudCitas {
        textPanel.setLayout(new BoxLayout(textPanel, BoxLayout.Y_AXIS));
        textPanel.setBackground(rgbColor);
        
-       JLabel lblNombreSolicitante = new JLabel("Solicitante: " + solicitudCitas.getNombresolicitante());
+       JLabel lblNombreUsuario = new JLabel("Solicitante: " + solicitudCitas.getNombreUsuario());
        JLabel lblTelefono = new JLabel("Teléfono del solicitante: " + solicitudCitas.getTelefono());
        JLabel lblCorreoElectronico = new JLabel("Correo Electrónico: " + solicitudCitas.getCorreoElectronico3());
        JLabel lblMotivoCita = new JLabel("Motivo de la cita: " + solicitudCitas.getMotivoCita());
        JLabel lblDui = new JLabel("Dui del solicitante: " + solicitudCitas.getDui2());
        JLabel lblFechaSolicitud = new JLabel("Fecha de la solicitud: " + solicitudCitas.getFechaSolicitud());
-       
-       lblNombreSolicitante.setAlignmentX(JLabel.LEFT_ALIGNMENT);
-       lblNombreSolicitante.setForeground(Color.WHITE);
+
+       lblNombreUsuario.setAlignmentX(JLabel.LEFT_ALIGNMENT);
+       lblNombreUsuario.setForeground(Color.WHITE);
        lblTelefono.setAlignmentX(JLabel.LEFT_ALIGNMENT);
        lblTelefono.setForeground(Color.WHITE);
        lblCorreoElectronico.setAlignmentX(JLabel.LEFT_ALIGNMENT);
@@ -207,7 +207,7 @@ public class SolicitudCitas {
        lblFechaSolicitud.setAlignmentX(JLabel.LEFT_ALIGNMENT);
        lblFechaSolicitud.setForeground(Color.WHITE);
        
-       textPanel.add(lblNombreSolicitante);
+       textPanel.add(lblNombreUsuario);
        textPanel.add(lblTelefono);
        textPanel.add(lblCorreoElectronico);
        textPanel.add(lblMotivoCita);
@@ -230,7 +230,7 @@ public class SolicitudCitas {
     }
     
     private void actualizarTextFieldsConDatos(SolicitudCitas solicitudCitas, PanelSolicitudesCitas panel){
-      panel.txtNombreSolicitante.setText(solicitudCitas.getNombresolicitante());
+      panel.txtNombreSolicitante.setText(solicitudCitas.getNombreUsuario());
       panel.txtTelefono.setText(solicitudCitas.getTelefono());
       panel.txtCorreo.setText(solicitudCitas.getCorreoElectronico3());
       panel.txtMotivoCita.setText(solicitudCitas.getMotivoCita());
