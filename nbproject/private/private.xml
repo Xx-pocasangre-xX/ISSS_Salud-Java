@@ -19,13 +19,6 @@
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/CitasMedicas.java</file>
         </group>
         <group>
-            <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Controlador/ctrlPantallaMenuAdmin.java</file>
-            <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Vista/jfrPantallaMenuAdminJefesEnfermeria.java</file>
-            <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/JefesEnfermeria.java</file>
-            <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/Doctores.java</file>
-            <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/CitasMedicas.java</file>
-        </group>
-        <group>
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Controlador/ctrlPantallaMenuJefesEnfermeria.java</file>
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Vista/jfrActualizarCita.java</file>
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/JefesEnfermeria.java</file>
@@ -47,6 +40,11 @@
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/EspecialidadDoctores.java</file>
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Vista/jfrAgendarCitasJefesEnfermeria.java</file>
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/Doctores.java</file>
+            <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/CitasMedicas.java</file>
+        </group>
+        <group>
+            <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Controlador/ctrlPantallaMenuJefesEnfermeria.java</file>
+            <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/CitasMedicasJefes.java</file>
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/CitasMedicas.java</file>
         </group>
         <group>

@@ -1,5 +1,8 @@
 package Modelo;
 
+import Vista.PanelBienvenidaChat;
+import Vista.PanelChatDoctoresSinDesplegar;
+import Vista.PanelMensajesChat;
 import Vista.jfrPantallaMenuDoctor;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -8,6 +11,8 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URL;
 import java.security.MessageDigest;
@@ -169,7 +174,7 @@ public String toString() {
        return listaPacientes;
     }
     
-    public void cargarCardsPacientes(JPanel jPanelChatsDoctores){
+    public void cargarCardsPacientes(JPanel jPanelChatsDoctores, PanelChatDoctoresSinDesplegar objMenu){
        JPanel panelCards = new JPanel();
        panelCards.setLayout(new GridBagLayout());
        
@@ -185,7 +190,7 @@ public String toString() {
        int row = 0;
        
        for(Usuarios paciente : pacientes){
-          JButton card = crearCard(paciente);
+          JButton card = crearCard(paciente, objMenu);
           gbc.gridy = row;
           panelCards.add(card, gbc);
         
@@ -225,7 +230,7 @@ public String toString() {
       return imagen;
     }
     
-    private JButton crearCard(Usuarios pacientes){
+    private JButton crearCard(Usuarios pacientes, PanelChatDoctoresSinDesplegar objMenu){
       JButton card = new JButton();
        card.setLayout(new BorderLayout(10, 10));
        card.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -255,6 +260,24 @@ public String toString() {
        card.setMaximumSize(new Dimension(300, 80));
        card.setMinimumSize(new Dimension(300, 80));
        card.setFocusable(true);
+       
+       card.addActionListener(new ActionListener(){
+         @Override
+         public void actionPerformed(ActionEvent e){
+             PanelMensajesChat panelMensajes = new PanelMensajesChat();
+             System.err.println("Clicked");
+      
+             JPanel jpChatsBienvenida = objMenu.jpChatsBienvenida; 
+
+             jpChatsBienvenida.removeAll();
+ 
+
+             jpChatsBienvenida.add(panelMensajes);
+
+             jpChatsBienvenida.revalidate();
+             jpChatsBienvenida.repaint();
+         }
+       });
        
        return card;
     }

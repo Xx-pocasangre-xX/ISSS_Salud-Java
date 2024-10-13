@@ -3,6 +3,7 @@ package Controlador;
 import Modelo.CitasMedicas;
 import Modelo.ExpedientesMedicos;
 import Modelo.Usuarios;
+import Vista.PanelBienvenidaChat;
 import Vista.PanelChatDoctoresSinDesplegar;
 import Vista.PanelCitasMedicasDoctor;
 import Vista.PanelExpedienteMedico;
@@ -59,6 +60,7 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
         if(e.getSource() == vista.btnMensajeria){
             //1-Creo un objeto del panel que quiero mostrar
             PanelChatDoctoresSinDesplegar objMenu = new PanelChatDoctoresSinDesplegar();
+            PanelBienvenidaChat objMenuBienvenida = new PanelBienvenidaChat();
             vista.btnMensajeria.setBackground(new java.awt.Color(41, 72, 152));
             vista.btnCitasMedicas.setBackground(new java.awt.Color(62, 68, 83));
              
@@ -67,10 +69,16 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
             //3- muestro el panel que quiero
             vista.jpPanelInfo.add(objMenu);
             
-            this.modelo3.cargarCardsPacientes(objMenu.JpCardsPacientes);
+            objMenu.jpChatsBienvenida.removeAll();
+            objMenu.jpChatsBienvenida.add(objMenuBienvenida);
+            
+            this.modelo3.cargarCardsPacientes(objMenu.JpCardsPacientes, objMenu);
             //4- Refrescar todo
             vista.jpPanelInfo.revalidate();
             vista.jpPanelInfo.repaint();
+            objMenu.jpChatsBienvenida.revalidate();
+            objMenu.jpChatsBienvenida.repaint();
+  
         }
         
         if(e.getSource() == vista.btnCerrarSesion){

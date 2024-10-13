@@ -33,8 +33,7 @@ public class PanelChatDoctoresSinDesplegar extends javax.swing.JPanel {
         chat = new javax.swing.JLabel();
         jPanelChatsDoctores = new javax.swing.JPanel();
         JpCardsPacientes = new javax.swing.JPanel();
-        jPanelInfoPaciente = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        jpChatsBienvenida = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(62, 68, 83));
         setMinimumSize(new java.awt.Dimension(1120, 750));
@@ -78,13 +77,9 @@ public class PanelChatDoctoresSinDesplegar extends javax.swing.JPanel {
 
         add(jPanelChatsDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 340, 560));
 
-        jPanelInfoPaciente.setBackground(new java.awt.Color(76, 82, 99));
-        jPanelInfoPaciente.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(156, 156, 156)));
-        jPanelInfoPaciente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jPanelInfoPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 780, 80));
-
-        jPanel1.setBackground(new java.awt.Color(62, 68, 83));
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 780, 560));
+        jpChatsBienvenida.setBackground(new java.awt.Color(62, 68, 83));
+        jpChatsBienvenida.setLayout(new java.awt.BorderLayout());
+        add(jpChatsBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 780, 640));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -93,10 +88,9 @@ public class PanelChatDoctoresSinDesplegar extends javax.swing.JPanel {
     public javax.swing.JLabel MensajeriaDoctores;
     public javax.swing.JLabel chat;
     public javax.swing.JLabel imgLogoIsss;
-    private javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanelChat;
     public javax.swing.JPanel jPanelChatsDoctores;
-    public javax.swing.JPanel jPanelInfoPaciente;
     public javax.swing.JPanel jPanelMensajeriaDoctores;
+    public javax.swing.JPanel jpChatsBienvenida;
     // End of variables declaration//GEN-END:variables
 }
