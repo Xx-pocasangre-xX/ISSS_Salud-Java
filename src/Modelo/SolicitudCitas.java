@@ -91,7 +91,7 @@ public class SolicitudCitas {
     
     public List<SolicitudCitas> obtenerSolicitudCitas(){
       List<SolicitudCitas> listaSolicitudCitas = new ArrayList<>();
-      String query = "SELECT u.telefono, u.nombre_usuario, u.correo_electronico, s.motivo_cita, u.dui, u.foto_usuario, s.fecha_solicitud FROM SolicitudCitas s INNER JOIN Usuarios u ON s.id_usuario = u.id_usuario";
+      String query = "SELECT * FROM (SELECT s.id_solicitud, u.telefono, u.nombre_usuario, u.correo_electronico, s.motivo_cita, u.dui, u.foto_usuario, s.fecha_solicitud FROM SolicitudCitas s INNER JOIN Usuarios u ON s.id_usuario = u.id_usuario ORDER BY s.id_solicitud DESC) WHERE ROWNUM <= 20";
       
       try(Connection conexion = ClaseConexion.getConexion();
           PreparedStatement stmt = conexion.prepareStatement(query);

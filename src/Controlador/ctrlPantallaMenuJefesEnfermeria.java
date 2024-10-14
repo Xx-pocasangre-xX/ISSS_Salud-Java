@@ -132,6 +132,7 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
         
         if(e.getSource() == miniPanel1.btnAsignarDatosCita){
             modelo2.insertarCitaMedica(miniPanel1.jdcFechaCita, miniPanel1.txtHoraCita, miniPanel1.cbPacientes, miniPanel1.cbDoctor);
+            modelo3.cargarCardsCitasMedicas(panel1.jpCardsCitasAgendadas2, panel1, miniPanel2);
         }
         
         if(e.getSource() == miniPanel1.btnRegresar){

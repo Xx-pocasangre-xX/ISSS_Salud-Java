@@ -103,7 +103,7 @@ public class CitasMedicas {
     public List<CitasMedicas> obtenerCitasMedicas(){
       List<CitasMedicas> listaCitasMedicas = new ArrayList<>();
       int idDoctor = Usuarios.getIdDoctor(); 
-      String query = "SELECT cm.id_cita, cm.fecha_cita, cm.hora_cita, u.id_usuario, u.foto_usuario, u.correo_electronico AS solicitante, d.nombre_doctor AS doctor FROM CitasMedicas cm INNER JOIN Usuarios u ON cm.id_usuario = u.id_usuario INNER JOIN Doctores d ON cm.id_doctor = d.id_doctor WHERE d.id_doctor = ?";
+      String query = "SELECT * FROM (SELECT cm.id_cita, cm.fecha_cita, cm.hora_cita, u.id_usuario, u.foto_usuario, u.correo_electronico AS solicitante, d.nombre_doctor AS doctor FROM CitasMedicas cm INNER JOIN Usuarios u ON cm.id_usuario = u.id_usuario INNER JOIN Doctores d ON cm.id_doctor = d.id_doctor WHERE d.id_doctor = ? ORDER BY cm.id_cita DESC) WHERE ROWNUM <= 20";
       
       try(Connection conexion = ClaseConexion.getConexion();
             PreparedStatement stmt = conexion.prepareStatement(query)){

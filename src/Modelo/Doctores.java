@@ -216,7 +216,7 @@ public class Doctores {
      
     public List <Doctores> obtenerDoctores() {
         List<Doctores> listaDoctores = new ArrayList<>();
-        String sql = "SELECT d.id_doctor, d.foto_doctor, d.correo_doctor, d.nombre_doctor, ed.especialidad_doctor AS Especialidad_Medica, um.nombre_unidad AS Unidad_Medica FROM Doctores d INNER JOIN EspecialidadDoctores ed ON d.id_especialidad = ed.id_especialidad INNER JOIN UnidadesMedicas um ON d.id_unidad = um.id_unidad";
+        String sql = "SELECT * FROM (SELECT d.id_doctor, d.foto_doctor, d.correo_doctor, d.nombre_doctor, ed.especialidad_doctor AS Especialidad_Medica, um.nombre_unidad AS Unidad_Medica FROM Doctores d INNER JOIN EspecialidadDoctores ed ON d.id_especialidad = ed.id_especialidad INNER JOIN UnidadesMedicas um ON d.id_unidad = um.id_unidad ORDER BY d.id_doctor DESC ) WHERE ROWNUM <= 20";
 
         try (Connection conexion = ClaseConexion.getConexion();
              PreparedStatement stmt = conexion.prepareStatement(sql);

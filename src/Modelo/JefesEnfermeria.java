@@ -288,7 +288,7 @@ public class JefesEnfermeria {
     
     public List<JefesEnfermeria> obtenerJefes(){
        List<JefesEnfermeria> listaJefes = new ArrayList<>();
-       String query = "SELECT id_usuario, dui, tipo_sangre, telefono, foto_usuario, correo_electronico, sexo, edad from Usuarios where id_rol = 3";
+       String query = "SELECT * FROM (SELECT id_usuario, dui, tipo_sangre, telefono, foto_usuario, correo_electronico, sexo, edad FROM Usuarios WHERE id_rol = 3 ORDER BY id_usuario DESC) WHERE ROWNUM <= 20";
        
        try(Connection conexion = ClaseConexion.getConexion();
            PreparedStatement stmt = conexion.prepareStatement(query);
