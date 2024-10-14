@@ -194,11 +194,14 @@ public String toString() {
     
     public List<Usuarios> obtenerPacientes(){
        List<Usuarios> listaPacientes = new ArrayList<>();
-       String query = "SELECT id_usuario, foto_usuario, nombre_usuario from Usuarios WHERE id_rol = 2";
+       String query = "SELECT DISTINCT U.id_usuario, U.foto_usuario, U.nombre_usuario FROM Usuarios U JOIN MensajesChat M ON U.id_usuario = M.id_remitente WHERE M.id_destinatario = ? AND M.tipo_remitente = 'PACIENTE'";
        
        try(Connection conexion = ClaseConexion.getConexion();
-           PreparedStatement stmt = conexion.prepareStatement(query);
-            ResultSet rs = stmt.executeQuery()){
+           PreparedStatement stmt = conexion.prepareStatement(query)){
+               
+          stmt.setInt(1, getIdDoctor());
+             
+             try(ResultSet rs = stmt.executeQuery()){
            
                while(rs.next()){
                  Usuarios pacientes = new Usuarios();
@@ -207,6 +210,7 @@ public String toString() {
                  pacientes.setCorreo_Electronico2(rs.getString("nombre_usuario"));
                  listaPacientes.add(pacientes);
                }
+             }
             }catch(SQLException e){
               e.printStackTrace();
             }
