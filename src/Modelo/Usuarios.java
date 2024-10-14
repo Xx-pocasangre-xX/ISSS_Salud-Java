@@ -6,7 +6,9 @@ import Vista.PanelMensajesChat;
 import Vista.jfrPantallaMenuDoctor;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
@@ -29,6 +31,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.SwingConstants;
 
 public class Usuarios {
     
@@ -36,10 +39,38 @@ public class Usuarios {
 public String toString() {
     return "Correo Electrónico: " + correo_electronico + ", Foto Usuario: " + foto_usuario;
 }
-    
+
+    private int id_usuario;
     private String foto_usuario;
     private String correo_electronico;
     private static int idDoctor;
+    private String mensaje;
+    private String tipoRemitente;
+    private String tipoDestinatario;
+    
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
+    
+    public String getTipoRemitente() {
+        return tipoRemitente;
+    }
+
+    public void setTipoRemitente(String tipoRemitente) {
+        this.tipoRemitente = tipoRemitente;
+    }
+    
+    public String getTipoDestinatario() {
+        return tipoDestinatario;
+    }
+
+    public void setTipoDestinatario(String tipoDestinatario) {
+        this.tipoDestinatario = tipoDestinatario;
+    }
 
     public static int getIdDoctor() {
         return idDoctor;
@@ -47,6 +78,14 @@ public String toString() {
 
     public static void setIdDoctor(int idDoctor) {
         Usuarios.idDoctor = idDoctor;
+    }
+    
+     public int getIdUsuario() {
+        return id_usuario;
+    }
+
+    public void setIdUsuario(int id_usuario) {
+        this.id_usuario = id_usuario;
     }
     
     public String getFoto_usuario2() {
@@ -155,7 +194,7 @@ public String toString() {
     
     public List<Usuarios> obtenerPacientes(){
        List<Usuarios> listaPacientes = new ArrayList<>();
-       String query = "SELECT foto_usuario, correo_electronico from Usuarios WHERE id_rol = 2";
+       String query = "SELECT id_usuario, foto_usuario, nombre_usuario from Usuarios WHERE id_rol = 2";
        
        try(Connection conexion = ClaseConexion.getConexion();
            PreparedStatement stmt = conexion.prepareStatement(query);
@@ -163,10 +202,10 @@ public String toString() {
            
                while(rs.next()){
                  Usuarios pacientes = new Usuarios();
+                 pacientes.setIdUsuario(rs.getInt("id_usuario"));
                  pacientes.setFoto_Usuario2(rs.getString("foto_usuario"));
-                 pacientes.setCorreo_Electronico2(rs.getString("correo_electronico"));
+                 pacientes.setCorreo_Electronico2(rs.getString("nombre_usuario"));
                  listaPacientes.add(pacientes);
-                 System.err.println("Esta es la lista de pacientes:" + listaPacientes);
                }
             }catch(SQLException e){
               e.printStackTrace();
@@ -262,22 +301,51 @@ public String toString() {
        card.setFocusable(true);
        
        card.addActionListener(new ActionListener(){
-         @Override
-         public void actionPerformed(ActionEvent e){
-             PanelMensajesChat panelMensajes = new PanelMensajesChat();
-             System.err.println("Clicked");
-      
-             JPanel jpChatsBienvenida = objMenu.jpChatsBienvenida; 
-
-             jpChatsBienvenida.removeAll();
- 
-
-             jpChatsBienvenida.add(panelMensajes);
-
-             jpChatsBienvenida.revalidate();
-             jpChatsBienvenida.repaint();
-         }
-       });
+    @Override
+    public void actionPerformed(ActionEvent e){
+        PanelMensajesChat panelMensajes = new PanelMensajesChat();
+        System.err.println("Clicked");
+        ActualizarCampos(pacientes, panelMensajes);
+        
+        JPanel jpChatsBienvenida = objMenu.jpChatsBienvenida; 
+        jpChatsBienvenida.removeAll();
+        
+        jpChatsBienvenida.add(panelMensajes);
+        
+        jpChatsBienvenida.revalidate();
+        jpChatsBienvenida.repaint();
+        
+        // Call cargarMensajes here
+        cargarMensajes(panelMensajes.jpCardsMensajes);
+        
+        panelMensajes.btnEnviarMensaje.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                System.err.println("Clicked");
+                
+                String textoMensaje = panelMensajes.txtMensaje.getText();
+                if (textoMensaje == null || textoMensaje.trim().isEmpty()) {
+                    System.out.println("El mensaje no puede estar vacío");
+                    return;
+                }
+                
+                // Asumiendo que 'pacientes' es un objeto que representa al destinatario
+                Usuarios mensaje = new Usuarios();
+                mensaje.setIdUsuario(getIdUsuario());  // El destinatario es el paciente
+                mensaje.setMensaje(textoMensaje);  // El mensaje es el texto del TextField
+                
+                // Insertar el mensaje en la base de datos
+                insertarMensaje(mensaje);
+                
+                // Actualizar el panel de mensajes con el nuevo mensaje
+                actualizarPanelMensajes(getIdDoctor(), getIdUsuario(), textoMensaje, "DOCTOR", "PACIENTE", panelMensajes.jpCardsMensajes);
+                
+                // Limpiar el campo de texto después de enviar
+                panelMensajes.txtMensaje.setText("");
+            }
+        });
+    }
+});
        
        return card;
     }
@@ -285,5 +353,126 @@ public String toString() {
     public boolean validarCorreo(String correo){
        String regex = "^[\\w._%+-]+@(gmail\\.com|isss\\.gob\\.sv)$";
        return correo.matches(regex);
+    }
+    
+    private void ActualizarCampos(Usuarios usuario, PanelMensajesChat panelMensajes){
+        setIdUsuario(usuario.getIdUsuario());
+        panelMensajes.lblNombrePaciente.setText(usuario.getCorreo_Electronico2());
+        
+        ImageIcon iconoFoto = cargarImagen(usuario.getFoto_usuario2());
+        Image image = iconoFoto.getImage();
+
+        int width = panelMensajes.jlFotoPaciente.getWidth();
+        int height = panelMensajes.jlFotoPaciente.getHeight();
+
+        if (width == 0 || height == 0) {
+          width = 60;
+          height = 50;
+        }
+
+        int imageWidth = image.getWidth(null);
+        int imageHeight = image.getHeight(null);
+
+        double aspectRatio = (double) imageWidth / imageHeight;
+
+        if (width / height > aspectRatio) {
+          width = (int) (height * aspectRatio);
+        } else {
+          height = (int) (width / aspectRatio);
+        }
+
+        Image scaledImage = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        panelMensajes.jlFotoPaciente.setIcon(new ImageIcon(scaledImage));
+        
+        System.err.println("ID: " + getIdUsuario());
+        System.err.println("ID DEL DOCTOR: " + getIdDoctor());
+    }
+    
+    public void insertarMensaje(Usuarios mensaje){
+      
+      if (mensaje.getMensaje() == null || mensaje.getMensaje().trim().isEmpty()) {
+        System.out.println("El mensaje no puede estar vacío");
+        return;  // Evita la inserción si el mensaje es nulo o vacío
+    }
+        
+      String query = "INSERT INTO MensajesChat (id_remitente, tipo_remitente, id_destinatario, tipo_destinatario, mensaje) VALUES (?, 'DOCTOR', ?, 'PACIENTE', ?)";
+      
+      try(Connection conexion = ClaseConexion.getConexion();
+              PreparedStatement stmt = conexion.prepareStatement(query)){
+          stmt.setInt(1, mensaje.getIdUsuario());
+          stmt.setInt(2, getIdDoctor());
+          stmt.setString(3, mensaje.getMensaje());
+          
+          stmt.executeUpdate();
+      }catch(SQLException e){
+        e.printStackTrace();
+      }
+    }
+    
+    private void actualizarPanelMensajes(int idRemitente, int idDestinatario, String mensaje, String tipoRemitente, String tipoDestinatario, JPanel jpCardsMensajes){
+ jpCardsMensajes.setLayout(new BoxLayout(jpCardsMensajes, BoxLayout.Y_AXIS));
+    
+    // Crear un botón que contendrá el mensaje
+    JButton btnMensaje = new JButton(mensaje);
+    btnMensaje.setFocusPainted(false);  // Evitar el borde de selección de los botones
+    
+    // Establecer colores y alineación según el tipo de remitente
+    if (tipoRemitente.equals("DOCTOR")) {
+        btnMensaje.setBackground(Color.WHITE);  // Azul para el doctor
+        btnMensaje.setForeground(Color.BLACK);             // Texto blanco
+        btnMensaje.setHorizontalAlignment(SwingConstants.LEFT); // Alineación a la derecha
+    } else {
+        btnMensaje.setBackground(Color.BLACK);   // Gris oscuro para el paciente
+        btnMensaje.setForeground(Color.WHITE);  
+        btnMensaje.setHorizontalAlignment(SwingConstants.RIGHT);  // Alineación del texto a la derecha
+        btnMensaje.setAlignmentX(Component.RIGHT_ALIGNMENT);// Texto blanco
+          // Alineación a la izquierda
+    }
+
+    // Ajustar tamaño del botón
+    btnMensaje.setPreferredSize(new Dimension(350, 50));  // Tamaño del botón
+    btnMensaje.setMaximumSize(new Dimension(350, 50));    // Evitar que crezca más
+    btnMensaje.setMinimumSize(new Dimension(350, 50));    // Evitar que sea más pequeño
+
+    // Añadir el botón al panel de mensajes
+    jpCardsMensajes.add(btnMensaje);
+    
+    // Espacio entre mensajes
+    jpCardsMensajes.add(Box.createRigidArea(new Dimension(0, 10)));
+
+    // Refrescar el panel
+    jpCardsMensajes.revalidate();
+    jpCardsMensajes.repaint();
+    }
+    
+    public void cargarMensajes(JPanel jpCardsMensajes){
+       String query = "SELECT * FROM MensajesChat WHERE (id_remitente = ? AND id_destinatario = ?) OR (id_remitente = ? AND id_destinatario = ?) ORDER BY id_mensaje ASC";
+       
+       try(Connection conexion = ClaseConexion.getConexion();
+               PreparedStatement stmt = conexion.prepareStatement(query)){
+          stmt.setInt(1, getIdDoctor());
+          stmt.setInt(2, getIdUsuario());
+          stmt.setInt(3, getIdUsuario());
+          stmt.setInt(4, getIdDoctor());
+          
+          ResultSet rs = stmt.executeQuery();
+               
+          while(rs.next()){
+              
+            int idRemitente = rs.getInt("id_remitente");
+            int idDestinatario = rs.getInt("id_destinatario");
+            String mensaje2 = rs.getString("mensaje");
+            String tipoRemitente2 = rs.getString("tipo_remitente");
+            String tipoDestinatario2 = rs.getString("tipo_destinatario");
+           
+            actualizarPanelMensajes(idRemitente, idDestinatario, mensaje2, tipoRemitente2, tipoDestinatario2, jpCardsMensajes);
+          }
+          
+          jpCardsMensajes.revalidate();
+    jpCardsMensajes.repaint();
+        
+       }catch(SQLException e){
+         e.printStackTrace();
+       }
     }
 }

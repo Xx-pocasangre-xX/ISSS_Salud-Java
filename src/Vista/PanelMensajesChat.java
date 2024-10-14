@@ -92,17 +92,6 @@ public class PanelMensajesChat extends javax.swing.JPanel {
 
         jpCardsMensajes.setBackground(new java.awt.Color(50, 55, 69));
 
-        javax.swing.GroupLayout jpCardsMensajesLayout = new javax.swing.GroupLayout(jpCardsMensajes);
-        jpCardsMensajes.setLayout(jpCardsMensajesLayout);
-        jpCardsMensajesLayout.setHorizontalGroup(
-            jpCardsMensajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jpCardsMensajesLayout.setVerticalGroup(
-            jpCardsMensajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 481, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
