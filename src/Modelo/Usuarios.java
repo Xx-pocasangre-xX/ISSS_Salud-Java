@@ -414,7 +414,8 @@ public String toString() {
     }
     
     private void actualizarPanelMensajes(int idRemitente, int idDestinatario, String mensaje, String tipoRemitente, String tipoDestinatario, JPanel jpCardsMensajes){
- jpCardsMensajes.setLayout(new BoxLayout(jpCardsMensajes, BoxLayout.Y_AXIS));
+        
+jpCardsMensajes.setLayout(new BoxLayout(jpCardsMensajes, BoxLayout.Y_AXIS));
     
     // Crear un botón que contendrá el mensaje
     JButton btnMensaje = new JButton(mensaje);
@@ -422,35 +423,32 @@ public String toString() {
     
     // Establecer colores y alineación según el tipo de remitente
     if (tipoRemitente.equals("DOCTOR")) {
-        btnMensaje.setBackground(Color.WHITE);  // Azul para el doctor
-        btnMensaje.setForeground(Color.BLACK);             // Texto blanco
+        btnMensaje.setBackground(Color.BLACK);  // Azul para el doctor
+        btnMensaje.setForeground(Color.WHITE);             // Texto blanco
         btnMensaje.setHorizontalAlignment(SwingConstants.LEFT); // Alineación a la derecha
     } else {
-        btnMensaje.setBackground(Color.BLACK);   // Gris oscuro para el paciente
-        btnMensaje.setForeground(Color.WHITE);  
+        btnMensaje.setBackground(Color.WHITE);   // Gris oscuro para el paciente
+        btnMensaje.setForeground(Color.BLACK);  
         btnMensaje.setHorizontalAlignment(SwingConstants.RIGHT);  // Alineación del texto a la derecha
         btnMensaje.setAlignmentX(Component.RIGHT_ALIGNMENT);// Texto blanco
           // Alineación a la izquierda
     }
-
     // Ajustar tamaño del botón
     btnMensaje.setPreferredSize(new Dimension(350, 50));  // Tamaño del botón
     btnMensaje.setMaximumSize(new Dimension(350, 50));    // Evitar que crezca más
     btnMensaje.setMinimumSize(new Dimension(350, 50));    // Evitar que sea más pequeño
-
     // Añadir el botón al panel de mensajes
     jpCardsMensajes.add(btnMensaje);
     
     // Espacio entre mensajes
     jpCardsMensajes.add(Box.createRigidArea(new Dimension(0, 10)));
-
     // Refrescar el panel
     jpCardsMensajes.revalidate();
     jpCardsMensajes.repaint();
     }
     
     public void cargarMensajes(JPanel jpCardsMensajes){
-       String query = "SELECT * FROM MensajesChat WHERE (id_remitente = ? AND id_destinatario = ?) OR (id_remitente = ? AND id_destinatario = ?) ORDER BY id_mensaje ASC";
+       String query = "SELECT * FROM (SELECT * FROM MensajesChat WHERE (id_remitente = ? AND id_destinatario = ?) OR (id_remitente = ? AND id_destinatario = ?) ORDER BY id_mensaje DESC ) WHERE ROWNUM <= 7 ORDER BY id_mensaje ASC";
        
        try(Connection conexion = ClaseConexion.getConexion();
                PreparedStatement stmt = conexion.prepareStatement(query)){
