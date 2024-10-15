@@ -30,13 +30,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import okhttp3.Call;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class NoticiasMedicas {
 
@@ -243,32 +238,56 @@ try {
       String query = "INSERT INTO NoticiasMedicas (imagen_noticia, titulo_noticia, descripcion_noticia, fecha_noticia) VALUES (?, ?, ?, ?)";
       
       try (Connection conexion = ClaseConexion.getConexion(); 
-            PreparedStatement pstmt = conexion.prepareStatement(query)) {
+           PreparedStatement pstmt = conexion.prepareStatement(query)) {
          
           String rutaImagen = this.getImagen_noticia(); 
         
-        if (rutaImagen == null || rutaImagen.trim().isEmpty()) {
-        JOptionPane.showMessageDialog(vista, "Debe subir una foto para agregar una noticia.");
-        return;
+           if (rutaImagen == null || rutaImagen.trim().isEmpty()) {
+             JOptionPane.showMessageDialog(vista, "Debe subir una foto para agregar una noticia.");
+             return;
+           }
+        
+           String titulo = vista.txtTituloNoticia.getText();
+           String descripcion = vista.txtDescripcionNoticia.getText();
+        
+           if (titulo.isEmpty() || descripcion.isEmpty()) {
+             JOptionPane.showMessageDialog(null, "Todos los campos deben estar completos para poder agregar una noticia.");
+             return;
+           }
+        
+                
+           if (vista.jdFechaPublicacion.getDate() == null) {
+            JOptionPane.showMessageDialog(null, "Por favor, elige una fecha", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return;
+           }
+        
+         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+         sdf.setLenient(false); // Desactivar interpretación flexible de fechas
+         String fechaNoticia;
+         
+         try {
+            Date fechaSeleccionada = vista.jdFechaPublicacion.getDate(); // Obtener fecha seleccionada
+            Date fechaActual = new Date();
+            
+            String fechaActualStr = sdf.format(fechaActual);
+            String fechaSeleccionadaStr = sdf.format(fechaSeleccionada);
+           
+            if (!fechaSeleccionadaStr.equals(fechaActualStr)) {
+                JOptionPane.showMessageDialog(vista, "Solo puedes seleccionar la fecha actual.", "Fecha inválida", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            
+            fechaNoticia = fechaSeleccionadaStr;
+            
+         } catch (Exception e) {
+           JOptionPane.showMessageDialog(null, "Fecha inválida. Por favor, usa el formato dd-MM-yyyy.", "Fecha inválida", JOptionPane.WARNING_MESSAGE);
+           return;
          }
-        
-        String titulo = vista.txtTituloNoticia.getText();
-        String descripcion = vista.txtDescripcionNoticia.getText();
-        
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-       sdf.setLenient(false); // Desactivar interpretación flexible de fechas
-       String fechaNoticia;
-      try {
-        fechaNoticia = sdf.format(vista.jdFechaPublicacion.getDate());
-      } catch (Exception e) {
-        JOptionPane.showMessageDialog(null, "Fecha inválida. Por favor, usa el formato dd-MM-yyyy.", "Fecha inválida", JOptionPane.WARNING_MESSAGE);
-        return;
-      }
       
-      pstmt.setString(1, rutaImagen);
-      pstmt.setString(2, titulo);
-      pstmt.setString(3, descripcion);
-      pstmt.setString(4, fechaNoticia);
+         pstmt.setString(1, rutaImagen);
+         pstmt.setString(2, titulo);
+         pstmt.setString(3, descripcion);
+         pstmt.setString(4, fechaNoticia);
       
       int rowsInserted = pstmt.executeUpdate();
         if (rowsInserted > 0) {
@@ -279,7 +298,7 @@ try {
         e.printStackTrace();
         JOptionPane.showMessageDialog(null, "Error al agregar jefe de enfermería.");
     }
-    }
+  }
     
     public void cargarImagen(JLabel imgNoticia, jfrPantallaMenuAdminNoticias vista){
       JFileChooser fileChooser = new JFileChooser();
