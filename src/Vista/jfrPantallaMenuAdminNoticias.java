@@ -4,6 +4,13 @@
  */
 package Vista;
 
+import Controlador.ctrlPantallaMenuAdmin;
+import Modelo.Doctores;
+import Modelo.EspecialidadDoctores;
+import Modelo.JefesEnfermeria;
+import Modelo.NoticiasMedicas;
+import Modelo.UnidadesMedicas;
+
 /**
  *
  * @author ricar

@@ -102,6 +102,7 @@ public class ctrlPantallaMenuAdmin {
               @Override
               public void actionPerformed(ActionEvent e){
                 System.err.println("Clicked");
+                modelo5.limpiarCampos(pantallaNoticias);
               }
             });
             
@@ -149,6 +150,8 @@ public class ctrlPantallaMenuAdmin {
               @Override
               public void actionPerformed(ActionEvent e){
                 System.err.println("Cliced");
+                modelo5.agregarNoticia(pantallaNoticias);
+                modelo5.cargarCardsNoticiasMedicas(pantallaNoticias.jpCardsNoticias, pantallaNoticias);
               }
             });
             
@@ -188,6 +191,7 @@ public class ctrlPantallaMenuAdmin {
               @Override
               public void actionPerformed(ActionEvent e){
                 System.err.println("Clicked");
+                modelo5.limpiarCampos(pantallaNoticias);
               }
             });
                   }

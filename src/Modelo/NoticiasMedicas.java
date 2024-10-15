@@ -272,7 +272,8 @@ try {
       
       int rowsInserted = pstmt.executeUpdate();
         if (rowsInserted > 0) {
-            JOptionPane.showMessageDialog(null, "Jefe de enfermería agregado exitosamente.");
+            JOptionPane.showMessageDialog(null, "Noticia agregada exitosamente.");
+            limpiarCampos(vista);
         }
       }catch (Exception e) {
         e.printStackTrace();
@@ -318,5 +319,24 @@ try {
       }
       
       return false;
+    }
+    
+    public void limpiarCampos(jfrPantallaMenuAdminNoticias vista){
+       vista.txtTituloNoticia.setText("");
+       vista.txtDescripcionNoticia.setText("");
+       vista.jdFechaPublicacion.setDate(null);
+       vista.imgNoticia.setIcon(null);
+       vista.btnCargarImagenNoticia.setEnabled(true);
+       vista.jdFechaPublicacion.setEnabled(true);
+       
+       String defaultImageUrl = "https://www.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600nw-1037719192.jpg";
+        
+     try {
+        ImageIcon icon = new ImageIcon(new URL(defaultImageUrl));
+        Image img = icon.getImage().getScaledInstance(vista.imgNoticia.getWidth(), vista.imgNoticia.getHeight(), Image.SCALE_SMOOTH);
+        vista.imgNoticia.setIcon(new ImageIcon(img));
+    } catch (IOException e) {
+        e.printStackTrace();
+    }  
     }
 }
