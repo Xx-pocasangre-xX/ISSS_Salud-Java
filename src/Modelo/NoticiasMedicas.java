@@ -1,5 +1,7 @@
 package Modelo;
 
+import Vista.jfrPantallaMenuAdminJefesEnfermeria;
+import Vista.jfrPantallaMenuAdminNoticias;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -7,20 +9,34 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
 import java.awt.Insets;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.imageio.ImageIO;
+import javax.security.auth.callback.Callback;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import okhttp3.Call;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class NoticiasMedicas {
 
@@ -94,7 +110,7 @@ public class NoticiasMedicas {
         return listaNoticias;
     }
     
-    public void cargarCardsNoticiasMedicas(JPanel jpCardsNoticias){
+    public void cargarCardsNoticiasMedicas(JPanel jpCardsNoticias, jfrPantallaMenuAdminNoticias vista){
        JPanel panelCards = new JPanel();
        panelCards.setLayout(new GridBagLayout());
        
@@ -110,7 +126,7 @@ public class NoticiasMedicas {
        int row = 0;
        
        for(NoticiasMedicas noticia : noticias){
-          JButton card = crearCard(noticia);
+          JButton card = crearCard(noticia, vista);
           gbc.gridy = row;
           panelCards.add(card, gbc);
         
@@ -150,7 +166,7 @@ public class NoticiasMedicas {
       return imagen;
     }
     
-    private JButton crearCard(NoticiasMedicas noticias){
+    private JButton crearCard(NoticiasMedicas noticias, jfrPantallaMenuAdminNoticias vista){
        JButton card = new JButton();
        card.setLayout(new BorderLayout(10, 10));
        card.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -186,9 +202,121 @@ public class NoticiasMedicas {
        card.setFocusable(true);
        
        card.addActionListener((e) -> {
-          
+          ActualizarCampos(noticias, vista);
        });
        
        return card;
+    }
+    
+    private void ActualizarCampos(NoticiasMedicas noticias, jfrPantallaMenuAdminNoticias vista){
+       this.setId_noticia(noticias.getId_noticia());
+       
+       vista.txtTituloNoticia.setText(noticias.getTitulo_noticia());
+       vista.txtDescripcionNoticia.setText(noticias.getDescripcion_noticia());
+       vista.btnCargarImagenNoticia.setEnabled(false);
+       vista.jdFechaPublicacion.setEnabled(false);
+       
+       String fechaString = noticias.getFecha_noticia();
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  // Formato para incluir la hora
+
+
+try {
+    // Imprimir para verificar el formato de la fecha
+    System.out.println("Fecha recibida: " + fechaString);
+    
+    // Convertir la cadena a java.util.Date
+    java.util.Date fechaDate = sdf.parse(fechaString);
+    
+    // Convertir java.util.Date a java.sql.Date
+    java.sql.Date fechaSqlDate = new java.sql.Date(fechaDate.getTime());
+    vista.jdFechaPublicacion.setDate(fechaSqlDate);
+} catch (ParseException e) {
+    e.printStackTrace();
+    JOptionPane.showMessageDialog(vista, "Error al convertir la fecha: " + e.getMessage(), "Error de fecha", JOptionPane.ERROR_MESSAGE);
+}
+      ImageIcon iconoFoto = cargarImagen(noticias.getImagen_noticia());
+      Image imgFoto = iconoFoto.getImage().getScaledInstance(vista.imgNoticia.getWidth(), vista.imgNoticia.getHeight(), Image.SCALE_SMOOTH);
+      vista.imgNoticia.setIcon(new ImageIcon(imgFoto));
+    }
+    
+    public void agregarNoticia(jfrPantallaMenuAdminNoticias vista){
+      String query = "INSERT INTO NoticiasMedicas (imagen_noticia, titulo_noticia, descripcion_noticia, fecha_noticia) VALUES (?, ?, ?, ?)";
+      
+      try (Connection conexion = ClaseConexion.getConexion(); 
+            PreparedStatement pstmt = conexion.prepareStatement(query)) {
+         
+          String rutaImagen = this.getImagen_noticia(); 
+        
+        if (rutaImagen == null || rutaImagen.trim().isEmpty()) {
+        JOptionPane.showMessageDialog(vista, "Debe subir una foto para agregar una noticia.");
+        return;
+         }
+        
+        String titulo = vista.txtTituloNoticia.getText();
+        String descripcion = vista.txtDescripcionNoticia.getText();
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+       sdf.setLenient(false); // Desactivar interpretación flexible de fechas
+       String fechaNoticia;
+      try {
+        fechaNoticia = sdf.format(vista.jdFechaPublicacion.getDate());
+      } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Fecha inválida. Por favor, usa el formato dd-MM-yyyy.", "Fecha inválida", JOptionPane.WARNING_MESSAGE);
+        return;
+      }
+      
+      pstmt.setString(1, rutaImagen);
+      pstmt.setString(2, titulo);
+      pstmt.setString(3, descripcion);
+      pstmt.setString(4, fechaNoticia);
+      
+      int rowsInserted = pstmt.executeUpdate();
+        if (rowsInserted > 0) {
+            JOptionPane.showMessageDialog(null, "Jefe de enfermería agregado exitosamente.");
+        }
+      }catch (Exception e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(null, "Error al agregar jefe de enfermería.");
+    }
+    }
+    
+    public void cargarImagen(JLabel imgNoticia, jfrPantallaMenuAdminNoticias vista){
+      JFileChooser fileChooser = new JFileChooser();
+
+    fileChooser.setAcceptAllFileFilterUsed(false);
+    fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("Imágenes", "jpg", "jpeg", "png", "gif", "bmp"));
+
+    int result = fileChooser.showOpenDialog(vista);
+    if (result == JFileChooser.APPROVE_OPTION) {
+        File selectedFile = fileChooser.getSelectedFile();
+
+        if (validarArchivoImagen(selectedFile)) {
+            ImageIcon icon = new ImageIcon(selectedFile.getAbsolutePath());
+            int width = imgNoticia.getWidth();
+            int height = imgNoticia.getHeight();
+            Image scaledImage = icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+
+            imgNoticia.setIcon(new ImageIcon(scaledImage));
+            imgNoticia.setText("");  // Elimina cualquier texto en el JLabel
+
+            // Guarda la ruta de la imagen seleccionada
+            this.imagen_noticia = selectedFile.getAbsolutePath();  
+        } else {
+            JOptionPane.showMessageDialog(vista, "Por favor, seleccione un archivo de imagen válido (jpg, jpeg, png, gif, bmp).", "Archivo no válido", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    }
+    
+    private boolean validarArchivoImagen(File file){
+      String[] extensionesValidas = {"jpg", "jpeg", "png", "gif", "bmp"};
+      String nombreArchivo = file.getName().toLowerCase();
+      
+      for(String ext : extensionesValidas){
+        if(nombreArchivo.endsWith("." + ext)){
+           return true;
+        }
+      }
+      
+      return false;
     }
 }

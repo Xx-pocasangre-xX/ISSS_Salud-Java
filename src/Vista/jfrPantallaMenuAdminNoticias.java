@@ -118,17 +118,17 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Foto de la noticia");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Titulo de la noticia");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 260, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 260, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Descripción");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, -1));
 
         txtTituloNoticia.setBackground(new java.awt.Color(50, 55, 65));
         txtTituloNoticia.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -139,7 +139,7 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
                 txtTituloNoticiaActionPerformed(evt);
             }
         });
-        jPanel1.add(txtTituloNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 290, 30));
+        jPanel1.add(txtTituloNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 290, 30));
 
         btnCargarImagenNoticia.setBackground(new java.awt.Color(41, 72, 152));
         btnCargarImagenNoticia.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
@@ -150,7 +150,7 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
                 btnCargarImagenNoticiaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCargarImagenNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 265, 150, 40));
+        jPanel1.add(btnCargarImagenNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, 150, 40));
 
         btnAgregarNoticia.setBackground(new java.awt.Color(41, 72, 152));
         btnAgregarNoticia.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
@@ -170,7 +170,7 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         jPanel1.add(btnActualizarNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 660, 120, 50));
 
         imgNoticia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/profile.jpg"))); // NOI18N
-        jPanel1.add(imgNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 550, 100));
+        jPanel1.add(imgNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 550, 140));
 
         btnLimpiarNoticia.setBackground(new java.awt.Color(41, 72, 152));
         btnLimpiarNoticia.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
@@ -197,13 +197,15 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         txtDescripcionNoticia.setBackground(new java.awt.Color(50, 55, 65));
         txtDescripcionNoticia.setColumns(20);
         txtDescripcionNoticia.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
+        txtDescripcionNoticia.setForeground(new java.awt.Color(255, 255, 255));
         txtDescripcionNoticia.setRows(5);
         jScrollPane1.setViewportView(txtDescripcionNoticia);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 550, 120));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 550, 70));
 
         jdFechaPublicacion.setBackground(new java.awt.Color(255, 255, 255));
         jdFechaPublicacion.setForeground(new java.awt.Color(0, 0, 0));
+        jdFechaPublicacion.setDateFormatString("dd-MM-yyyy");
         jPanel1.add(jdFechaPublicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 540, 370, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1122, -1));

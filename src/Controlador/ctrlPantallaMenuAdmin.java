@@ -11,6 +11,9 @@ import Vista.jfrPantallaMenuAdminJefesEnfermeria;
 import Vista.jfrPantallaMenuAdminNoticias;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 public class ctrlPantallaMenuAdmin {
@@ -50,7 +53,7 @@ public class ctrlPantallaMenuAdmin {
             jfrPantallaMenuAdminNoticias pantallaNoticias = new jfrPantallaMenuAdminNoticias();
             pantallaNoticias.setVisible(true);
             pantallaNoticias.setLocationRelativeTo(null);
-            modelo5.cargarCardsNoticiasMedicas(pantallaNoticias.jpCardsNoticias);
+            modelo5.cargarCardsNoticiasMedicas(pantallaNoticias.jpCardsNoticias, pantallaNoticias);
             vista.dispose();
             
             pantallaNoticias.btnAgregarTrabajadores.addActionListener(new ActionListener(){
@@ -67,6 +70,8 @@ public class ctrlPantallaMenuAdmin {
               @Override
               public void actionPerformed(ActionEvent e){
                 System.err.println("Cliced");
+                modelo5.agregarNoticia(pantallaNoticias);
+                modelo5.cargarCardsNoticiasMedicas(pantallaNoticias.jpCardsNoticias, pantallaNoticias);
               }
             });
             
@@ -81,6 +86,8 @@ public class ctrlPantallaMenuAdmin {
               @Override
               public void actionPerformed(ActionEvent e){
                 System.err.println("Clicked");
+                modelo5.cargarImagen(pantallaNoticias.imgNoticia, pantallaNoticias);
+                
               }
             });
             
@@ -125,7 +132,7 @@ public class ctrlPantallaMenuAdmin {
                     jfrPantallaMenuAdminNoticias pantallaNoticias = new jfrPantallaMenuAdminNoticias();
                     pantallaNoticias.setVisible(true);
                     pantallaNoticias.setLocationRelativeTo(null);
-                    modelo5.cargarCardsNoticiasMedicas(pantallaNoticias.jpCardsNoticias);
+                    modelo5.cargarCardsNoticiasMedicas(pantallaNoticias.jpCardsNoticias, pantallaNoticias);
                     pantallaJefes.dispose();
                     
                     pantallaNoticias.btnAgregarTrabajadores.addActionListener(new ActionListener(){
@@ -156,6 +163,7 @@ public class ctrlPantallaMenuAdmin {
               @Override
               public void actionPerformed(ActionEvent e){
                 System.err.println("Clicked");
+                modelo5.cargarImagen(pantallaNoticias.imgNoticia, pantallaNoticias);
               }
             });
             
