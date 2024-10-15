@@ -79,6 +79,24 @@ public class ctrlPantallaMenuAdmin {
               @Override
               public void actionPerformed(ActionEvent e){
                 System.err.println("Clicked");
+                
+                int id_noticia = modelo5.getId_noticia();
+                        System.out.println("ID de noticia seleccionado: " + id_noticia);
+                        String titulo = pantallaNoticias.txtTituloNoticia.getText();
+                        String descripcion = pantallaNoticias.txtDescripcionNoticia.getText();
+                        
+                        if(titulo.isEmpty() || descripcion.isEmpty()){
+                          JOptionPane.showMessageDialog(null, "Selecciona una card en orden de actualizar");
+                          return;
+                        }
+
+                        if (modelo5.actulizarNoticia(id_noticia, titulo, descripcion, pantallaNoticias)) {
+                            JOptionPane.showMessageDialog(vista, "Actualización exitosa.");
+                            modelo5.limpiarCampos(pantallaNoticias);
+                            modelo5.cargarCardsNoticiasMedicas(pantallaNoticias.jpCardsNoticias, pantallaNoticias);
+                        } else {
+                            JOptionPane.showMessageDialog(vista, "Error al actualizar la noticia");
+                        }
               }
             });
             
@@ -159,6 +177,23 @@ public class ctrlPantallaMenuAdmin {
               @Override
               public void actionPerformed(ActionEvent e){
                 System.err.println("Clicked");
+                int id_noticia = modelo5.getId_noticia();
+                        System.out.println("ID de noticia seleccionado: " + id_noticia);
+                        String titulo = pantallaNoticias.txtTituloNoticia.getText();
+                        String descripcion = pantallaNoticias.txtDescripcionNoticia.getText();
+                        
+                        if(titulo.isEmpty() || descripcion.isEmpty()){
+                          JOptionPane.showMessageDialog(null, "Selecciona una card en orden de actualizar");
+                          return;
+                        }
+
+                        if (modelo5.actulizarNoticia(id_noticia, titulo, descripcion, pantallaNoticias)) {
+                            JOptionPane.showMessageDialog(vista, "Actualización exitosa.");
+                            modelo5.limpiarCampos(pantallaNoticias);
+                            modelo5.cargarCardsNoticiasMedicas(pantallaNoticias.jpCardsNoticias, pantallaNoticias);
+                        } else {
+                            JOptionPane.showMessageDialog(vista, "Error al actualizar la noticia");
+                        }
               }
             });
             

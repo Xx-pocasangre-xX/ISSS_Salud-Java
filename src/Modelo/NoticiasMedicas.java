@@ -339,4 +339,20 @@ try {
         e.printStackTrace();
     }  
     }
+    
+    public boolean actulizarNoticia(int id_noticia, String titulo, String descripcion, jfrPantallaMenuAdminNoticias vista){
+      Connection conexion = ClaseConexion.getConexion();
+      String query = "UPDATE NoticiasMedicas SET titulo_noticia = ?, descripcion_noticia = ? WHERE id_noticia = ?";
+      
+      try(PreparedStatement ps = conexion.prepareStatement(query)){
+         ps.setString(1, titulo);
+         ps.setString(2, descripcion);
+         ps.setInt(3, id_noticia);
+         
+         return ps.executeUpdate() > 0;
+      }catch(SQLException e){
+        e.printStackTrace();
+        return false;
+      }
+    }
 }
