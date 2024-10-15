@@ -82,7 +82,7 @@ public class NoticiasMedicas {
     
     public List<NoticiasMedicas> obtenerNoticias() {
         List<NoticiasMedicas> listaNoticias = new ArrayList<>();
-        String query = "SELECT id_noticia, imagen_noticia, titulo_noticia, descripcion_noticia, fecha_noticia FROM NoticiasMedicas";
+        String query = "SELECT * FROM (SELECT id_noticia, imagen_noticia, titulo_noticia, descripcion_noticia, fecha_noticia FROM NoticiasMedicas ORDER BY id_noticia DESC) WHERE ROWNUM <= 30";
 
         try (Connection conexion = ClaseConexion.getConexion();
              PreparedStatement stmt = conexion.prepareStatement(query)) {
