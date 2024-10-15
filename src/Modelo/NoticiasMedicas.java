@@ -355,4 +355,20 @@ try {
         return false;
       }
     }
+    
+    public boolean eliminarNoticia(int id_noticia, jfrPantallaMenuAdminNoticias vista){
+      Connection conexion = ClaseConexion.getConexion();
+      String query = "DELETE FROM NoticiasMedicas WHERE id_noticia = ?";
+      
+      try(PreparedStatement ps = conexion.prepareStatement(query)){
+        ps.setInt(1, id_noticia);
+        return ps.executeUpdate() > 0;
+      }catch(SQLIntegrityConstraintViolationException e){
+         JOptionPane.showMessageDialog(vista, "No se pudo eliminar la noticia", "Error", JOptionPane.ERROR_MESSAGE);
+         return false;
+      }catch(SQLException e){
+        e.printStackTrace();
+        return false;
+      }
+    }
 }

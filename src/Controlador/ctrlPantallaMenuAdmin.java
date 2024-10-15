@@ -113,6 +113,19 @@ public class ctrlPantallaMenuAdmin {
               @Override
               public void actionPerformed(ActionEvent e){
                 System.err.println("Clicked");
+                
+                int id_noticia = modelo5.getId_noticia();
+
+                        int confirmar = JOptionPane.showConfirmDialog(vista, "Estas seguro de que deseas aliminar esta noticia", "Confirmación", JOptionPane.YES_NO_OPTION);
+                        if (confirmar == JOptionPane.YES_OPTION) {
+                            if (modelo5.eliminarNoticia(id_noticia, pantallaNoticias)) {
+                                JOptionPane.showMessageDialog(vista, "Noticia elimanda exitosamente.");
+                                modelo5.cargarCardsNoticiasMedicas(pantallaNoticias.jpCardsNoticias, pantallaNoticias);
+                                modelo5.limpiarCampos(pantallaNoticias);
+                            } else {
+                                JOptionPane.showMessageDialog(vista, "Error al eiminar la noticia, selecciona una card o elige otra noticia");
+                            }
+                        }
               }
             });
             
@@ -209,6 +222,19 @@ public class ctrlPantallaMenuAdmin {
               @Override
               public void actionPerformed(ActionEvent e){
                 System.err.println("Clicked");
+                
+                int id_noticia = modelo5.getId_noticia();
+
+                        int confirmar = JOptionPane.showConfirmDialog(vista, "Estas seguro de que deseas aliminar esta noticia", "Confirmación", JOptionPane.YES_NO_OPTION);
+                        if (confirmar == JOptionPane.YES_OPTION) {
+                            if (modelo5.eliminarNoticia(id_noticia, pantallaNoticias)) {
+                                JOptionPane.showMessageDialog(vista, "Noticia elimanda exitosamente.");
+                                modelo5.cargarCardsNoticiasMedicas(pantallaNoticias.jpCardsNoticias, pantallaNoticias);
+                                modelo5.limpiarCampos(pantallaNoticias);
+                            } else {
+                                JOptionPane.showMessageDialog(vista, "Error al eiminar la noticia, selecciona una card o elige otra noticia");
+                            }
+                        }
               }
             });
             
