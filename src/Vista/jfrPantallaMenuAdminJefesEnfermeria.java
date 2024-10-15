@@ -29,7 +29,7 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btnAgregarTrabajadores = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        btnAgregarJefes = new javax.swing.JButton();
+        btnNoticiasJ = new javax.swing.JButton();
         btnCerrarSesion = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -85,10 +85,10 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         jButton1.setBorder(null);
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
-        btnAgregarJefes.setBackground(new java.awt.Color(62, 68, 83));
-        btnAgregarJefes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnNoticiasModoOscuro.png"))); // NOI18N
-        btnAgregarJefes.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
-        jPanel2.add(btnAgregarJefes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 80, 70));
+        btnNoticiasJ.setBackground(new java.awt.Color(62, 68, 83));
+        btnNoticiasJ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnNoticiasModoOscuro.png"))); // NOI18N
+        btnNoticiasJ.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
+        jPanel2.add(btnNoticiasJ, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 80, 70));
 
         btnCerrarSesion.setBackground(new java.awt.Color(62, 68, 83));
         btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salida 1.png"))); // NOI18N
@@ -356,7 +356,6 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnActualizarJefe;
     public javax.swing.JButton btnAgregarJefe;
-    public javax.swing.JButton btnAgregarJefes;
     public javax.swing.JButton btnAgregarTrabajadores;
     public javax.swing.JButton btnCargarImagenJefe;
     public javax.swing.JButton btnCerrarSesion;
@@ -364,6 +363,7 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
     public javax.swing.JButton btnEliminarJefe;
     public javax.swing.JButton btnJefes;
     public javax.swing.JButton btnLimpiarJefe;
+    public javax.swing.JButton btnNoticiasJ;
     public javax.swing.JComboBox<String> cbSexoJefe;
     public javax.swing.JComboBox<String> cbTipoSangre;
     private javax.swing.JButton jButton1;

@@ -42,14 +42,14 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         txtTituloNoticia = new javax.swing.JTextField();
         btnCargarImagenNoticia = new javax.swing.JButton();
-        btnAgregar = new javax.swing.JButton();
-        btnActualizar = new javax.swing.JButton();
+        btnAgregarNoticia = new javax.swing.JButton();
+        btnActualizarNoticia = new javax.swing.JButton();
         imgNoticia = new javax.swing.JLabel();
-        btnLimpiar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
-        txtFechaPublicacion = new javax.swing.JPasswordField();
+        btnLimpiarNoticia = new javax.swing.JButton();
+        btnEliminarNoticia = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDescripcionNoticia = new javax.swing.JTextArea();
+        jdFechaPublicacion = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1200, 750));
@@ -113,7 +113,7 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Fecha de publicación");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,53 +152,47 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         });
         jPanel1.add(btnCargarImagenNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 265, 150, 40));
 
-        btnAgregar.setBackground(new java.awt.Color(41, 72, 152));
-        btnAgregar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
-        btnAgregar.setText("Agregar");
-        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarNoticia.setBackground(new java.awt.Color(41, 72, 152));
+        btnAgregarNoticia.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnAgregarNoticia.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregarNoticia.setText("Agregar");
+        btnAgregarNoticia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarActionPerformed(evt);
+                btnAgregarNoticiaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 660, 120, 50));
+        jPanel1.add(btnAgregarNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 660, 120, 50));
 
-        btnActualizar.setBackground(new java.awt.Color(41, 72, 152));
-        btnActualizar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnActualizar.setForeground(new java.awt.Color(255, 255, 255));
-        btnActualizar.setText("Actualizar");
-        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 660, 120, 50));
+        btnActualizarNoticia.setBackground(new java.awt.Color(41, 72, 152));
+        btnActualizarNoticia.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnActualizarNoticia.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizarNoticia.setText("Actualizar");
+        jPanel1.add(btnActualizarNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 660, 120, 50));
 
         imgNoticia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/profile.jpg"))); // NOI18N
         jPanel1.add(imgNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 550, 100));
 
-        btnLimpiar.setBackground(new java.awt.Color(41, 72, 152));
-        btnLimpiar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnLimpiar.setForeground(new java.awt.Color(255, 255, 255));
-        btnLimpiar.setText("Limpiar");
-        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+        btnLimpiarNoticia.setBackground(new java.awt.Color(41, 72, 152));
+        btnLimpiarNoticia.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnLimpiarNoticia.setForeground(new java.awt.Color(255, 255, 255));
+        btnLimpiarNoticia.setText("Limpiar");
+        btnLimpiarNoticia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiarActionPerformed(evt);
+                btnLimpiarNoticiaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 660, 120, 50));
+        jPanel1.add(btnLimpiarNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 660, 120, 50));
 
-        btnEliminar.setBackground(new java.awt.Color(41, 72, 152));
-        btnEliminar.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        btnEliminar.setText("Eliminar");
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminarNoticia.setBackground(new java.awt.Color(41, 72, 152));
+        btnEliminarNoticia.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnEliminarNoticia.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminarNoticia.setText("Eliminar");
+        btnEliminarNoticia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
+                btnEliminarNoticiaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 660, 120, 50));
-
-        txtFechaPublicacion.setBackground(new java.awt.Color(50, 55, 65));
-        txtFechaPublicacion.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
-        txtFechaPublicacion.setForeground(new java.awt.Color(255, 255, 255));
-        txtFechaPublicacion.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
-        jPanel1.add(txtFechaPublicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 560, 290, 30));
+        jPanel1.add(btnEliminarNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 660, 120, 50));
 
         txtDescripcionNoticia.setBackground(new java.awt.Color(50, 55, 65));
         txtDescripcionNoticia.setColumns(20);
@@ -206,7 +200,11 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         txtDescripcionNoticia.setRows(5);
         jScrollPane1.setViewportView(txtDescripcionNoticia);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 550, 160));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 550, 120));
+
+        jdFechaPublicacion.setBackground(new java.awt.Color(255, 255, 255));
+        jdFechaPublicacion.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jdFechaPublicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 540, 370, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1122, -1));
 
@@ -225,17 +223,17 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCargarImagenNoticiaActionPerformed
 
-    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+    private void btnAgregarNoticiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarNoticiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregarActionPerformed
+    }//GEN-LAST:event_btnAgregarNoticiaActionPerformed
 
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+    private void btnLimpiarNoticiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarNoticiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnLimpiarActionPerformed
+    }//GEN-LAST:event_btnLimpiarNoticiaActionPerformed
 
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+    private void btnEliminarNoticiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarNoticiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminarActionPerformed
+    }//GEN-LAST:event_btnEliminarNoticiaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,14 +271,14 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnActualizar;
-    public javax.swing.JButton btnAgregar;
+    public javax.swing.JButton btnActualizarNoticia;
     public javax.swing.JButton btnAgregarJefes;
+    public javax.swing.JButton btnAgregarNoticia;
     public javax.swing.JButton btnAgregarTrabajadores;
     public javax.swing.JButton btnCargarImagenNoticia;
     public javax.swing.JButton btnCerrarSesion;
-    public javax.swing.JButton btnEliminar;
-    public javax.swing.JButton btnLimpiar;
+    public javax.swing.JButton btnEliminarNoticia;
+    public javax.swing.JButton btnLimpiarNoticia;
     public javax.swing.JLabel imgNoticia;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
@@ -293,9 +291,9 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    public com.toedter.calendar.JDateChooser jdFechaPublicacion;
     public javax.swing.JPanel jpCardsNoticias;
     public javax.swing.JTextArea txtDescripcionNoticia;
-    public javax.swing.JPasswordField txtFechaPublicacion;
     public javax.swing.JTextField txtTituloNoticia;
     // End of variables declaration//GEN-END:variables
 }

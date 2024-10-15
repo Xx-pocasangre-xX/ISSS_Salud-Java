@@ -3,6 +3,7 @@ package Controlador;
 import Modelo.Doctores;
 import Modelo.EspecialidadDoctores;
 import Modelo.JefesEnfermeria;
+import Modelo.NoticiasMedicas;
 import Modelo.UnidadesMedicas;
 import Vista.jfrPantallaLogin;
 import Vista.jfrPantallaMenuAdminDoctores;
@@ -21,6 +22,7 @@ public class ctrlPantallaMenuAdmin {
     private jfrPantallaMenuAdminJefesEnfermeria vista2;
     private jfrPantallaMenuAdminNoticias vista3;
     private JefesEnfermeria modelo4;
+    NoticiasMedicas modelo5;
 
     public ctrlPantallaMenuAdmin(jfrPantallaMenuAdminDoctores vista, EspecialidadDoctores modelo) {
         this.vista = vista;
@@ -34,12 +36,79 @@ public class ctrlPantallaMenuAdmin {
         this.modelo2.cargarUnidadesMedicas(vista.cbUnidadesMedicas);
     }
 
-    public ctrlPantallaMenuAdmin(jfrPantallaMenuAdminDoctores vista, Doctores modelo3, jfrPantallaMenuAdminJefesEnfermeria vista2, JefesEnfermeria modelo4) {
+    public ctrlPantallaMenuAdmin(jfrPantallaMenuAdminDoctores vista, Doctores modelo3, jfrPantallaMenuAdminJefesEnfermeria vista2, JefesEnfermeria modelo4, NoticiasMedicas modelo5) {
         this.vista = vista;
         this.modelo3 = modelo3;
         this.modelo4 = modelo4;
+        this.modelo5 = modelo5;
         this.vista2 = vista2;
         this.modelo3.cargarCardsDoctores(vista.jpCardsDoctores, vista);
+        
+        this.vista.btnNoticias.addActionListener(new ActionListener(){
+          @Override
+          public void actionPerformed(ActionEvent e){
+            jfrPantallaMenuAdminNoticias pantallaNoticias = new jfrPantallaMenuAdminNoticias();
+            pantallaNoticias.setVisible(true);
+            pantallaNoticias.setLocationRelativeTo(null);
+            modelo5.cargarCardsNoticiasMedicas(pantallaNoticias.jpCardsNoticias);
+            vista.dispose();
+            
+            pantallaNoticias.btnAgregarTrabajadores.addActionListener(new ActionListener(){
+               @Override
+               public void actionPerformed(ActionEvent e){
+                 jfrPantallaMenuAdminDoctores pantallaDoctores = new jfrPantallaMenuAdminDoctores();
+                 pantallaDoctores.setVisible(true);
+                 pantallaDoctores.setLocationRelativeTo(null);
+                 pantallaNoticias.dispose();
+               }
+            });
+            
+            pantallaNoticias.btnAgregarNoticia.addActionListener(new ActionListener(){
+              @Override
+              public void actionPerformed(ActionEvent e){
+                System.err.println("Cliced");
+              }
+            });
+            
+            pantallaNoticias.btnActualizarNoticia.addActionListener(new ActionListener(){
+              @Override
+              public void actionPerformed(ActionEvent e){
+                System.err.println("Clicked");
+              }
+            });
+            
+            pantallaNoticias.btnCargarImagenNoticia.addActionListener(new ActionListener(){
+              @Override
+              public void actionPerformed(ActionEvent e){
+                System.err.println("Clicked");
+              }
+            });
+            
+            pantallaNoticias.btnEliminarNoticia.addActionListener(new ActionListener(){
+              @Override
+              public void actionPerformed(ActionEvent e){
+                System.err.println("Clicked");
+              }
+            });
+            
+            pantallaNoticias.btnLimpiarNoticia.addActionListener(new ActionListener(){
+              @Override
+              public void actionPerformed(ActionEvent e){
+                System.err.println("Clicked");
+              }
+            });
+            
+            pantallaNoticias.btnCerrarSesion.addActionListener(new ActionListener(){
+              @Override
+              public void actionPerformed(ActionEvent e){
+                  jfrPantallaLogin login = new jfrPantallaLogin();
+                  login.setVisible(true);
+                  login.setLocationRelativeTo(null);
+                  pantallaNoticias.dispose();
+              }
+            });
+          }
+        });
 
         this.vista.btnJefes.addActionListener(new ActionListener() {
             @Override
@@ -49,6 +118,72 @@ public class ctrlPantallaMenuAdmin {
                 pantallaJefes.setLocationRelativeTo(null);
                 modelo4.cargarCardsJefes(pantallaJefes.jpCardsJefes, pantallaJefes);
                 vista.dispose();
+                
+                pantallaJefes.btnNoticiasJ.addActionListener(new ActionListener(){
+                  @Override
+                  public void actionPerformed(ActionEvent e){
+                    jfrPantallaMenuAdminNoticias pantallaNoticias = new jfrPantallaMenuAdminNoticias();
+                    pantallaNoticias.setVisible(true);
+                    pantallaNoticias.setLocationRelativeTo(null);
+                    modelo5.cargarCardsNoticiasMedicas(pantallaNoticias.jpCardsNoticias);
+                    pantallaJefes.dispose();
+                    
+                    pantallaNoticias.btnAgregarTrabajadores.addActionListener(new ActionListener(){
+                      @Override
+                      public void actionPerformed(ActionEvent e){
+                      jfrPantallaMenuAdminDoctores pantallaDoctores = new jfrPantallaMenuAdminDoctores();
+                      pantallaDoctores.setVisible(true);
+                      pantallaDoctores.setLocationRelativeTo(null);
+                      pantallaNoticias.dispose();
+                   }
+                });
+                    
+             pantallaNoticias.btnAgregarNoticia.addActionListener(new ActionListener(){
+              @Override
+              public void actionPerformed(ActionEvent e){
+                System.err.println("Cliced");
+              }
+            });
+            
+            pantallaNoticias.btnActualizarNoticia.addActionListener(new ActionListener(){
+              @Override
+              public void actionPerformed(ActionEvent e){
+                System.err.println("Clicked");
+              }
+            });
+            
+            pantallaNoticias.btnCargarImagenNoticia.addActionListener(new ActionListener(){
+              @Override
+              public void actionPerformed(ActionEvent e){
+                System.err.println("Clicked");
+              }
+            });
+            
+            pantallaNoticias.btnEliminarNoticia.addActionListener(new ActionListener(){
+              @Override
+              public void actionPerformed(ActionEvent e){
+                System.err.println("Clicked");
+              }
+            });
+            
+            pantallaNoticias.btnCerrarSesion.addActionListener(new ActionListener(){
+              @Override
+              public void actionPerformed(ActionEvent e){
+                  jfrPantallaLogin login = new jfrPantallaLogin();
+                  login.setVisible(true);
+                  login.setLocationRelativeTo(null);
+                  pantallaNoticias.dispose();
+              }
+            });
+            
+            pantallaNoticias.btnLimpiarNoticia.addActionListener(new ActionListener(){
+              @Override
+              public void actionPerformed(ActionEvent e){
+                System.err.println("Clicked");
+              }
+            });
+                  }
+                });
 
                 pantallaJefes.btnDoctores.addActionListener(new ActionListener() {
                     @Override
