@@ -3,6 +3,7 @@ package Modelo;
 import Vista.PanelBienvenidaChat;
 import Vista.PanelChatDoctoresSinDesplegar;
 import Vista.PanelMensajesChat;
+import Vista.jfrPantallaLogin;
 import Vista.jfrPantallaMenuDoctor;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -476,5 +477,34 @@ jpCardsMensajes.setLayout(new BoxLayout(jpCardsMensajes, BoxLayout.Y_AXIS));
        }catch(SQLException e){
          e.printStackTrace();
        }
+    }
+    
+    private boolean passwordVisible = false;
+
+    public void togglePasswordVisibility(jfrPantallaLogin vista) {
+        // Obtener las dimensiones del botón
+        int width = vista.btnVerContrasena.getWidth();
+        int height = vista.btnVerContrasena.getHeight();
+
+        if (passwordVisible) {
+            // Si la contraseña está visible, ocultarla
+            vista.txtContrasena.setEchoChar('•'); // Mostrar los puntos negros (ocultar la contraseña)
+
+            // Cambiar el icono a "no ver contraseña"
+            ImageIcon icon = new ImageIcon(getClass().getResource("/Imagenes/no_ver_password.png"));
+            Image scaledImage = icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+            vista.btnVerContrasena.setIcon(new ImageIcon(scaledImage));
+        } else {
+            // Si la contraseña está oculta, mostrarla
+            vista.txtContrasena.setEchoChar((char) 0); // Mostrar el texto de la contraseña
+
+            // Cambiar el icono a "ver contraseña"
+            ImageIcon icon = new ImageIcon(getClass().getResource("/Imagenes/ver_password.png"));
+            Image scaledImage = icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+            vista.btnVerContrasena.setIcon(new ImageIcon(scaledImage));
+        }
+
+        // Cambiar el estado de passwordVisible
+        passwordVisible = !passwordVisible;
     }
 }

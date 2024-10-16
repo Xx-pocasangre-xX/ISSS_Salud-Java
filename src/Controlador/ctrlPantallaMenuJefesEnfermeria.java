@@ -4,6 +4,7 @@ import Modelo.CitasMedicas;
 import Modelo.CitasMedicasJefes;
 import Modelo.EspecialidadDoctores;
 import Modelo.SolicitudCitas;
+import Modelo.Usuarios;
 import Vista.PanelCitasAgendadasJefeEnfermeria;
 import Vista.PanelExpedienteMedico;
 import Vista.PanelInfoCitaDoctor;
@@ -15,6 +16,8 @@ import Vista.jfrAgendarCitasJefesEnfermeria;
 import static Vista.jfrAgendarCitasJefesEnfermeria.initjfrAgendarCitasJefesEnfermeria;
 import Vista.jfrPantallaLogin;
 import Vista.jfrPantallaMenuJefesEnfermeria;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
@@ -30,8 +33,9 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
     private CitasMedicas modelo2;
     private CitasMedicasJefes modelo3;
     private EspecialidadDoctores modelo4;
+    Usuarios modelo5;
     
-    public ctrlPantallaMenuJefesEnfermeria(jfrPantallaMenuJefesEnfermeria Vista, PanelSolicitudesCitas Panel, PanelCitasAgendadasJefeEnfermeria Panel1, jfrActualizarCita MiniPanel2, jfrAgendarCitasJefesEnfermeria MiniPanel1, SolicitudCitas modelo, CitasMedicas modelo2, CitasMedicasJefes modelo3, EspecialidadDoctores modelo4){
+    public ctrlPantallaMenuJefesEnfermeria(jfrPantallaMenuJefesEnfermeria Vista, PanelSolicitudesCitas Panel, PanelCitasAgendadasJefeEnfermeria Panel1, jfrActualizarCita MiniPanel2, jfrAgendarCitasJefesEnfermeria MiniPanel1, SolicitudCitas modelo, CitasMedicas modelo2, CitasMedicasJefes modelo3, EspecialidadDoctores modelo4,  Usuarios modelo5){
         this.vista = Vista;
         this.panel = Panel;
         this.panel1 = Panel1;
@@ -41,6 +45,7 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
         this.modelo2 = modelo2;
         this.modelo3 = modelo3;
         this.modelo4 = modelo4;
+        this.modelo5 = modelo5;
         this.modelo.cargarCardsSolicitudCitas(panel.jpCardsSolicitudCitas, panel);
         this.modelo.bloquearTextFields(panel.txtNombreSolicitante, panel.txtTelefono, panel.txtCorreo, panel.txtMotivoCita, panel.txtDUI, panel.txtFechaSolicitud);
         this.modelo2.cargarDoctores(miniPanel1.cbDoctor);
@@ -74,6 +79,13 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
            login.setVisible(true);
            login.setLocationRelativeTo(null);
            vista.dispose();
+           
+           login.btnVerContrasena.addActionListener(new ActionListener(){
+                     @Override
+                     public void actionPerformed(ActionEvent e){
+                       modelo5.togglePasswordVisibility(login);
+                     }
+                  });
         }
         
         if(e.getSource() == vista.btnAgendadas){

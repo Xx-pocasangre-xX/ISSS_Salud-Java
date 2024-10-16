@@ -1,6 +1,7 @@
 package Vista;
 
 import Controlador.ctrlPantallaMain;
+import Modelo.Usuarios;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -17,7 +18,8 @@ public class jfrPantallaMain extends javax.swing.JFrame {
     public jfrPantallaMain() {
         initComponents();
         
-        ctrlPantallaMain Controlador = new ctrlPantallaMain(this);
+        Usuarios modelo = new Usuarios();
+        ctrlPantallaMain Controlador = new ctrlPantallaMain(this, modelo);
         btnBienvenida.addActionListener(Controlador);
         btnBienvenida.setUI(new RoundedButtonUI());
     }

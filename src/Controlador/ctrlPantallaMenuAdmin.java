@@ -5,6 +5,7 @@ import Modelo.EspecialidadDoctores;
 import Modelo.JefesEnfermeria;
 import Modelo.NoticiasMedicas;
 import Modelo.UnidadesMedicas;
+import Modelo.Usuarios;
 import Vista.jfrPantallaLogin;
 import Vista.jfrPantallaMenuAdminDoctores;
 import Vista.jfrPantallaMenuAdminJefesEnfermeria;
@@ -22,6 +23,7 @@ public class ctrlPantallaMenuAdmin {
     private EspecialidadDoctores modelo;
     private UnidadesMedicas modelo2;
     private Doctores modelo3;
+    Usuarios modelo6;
     private jfrPantallaMenuAdminJefesEnfermeria vista2;
     private jfrPantallaMenuAdminNoticias vista3;
     private JefesEnfermeria modelo4;
@@ -39,11 +41,12 @@ public class ctrlPantallaMenuAdmin {
         this.modelo2.cargarUnidadesMedicas(vista.cbUnidadesMedicas);
     }
 
-    public ctrlPantallaMenuAdmin(jfrPantallaMenuAdminDoctores vista, Doctores modelo3, jfrPantallaMenuAdminJefesEnfermeria vista2, JefesEnfermeria modelo4, NoticiasMedicas modelo5) {
+    public ctrlPantallaMenuAdmin(jfrPantallaMenuAdminDoctores vista, Doctores modelo3, jfrPantallaMenuAdminJefesEnfermeria vista2, JefesEnfermeria modelo4, NoticiasMedicas modelo5, Usuarios modelo6) {
         this.vista = vista;
         this.modelo3 = modelo3;
         this.modelo4 = modelo4;
         this.modelo5 = modelo5;
+        this.modelo6 = modelo6;
         this.vista2 = vista2;
         this.modelo3.cargarCardsDoctores(vista.jpCardsDoctores, vista);
         
@@ -144,6 +147,13 @@ public class ctrlPantallaMenuAdmin {
                   login.setVisible(true);
                   login.setLocationRelativeTo(null);
                   pantallaNoticias.dispose();
+                  
+                  login.btnVerContrasena.addActionListener(new ActionListener(){
+                     @Override
+                     public void actionPerformed(ActionEvent e){
+                       modelo6.togglePasswordVisibility(login);
+                     }
+                  });
               }
             });
           }
@@ -245,6 +255,13 @@ public class ctrlPantallaMenuAdmin {
                   login.setVisible(true);
                   login.setLocationRelativeTo(null);
                   pantallaNoticias.dispose();
+                  
+                  login.btnVerContrasena.addActionListener(new ActionListener(){
+                     @Override
+                     public void actionPerformed(ActionEvent e){
+                       modelo6.togglePasswordVisibility(login);
+                     }
+                  });
               }
             });
             
@@ -352,6 +369,13 @@ public class ctrlPantallaMenuAdmin {
                      login.setVisible(true);
                      login.setLocationRelativeTo(null);
                      pantallaJefes.dispose();
+                     
+                     login.btnVerContrasena.addActionListener(new ActionListener(){
+                     @Override
+                     public void actionPerformed(ActionEvent e){
+                       modelo6.togglePasswordVisibility(login);
+                     }
+                  });
                   }
                 });
 
@@ -365,6 +389,13 @@ public class ctrlPantallaMenuAdmin {
               login.setVisible(true);
               login.setLocationRelativeTo(null);
               vista.dispose();
+              
+              login.btnVerContrasena.addActionListener(new ActionListener(){
+                     @Override
+                     public void actionPerformed(ActionEvent e){
+                       modelo6.togglePasswordVisibility(login);
+                     }
+                  });
            }
         });
 

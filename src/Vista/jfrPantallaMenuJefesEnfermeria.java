@@ -9,6 +9,7 @@ import Modelo.CitasMedicas;
 import Modelo.CitasMedicasJefes;
 import Modelo.EspecialidadDoctores;
 import Modelo.SolicitudCitas;
+import Modelo.Usuarios;
 
 /**
  *
@@ -34,8 +35,9 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
         CitasMedicas modelo2 = new CitasMedicas();
         CitasMedicasJefes modelo3 = new CitasMedicasJefes();
         EspecialidadDoctores modelo4 = new EspecialidadDoctores();
+        Usuarios modelo5 = new Usuarios();
         
-        ctrlPantallaMenuJefesEnfermeria controlador = new ctrlPantallaMenuJefesEnfermeria(vista, panel, Panel1, MiniPanel2, MiniPanel1, modelo, modelo2, modelo3, modelo4);
+        ctrlPantallaMenuJefesEnfermeria controlador = new ctrlPantallaMenuJefesEnfermeria(vista, panel, Panel1, MiniPanel2, MiniPanel1, modelo, modelo2, modelo3, modelo4, modelo5);
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
     } 

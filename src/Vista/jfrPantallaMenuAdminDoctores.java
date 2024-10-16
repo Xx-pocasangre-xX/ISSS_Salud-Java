@@ -6,6 +6,7 @@ import Modelo.EspecialidadDoctores;
 import Modelo.JefesEnfermeria;
 import Modelo.NoticiasMedicas;
 import Modelo.UnidadesMedicas;
+import Modelo.Usuarios;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
@@ -20,10 +21,11 @@ public class jfrPantallaMenuAdminDoctores extends javax.swing.JFrame {
         Doctores modelo3 = new Doctores();
         JefesEnfermeria modelo4 = new JefesEnfermeria();
         NoticiasMedicas modelo5 = new NoticiasMedicas();
+        Usuarios modelo6 = new Usuarios();
         jfrPantallaMenuAdminJefesEnfermeria vista2 = new jfrPantallaMenuAdminJefesEnfermeria();
         ctrlPantallaMenuAdmin Controlador = new ctrlPantallaMenuAdmin(this, modelo);
         ctrlPantallaMenuAdmin Controlador2 = new ctrlPantallaMenuAdmin(this, modelo2);
-        ctrlPantallaMenuAdmin Controlador3 = new ctrlPantallaMenuAdmin(this, modelo3, vista2, modelo4, modelo5);
+        ctrlPantallaMenuAdmin Controlador3 = new ctrlPantallaMenuAdmin(this, modelo3, vista2, modelo4, modelo5, modelo6);
         
         int width = profileImage.getWidth();
         int height = profileImage.getHeight();
