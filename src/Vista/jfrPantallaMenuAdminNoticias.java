@@ -66,6 +66,8 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(62, 68, 83));
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
+        jPanel2.setMinimumSize(new java.awt.Dimension(80, 760));
+        jPanel2.setPreferredSize(new java.awt.Dimension(80, 760));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnAgregarTrabajadores.setBackground(new java.awt.Color(62, 68, 83));
@@ -91,11 +93,13 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         btnCerrarSesion.setBackground(new java.awt.Color(62, 68, 83));
         btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salida 1.png"))); // NOI18N
         btnCerrarSesion.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
-        jPanel2.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 680, 80, 70));
+        jPanel2.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, 80, 70));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 750));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(50, 55, 69));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 760));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 760));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(62, 68, 83));
@@ -116,7 +120,7 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         jpCardsNoticias.setBackground(new java.awt.Color(70, 76, 92));
         jpCardsNoticias.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(156, 156, 156)));
         jpCardsNoticias.setLayout(new java.awt.BorderLayout());
-        jPanel1.add(jpCardsNoticias, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 480, 640));
+        jPanel1.add(jpCardsNoticias, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 480, 650));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -216,7 +220,7 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         jdFechaPublicacion.setDateFormatString("dd-MM-yyyy");
         jPanel1.add(jdFechaPublicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 540, 370, 40));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1122, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -1,6 +1,7 @@
 package Vista;
 
 import Controlador.ctrlPantallaRecuperacionExitosa;
+import Modelo.Usuarios;
 
 public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
 
@@ -8,7 +9,8 @@ public class jfrPantallaRecuperacionExitosa extends javax.swing.JFrame {
     public jfrPantallaRecuperacionExitosa() {
         initComponents();
         
-        ctrlPantallaRecuperacionExitosa Controlafor = new ctrlPantallaRecuperacionExitosa(this);
+        Usuarios modelo = new Usuarios();
+        ctrlPantallaRecuperacionExitosa Controlafor = new ctrlPantallaRecuperacionExitosa(this, modelo);
     }
 
     /**

@@ -68,6 +68,8 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(62, 68, 83));
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
+        jPanel2.setMinimumSize(new java.awt.Dimension(80, 760));
+        jPanel2.setPreferredSize(new java.awt.Dimension(80, 760));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnAgregarTrabajadores.setBackground(new java.awt.Color(41, 72, 152));
@@ -95,7 +97,7 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         btnCerrarSesion.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(156, 156, 156)));
         jPanel2.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 680, 80, 70));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 760));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(50, 55, 69));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
