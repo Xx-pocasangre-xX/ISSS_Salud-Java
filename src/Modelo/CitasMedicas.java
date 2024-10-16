@@ -103,7 +103,7 @@ public class CitasMedicas {
     public List<CitasMedicas> obtenerCitasMedicas(){
       List<CitasMedicas> listaCitasMedicas = new ArrayList<>();
       int idDoctor = Usuarios.getIdDoctor(); 
-      String query = "SELECT * FROM (SELECT cm.id_cita, cm.fecha_cita, cm.hora_cita, u.id_usuario, u.foto_usuario, u.correo_electronico AS solicitante, d.nombre_doctor AS doctor FROM CitasMedicas cm INNER JOIN Usuarios u ON cm.id_usuario = u.id_usuario INNER JOIN Doctores d ON cm.id_doctor = d.id_doctor WHERE d.id_doctor = ? ORDER BY cm.id_cita DESC) WHERE ROWNUM <= 20";
+      String query = "SELECT * FROM (SELECT cm.id_cita, cm.fecha_cita, cm.hora_cita, u.id_usuario, u.foto_usuario, u.nombre_usuario AS solicitante, d.nombre_doctor AS doctor FROM CitasMedicas cm INNER JOIN Usuarios u ON cm.id_usuario = u.id_usuario INNER JOIN Doctores d ON cm.id_doctor = d.id_doctor WHERE d.id_doctor = ? ORDER BY cm.id_cita DESC) WHERE ROWNUM <= 20";
       
       try(Connection conexion = ClaseConexion.getConexion();
             PreparedStatement stmt = conexion.prepareStatement(query)){
@@ -247,7 +247,7 @@ public class CitasMedicas {
        panel2.txtFechaCita.setText(citasAgendadas.getFecha_cita());
        panel2.txtHoraCita.setText(citasAgendadas.getHora_cita());
        
-       String query = "SELECT u.sexo, u.dui, u.tipo_sangre FROM Usuarios u WHERE u.correo_electronico = ?";
+       String query = "SELECT u.sexo, u.dui, u.tipo_sangre FROM Usuarios u WHERE u.nombre_usuario = ?";
        
        try(Connection conexion = ClaseConexion.getConexion();
            PreparedStatement stmt = conexion.prepareStatement(query)){
@@ -291,7 +291,7 @@ public class CitasMedicas {
          System.out.println("Entrando a mostrarDatosExpediente");
           panel3.txtCorreoPaciente.setText(citasAgendadas.getSolicitante());
 
-    String queryExpediente = "SELECT e.id_expediente, u.dui, u.sexo, u.telefono, u.correo_electronico, u.tipo_sangre, u.edad, e.antecedentes_familiares, e.problemas_salud_preexistentes, e.alergias, e.salud_actual, e.resultados_examenes_laboratorio, e.ficha_ingreso FROM ExpedientesMedicos e INNER JOIN Usuarios u ON e.id_usuario = u.id_usuario WHERE u.correo_electronico = ?";
+    String queryExpediente = "SELECT e.id_expediente, u.dui, u.sexo, u.telefono, u.nombre_usuario, u.tipo_sangre, u.edad, e.antecedentes_familiares, e.problemas_salud_preexistentes, e.alergias, e.salud_actual, e.resultados_examenes_laboratorio, e.ficha_ingreso FROM ExpedientesMedicos e INNER JOIN Usuarios u ON e.id_usuario = u.id_usuario WHERE u.nombre_usuario = ?";
 
     try (Connection conexion = ClaseConexion.getConexion();
          PreparedStatement stmt = conexion.prepareStatement(queryExpediente)) {
@@ -361,7 +361,7 @@ public class CitasMedicas {
             if (filasActualizadas > 0) {
             JOptionPane.showMessageDialog(null, "El expediente ha sido actualizado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, "No se encontró el expediente para actualizar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No se encontró el expediente para actualizar, haz clic a una card e orden de actualizar", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
             
         } catch (SQLException ex) {

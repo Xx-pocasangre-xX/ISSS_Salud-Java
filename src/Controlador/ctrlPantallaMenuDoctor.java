@@ -114,6 +114,12 @@ public class ctrlPantallaMenuDoctor implements MouseListener {
             panel2.initPanelInfoCitaDoctor();
             panel1.revalidate();
             panel1.repaint();
+            panel3.txtCorreoPaciente.setEnabled(false);
+            panel3.txtDuiPaciente.setEnabled(false);
+            panel3.txtSexoPaciente.setEnabled(false);
+            panel3.txtTelefonoPaciente.setEnabled(false);
+            panel3.txtTipoSangrePaciente.setEnabled(false);
+            panel3.txtEdadPaciente.setEnabled(false);
             
             if (panel1.jPanelInformacionCitaDoctor.getComponentCount() > 0 && panel1.jPanelInformacionCitaDoctor.getComponent(0) == panel3) {
                 System.out.println("PanelExpedienteMedico agregado correctamente.");
