@@ -92,7 +92,7 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("DUI");
-        jPanel7.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 40, -1));
+        jPanel7.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 40, -1));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -102,12 +102,12 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Tipo sangre");
-        jPanel7.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 140, -1));
+        jPanel7.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 140, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Sexo");
-        jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, -1, -1));
+        jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 320, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -130,17 +130,18 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
         txtSexo.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         txtSexo.setForeground(new java.awt.Color(255, 255, 255));
         txtSexo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 360, 270, 40));
+        jPanel7.add(txtSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, 270, 40));
 
         txtTelefono.setBackground(new java.awt.Color(70, 76, 92));
         txtTelefono.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         txtTelefono.setForeground(new java.awt.Color(255, 255, 255));
         txtTelefono.setToolTipText("");
         txtTelefono.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
-        jPanel7.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 290, 40));
+        jPanel7.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 290, 40));
 
         btnActualizarCita.setBackground(new java.awt.Color(41, 72, 152));
         btnActualizarCita.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnActualizarCita.setForeground(new java.awt.Color(255, 255, 255));
         btnActualizarCita.setText("Actualizar información");
         btnActualizarCita.setBorder(null);
         btnActualizarCita.addActionListener(new java.awt.event.ActionListener() {
@@ -148,7 +149,7 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
                 btnActualizarCitaActionPerformed(evt);
             }
         });
-        jPanel7.add(btnActualizarCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 470, 210, 40));
+        jPanel7.add(btnActualizarCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 470, 210, 40));
 
         txtTIpoSangre.setBackground(new java.awt.Color(70, 76, 92));
         txtTIpoSangre.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
@@ -170,7 +171,7 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
         jLabel13.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Hora");
-        jPanel7.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 140, -1));
+        jPanel7.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 140, -1));
 
         txtHora.setBackground(new java.awt.Color(70, 76, 92));
         txtHora.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
@@ -181,7 +182,7 @@ public class PanelCitasAgendadasJefeEnfermeria extends javax.swing.JPanel {
         jLabel14.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Fecha de la cita");
-        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
+        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
 
         txtDia.setBackground(new java.awt.Color(70, 76, 92));
         txtDia.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N

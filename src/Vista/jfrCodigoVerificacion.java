@@ -53,7 +53,7 @@ public class jfrCodigoVerificacion extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoprueba.PNG"))); // NOI18N
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 145, 314, 333));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 145, -1, 333));
 
         jPanel1.setBackground(new java.awt.Color(31, 38, 76));
         jPanel1.setMinimumSize(new java.awt.Dimension(430, 480));
@@ -63,22 +63,22 @@ public class jfrCodigoVerificacion extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Roboto", 3, 32)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Verifique su código");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("su correo electrónico");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 150, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ingrese correctamente el código que ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("se le ha enviado con anterioridad a");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 130, 220, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 230, -1));
 
         txtNum6.setFont(new java.awt.Font("Dialog", 0, 40)); // NOI18N
         txtNum6.setHorizontalAlignment(javax.swing.JTextField.CENTER);

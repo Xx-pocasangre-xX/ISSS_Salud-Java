@@ -59,7 +59,7 @@ public class PanelPersonalAdmin extends javax.swing.JPanel {
         btnAgendadas.setBackground(new java.awt.Color(183, 184, 187));
         btnAgendadas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnAgendadas.setForeground(new java.awt.Color(61, 61, 61));
-        btnAgendadas.setText("Jefes de enfermeria");
+        btnAgendadas.setText("Jefes de enfermería");
         jPanel3.add(btnAgendadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 170, 40));
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 110));

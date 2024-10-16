@@ -69,7 +69,8 @@ public class jfrPantallaMenuAdminDoctores extends javax.swing.JFrame {
         txtContrasenaDoctor = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1200, 750));
+        setMinimumSize(new java.awt.Dimension(1200, 760));
+        setPreferredSize(new java.awt.Dimension(1200, 760));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -123,7 +124,7 @@ public class jfrPantallaMenuAdminDoctores extends javax.swing.JFrame {
         btnJefes.setBackground(new java.awt.Color(183, 184, 187));
         btnJefes.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnJefes.setForeground(new java.awt.Color(61, 61, 61));
-        btnJefes.setText("Jefes de enfermeria");
+        btnJefes.setText("Jefes de enfermería");
         jPanel3.add(btnJefes, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 40, 170, 40));
 
         btnDoctores.setBackground(new java.awt.Color(41, 72, 152));
@@ -147,7 +148,7 @@ public class jfrPantallaMenuAdminDoctores extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Foto del doctor");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, 130, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, 140, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -161,7 +162,7 @@ public class jfrPantallaMenuAdminDoctores extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Unidad Medica");
+        jLabel12.setText("Unidad Médica");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, -1, -1));
 
         txtNombreDoctor.setBackground(new java.awt.Color(50, 55, 65));

@@ -50,7 +50,7 @@ public class PanelChatDoctoresSinDesplegar extends javax.swing.JPanel {
         MensajeriaDoctores.setBackground(new java.awt.Color(255, 255, 255));
         MensajeriaDoctores.setFont(new java.awt.Font("Roboto", 3, 36)); // NOI18N
         MensajeriaDoctores.setForeground(new java.awt.Color(255, 255, 255));
-        MensajeriaDoctores.setText("Mensajeria");
+        MensajeriaDoctores.setText("Mensajería");
         jPanelMensajeriaDoctores.add(MensajeriaDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, -1, -1));
 
         add(jPanelMensajeriaDoctores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 110));

@@ -449,7 +449,7 @@ jpCardsMensajes.setLayout(new BoxLayout(jpCardsMensajes, BoxLayout.Y_AXIS));
     }
     
     public void cargarMensajes(JPanel jpCardsMensajes){
-       String query = "SELECT * FROM (SELECT * FROM MensajesChat WHERE (id_remitente = ? AND id_destinatario = ?) OR (id_remitente = ? AND id_destinatario = ?) ORDER BY id_mensaje DESC ) WHERE ROWNUM <= 7 ORDER BY id_mensaje ASC";
+       String query = "SELECT * FROM MensajesChat WHERE (id_remitente = ? AND id_destinatario = ?) OR (id_remitente = ? AND id_destinatario = ?) ORDER BY id_mensaje ASC";
        
        try(Connection conexion = ClaseConexion.getConexion();
                PreparedStatement stmt = conexion.prepareStatement(query)){

@@ -33,7 +33,6 @@ public class jfrPantallaMain extends javax.swing.JFrame {
         btnBienvenida = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(960, 640));
         setMinimumSize(new java.awt.Dimension(960, 640));
         setResizable(false);
 
@@ -44,7 +43,7 @@ public class jfrPantallaMain extends javax.swing.JFrame {
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoprueba.PNG"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 314, 333));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 250, 333));
 
         btnBienvenida.setBackground(new java.awt.Color(255, 255, 255));
         btnBienvenida.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N

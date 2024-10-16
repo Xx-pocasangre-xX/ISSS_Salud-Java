@@ -55,9 +55,9 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="314" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                   <Component id="jpFondoAzul" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="68" max="32767" attributes="0"/>
               </Group>
@@ -68,12 +68,12 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="333" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                           <Component id="jpFondoAzul" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="333" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="78" max="32767" attributes="0"/>
@@ -128,7 +128,7 @@
                                       <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="btnVerContrasena" min="-2" pref="41" max="-2" attributes="0"/>
+                                      <Component id="btnVerContrasena" min="-2" pref="35" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -155,12 +155,12 @@
                       <Component id="BienvenidoLabel" min="-2" pref="41" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="BienvenidoLabel1" min="-2" pref="41" max="-2" attributes="0"/>
-                      <EmptySpace pref="70" max="32767" attributes="0"/>
+                      <EmptySpace pref="57" max="32767" attributes="0"/>
                       <Component id="txtEmail" min="-2" pref="36" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="txtContrasena" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="btnVerContrasena" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnVerContrasena" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="btnIniciarSesion" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -259,7 +259,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="d2" red="8a" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="&#xbf;olvidaste tu contrase&#xf1;a?"/>
+                <Property name="text" type="java.lang.String" value="&#xbf;Olvidaste tu contrase&#xf1;a?"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOlvidasteContraActionPerformed"/>

@@ -145,6 +145,7 @@ public class PanelSolicitudesCitas extends javax.swing.JPanel {
 
         btnAgendarCita.setBackground(new java.awt.Color(41, 72, 152));
         btnAgendarCita.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnAgendarCita.setForeground(new java.awt.Color(255, 255, 255));
         btnAgendarCita.setText("Agendar cita");
         btnAgendarCita.setBorder(null);
         jPanel7.add(btnAgendarCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 120, 40));

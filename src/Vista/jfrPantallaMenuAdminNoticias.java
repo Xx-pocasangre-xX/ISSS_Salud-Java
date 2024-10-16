@@ -59,7 +59,8 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         jdFechaPublicacion = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1200, 750));
+        setMinimumSize(new java.awt.Dimension(1200, 760));
+        setPreferredSize(new java.awt.Dimension(1200, 760));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -129,7 +130,7 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Titulo de la noticia");
+        jLabel7.setText("Título de la noticia");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 260, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N

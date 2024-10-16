@@ -62,7 +62,7 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         txtContrasenaJefe = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1200, 750));
+        setMinimumSize(new java.awt.Dimension(1200, 760));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -116,7 +116,7 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         btnJefes.setBackground(new java.awt.Color(41, 72, 152));
         btnJefes.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         btnJefes.setForeground(new java.awt.Color(255, 255, 255));
-        btnJefes.setText("Jefes de enfermeria");
+        btnJefes.setText("Jefes de enfermería");
         jPanel3.add(btnJefes, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 40, 170, 40));
 
         btnDoctores.setBackground(new java.awt.Color(183, 184, 187));
@@ -144,7 +144,7 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Foto del jefe de enfermeria");
+        jLabel6.setText("Foto del jefe de enfermería");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 230, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
@@ -281,7 +281,7 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         txtContrasenaJefe.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
         jPanel1.add(txtContrasenaJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 395, 290, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1122, 750));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 1120, 760));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

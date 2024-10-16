@@ -36,14 +36,6 @@
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Controlador/ctrlPantallaMenuDoctor.java</file>
         </group>
         <group>
-            <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Vista/PanelBienvenidaChat.java</file>
-            <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Vista/PanelMensajesChat.java</file>
-            <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/Usuarios.java</file>
-            <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Vista/PanelChatDoctoresSinDesplegar.java</file>
-            <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/Doctores.java</file>
-            <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Controlador/ctrlPantallaMenuDoctor.java</file>
-        </group>
-        <group>
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/Usuarios.java</file>
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/CitasMedicas.java</file>
         </group>
@@ -63,6 +55,10 @@
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/NoticiasMedicas.java</file>
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Controlador/ctrlPantallaMenuAdmin.java</file>
             <file>file:/C:/Users/Eduardo%20Padilla/Desktop/ISSS_Salud-Java/src/Modelo/JefesEnfermeria.java</file>
+        </group>
+        <group>
+            <file>file:/C:/Users/ricar/Desktop/ISSS_Salud-Java/src/Modelo/Usuarios.java</file>
+            <file>file:/C:/Users/ricar/Desktop/ISSS_Salud-Java/src/Vista/PanelMensajesChat.java</file>
         </group>
     </open-files>
 </project-private>

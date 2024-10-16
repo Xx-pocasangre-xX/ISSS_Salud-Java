@@ -47,7 +47,7 @@ public class jfrCambioContra extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoprueba.PNG"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 145, 314, 333));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 145, -1, 333));
 
         jPanel2.setBackground(new java.awt.Color(31, 38, 76));
         jPanel2.setMinimumSize(new java.awt.Dimension(430, 480));
@@ -69,13 +69,13 @@ public class jfrCambioContra extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("caracteres e incluir una combinación de ");
+        jLabel6.setText("carácteres e incluir una combinación de ");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 2, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Repetir contraseña nueva");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 140, -1));
+        jLabel7.setText("Confirmar contraseña");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 120, -1));
 
         btnActualizarContrasena.setBackground(new java.awt.Color(144, 188, 255));
         btnActualizarContrasena.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -91,7 +91,7 @@ public class jfrCambioContra extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("números, letras y caracteres");
+        jLabel10.setText("números, letras y carácteres");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -102,7 +102,7 @@ public class jfrCambioContra extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Roboto", 2, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Contraseña nueva");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 100, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 110, -1));
 
         txtContrasenaNueva.setFont(new java.awt.Font("Roboto", 2, 12)); // NOI18N
         txtContrasenaNueva.setForeground(new java.awt.Color(0, 0, 0));

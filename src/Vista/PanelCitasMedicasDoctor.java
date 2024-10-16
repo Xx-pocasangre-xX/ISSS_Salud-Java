@@ -50,7 +50,7 @@ public class PanelCitasMedicasDoctor extends javax.swing.JPanel {
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Roboto", 3, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Citas medicas");
+        jLabel6.setText("Citas médicas");
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, -1, -1));
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 110));

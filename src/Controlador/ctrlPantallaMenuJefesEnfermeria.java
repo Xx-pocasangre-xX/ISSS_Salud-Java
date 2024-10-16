@@ -92,7 +92,9 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
             //1-Creo un objeto del panel que quiero mostrar
             PanelCitasAgendadasJefeEnfermeria objMenu = new PanelCitasAgendadasJefeEnfermeria();
             vista.btnSolicitudes.setBackground(new java.awt.Color(183, 184, 187));
-            vista.btnAgendadas.setBackground(new java.awt.Color(41, 72, 152));
+            vista.btnAgendadas.setBackground(new java.awt.Color(41,72,152));
+            vista.btnAgendadas.setForeground(new java.awt.Color(255,255,255));
+            vista.btnSolicitudes.setForeground(new java.awt.Color(61,61,61));
             modelo3.cargarCardsCitasMedicas(objMenu.jpCardsCitasAgendadas2, objMenu, miniPanel2);
             
             
@@ -163,6 +165,8 @@ public class ctrlPantallaMenuJefesEnfermeria implements MouseListener {
             this.modelo.bloquearTextFields(objMenu.txtNombreSolicitante, objMenu.txtTelefono, objMenu.txtCorreo, objMenu.txtMotivoCita, objMenu.txtDUI, objMenu.txtFechaSolicitud);
             vista.btnAgendadas.setBackground(new java.awt.Color(183, 184, 187));
             vista.btnSolicitudes.setBackground(new java.awt.Color(41, 72, 152));
+            vista.btnAgendadas.setForeground(new java.awt.Color(61,61,61));
+            vista.btnSolicitudes.setForeground(new java.awt.Color(255,255,255));
             
             //2- Limpio el panel contendor (por si acaso)
             vista.jPanelInfoJefes.removeAll();

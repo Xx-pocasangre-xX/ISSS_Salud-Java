@@ -43,7 +43,7 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoprueba.PNG"))); // NOI18N
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 145, 314, 333));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 145, 250, 333));
 
         jPanel1.setBackground(new java.awt.Color(31, 38, 76));
         jPanel1.setMinimumSize(new java.awt.Dimension(430, 480));
@@ -63,18 +63,18 @@ public class jfrRecuperacionContra extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Ingresa tu correo electrónico y te ");
+        jLabel5.setText("Ingrese su correo electrónico y le ");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("enviaremos un codigo para que cambies ");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
+        jLabel6.setText("enviaremos un código para que cambie");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("la contraseña a tu cuenta");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
+        jLabel7.setText("la contraseña de su cuenta");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, -1, -1));
 
         txtCorreoRec.setBackground(new java.awt.Color(250, 250, 250));
         txtCorreoRec.setFont(new java.awt.Font("Raleway Thin", 2, 16)); // NOI18N

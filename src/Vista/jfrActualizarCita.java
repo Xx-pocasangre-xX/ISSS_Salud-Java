@@ -129,7 +129,7 @@ public class jfrActualizarCita extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Especialidad del doctor");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 220, -1));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 230, -1));
 
         cbEspecialidadDoctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(cbEspecialidadDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 280, 40));

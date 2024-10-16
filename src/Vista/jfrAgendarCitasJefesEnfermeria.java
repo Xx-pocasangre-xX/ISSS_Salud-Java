@@ -128,7 +128,7 @@ public class jfrAgendarCitasJefesEnfermeria extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Especialidad del doctor");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 220, -1));
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 230, -1));
 
         cbEspecialidadDoctor.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
         cbEspecialidadDoctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));

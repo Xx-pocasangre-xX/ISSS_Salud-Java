@@ -77,7 +77,7 @@ public class jfrPantallaMenuJefesEnfermeria extends javax.swing.JFrame {
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Roboto", 3, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Citas medicas");
+        jLabel6.setText("Citas médicas");
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 250, -1));
 
         btnSolicitudes.setBackground(new java.awt.Color(41, 72, 152));
