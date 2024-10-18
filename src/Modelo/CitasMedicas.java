@@ -440,7 +440,7 @@ public class CitasMedicas {
     public ArrayList<String> obtenerPacientes(){
       Connection conexion = ClaseConexion.getConexion();
       ArrayList<String> pacientes = new ArrayList<>();
-      String query = "SELECT nombre_usuario FROM Usuarios WHERE id_rol = 2";
+      String query = "SELECT nombre_usuario FROM Usuarios WHERE id_rol = 2 ORDER BY id_usuario  DESC";
       
       try(PreparedStatement stmt = conexion.prepareStatement(query);
            ResultSet rs = stmt.executeQuery()){
@@ -543,7 +543,7 @@ public class CitasMedicas {
     
     public int obtenerIdUsuario(String correo){
       int idUsuario2 = -1;
-      String query = "SELECT id_usuario FROM Usuarios WHERE correo_electronico = ?";
+      String query = "SELECT id_usuario FROM Usuarios WHERE nombre_usuario = ?";
       
       try(Connection conexion = ClaseConexion.getConexion();
           PreparedStatement stmt = conexion.prepareStatement(query)){
