@@ -88,7 +88,7 @@ public class jfrActualizarCita extends javax.swing.JFrame {
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, 140, -1));
 
         txtHoraActualizada.setBackground(new java.awt.Color(70, 76, 92));
-        txtHoraActualizada.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        txtHoraActualizada.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         txtHoraActualizada.setForeground(new java.awt.Color(255, 255, 255));
         txtHoraActualizada.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
         txtHoraActualizada.addActionListener(new java.awt.event.ActionListener() {
@@ -104,7 +104,8 @@ public class jfrActualizarCita extends javax.swing.JFrame {
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 230, -1));
 
         btnGuardarCambios.setBackground(new java.awt.Color(41, 72, 152));
-        btnGuardarCambios.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnGuardarCambios.setFont(new java.awt.Font("Roboto", 3, 16)); // NOI18N
+        btnGuardarCambios.setForeground(new java.awt.Color(255, 255, 255));
         btnGuardarCambios.setText("Guardar cambios");
         btnGuardarCambios.setBorder(null);
         btnGuardarCambios.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +115,7 @@ public class jfrActualizarCita extends javax.swing.JFrame {
         });
         jPanel1.add(btnGuardarCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 160, 40));
 
-        cbDoctor.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        cbDoctor.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         cbDoctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,6 +124,7 @@ public class jfrActualizarCita extends javax.swing.JFrame {
         });
         jPanel1.add(cbDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 280, 40));
 
+        jdcFechaActualizada.setForeground(new java.awt.Color(255, 255, 255));
         jdcFechaActualizada.setDateFormatString("dd-MM-yyyy");
         jPanel1.add(jdcFechaActualizada, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 270, 40));
 
@@ -131,7 +133,13 @@ public class jfrActualizarCita extends javax.swing.JFrame {
         jLabel15.setText("Especialidad del doctor");
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 230, -1));
 
+        cbEspecialidadDoctor.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         cbEspecialidadDoctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbEspecialidadDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbEspecialidadDoctorActionPerformed(evt);
+            }
+        });
         jPanel1.add(cbEspecialidadDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 280, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 560));
@@ -150,6 +158,10 @@ public class jfrActualizarCita extends javax.swing.JFrame {
     private void cbDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbDoctorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbDoctorActionPerformed
+
+    private void cbEspecialidadDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEspecialidadDoctorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbEspecialidadDoctorActionPerformed
 
     /**
      * @param args the command line arguments

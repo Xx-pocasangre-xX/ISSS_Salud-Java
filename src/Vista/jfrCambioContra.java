@@ -104,11 +104,11 @@ public class jfrCambioContra extends javax.swing.JFrame {
         jLabel9.setText("Contraseña nueva");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 110, -1));
 
-        txtContrasenaNueva.setFont(new java.awt.Font("Roboto", 2, 12)); // NOI18N
+        txtContrasenaNueva.setFont(new java.awt.Font("Roboto", 2, 13)); // NOI18N
         txtContrasenaNueva.setForeground(new java.awt.Color(0, 0, 0));
         jPanel2.add(txtContrasenaNueva, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 350, 30));
 
-        txtRepetirContrasenaNueva.setFont(new java.awt.Font("Roboto", 2, 12)); // NOI18N
+        txtRepetirContrasenaNueva.setFont(new java.awt.Font("Roboto", 2, 13)); // NOI18N
         txtRepetirContrasenaNueva.setForeground(new java.awt.Color(0, 0, 0));
         jPanel2.add(txtRepetirContrasenaNueva, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 350, 30));
 

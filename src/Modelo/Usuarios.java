@@ -1,15 +1,12 @@
 package Modelo;
 
-import Vista.PanelBienvenidaChat;
 import Vista.PanelChatDoctoresSinDesplegar;
 import Vista.PanelMensajesChat;
 import Vista.jfrPantallaLogin;
-import Vista.jfrPantallaMenuDoctor;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
@@ -353,8 +350,8 @@ public String toString() {
 });
        
        return card;
-    }
-    
+    } 
+
     public boolean validarCorreo(String correo){
        String regex = "^[\\w._%+-]+@(gmail\\.com|isss\\.gob\\.sv)$";
        return correo.matches(regex);
@@ -416,7 +413,7 @@ public String toString() {
     
     private void actualizarPanelMensajes(int idRemitente, int idDestinatario, String mensaje, String tipoRemitente, String tipoDestinatario, JPanel jpCardsMensajes){
         
-jpCardsMensajes.setLayout(new BoxLayout(jpCardsMensajes, BoxLayout.Y_AXIS));
+    jpCardsMensajes.setLayout(new BoxLayout(jpCardsMensajes, BoxLayout.Y_AXIS));
     
     // Crear un botón que contendrá el mensaje
     JButton btnMensaje = new JButton(mensaje);
@@ -472,7 +469,7 @@ jpCardsMensajes.setLayout(new BoxLayout(jpCardsMensajes, BoxLayout.Y_AXIS));
           }
           
           jpCardsMensajes.revalidate();
-    jpCardsMensajes.repaint();
+          jpCardsMensajes.repaint();
         
        }catch(SQLException e){
          e.printStackTrace();

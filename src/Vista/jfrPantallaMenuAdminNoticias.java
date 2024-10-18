@@ -60,7 +60,6 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1200, 760));
-        setPreferredSize(new java.awt.Dimension(1200, 760));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -125,12 +124,12 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Fecha de publicación");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Foto de la noticia");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -140,7 +139,7 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Descripción");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, -1));
 
         txtTituloNoticia.setBackground(new java.awt.Color(50, 55, 65));
         txtTituloNoticia.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -151,7 +150,7 @@ public class jfrPantallaMenuAdminNoticias extends javax.swing.JFrame {
                 txtTituloNoticiaActionPerformed(evt);
             }
         });
-        jPanel1.add(txtTituloNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 290, 30));
+        jPanel1.add(txtTituloNoticia, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 290, 30));
 
         btnCargarImagenNoticia.setBackground(new java.awt.Color(41, 72, 152));
         btnCargarImagenNoticia.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N

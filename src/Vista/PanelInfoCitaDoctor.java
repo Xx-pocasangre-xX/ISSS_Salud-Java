@@ -145,7 +145,7 @@ public class PanelInfoCitaDoctor extends javax.swing.JPanel {
                 btnLimpiarActionPerformed(evt);
             }
         });
-        jPanel7.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 120, 40));
+        jPanel7.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, 120, 40));
 
         txtTipoSangrePaciente.setBackground(new java.awt.Color(70, 76, 92));
         txtTipoSangrePaciente.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
@@ -166,11 +166,11 @@ public class PanelInfoCitaDoctor extends javax.swing.JPanel {
         jPanel7.add(txtFechaCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 350, 30));
 
         btnExpediente.setBackground(new java.awt.Color(41, 72, 152));
-        btnExpediente.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnExpediente.setFont(new java.awt.Font("Roboto", 3, 16)); // NOI18N
         btnExpediente.setForeground(new java.awt.Color(255, 255, 255));
         btnExpediente.setText("Ver expediente");
         btnExpediente.setBorder(null);
-        jPanel7.add(btnExpediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 430, 120, 40));
+        jPanel7.add(btnExpediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 430, 140, 40));
 
         add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 560));
     }// </editor-fold>//GEN-END:initComponents

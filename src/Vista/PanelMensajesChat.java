@@ -42,6 +42,7 @@ public class PanelMensajesChat extends javax.swing.JPanel {
         btnEnviarMensaje = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jpCardsMensajes = new javax.swing.JPanel();
+        btnInvisible = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(50, 55, 69));
         setMaximumSize(new java.awt.Dimension(786, 638));
@@ -81,6 +82,7 @@ public class PanelMensajesChat extends javax.swing.JPanel {
         );
 
         txtMensaje.setBackground(new java.awt.Color(255, 255, 255));
+        txtMensaje.setFont(new java.awt.Font("Roboto", 2, 15)); // NOI18N
         txtMensaje.setForeground(new java.awt.Color(0, 0, 0));
 
         btnEnviarMensaje.setBackground(new java.awt.Color(50, 55, 69));
@@ -94,18 +96,24 @@ public class PanelMensajesChat extends javax.swing.JPanel {
         jpCardsMensajes.setBackground(new java.awt.Color(50, 55, 69));
         jScrollPane1.setViewportView(jpCardsMensajes);
 
+        btnInvisible.setBackground(new java.awt.Color(50, 55, 69));
+        btnInvisible.setBorder(null);
+        btnInvisible.setBorderPainted(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnInvisible, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtMensaje, javax.swing.GroupLayout.DEFAULT_SIZE, 690, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(btnEnviarMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,9 +123,10 @@ public class PanelMensajesChat extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEnviarMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(btnEnviarMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addComponent(btnInvisible, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -128,6 +137,7 @@ public class PanelMensajesChat extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnEnviarMensaje;
+    public javax.swing.JButton btnInvisible;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JLabel jlFotoPaciente;

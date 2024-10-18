@@ -124,7 +124,7 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
         BienvenidoLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         BienvenidoLabel1.setText("ISSS Salud");
 
-        txtEmail.setFont(new java.awt.Font("Roboto", 2, 11)); // NOI18N
+        txtEmail.setFont(new java.awt.Font("Roboto", 2, 13)); // NOI18N
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
@@ -143,7 +143,7 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
             }
         });
 
-        txtContrasena.setFont(new java.awt.Font("Roboto", 2, 11)); // NOI18N
+        txtContrasena.setFont(new java.awt.Font("Roboto", 2, 13)); // NOI18N
 
         btnOlvidasteContra.setBackground(new java.awt.Color(31, 38, 76));
         btnOlvidasteContra.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
@@ -196,7 +196,7 @@ public class jfrPantallaLogin extends javax.swing.JFrame {
                 .addComponent(BienvenidoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BienvenidoLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(txtContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)

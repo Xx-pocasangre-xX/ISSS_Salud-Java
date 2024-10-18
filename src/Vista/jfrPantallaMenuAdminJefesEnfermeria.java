@@ -141,8 +141,8 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Edad");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 540, 50, -1));
+        jLabel5.setText("Fecha de nacimiento");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 540, 180, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -249,6 +249,7 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         });
         jPanel1.add(btnEliminarJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 660, 120, 50));
 
+        cbTipoSangre.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         cbTipoSangre.setForeground(java.awt.Color.black);
         cbTipoSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" }));
         jPanel1.add(cbTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, 290, 30));
@@ -264,6 +265,7 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 260, -1));
 
         txtTelefonoJefe.setBackground(new java.awt.Color(50, 55, 65));
+        txtTelefonoJefe.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         txtTelefonoJefe.setForeground(java.awt.Color.white);
         txtTelefonoJefe.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
         jPanel1.add(txtTelefonoJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 155, 290, 30));
@@ -279,6 +281,7 @@ public class jfrPantallaMenuAdminJefesEnfermeria extends javax.swing.JFrame {
         jPanel1.add(jdcEdadJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 570, 260, 30));
 
         txtContrasenaJefe.setBackground(new java.awt.Color(50, 55, 65));
+        txtContrasenaJefe.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         txtContrasenaJefe.setForeground(java.awt.Color.white);
         txtContrasenaJefe.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(132, 135, 143)));
         jPanel1.add(txtContrasenaJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 395, 290, 30));

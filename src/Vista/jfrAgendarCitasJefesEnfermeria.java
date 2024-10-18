@@ -89,7 +89,7 @@ public class jfrAgendarCitasJefesEnfermeria extends javax.swing.JFrame {
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 140, -1));
 
         txtHoraCita.setBackground(new java.awt.Color(70, 76, 92));
-        txtHoraCita.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        txtHoraCita.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         txtHoraCita.setForeground(new java.awt.Color(255, 255, 255));
         txtHoraCita.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(144, 148, 157)));
         jPanel1.add(txtHoraCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 270, 40));
@@ -102,10 +102,11 @@ public class jfrAgendarCitasJefesEnfermeria extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Roboto", 3, 20)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Paciente");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, -1, -1));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 90, -1));
 
         btnAsignarDatosCita.setBackground(new java.awt.Color(41, 72, 152));
         btnAsignarDatosCita.setFont(new java.awt.Font("Roboto", 3, 16)); // NOI18N
+        btnAsignarDatosCita.setForeground(new java.awt.Color(255, 255, 255));
         btnAsignarDatosCita.setText("Agendar Cita");
         btnAsignarDatosCita.setBorder(null);
         btnAsignarDatosCita.addActionListener(new java.awt.event.ActionListener() {
@@ -115,13 +116,15 @@ public class jfrAgendarCitasJefesEnfermeria extends javax.swing.JFrame {
         });
         jPanel1.add(btnAsignarDatosCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 420, 140, 40));
 
-        cbDoctor.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        cbDoctor.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         cbDoctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(cbDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 310, 40));
 
+        cbPacientes.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         cbPacientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(cbPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 310, 40));
 
+        jdcFechaCita.setForeground(new java.awt.Color(255, 255, 255));
         jdcFechaCita.setDateFormatString("dd-MM-yyyy");
         jPanel1.add(jdcFechaCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 270, 40));
 
@@ -130,7 +133,7 @@ public class jfrAgendarCitasJefesEnfermeria extends javax.swing.JFrame {
         jLabel16.setText("Especialidad del doctor");
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 230, -1));
 
-        cbEspecialidadDoctor.setFont(new java.awt.Font("Raleway Thin", 2, 13)); // NOI18N
+        cbEspecialidadDoctor.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         cbEspecialidadDoctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(cbEspecialidadDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 270, 40));
 

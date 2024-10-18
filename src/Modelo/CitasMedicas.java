@@ -440,13 +440,13 @@ public class CitasMedicas {
     public ArrayList<String> obtenerPacientes(){
       Connection conexion = ClaseConexion.getConexion();
       ArrayList<String> pacientes = new ArrayList<>();
-      String query = "SELECT correo_electronico FROM Usuarios WHERE id_rol = 2";
+      String query = "SELECT nombre_usuario FROM Usuarios WHERE id_rol = 2";
       
       try(PreparedStatement stmt = conexion.prepareStatement(query);
            ResultSet rs = stmt.executeQuery()){
       
           while(rs.next()){
-            pacientes.add(rs.getString("correo_electronico"));
+            pacientes.add(rs.getString("nombre_usuario"));
           }
       }catch(SQLException e){
         e.printStackTrace();

@@ -122,7 +122,7 @@ public class PanelExpedienteMedico extends javax.swing.JPanel {
         jLabel9.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(183, 186, 193));
         jLabel9.setText("Nombre");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, -1, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, 70, -1));
 
         jLabel10.setFont(new java.awt.Font("Roboto", 3, 16)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -156,8 +156,8 @@ public class PanelExpedienteMedico extends javax.swing.JPanel {
 
         jLabel12.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(183, 186, 193));
-        jLabel12.setText("Edad");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 480, 50, -1));
+        jLabel12.setText("Fecha de nacimiento");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 480, 180, -1));
 
         jLabel13.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(183, 186, 193));
